@@ -1,0 +1,758 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#000000">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="Picks">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23ff1e3c'/%3E%3Ccircle cx='16' cy='16' r='11' fill='%23fff'/%3E%3Cpath d='M16 10l5 3.6-1.9 5.9h-6.2L11 13.6z' fill='%23000'/%3E%3C/svg%3E">
+<title>Picks del día</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;1,700;1,800;1,900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* Layout: noche de partido. Fondo negro con focos y rayas rojas en diagonal, cabecera tipo estadio,
+   tarjetas de partido con la cuota en un bloque rojo y combinadas en formato boleto. Un solo tema (oscuro) a propósito. */
+:root {
+  --bg: #07070a;
+  --panel: #111116;
+  --panel-2: #1a1a21;
+  --panel-3: #23232c;
+  --ink: #f6f6f8;
+  --ink-2: #b9b9c4;
+  --muted: #7d7d8a;
+  --line: #2a2a33;
+  --red: #ff1e3c;
+  --red-2: #c4001f;
+  --red-glow: rgba(255, 30, 60, .35);
+  --alta: #2ee28a;
+  --media: #ffb31f;
+  --baja: #ff6b3d;
+  --font-display: "Barlow Condensed", "Arial Narrow", "Inter", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { background: var(--bg); }
+body {
+  margin: 0; color: var(--ink); background: var(--bg);
+  font: 15px/1.5 var(--font-body); font-variant-numeric: tabular-nums;
+  background-image:
+    radial-gradient(900px 500px at 85% -10%, rgba(255, 30, 60, .16), transparent 60%),
+    radial-gradient(700px 420px at -10% 30%, rgba(255, 30, 60, .08), transparent 60%),
+    repeating-linear-gradient(-58deg, transparent 0 46px, rgba(255, 30, 60, .045) 46px 48px, transparent 48px 140px);
+  background-attachment: fixed;
+}
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 20; background: #000; }
+h1, h2, h3 { margin: 0; font-family: var(--font-display); text-transform: uppercase; letter-spacing: .01em; line-height: 1; text-wrap: balance; }
+p { margin: 0; }
+button, select, input { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--red); outline-offset: 2px; }
+.muted { color: var(--muted); }
+.pos { color: var(--alta); }
+.neg { color: var(--baja); }
+.inner { max-width: 1200px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+
+/* ---------- barra superior ---------- */
+.topbar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 10; background: rgba(0, 0, 0, .88); backdrop-filter: blur(12px); border-bottom: 2px solid var(--red); }
+.topbar .inner { display: flex; align-items: center; gap: 16px; padding-block: 0; flex-wrap: wrap; min-height: 58px; }
+.brand { display: flex; align-items: center; gap: 10px; font-family: var(--font-display); font-weight: 900; font-style: italic; font-size: 24px; text-transform: uppercase; letter-spacing: .02em; }
+.brand svg { width: 28px; height: 28px; flex-shrink: 0; }
+.brand b { color: var(--red); font-weight: 900; }
+.tabs { display: flex; margin-left: auto; align-self: stretch; }
+.tabs a {
+  display: flex; align-items: center; text-decoration: none; padding: 0 16px; color: var(--ink-2);
+  font-family: var(--font-display); font-weight: 700; font-size: 18px; text-transform: uppercase; letter-spacing: .04em;
+  border-bottom: 3px solid transparent; margin-bottom: -2px;
+}
+.tabs a:hover { color: var(--ink); }
+.tabs a.on { color: var(--ink); border-bottom-color: var(--red); background: linear-gradient(to top, rgba(255, 30, 60, .18), transparent 70%); }
+.saldo-chip {
+  text-decoration: none; font-family: var(--font-display); font-weight: 800; font-size: 19px;
+  padding: 4px 14px; background: var(--red); color: #fff; transform: skewX(-12deg); white-space: nowrap;
+}
+.saldo-chip span { display: inline-block; transform: skewX(12deg); }
+
+main.inner { padding-block: 22px 44px; display: flex; flex-direction: column; gap: 22px; }
+.pie { padding-block: 0 32px; color: var(--muted); font-size: 12px; }
+
+/* ---------- cabecera tipo estadio ---------- */
+.hero {
+  position: relative; overflow: hidden; border-radius: 4px; isolation: isolate;
+  background: linear-gradient(180deg, #0d0d12 0%, #050507 100%);
+  border: 1px solid var(--line); padding: 28px 24px 22px; min-height: 230px;
+  display: flex; flex-direction: column; justify-content: flex-end; gap: 16px;
+}
+.hero-art { position: absolute; inset: 0; z-index: -1; width: 100%; height: 100%; }
+.hero::after {
+  content: ""; position: absolute; z-index: -1; right: -60px; top: -40px; width: 340px; height: 140%;
+  background: repeating-linear-gradient(-62deg, var(--red) 0 10px, transparent 10px 26px);
+  opacity: .9; transform: skewX(-22deg); mask-image: linear-gradient(to left, #000 20%, transparent 95%); -webkit-mask-image: linear-gradient(to left, #000 20%, transparent 95%);
+}
+.hero-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; flex-wrap: wrap; }
+.tag {
+  display: inline-block; background: var(--red); color: #fff; font-family: var(--font-display); font-weight: 800; font-style: italic;
+  text-transform: uppercase; letter-spacing: .06em; font-size: 15px; padding: 3px 14px; transform: skewX(-12deg);
+}
+.tag > span { display: inline-block; transform: skewX(12deg); }
+.hero h1 { font-size: clamp(38px, 7vw, 76px); font-weight: 900; font-style: italic; text-shadow: 0 4px 30px rgba(0, 0, 0, .7); }
+.hero h1 em { color: var(--red); font-style: italic; }
+.hero .sub { font-family: var(--font-display); font-size: clamp(18px, 2.4vw, 24px); font-weight: 700; text-transform: uppercase; color: var(--ink-2); letter-spacing: .03em; margin-top: 6px; }
+.nota { color: var(--ink-2); font-size: 13px; max-width: 75ch; }
+.selector { display: flex; gap: 8px; align-items: center; font-size: 13px; }
+select, input { background: var(--panel-2); border: 1px solid var(--line); border-radius: 3px; padding: 7px 10px; }
+
+.marcador { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; border: 1px solid var(--line); background: rgba(0, 0, 0, .55); backdrop-filter: blur(6px); }
+.marcador.cuatro { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.marcador > div { padding: 12px 16px; display: flex; flex-direction: column; border-left: 1px solid var(--line); min-width: 0; }
+.marcador > div:first-child { border-left: 0; }
+.m-n { font-family: var(--font-display); font-weight: 800; font-size: 34px; line-height: 1; }
+.m-n.rojo { color: var(--red); }
+.m-l { color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: .08em; margin-top: 4px; }
+
+.seccion-t { display: flex; align-items: center; gap: 12px; font-family: var(--font-display); font-weight: 800; font-style: italic; font-size: 26px; text-transform: uppercase; }
+.seccion-t::after { content: ""; flex: 1; height: 6px; background: repeating-linear-gradient(-60deg, var(--red) 0 4px, transparent 4px 10px); opacity: .8; }
+
+.aviso { border-left: 4px solid var(--red); background: var(--panel); padding: 10px 14px; font-size: 13px; color: var(--ink-2); }
+
+/* ---------- tarjetas de partido ---------- */
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); gap: 18px; }
+.pick {
+  position: relative; overflow: hidden; background: linear-gradient(160deg, var(--panel-2) 0%, var(--panel) 55%);
+  border: 1px solid var(--line); border-radius: 4px; display: flex; flex-direction: column; min-width: 0;
+  transition: transform .15s ease, border-color .15s ease, box-shadow .15s ease;
+}
+.pick:hover { transform: translateY(-2px); border-color: #3a3a46; box-shadow: 0 10px 30px rgba(0, 0, 0, .5), 0 0 0 1px rgba(255, 30, 60, .15); }
+.pick::before {
+  content: ""; position: absolute; top: 0; right: 0; width: 120px; height: 100%; pointer-events: none;
+  background: repeating-linear-gradient(-60deg, rgba(255, 30, 60, .10) 0 3px, transparent 3px 14px);
+  mask-image: linear-gradient(to left, #000, transparent); -webkit-mask-image: linear-gradient(to left, #000, transparent);
+}
+.pick-top { display: flex; align-items: center; gap: 10px; padding: 12px 16px 0; font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: .07em; font-weight: 600; }
+.hora { font-family: var(--font-display); font-weight: 800; font-size: 17px; background: var(--ink); color: #000; padding: 1px 10px; transform: skewX(-12deg); letter-spacing: 0; }
+.hora > span { display: inline-block; transform: skewX(12deg); }
+.comp { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.equipos { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 10px; padding: 16px 16px 14px; }
+.eq { display: flex; flex-direction: column; align-items: center; gap: 8px; text-align: center; min-width: 0; }
+.escudo {
+  width: 54px; height: 54px; border-radius: 50%; display: grid; place-items: center;
+  font-family: var(--font-display); font-weight: 900; font-size: 20px; color: #fff; letter-spacing: .02em;
+  border: 2px solid rgba(255, 255, 255, .18); box-shadow: inset 0 -8px 16px rgba(0, 0, 0, .35), 0 6px 18px rgba(0, 0, 0, .5);
+}
+.eq-n { font-family: var(--font-display); font-weight: 800; font-size: 20px; text-transform: uppercase; line-height: 1.05; overflow-wrap: anywhere; }
+.vs { font-family: var(--font-display); font-weight: 900; font-style: italic; font-size: 22px; color: var(--red); }
+
+.apuesta { display: flex; align-items: stretch; margin: 0 16px; background: #000; border: 1px solid var(--line); }
+.ap-txt { flex: 1; padding: 10px 12px; min-width: 0; }
+.ap-m { font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: .1em; font-weight: 600; }
+.ap-s { font-family: var(--font-display); font-weight: 800; font-size: 21px; text-transform: uppercase; line-height: 1.1; }
+.cuota {
+  display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 6px 18px 6px 22px; min-width: 92px;
+  background: var(--red); color: #fff; clip-path: polygon(12px 0, 100% 0, 100% 100%, 0 100%);
+  box-shadow: 0 0 24px var(--red-glow);
+}
+.cuota-l { font-size: 9px; text-transform: uppercase; letter-spacing: .12em; font-weight: 700; opacity: .85; }
+.cuota-n { font-family: var(--font-display); font-weight: 900; font-size: 32px; line-height: 1; }
+
+.cuerpo { padding: 14px 16px 0; display: flex; flex-direction: column; gap: 12px; flex: 1; }
+.fiab-top { display: flex; justify-content: space-between; align-items: baseline; font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; font-weight: 600; margin-bottom: 6px; }
+.fiab-top b { font-family: var(--font-display); font-size: 22px; letter-spacing: 0; color: var(--ink); }
+.segs { display: grid; grid-template-columns: repeat(20, 1fr); gap: 2px; }
+.segs i { height: 8px; background: var(--panel-3); transform: skewX(-20deg); }
+.alta .segs i.on { background: var(--alta); }
+.media .segs i.on { background: var(--media); }
+.baja .segs i.on { background: var(--baja); }
+.alta .fiab-top b { color: var(--alta); }
+.media .fiab-top b { color: var(--media); }
+.baja .fiab-top b { color: var(--baja); }
+.fiab-sub { font-size: 11px; color: var(--muted); margin-top: 5px; }
+.motivo { font-size: 14px; color: var(--ink-2); }
+.riesgo { font-size: 13px; color: var(--ink-2); display: flex; gap: 8px; }
+.riesgo::before { content: "!"; flex-shrink: 0; width: 18px; height: 18px; display: grid; place-items: center; background: var(--media); color: #000; font-weight: 800; font-size: 12px; transform: skewX(-12deg); margin-top: 1px; }
+.alt { font-size: 13px; color: var(--ink-2); }
+.alt b { color: var(--muted); font-weight: 600; text-transform: uppercase; font-size: 10px; letter-spacing: .1em; margin-right: 4px; }
+
+.stake { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-top: auto; padding: 12px 16px; border-top: 1px solid var(--line); background: rgba(0, 0, 0, .35); }
+.stake-l { font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: .12em; font-weight: 600; display: block; }
+.stake-n { font-family: var(--font-display); font-size: 28px; font-weight: 900; color: var(--alta); line-height: 1; }
+.stake-n.cero { color: var(--muted); }
+.stake-pct { font-size: 12px; color: var(--muted); text-align: right; }
+
+.jugar { padding: 0 16px 14px; background: rgba(0, 0, 0, .35); }
+.jugar summary { cursor: pointer; list-style: none; font-family: var(--font-display); font-weight: 800; font-size: 15px; text-transform: uppercase; letter-spacing: .06em; color: var(--red); }
+.jugar summary::-webkit-details-marker { display: none; }
+.jugar summary::before { content: "+ "; }
+.jugar[open] summary::before { content: "– "; }
+.jugar form { display: grid; grid-template-columns: 1fr 1fr auto; gap: 8px; align-items: end; margin-top: 8px; }
+.jugar label { display: flex; flex-direction: column; font-size: 10px; color: var(--muted); gap: 3px; text-transform: uppercase; letter-spacing: .08em; min-width: 0; }
+.jugar input { width: 100%; }
+.btn {
+  cursor: pointer; border: 0; background: var(--red); color: #fff; padding: 8px 16px;
+  font-family: var(--font-display); font-weight: 800; font-size: 16px; text-transform: uppercase; letter-spacing: .05em;
+  clip-path: polygon(8px 0, 100% 0, calc(100% - 8px) 100%, 0 100%);
+}
+.btn:hover { background: #ff3b55; }
+.btn:disabled { opacity: .5; cursor: default; }
+.ok-msg { font-size: 12px; color: var(--alta); margin-top: 6px; }
+
+/* ---------- combinadas (boleto) ---------- */
+.grid.comb { grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); }
+.boleto { position: relative; background: var(--panel); border: 1px solid var(--line); border-radius: 4px; overflow: hidden; display: flex; flex-direction: column; min-width: 0; }
+.bol-top {
+  position: relative; padding: 16px 18px; display: flex; justify-content: space-between; gap: 12px; align-items: flex-start;
+  background: linear-gradient(110deg, var(--red-2) 0%, var(--red) 55%, #ff4d63 100%); overflow: hidden;
+}
+.bol-top::after { content: ""; position: absolute; inset: 0; background: repeating-linear-gradient(-60deg, rgba(0, 0, 0, .14) 0 6px, transparent 6px 18px); pointer-events: none; }
+.bol-top > * { position: relative; z-index: 1; }
+.bol-top h2 { font-size: 30px; font-weight: 900; font-style: italic; }
+.bol-top p { font-size: 13px; color: rgba(255, 255, 255, .85); margin-top: 4px; max-width: 32ch; }
+.bol-cuota { text-align: right; flex-shrink: 0; }
+.bol-cuota span { display: block; font-size: 10px; text-transform: uppercase; letter-spacing: .12em; font-weight: 700; color: rgba(255, 255, 255, .85); }
+.bol-cuota b { font-family: var(--font-display); font-weight: 900; font-size: 52px; line-height: .9; color: #fff; text-shadow: 0 3px 0 rgba(0, 0, 0, .25); }
+.perfo { height: 0; border-top: 2px dashed var(--line); margin: 0 14px; position: relative; }
+.perfo::before, .perfo::after { content: ""; position: absolute; top: -11px; width: 20px; height: 20px; border-radius: 50%; background: var(--bg); }
+.perfo::before { left: -25px; }
+.perfo::after { right: -25px; }
+.lista { list-style: none; margin: 0; padding: 14px 16px; display: flex; flex-direction: column; gap: 8px; }
+.lista li { display: grid; grid-template-columns: auto 1fr auto; grid-template-areas: "h p c" "h s c"; column-gap: 12px; align-items: center; padding: 8px 10px; background: var(--panel-2); border-left: 3px solid var(--red); }
+.lista .hora { grid-area: h; font-size: 15px; }
+.lista .p { grid-area: p; font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; font-weight: 600; min-width: 0; }
+.lista .s { grid-area: s; font-family: var(--font-display); font-weight: 800; font-size: 18px; text-transform: uppercase; line-height: 1.1; }
+.lista .c { grid-area: c; font-family: var(--font-display); font-weight: 900; font-size: 22px; color: var(--red); }
+.datos { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--line); }
+.datos div { padding: 12px 16px; display: flex; flex-direction: column; border-left: 1px solid var(--line); min-width: 0; }
+.datos div:first-child { border-left: 0; }
+.datos .m-n { font-size: 28px; }
+.datos .verde { color: var(--alta); }
+.xs { font-size: 11px; }
+
+/* ---------- resultados ---------- */
+.badge { margin-left: auto; flex-shrink: 0; font-size: 10px; font-weight: 700; letter-spacing: .08em; padding: 2px 8px; color: #000; background: var(--muted); }
+.badge.acierto { background: var(--alta); }
+.badge.fallo { background: var(--red); color: #fff; }
+.res-dia { display: flex; flex-direction: column; gap: 10px; }
+.res-fecha { font-size: 20px; font-weight: 800; font-style: italic; color: var(--ink-2); }
+.res-lista { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 14px; }
+.res-comb { background: var(--panel); border: 1px solid var(--line); border-left: 4px solid var(--muted); border-radius: 4px; min-width: 0; }
+.res-comb.ganada { border-left-color: var(--alta); }
+.res-comb.perdida { border-left-color: var(--red); }
+.res-comb header { display: flex; align-items: center; gap: 10px; padding: 12px 14px; border-bottom: 1px solid var(--line); }
+.res-comb h4 { margin: 0; font-family: var(--font-display); font-weight: 800; font-size: 20px; text-transform: uppercase; flex: 1; min-width: 0; }
+.res-cuota { font-family: var(--font-display); font-weight: 900; font-size: 30px; line-height: 1; color: var(--red); }
+.res-comb.ganada .res-cuota { color: var(--alta); }
+.estado-tag { font-family: var(--font-display); font-weight: 800; font-style: italic; font-size: 14px; text-transform: uppercase; padding: 2px 10px; transform: skewX(-12deg); background: var(--panel-3); color: var(--ink-2); }
+.estado-tag.ganada { background: var(--alta); color: #000; }
+.estado-tag.perdida { background: var(--red); color: #fff; }
+.res-comb ul { list-style: none; margin: 0; padding: 8px 14px 12px; display: flex; flex-direction: column; gap: 6px; }
+.res-comb li { display: grid; grid-template-columns: 22px 1fr auto; grid-template-areas: "i p c" "i s c"; column-gap: 8px; align-items: center; font-size: 13px; }
+.res-comb .ico { grid-area: i; width: 20px; height: 20px; display: grid; place-items: center; font-weight: 800; font-size: 12px; background: var(--panel-3); color: var(--muted); }
+.res-comb li.acierto .ico { background: var(--alta); color: #000; }
+.res-comb li.fallo .ico { background: var(--red); color: #fff; }
+.r-p { grid-area: p; color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: .05em; font-weight: 600; min-width: 0; }
+.r-p b { color: var(--ink); }
+.r-s { grid-area: s; font-weight: 600; color: var(--ink); }
+.r-c { grid-area: c; font-family: var(--font-display); font-weight: 800; font-size: 18px; color: var(--ink-2); }
+.res-comb li.fallo .r-s { text-decoration: line-through; text-decoration-color: var(--red); }
+
+/* ---------- banca ---------- */
+.card { background: var(--panel); border: 1px solid var(--line); border-radius: 4px; padding: 18px; min-width: 0; }
+.h2 { font-size: 22px; font-weight: 800; font-style: italic; margin-bottom: 14px; }
+.grafica { position: relative; }
+.grafica svg { width: 100%; height: auto; display: block; overflow: visible; }
+.grid-l { stroke: var(--line); stroke-width: 1; }
+.base-l { stroke: var(--muted); stroke-width: 1; stroke-dasharray: 4 4; }
+.eje { fill: var(--muted); font-size: 11px; font-family: var(--font-body); }
+.linea { fill: none; stroke: var(--red); stroke-width: 2.5; stroke-linejoin: round; stroke-linecap: round; filter: drop-shadow(0 0 6px var(--red-glow)); }
+.punto { fill: var(--red); stroke: var(--panel); stroke-width: 2; }
+.hit { fill: transparent; cursor: pointer; }
+.tip { position: absolute; pointer-events: none; background: #fff; color: #000; padding: 6px 10px; font-size: 12px; max-width: 220px; line-height: 1.35; }
+.tabla-wrap { overflow-x: auto; }
+.tabla { width: 100%; border-collapse: collapse; font-size: 14px; }
+.tabla th { text-align: left; font-size: 10px; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); font-weight: 600; padding: 8px; border-bottom: 2px solid var(--red); }
+.tabla td { padding: 11px 8px; border-bottom: 1px solid var(--line); vertical-align: middle; }
+.tabla .num { text-align: right; white-space: nowrap; font-family: var(--font-display); font-weight: 700; font-size: 17px; }
+.estados { display: flex; gap: 4px; flex-wrap: wrap; }
+.chip { border: 0; cursor: pointer; background: var(--panel-3); color: var(--ink-2); padding: 4px 10px; font-size: 12px; font-weight: 600; }
+.chip.on.ganada { background: var(--alta); color: #000; }
+.chip.on.perdida { background: var(--red); color: #fff; }
+.chip.on.pendiente, .chip.on.nula { background: var(--ink); color: #000; }
+.chip.borrar { background: transparent; color: var(--muted); }
+.chip.borrar.confirmar { background: var(--red); color: #fff; }
+.reglas ul { margin: 0; padding-left: 18px; color: var(--ink-2); font-size: 14px; display: flex; flex-direction: column; gap: 6px; }
+.reglas li::marker { color: var(--red); }
+.vacio { text-align: center; padding: 44px 18px; }
+.vacio h2 { font-size: 30px; margin-bottom: 8px; }
+
+@media (max-width: 720px) {
+  .topbar .inner { gap: 10px; padding-top: 8px; }
+  .tabs { order: 3; width: 100%; margin-left: 0; }
+  .tabs a { flex: 1; justify-content: center; padding: 10px 0; font-size: 15px; letter-spacing: .02em; }
+  .res-lista { grid-template-columns: 1fr; }
+  .saldo-chip { margin-left: auto; }
+  .hero { padding: 22px 16px 16px; min-height: 200px; }
+  .hero::after { width: 200px; right: -80px; }
+  .marcador, .marcador.cuatro { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .marcador > div:nth-child(3) { border-left: 0; }
+  .marcador > div:nth-child(n+3) { border-top: 1px solid var(--line); }
+  .m-n { font-size: 26px; }
+  .grid, .grid.comb { grid-template-columns: 1fr; }
+  .bol-cuota b { font-size: 42px; }
+  main.inner { padding-block: 16px 32px; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+:root { padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
+[hidden] { display: none !important; }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="balon" viewBox="0 0 32 32">
+      <circle cx="16" cy="16" r="14.5" fill="#fff" stroke="#000" stroke-width="1.5"/>
+      <path d="M16 9.5l5.6 4.1-2.1 6.6h-7l-2.1-6.6z" fill="#000"/>
+      <path d="M16 9.5V3.2M21.6 13.6l6-2M19.5 20.2l3.7 5.2M12.5 20.2l-3.7 5.2M10.4 13.6l-6-2" stroke="#000" stroke-width="1.5"/>
+    </symbol>
+  </defs>
+</svg>
+
+<header class="topbar">
+  <div class="inner">
+    <div class="brand"><svg><use href="#balon"/></svg><span>Picks <b>del día</b></span></div>
+    <nav class="tabs">
+      <a href="#partidos" data-v="partidos">Partidos</a>
+      <a href="#combinadas" data-v="combinadas">Combinadas</a>
+      <a href="#resultados" data-v="resultados">Resultados</a>
+      <a href="#banca" data-v="banca">Banca</a>
+    </nav>
+    <a class="saldo-chip" href="#banca"><span id="saldo-chip">50,00 €</span></a>
+  </div>
+</header>
+<main class="inner" id="app">
+  <section class="card vacio">
+    <h2>Cargando los picks…</h2>
+    <p class="muted">Aquí salen los partidos del día con su selección, la fiabilidad y cuánto apostar.</p>
+  </section>
+</main>
+<footer class="inner pie">Estimaciones propias, no garantías. Las cuotas son aproximadas: manda la de tu casa de apuestas. Juega solo lo que estés dispuesto a perder · +18</footer>
+
+<script>
+(() => {
+  const DEF_CFG = { banca_inicial: 50, kelly_fraccion: 0.25, peso_mi_estimacion: 0.5, tope_simple: 0.05, tope_combinada: 0.02, tope_diario: 0.15, margen_casa: 0.05 };
+  const DIAS = ["domingo", "lunes", "martes", "miércoles", "jueves", "viernes", "sábado"];
+  const MESES = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"];
+  const st = { dias: [], apuestas: [], cfg: DEF_CFG, fecha: null, mes: null, cargado: false, error: null, puedeEscribir: true, db: null, borrarPend: null };
+
+  // ---------- formato ----------
+  const eur = v => (Math.round(v * 100) / 100).toLocaleString("es-ES", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + " €";
+  const pct = v => Math.round(v * 100) + " %";
+  const cuo = v => v.toFixed(2).replace(".", ",");
+  const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  const fd = f => new Date(f + "T12:00:00");
+  const fechaCorta = f => { const d = fd(f); return isNaN(d) ? f : `${DIAS[d.getDay()][0].toUpperCase() + DIAS[d.getDay()].slice(1)} ${d.getDate()}/${d.getMonth() + 1}`; };
+  const num = s => parseFloat(String(s).replace(",", "."));
+
+  // escudos: iniciales con un color estable por equipo
+  const COLORES = ["#c8102e", "#0b3d91", "#00843d", "#f2a900", "#6a1b9a", "#e35205", "#00808f", "#1d1d1d", "#b5121b", "#003da5", "#2e7d32", "#7b1e3c"];
+  const CONOCIDOS = { "españa": "#c60b1e", "francia": "#0055a4", "italia": "#0a4fa3", "inglaterra": "#e8e8ec", "croacia": "#d40f2f", "bélgica": "#c8102e", "turquía": "#e30a17", "alemania": "#1d1d1d", "portugal": "#046a38", "chequia": "#11457e", "real madrid": "#f1f1f4", "barcelona": "#a50044", "atlético": "#cb3524", "arsenal": "#ef0107", "liverpool": "#c8102e", "man city": "#6cabdd", "psg": "#004170", "bayern": "#dc052d", "dortmund": "#fde100", "juventus": "#1d1d1d", "inter": "#0068a8", "milan": "#fb090b" };
+  const claro = c => { const n = parseInt(c.slice(1), 16); return ((n >> 16) * 299 + ((n >> 8) & 255) * 587 + (n & 255) * 114) / 1000 > 160; };
+  function escudo(nombre) {
+    const k = nombre.toLowerCase().trim();
+    let c = CONOCIDOS[k];
+    if (!c) { let h = 0; for (const ch of k) h = (h * 31 + ch.charCodeAt(0)) >>> 0; c = COLORES[h % COLORES.length]; }
+    const pal = k.replace(/[^a-záéíóúñü ]/g, "").split(/\s+/).filter(Boolean);
+    const ini = (pal.length > 1 ? pal[0][0] + pal[1][0] : k.slice(0, 3)).toUpperCase();
+    return `<span class="escudo" style="background:radial-gradient(circle at 35% 30%, rgba(255,255,255,.25), transparent 55%), ${c};color:${claro(c) ? "#000" : "#fff"}">${esc(ini)}</span>`;
+  }
+
+  // ---------- cálculo (Kelly fraccionado con topes) ----------
+  const probImpl = (c, m) => Math.min(0.99, (1 / c) / (1 + m));
+  const probAj = (p, c, cfg) => cfg.peso_mi_estimacion * p + (1 - cfg.peso_mi_estimacion) * probImpl(c, cfg.margen_casa);
+  const kelly = (p, c, f, tope) => { if (c <= 1) return 0; const v = p * c - 1; return v <= 0 ? 0 : Math.min(tope, f * v / (c - 1)); };
+  function beneficio(a) { return a.estado === "ganada" ? +(a.importe * (a.cuota - 1)).toFixed(2) : a.estado === "perdida" ? -a.importe : 0; }
+
+  function banca() {
+    const cfg = st.cfg, ini = cfg.banca_inicial;
+    const cerradas = st.apuestas.filter(a => ["ganada", "perdida", "nula"].includes(a.estado)).sort((a, b) => a.creada.localeCompare(b.creada));
+    let s = ini; const puntos = [{ etiqueta: "Inicio", saldo: ini }];
+    for (const a of cerradas) { s += beneficio(a); puntos.push({ etiqueta: `${fechaCorta(a.fecha)} · ${a.descripcion}`, saldo: +s.toFixed(2) }); }
+    const pendiente = st.apuestas.filter(a => a.estado === "pendiente").reduce((t, a) => t + a.importe, 0);
+    const dec = cerradas.filter(a => a.estado !== "nula");
+    const gan = dec.filter(a => a.estado === "ganada").length;
+    const conP = dec.filter(a => a.prob);
+    return {
+      inicial: ini, saldo: +s.toFixed(2), pendiente, puntos, n: dec.length,
+      rend: ini ? (s - ini) / ini * 100 : 0,
+      real: dec.length ? gan / dec.length * 100 : null,
+      est: conP.length ? conP.reduce((t, a) => t + a.prob, 0) / conP.length * 100 : null,
+    };
+  }
+
+  function preparar(dia, saldo) {
+    const cfg = st.cfg, porId = {};
+    const picks = (dia.picks || []).map(p => {
+      const pa = probAj(p.prob, p.cuota, cfg), k = kelly(pa, p.cuota, cfg.kelly_fraccion, cfg.tope_simple);
+      const o = { ...p, pa, pctB: k, importe: +(saldo * k).toFixed(2) }; porId[p.id] = o; return o;
+    });
+    const combs = (dia.combinadas || []).map(cb => {
+      const lista = (cb.picks || []).map(i => porId[i]).filter(Boolean);
+      const c = lista.reduce((t, p) => t * p.cuota, 1), pa = lista.reduce((t, p) => t * p.pa, 1);
+      const k = kelly(pa, c, cfg.kelly_fraccion, cfg.tope_combinada);
+      return { ...cb, lista, cuota: c, pa, pctB: k, importe: +(saldo * k).toFixed(2) };
+    });
+    const total = [...picks, ...combs].reduce((t, o) => t + o.importe, 0), lim = saldo * cfg.tope_diario;
+    const factor = total > lim && total > 0 ? lim / total : 1;
+    if (factor < 1) [...picks, ...combs].forEach(o => o.importe = +(o.importe * factor).toFixed(2));
+    picks.sort((a, b) => a.hora.localeCompare(b.hora) || b.pa - a.pa);
+    return { ...dia, picks, combs, factor };
+  }
+
+  // ---------- piezas ----------
+  const vista = () => ["partidos", "combinadas", "resultados", "banca"].includes(location.hash.slice(1)) ? location.hash.slice(1) : "partidos";
+  const tag = t => `<span class="tag"><span>${esc(t)}</span></span>`;
+  const horaTag = h => `<span class="hora"><span>${esc(h)}</span></span>`;
+
+  // estadio de noche dibujado: focos, gradas y líneas del campo en perspectiva
+  const ESTADIO = `<svg class="hero-art" viewBox="0 0 1200 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <defs>
+      <radialGradient id="foco1" cx="18%" cy="0%" r="55%"><stop offset="0" stop-color="#fff" stop-opacity=".22"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+      <radialGradient id="foco2" cx="62%" cy="0%" r="50%"><stop offset="0" stop-color="#fff" stop-opacity=".16"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+      <linearGradient id="cesped" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0c3b22"/><stop offset="1" stop-color="#03130a"/></linearGradient>
+      <linearGradient id="fade" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#050507" stop-opacity=".92"/><stop offset=".55" stop-color="#050507" stop-opacity=".45"/><stop offset="1" stop-color="#050507" stop-opacity=".2"/></linearGradient>
+      <pattern id="gente" width="8" height="6" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.3" fill="#2a2a35"/><circle cx="6" cy="4" r="1.3" fill="#22222b"/></pattern>
+    </defs>
+    <rect width="1200" height="300" fill="#060609"/>
+    <path d="M0 40 L1200 40 L1200 150 L0 150 Z" fill="url(#gente)" opacity=".9"/>
+    <path d="M0 150 L1200 150 L1200 300 L0 300 Z" fill="url(#cesped)"/>
+    <g fill="#ffffff" opacity=".04"><path d="M0 150h1200v18H0z"/><path d="M0 190h1200v24H0z"/><path d="M0 240h1200v30H0z"/></g>
+    <g fill="none" stroke="#fff" stroke-opacity=".35" stroke-width="2">
+      <path d="M90 300 L260 150 L940 150 L1110 300"/>
+      <path d="M600 150 L600 300"/>
+      <ellipse cx="600" cy="205" rx="120" ry="34"/>
+      <path d="M430 150 L405 182 L795 182 L770 150"/>
+    </g>
+    <g fill="#fff"><circle cx="210" cy="18" r="5" opacity=".9"/><circle cx="228" cy="18" r="5" opacity=".9"/><circle cx="246" cy="18" r="5" opacity=".9"/><circle cx="740" cy="14" r="5" opacity=".8"/><circle cx="758" cy="14" r="5" opacity=".8"/><circle cx="776" cy="14" r="5" opacity=".8"/></g>
+    <rect width="1200" height="300" fill="url(#foco1)"/><rect width="1200" height="300" fill="url(#foco2)"/>
+    <rect width="1200" height="300" fill="url(#fade)"/>
+  </svg>`;
+
+  function selectorFecha(d) {
+    if (st.dias.length < 2) return "";
+    const opts = st.dias.map(x => `<option value="${esc(x.fecha)}" ${x.fecha === d.fecha ? "selected" : ""}>${fechaCorta(x.fecha)}</option>`).join("");
+    return `<label class="selector"><span class="muted">Otro día</span><select id="sel-fecha">${opts}</select></label>`;
+  }
+
+  function hero(d, marcador) {
+    const f = fd(d.fecha);
+    const grande = isNaN(f) ? esc(d.fecha) : `${DIAS[f.getDay()]} <em>${f.getDate()}</em> ${MESES[f.getMonth()].slice(0, 3)}`;
+    const partes = String(d.titulo || "").split("·");
+    const sub = (partes.length > 1 ? partes.slice(1).join("·") : partes[0]).trim();
+    return `<section class="hero">${ESTADIO}
+      <div class="hero-top">${tag("Noche de partido")}${selectorFecha(d)}</div>
+      <div><h1>${grande}</h1>${sub ? `<p class="sub">${esc(sub)}</p>` : ""}</div>
+      ${marcador}
+      ${d.nota ? `<p class="nota">${esc(d.nota)}</p>` : ""}
+    </section>`;
+  }
+
+  function formJugar(tipo, ref, desc, importe, cuota, prob) {
+    if (!st.puedeEscribir) return "";
+    return `<details class="jugar"><summary>La he jugado</summary>
+      <form data-tipo="${tipo}" data-ref="${esc(ref)}" data-desc="${esc(desc)}" data-prob="${prob.toFixed(4)}">
+        <label>Importe (€)<input name="importe" id="imp-${esc(ref)}" inputmode="decimal" value="${(importe > 0 ? importe : 1).toFixed(2).replace(".", ",")}"></label>
+        <label>Cuota real<input name="cuota" id="cuo-${esc(ref)}" inputmode="decimal" value="${cuota.toFixed(2).replace(".", ",")}"></label>
+        <button class="btn" type="submit">Guardar</button>
+      </form></details>`;
+  }
+
+  // ---------- vistas ----------
+  function vistaVacia() {
+    return `<section class="hero">${ESTADIO}<div>${tag("Sin partidos")}</div>
+      <div><h1>Todavía no hay <em>picks</em></h1><p class="sub">Champions martes y miércoles · Europa los jueves · Ligas de viernes a domingo</p></div></section>`;
+  }
+
+  function vistaPartidos(d, b) {
+    const conValor = d.picks.filter(p => p.importe > 0).length;
+    const tarjetas = d.picks.map(p => {
+      const nivel = p.pa >= 0.8 ? "alta" : p.pa >= 0.68 ? "media" : "baja";
+      const on = Math.round(p.pa * 20);
+      const segs = Array.from({ length: 20 }, (_, i) => `<i class="${i < on ? "on" : ""}"></i>`).join("");
+      return `<article class="pick ${nivel}">
+        <header class="pick-top">${horaTag(p.hora)}<span class="comp">${esc(p.competicion)}</span>${badgePick(p)}</header>
+        <div class="equipos">
+          <div class="eq">${escudo(p.local)}<span class="eq-n">${esc(p.local)}</span></div>
+          <span class="vs">VS</span>
+          <div class="eq">${escudo(p.visitante)}<span class="eq-n">${esc(p.visitante)}</span></div>
+        </div>
+        <div class="apuesta">
+          <div class="ap-txt"><p class="ap-m">${esc(p.mercado)}</p><p class="ap-s">${esc(p.seleccion)}</p></div>
+          <div class="cuota"><span class="cuota-l">Cuota aprox.</span><span class="cuota-n">${cuo(p.cuota)}</span></div>
+        </div>
+        <div class="cuerpo">
+          <div><div class="fiab-top"><span>Fiabilidad</span><b>${pct(p.pa)}</b></div>
+            <div class="segs" role="img" aria-label="Fiabilidad ${pct(p.pa)}">${segs}</div>
+            <p class="fiab-sub">Mi estimación ${pct(p.prob)}, corregida con la cuota</p></div>
+          <p class="motivo">${esc(p.motivo)}</p>
+          ${p.riesgo ? `<p class="riesgo">${esc(p.riesgo)}</p>` : ""}
+          ${p.alternativa ? `<p class="alt"><b>Alternativa</b>${esc(p.alternativa)}</p>` : ""}
+        </div>
+        <footer class="stake"><div><span class="stake-l">Apostar</span>
+          <span class="stake-n ${p.importe > 0 ? "" : "cero"}">${p.importe > 0 ? eur(p.importe) : "0 €"}</span></div>
+          <span class="stake-pct">${p.importe > 0 ? (p.pctB * 100).toFixed(1).replace(".", ",") + " % de la banca" : "Sin valor a esta cuota"}</span></footer>
+        ${formJugar("simple", d.fecha + "-" + p.id, `${p.local} – ${p.visitante}: ${p.seleccion}`, p.importe, p.cuota, p.pa)}
+      </article>`;
+    }).join("");
+    const marcador = `<div class="marcador">
+      <div><span class="m-n">${d.picks.length}</span><span class="m-l">Partidos</span></div>
+      <div><span class="m-n rojo">${conValor}</span><span class="m-l">Con valor</span></div>
+      <div><span class="m-n">${eur(b.saldo)}</span><span class="m-l">Banca</span></div></div>`;
+    return `${hero(d, marcador)}
+      ${d.factor < 1 ? `<p class="aviso">Los importes se han reducido para no pasar del tope diario del ${Math.round(st.cfg.tope_diario * 100)} % de la banca.</p>` : ""}
+      <h2 class="seccion-t">Partidos del día</h2>
+      <div class="grid">${tarjetas}</div>`;
+  }
+
+  function vistaCombinadas(d, b) {
+    const mejor = d.combs.reduce((m, c) => Math.max(m, c.cuota), 0);
+    const marcador = `<div class="marcador">
+      <div><span class="m-n">${d.combs.length}</span><span class="m-l">Combinadas</span></div>
+      <div><span class="m-n rojo">${mejor ? cuo(mejor) : "—"}</span><span class="m-l">Cuota más alta</span></div>
+      <div><span class="m-n">${eur(b.saldo)}</span><span class="m-l">Banca</span></div></div>`;
+    if (!d.combs.length) return hero(d, marcador) + `<section class="card vacio"><h2>Hoy no hay combinadas</h2><p class="muted">Cuando las haya, salen aquí con su cuota aproximada.</p></section>`;
+    const cards = d.combs.map(cb => `<article class="boleto">
+      <header class="bol-top"><div><h2>${esc(cb.nombre)}</h2><p>${esc(cb.descripcion)}</p></div>
+        <div class="bol-cuota"><span>Cuota total</span><b>${cuo(cb.cuota)}</b></div></header>
+      <ol class="lista">${cb.lista.map(p => `<li>${horaTag(p.hora)}<span class="p">${esc(p.local)} – ${esc(p.visitante)}</span><span class="s">${esc(p.seleccion)}</span><span class="c">${cuo(p.cuota)}</span></li>`).join("")}</ol>
+      <div class="perfo"></div>
+      <div class="datos">
+        <div><span class="m-l">Acierta</span><span class="m-n">${pct(cb.pa)}</span><span class="muted xs">1 de cada ${(1 / cb.pa).toFixed(1).replace(".", ",")}</span></div>
+        <div><span class="m-l">Con 10 € cobras</span><span class="m-n">${eur(cb.cuota * 10)}</span></div>
+        <div><span class="m-l">Apostar</span>${cb.importe > 0
+          ? `<span class="m-n verde">${eur(cb.importe)}</span><span class="muted xs">${(cb.pctB * 100).toFixed(1).replace(".", ",")} % de la banca</span>`
+          : `<span class="m-n muted">0 €</span><span class="muted xs">sin valor</span>`}</div>
+      </div>
+      ${formJugar("combinada", d.fecha + "-" + cb.id, `Combinada «${cb.nombre}» (${cb.lista.length} selecciones)`, cb.importe, cb.cuota, cb.pa)}
+    </article>`).join("");
+    return `${hero(d, marcador)}<h2 class="seccion-t">Combinadas</h2><div class="grid comb">${cards}</div>
+      <p class="nota">La cuota total es la multiplicación de las cuotas aproximadas. En la casa de apuestas puede variar un poco: apunta la real al guardarla.</p>`;
+  }
+
+  // ---------- resultados (seguimiento de los picks publicados, sin dinero) ----------
+  const RES_TXT = { acierto: "Acertado", fallo: "Fallado", nulo: "Nulo" };
+  function badgePick(p) {
+    if (!p.resultado) return "";
+    return `<span class="badge ${p.resultado}">${RES_TXT[p.resultado] || ""}${p.marcador ? " · " + esc(p.marcador) : ""}</span>`;
+  }
+  function estadoComb(lista) {
+    if (lista.some(p => p.resultado === "fallo")) return "perdida";
+    if (lista.every(p => p.resultado === "acierto" || p.resultado === "nulo")) return lista.every(p => p.resultado === "nulo") ? "nula" : "ganada";
+    return "pendiente";
+  }
+  function combinadasDelDia(dia) {
+    const porId = Object.fromEntries((dia.picks || []).map(p => [p.id, p]));
+    return (dia.combinadas || []).map(cb => {
+      const lista = (cb.picks || []).map(i => porId[i]).filter(Boolean);
+      const estado = estadoComb(lista);
+      const cuotaPub = lista.reduce((t, p) => t * p.cuota, 1);
+      const cuotaFinal = lista.filter(p => p.resultado !== "nulo").reduce((t, p) => t * p.cuota, 1);
+      return { ...cb, lista, estado, cuota: estado === "ganada" ? cuotaFinal : cuotaPub };
+    });
+  }
+  const mesDe = f => f.slice(0, 7);
+  const mesBonito = m => { const [a, n] = m.split("-"); return `${MESES[+n - 1]} ${a}`; };
+  const media = arr => arr.length ? arr.reduce((t, v) => t + v, 0) / arr.length : null;
+
+  function vistaResultados() {
+    const meses = [...new Set(st.dias.map(d => mesDe(d.fecha)))].sort().reverse();
+    if (!meses.length) return vistaVacia();
+    if (!st.mes || !meses.includes(st.mes)) st.mes = meses[0];
+    const dias = st.dias.filter(d => mesDe(d.fecha) === st.mes).sort((a, b) => b.fecha.localeCompare(a.fecha));
+    const combs = dias.flatMap(d => combinadasDelDia(d).map(c => ({ ...c, fecha: d.fecha })));
+    const gan = combs.filter(c => c.estado === "ganada"), per = combs.filter(c => c.estado === "perdida"), pen = combs.filter(c => c.estado === "pendiente");
+    const picks = dias.flatMap(d => d.picks || []);
+    const pa = picks.filter(p => p.resultado === "acierto").length, pf = picks.filter(p => p.resultado === "fallo").length;
+    const decididas = gan.length + per.length;
+    const fmtC = v => v === null ? "—" : cuo(v);
+    const sel = meses.length > 1 ? `<label class="selector"><span class="muted">Mes</span><select id="sel-mes">${meses.map(m => `<option value="${m}" ${m === st.mes ? "selected" : ""}>${mesBonito(m)}</option>`).join("")}</select></label>` : "";
+    const marcador = `<div class="marcador cuatro">
+      <div><span class="m-n pos">${gan.length}</span><span class="m-l">Ganadas · cuota media ${fmtC(media(gan.map(c => c.cuota)))}</span></div>
+      <div><span class="m-n rojo">${per.length}</span><span class="m-l">Perdidas · cuota media ${fmtC(media(per.map(c => c.cuota)))}</span></div>
+      <div><span class="m-n">${decididas ? Math.round(gan.length / decididas * 100) + " %" : "—"}</span><span class="m-l">Combinadas acertadas${pen.length ? ` · ${pen.length} pendientes` : ""}</span></div>
+      <div><span class="m-n">${pa + pf ? Math.round(pa / (pa + pf) * 100) + " %" : "—"}</span><span class="m-l">Picks sueltos acertados (${pa} de ${pa + pf})</span></div></div>`;
+    const bloques = dias.map(d => {
+      const cs = combinadasDelDia(d);
+      if (!cs.length) return "";
+      return `<section class="res-dia"><h3 class="res-fecha">${fechaCorta(d.fecha)}</h3><div class="res-lista">${cs.map(c => `
+        <article class="res-comb ${c.estado}">
+          <header><span class="estado-tag ${c.estado}">${{ ganada: "Ganada", perdida: "Perdida", pendiente: "Pendiente", nula: "Nula" }[c.estado]}</span>
+            <h4>${esc(c.nombre)}</h4><span class="res-cuota">${cuo(c.cuota)}</span></header>
+          <ul>${c.lista.map(p => `<li class="${p.resultado || "pend"}"><span class="ico" aria-hidden="true">${p.resultado === "acierto" ? "✓" : p.resultado === "fallo" ? "✕" : p.resultado === "nulo" ? "–" : "·"}</span>
+            <span class="r-p">${esc(p.local)} – ${esc(p.visitante)}${p.marcador ? ` <b>${esc(p.marcador)}</b>` : ""}</span>
+            <span class="r-s">${esc(p.seleccion)}</span><span class="r-c">${cuo(p.cuota)}</span></li>`).join("")}</ul>
+        </article>`).join("")}</div></section>`;
+    }).join("");
+    return `<section class="hero">${ESTADIO}<div class="hero-top">${tag("Resultados")}${sel}</div>
+        <div><h1>Así van las <em>combinadas</em></h1><p class="sub">${mesBonito(st.mes)} · todas las que he publicado, las jugaras o no</p></div>${marcador}</section>
+      <h2 class="seccion-t">Día a día</h2>
+      ${bloques || `<section class="card vacio"><h2>Aún no hay combinadas este mes</h2></section>`}
+      <p class="nota">Los resultados los apunto yo al día siguiente de cada partido. Una combinada se gana si aciertan todas sus selecciones; si se suspende un partido, esa selección cuenta como nula y no cuenta en la cuota.</p>`;
+  }
+
+  function grafica(b) {
+    const pts = b.puntos;
+    if (pts.length < 2) return `<p class="muted">La gráfica aparece cuando cierres la primera apuesta (ganada o perdida).</p>`;
+    const vals = pts.map(p => p.saldo);
+    let lo = Math.min(...vals, b.inicial), hi = Math.max(...vals, b.inicial);
+    const pad = hi > lo ? (hi - lo) * 0.15 : 5; lo -= pad; hi += pad;
+    const W = 640, H = 220, L = 44, R = 12, T = 12, B = 16, n = pts.length - 1;
+    const x = i => L + (W - L - R) * i / n, y = v => T + (H - T - B) * (1 - (v - lo) / (hi - lo));
+    let s = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Evolución del saldo de la banca"><defs><linearGradient id="ar" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff1e3c" stop-opacity=".35"/><stop offset="1" stop-color="#ff1e3c" stop-opacity="0"/></linearGradient></defs>`;
+    for (let k = 0; k <= 4; k++) { const v = lo + (hi - lo) * k / 4, yy = y(v); s += `<line class="grid-l" x1="${L}" x2="${W - R}" y1="${yy}" y2="${yy}"/><text class="eje" x="${L - 6}" y="${yy + 4}" text-anchor="end">${Math.round(v)}</text>`; }
+    s += `<line class="base-l" x1="${L}" x2="${W - R}" y1="${y(b.inicial)}" y2="${y(b.inicial)}"/>`;
+    const poly = pts.map((p, i) => `${x(i)},${y(p.saldo)}`).join(" ");
+    s += `<polygon fill="url(#ar)" points="${x(0)},${H - B} ${poly} ${x(n)},${H - B}"/><polyline class="linea" points="${poly}"/>`;
+    pts.forEach((p, i) => { s += `<g class="pt" data-i="${i}"><rect class="hit" x="${x(i) - (W - L - R) / n / 2}" y="${T}" width="${(W - L - R) / n}" height="${H - T - B}"/><circle class="punto" cx="${x(i)}" cy="${y(p.saldo)}" r="${i === n ? 5.5 : 3.5}"/></g>`; });
+    return `<div class="grafica" id="grafica">${s}</svg><div class="tip" id="tip" hidden></div></div>`;
+  }
+
+  function vistaBanca(b) {
+    const filas = [...st.apuestas].sort((a, z) => z.creada.localeCompare(a.creada)).map(a => {
+      const bn = beneficio(a);
+      const est = [["pendiente", "Pendiente"], ["ganada", "Ganada"], ["perdida", "Perdida"], ["nula", "Nula"]]
+        .map(([e, t]) => `<button class="chip ${e} ${a.estado === e ? "on" : ""}" data-estado="${e}" data-id="${esc(a.id)}" ${st.puedeEscribir ? "" : "disabled"}>${t}</button>`).join("");
+      const borrar = st.puedeEscribir ? `<button class="chip borrar ${st.borrarPend === a.id ? "confirmar" : ""}" data-borrar="${esc(a.id)}" aria-label="Borrar apuesta">${st.borrarPend === a.id ? "¿Borrar?" : "✕"}</button>` : "";
+      return `<tr><td>${fechaCorta(a.fecha)}</td><td>${esc(a.descripcion)}</td><td class="num">${eur(a.importe)}</td><td class="num">${cuo(a.cuota)}</td>
+        <td class="num ${bn > 0 ? "pos" : bn < 0 ? "neg" : ""}">${a.estado === "pendiente" ? "—" : (bn > 0 ? "+" : "") + eur(bn)}</td>
+        <td><div class="estados">${est}${borrar}</div></td></tr>`;
+    }).join("");
+    const cfg = st.cfg;
+    const marcador = `<div class="marcador cuatro">
+      <div><span class="m-n">${eur(b.saldo)}</span><span class="m-l">Saldo · empezó en ${eur(b.inicial)}</span></div>
+      <div><span class="m-n ${b.rend > 0 ? "pos" : b.rend < 0 ? "neg" : ""}">${(b.rend > 0 ? "+" : "") + b.rend.toFixed(1).replace(".", ",")} %</span><span class="m-l">Rendimiento</span></div>
+      <div><span class="m-n">${eur(b.pendiente)}</span><span class="m-l">En juego</span></div>
+      <div>${b.real === null ? `<span class="m-n">—</span><span class="m-l">Acierto · sin apuestas cerradas</span>`
+        : `<span class="m-n">${Math.round(b.real)} %</span><span class="m-l">Acierto real${b.est !== null ? ` · estimado ${Math.round(b.est)} %` : ""} (${b.n})</span>`}</div></div>`;
+    return `<section class="hero">${ESTADIO}<div>${tag("Seguimiento")}</div>
+        <div><h1>Tu <em>banca</em></h1><p class="sub">Cada euro apuntado, ganado o perdido</p></div>${marcador}</section>
+      <section class="card"><h2 class="h2">Evolución del saldo</h2>${grafica(b)}</section>
+      <section class="card"><h2 class="h2">Apuestas</h2>
+        ${filas ? `<div class="tabla-wrap"><table class="tabla"><thead><tr><th>Día</th><th>Apuesta</th><th class="num">Importe</th><th class="num">Cuota</th><th class="num">Resultado</th><th>Estado</th></tr></thead><tbody>${filas}</tbody></table></div>`
+          : `<p class="muted">Todavía no has guardado ninguna apuesta. En cada partido o combinada pulsa «La he jugado».</p>`}
+      </section>
+      <section class="card reglas"><h2 class="h2">Cómo se calcula cuánto apostar</h2><ul>
+        <li>Corrijo mi probabilidad acercándola a la que da la cuota (mitad y mitad), porque mis estimaciones suelen ser optimistas.</li>
+        <li>Si probabilidad × cuota no pasa de 1, no hay valor: 0 €, aunque parezca segura.</li>
+        <li>Importe = ¼ de Kelly sobre la banca actual. Topes: ${Math.round(cfg.tope_simple * 100)} % por apuesta simple, ${Math.round(cfg.tope_combinada * 100)} % por combinada y ${Math.round(cfg.tope_diario * 100)} % en total al día.</li>
+        <li>Los ${eur(cfg.banca_inicial).replace(",00", "")} son la banca entera. Si baja, no se recarga para recuperar.</li>
+        <li>Las apuestas que apuntas se guardan en este dispositivo. Si borras los datos del navegador, se pierden.</li>
+      </ul></section>`;
+  }
+
+  function render() {
+    const v = vista(), b = banca(), app = document.getElementById("app");
+    document.querySelectorAll(".tabs a").forEach(a => a.classList.toggle("on", a.dataset.v === v));
+    document.getElementById("saldo-chip").textContent = eur(b.saldo);
+    if (st.error && !st.dias.length && v !== "banca") { app.innerHTML = `<section class="card vacio"><h2>No se pueden cargar los datos</h2><p class="muted">${esc(st.error)}</p></section>`; return; }
+    if (v === "banca") { app.innerHTML = vistaBanca(b); conectarGrafica(b); return; }
+    if (!st.cargado) return;
+    if (!st.dias.length) { app.innerHTML = vistaVacia(); return; }
+    if (v === "resultados") { app.innerHTML = vistaResultados(); return; }
+    const raw = st.dias.find(x => x.fecha === st.fecha) || st.dias[0];
+    const d = preparar(raw, b.saldo);
+    app.innerHTML = v === "combinadas" ? vistaCombinadas(d, b) : vistaPartidos(d, b);
+  }
+
+  function conectarGrafica(b) {
+    const g = document.getElementById("grafica"); if (!g) return;
+    const tip = document.getElementById("tip");
+    g.querySelectorAll(".pt").forEach(pt => {
+      const show = () => {
+        const p = b.puntos[+pt.dataset.i];
+        tip.innerHTML = `<strong>${eur(p.saldo)}</strong><br>${esc(p.etiqueta)}`; tip.hidden = false;
+        const c = pt.querySelector("circle").getBoundingClientRect(), r = g.getBoundingClientRect();
+        let xx = c.left - r.left + 10; if (xx > r.width - 230) xx = c.left - r.left - 230;
+        tip.style.left = Math.max(0, xx) + "px"; tip.style.top = Math.max(0, c.top - r.top - 24) + "px";
+      };
+      pt.addEventListener("mouseenter", show); pt.addEventListener("click", show);
+    });
+    g.addEventListener("mouseleave", () => { tip.hidden = true; });
+  }
+
+  // ---------- eventos ----------
+  window.addEventListener("hashchange", () => { st.borrarPend = null; render(); window.scrollTo(0, 0); });
+  document.addEventListener("change", e => {
+    if (e.target.id === "sel-fecha") { st.fecha = e.target.value; render(); }
+    if (e.target.id === "sel-mes") { st.mes = e.target.value; render(); }
+  });
+  document.addEventListener("submit", async e => {
+    const f = e.target.closest(".jugar form"); if (!f) return;
+    e.preventDefault();
+    const importe = num(f.importe.value), cuota = num(f.cuota.value);
+    if (!(importe > 0) || !(cuota > 1)) { aviso(f, "Revisa el importe y la cuota (mayor que 1)."); return; }
+    if (!st.db) { aviso(f, "No hay conexión con los datos ahora mismo."); return; }
+    const btn = f.querySelector("button"); btn.disabled = true;
+    const raw = st.dias.find(x => x.fecha === st.fecha) || st.dias[0];
+    try {
+      await st.db.collection("apuestas").add({
+        fecha: raw ? raw.fecha : "", tipo: f.dataset.tipo, ref: f.dataset.ref, descripcion: f.dataset.desc,
+        importe: +importe.toFixed(2), cuota: +cuota.toFixed(2), prob: +f.dataset.prob, estado: "pendiente", creada: new Date().toISOString(),
+      });
+      aviso(f, "Guardada. La tienes en Banca.");
+    } catch (err) { btn.disabled = false; aviso(f, err.code === "quota_exceeded" ? "No caben más apuestas guardadas." : "No se ha podido guardar. Prueba otra vez."); }
+  });
+  function aviso(f, txt) { let m = f.parentElement.querySelector(".ok-msg"); if (!m) { m = document.createElement("p"); m.className = "ok-msg"; f.parentElement.appendChild(m); } m.textContent = txt; }
+  document.addEventListener("click", async e => {
+    const bEst = e.target.closest("[data-estado]"), bBor = e.target.closest("[data-borrar]");
+    if (bEst && st.db) { st.borrarPend = null; const id = bEst.dataset.id; const a = st.apuestas.find(x => x.id === id); if (!a || a.estado === bEst.dataset.estado) return;
+      try { await st.db.doc("apuestas/" + id).update({ estado: bEst.dataset.estado }); } catch { /* el snapshot mantiene el estado real */ } }
+    if (bBor && st.db) { const id = bBor.dataset.borrar;
+      if (st.borrarPend !== id) { st.borrarPend = id; render(); return; }
+      st.borrarPend = null; try { await st.db.doc("apuestas/" + id).delete(); } catch { render(); } }
+  });
+
+  // ---------- datos ----------
+  // Picks y resultados: archivos JSON que publica la tarea diaria.
+  // Apuestas: se guardan en este dispositivo (localStorage).
+  const CLAVE = "picks-apuestas-v1";
+  const leerApuestas = () => { try { return JSON.parse(localStorage.getItem(CLAVE) || "[]"); } catch { return []; } };
+  const guardarApuestas = l => { try { localStorage.setItem(CLAVE, JSON.stringify(l)); return true; } catch { return false; } };
+  st.apuestas = leerApuestas();
+  st.db = {
+    collection: () => ({ add: async data => {
+      const l = leerApuestas(); l.push({ id: Math.random().toString(36).slice(2, 12), ...data });
+      if (!guardarApuestas(l)) throw { code: "unavailable" };
+      st.apuestas = l; render();
+    } }),
+    doc: path => {
+      const id = path.split("/")[1];
+      return {
+        update: async cambios => { const l = leerApuestas().map(a => a.id === id ? { ...a, ...cambios } : a); guardarApuestas(l); st.apuestas = l; render(); },
+        delete: async () => { const l = leerApuestas().filter(a => a.id !== id); guardarApuestas(l); st.apuestas = l; render(); },
+      };
+    },
+  };
+  const v = () => "?v=" + Date.now();
+  async function cargar() {
+    try {
+      const [cfg, idx] = await Promise.all([
+        fetch("data/config.json" + v()).then(r => r.ok ? r.json() : {}),
+        fetch("data/index.json" + v()).then(r => { if (!r.ok) throw new Error(r.status); return r.json(); }),
+      ]);
+      st.cfg = { ...DEF_CFG, ...cfg };
+      const fechas = (idx.dias || []).slice().sort().reverse().slice(0, 90);
+      const dias = await Promise.all(fechas.map(f => fetch(`data/dias/${f}.json` + v()).then(r => r.ok ? r.json() : null).catch(() => null)));
+      st.dias = dias.filter(Boolean);
+      if (!st.fecha || !st.dias.some(x => x.fecha === st.fecha)) st.fecha = st.dias[0]?.fecha || null;
+      st.error = null;
+    } catch { st.error = "No se han podido cargar los picks. Comprueba la conexión y recarga."; }
+    st.cargado = true; render();
+  }
+  render();
+  cargar();
+  document.addEventListener("visibilitychange", () => { if (document.visibilityState === "visible") cargar(); });
+})();
+</script>
+</body>
+</html>
