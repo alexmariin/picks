@@ -1,0 +1,140 @@
+{
+  "fecha": "2026-11-12",
+  "titulo": "Jueves 12 de noviembre · Nations League (jornada 5)",
+  "generado": "2026-11-12 17:55",
+  "nota": "Prueba sin API todavía: datos de clasificaciones y resultados de UEFA, cuotas aproximadas de webs de cuotas y estimación propia. Comprueba la cuota real en Winamax antes de apostar. Copa del Rey: no he podido confirmar qué partidos se juegan hoy, así que no la incluyo.",
+  "picks": [
+    {
+      "id": "tur-bel",
+      "hora": "18:00",
+      "competicion": "Nations League A · Grupo 1",
+      "local": "Turquía",
+      "visitante": "Bélgica",
+      "seleccion": "Bélgica o empate",
+      "mercado": "Doble oportunidad",
+      "cuota": 1.33,
+      "prob": 0.74,
+      "motivo": "Turquía lleva 0 puntos y 2-11 en goles, pero contra Francia, Italia y Bélgica (todos de nivel alto). Bélgica ganó en Italia (0-2) y le metió 3-0 a Turquía; sus derrotas son contra Francia.",
+      "alternativa": "Más de 1,5 goles (~78 %)",
+      "riesgo": "Turquía en casa aprieta mucho; Bélgica ha encajado 5 en 4 partidos."
+    },
+    {
+      "id": "arm-cyp",
+      "hora": "18:00",
+      "competicion": "Nations League C · Grupo 2",
+      "local": "Armenia",
+      "visitante": "Chipre",
+      "seleccion": "Menos de 2,5 goles",
+      "mercado": "Goles totales",
+      "cuota": 1.55,
+      "prob": 0.66,
+      "motivo": "Grupo de pocos goles: 2-1, 0-0, 0-0, 2-0, 2-1... Armenia ha marcado 4 en 4 partidos y Chipre 5. Equipos de nivel parecido.",
+      "alternativa": "Menos de 3,5 goles (~85 %, paga poco)",
+      "riesgo": "Flojo: partido muy igualado y con poca información fiable."
+    },
+    {
+      "id": "ita-fra",
+      "hora": "20:45",
+      "competicion": "Nations League A · Grupo 1",
+      "local": "Italia",
+      "visitante": "Francia",
+      "seleccion": "Francia o empate",
+      "mercado": "Doble oportunidad",
+      "cuota": 1.28,
+      "prob": 0.76,
+      "motivo": "Francia es líder invicta (7-2 en goles) contra Turquía, Bélgica e Italia. Ojo: 7 de los 8 goles de Italia fueron contra Turquía; ante Bélgica perdió 0-2 en casa y en Francia empató 1-1.",
+      "alternativa": "Menos de 3,5 goles (~78 %)",
+      "riesgo": "Mira el once: no he confirmado si juega Mbappé."
+    },
+    {
+      "id": "cze-esp",
+      "hora": "20:45",
+      "competicion": "Nations League A · Grupo 3",
+      "local": "Chequia",
+      "visitante": "España",
+      "seleccion": "España gana",
+      "mercado": "1X2",
+      "cuota": 1.42,
+      "prob": 0.72,
+      "motivo": "España 4 de 4 (12-5), con victorias contra Inglaterra y Croacia. Chequia 0 puntos (2-10), aunque contra Croacia, Inglaterra (dos veces) y España: rivales de nivel.",
+      "alternativa": "España o empate (~90 %, ~1,12)",
+      "riesgo": "Sin Lamine Yamal ni Oyarzabal. España ha encajado en 4 de 4."
+    },
+    {
+      "id": "eng-cro",
+      "hora": "20:45",
+      "competicion": "Nations League A · Grupo 3",
+      "local": "Inglaterra",
+      "visitante": "Croacia",
+      "seleccion": "Inglaterra gana",
+      "mercado": "1X2",
+      "cuota": 1.30,
+      "prob": 0.79,
+      "motivo": "Inglaterra ganó 0-7 en Croacia hace un mes. Croacia ha encajado 14 en 4 (7 de ellos contra Inglaterra y 4 contra España). Juega en Wembley.",
+      "alternativa": "Inglaterra gana por 2 o más (~58 %, ~1,75)",
+      "riesgo": "Sin Palmer ni Lewis-Skelly (sancionado). Tuchel rota."
+    },
+    {
+      "id": "alb-fin",
+      "hora": "20:45",
+      "competicion": "Nations League C · Grupo 1",
+      "local": "Albania",
+      "visitante": "Finlandia",
+      "seleccion": "Menos de 2,5 goles",
+      "mercado": "Goles totales",
+      "cuota": 1.62,
+      "prob": 0.63,
+      "motivo": "Quitando los partidos contra San Marino, los del grupo son cortos: 2-0, 0-0, 2-1, 1-0. Finlandia solo ha encajado 2 en 4.",
+      "alternativa": "Menos de 3,5 goles (~83 %)",
+      "riesgo": "Flojo: 2-1 en la ida y los dos se juegan el grupo."
+    },
+    {
+      "id": "smr-blr",
+      "hora": "20:45",
+      "competicion": "Nations League C · Grupo 1",
+      "local": "San Marino",
+      "visitante": "Bielorrusia",
+      "seleccion": "Bielorrusia gana",
+      "mercado": "1X2",
+      "cuota": 1.20,
+      "prob": 0.88,
+      "motivo": "San Marino lleva 1-16 en goles. Bielorrusia le ganó 4-0 en la ida y le ha sacado puntos a Finlandia (0-0 y 1-0).",
+      "alternativa": "San Marino no marca (~82 %)",
+      "riesgo": "Bielorrusia marca poco fuera de casa contra rivales serios, pero San Marino no lo es."
+    },
+    {
+      "id": "mne-lva",
+      "hora": "20:45",
+      "competicion": "Nations League C · Grupo 2",
+      "local": "Montenegro",
+      "visitante": "Letonia",
+      "seleccion": "Montenegro o empate",
+      "mercado": "Doble oportunidad",
+      "cuota": 1.22,
+      "prob": 0.83,
+      "motivo": "Montenegro, líder invicto (10 puntos), ya ganó en Letonia (1-2). Letonia lleva 1 punto y solo 2 goles en 4 partidos.",
+      "alternativa": "Montenegro gana (~60 %, ~1,65)",
+      "riesgo": "Montenegro gana sus partidos por la mínima."
+    }
+  ],
+  "combinadas": [
+    {
+      "id": "segura",
+      "nombre": "La segura",
+      "descripcion": "Las 3 más sólidas del día. Paga poco, pero es la que más acierta.",
+      "picks": ["smr-blr", "mne-lva", "eng-cro"]
+    },
+    {
+      "id": "equilibrada",
+      "nombre": "La equilibrada",
+      "descripcion": "Los 4 partidos grandes con selecciones de cuota decente.",
+      "picks": ["eng-cro", "cze-esp", "ita-fra", "tur-bel"]
+    },
+    {
+      "id": "noche",
+      "nombre": "Solo las de las 20:45",
+      "descripcion": "Por si ya no llegas a los de las 18:00.",
+      "picks": ["eng-cro", "ita-fra", "smr-blr", "mne-lva", "cze-esp"]
+    }
+  ]
+}
