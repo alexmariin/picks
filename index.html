@@ -733,6 +733,26 @@ select, input { background: var(--panel-2); border: 1px solid var(--line); borde
       };
     },
   };
+  // Cierra solas las apuestas apuntadas cuando el pick o la combinada ya tiene resultado.
+  function cerrarApuestas() {
+    let cambios = false;
+    const l = leerApuestas().map(a => {
+      if (a.estado !== "pendiente" || !a.fecha) return a;
+      const dia = st.dias.find(x => x.fecha === a.fecha); if (!dia) return a;
+      const id = String(a.ref || "").slice(a.fecha.length + 1);
+      let nuevo = null;
+      if (a.tipo === "combinada") {
+        const c = combinadasDelDia(dia).find(x => x.id === id);
+        if (c && c.estado !== "pendiente") nuevo = c.estado;
+      } else {
+        const p = (dia.picks || []).find(x => x.id === id);
+        nuevo = p && { acierto: "ganada", fallo: "perdida", nulo: "nula" }[p.resultado];
+      }
+      if (!nuevo) return a;
+      cambios = true; return { ...a, estado: nuevo };
+    });
+    if (cambios) { guardarApuestas(l); st.apuestas = l; }
+  }
   const v = () => "?v=" + Date.now();
   async function cargar() {
     try {
@@ -746,6 +766,7 @@ select, input { background: var(--panel-2); border: 1px solid var(--line); borde
       st.dias = dias.filter(Boolean);
       if (!st.fecha || !st.dias.some(x => x.fecha === st.fecha)) st.fecha = st.dias[0]?.fecha || null;
       st.error = null;
+      cerrarApuestas();
     } catch { st.error = "No se han podido cargar los picks. Comprueba la conexión y recarga."; }
     st.cargado = true; render();
   }
