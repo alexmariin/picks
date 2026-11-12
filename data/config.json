@@ -1,0 +1,9 @@
+{
+  "banca_inicial": 50.0,
+  "kelly_fraccion": 0.25,
+  "peso_mi_estimacion": 0.5,
+  "tope_simple": 0.05,
+  "tope_combinada": 0.02,
+  "tope_diario": 0.15,
+  "margen_casa": 0.05
+}
