@@ -163,6 +163,12 @@
       "nombre": "Partidos cerrados",
       "descripcion": "Tres partidos de selecciones modestas que suelen acabar con pocos goles.",
       "picks": ["lux-est", "lie-aze", "and-gib"]
+    },
+    {
+      "id": "sonadora",
+      "nombre": "La soñadora",
+      "descripcion": "Un pick de cada partido del día, todos en una. Cuota de unas 29. Es un capricho para echar lo mínimo: acertar las 10 es muy difícil.",
+      "picks": ["mda-kaz", "ned-gre", "srb-ger", "sco-mkd", "svn-sui", "svk-fro", "bul-isl", "lux-est", "lie-aze", "and-gib"]
     }
   ]
 }
