@@ -1,0 +1,140 @@
+{
+  "fecha": "2026-11-14",
+  "titulo": "Sábado 14 de noviembre · Nations League (jornada 5)",
+  "generado": "2026-11-14 12:05",
+  "nota": "Clasificaciones y resultados de Wikipedia/UEFA. Cuotas de Forza Football y Oddslot (precio medio de mercado). Suecia-Bosnia no tenía cuotas publicadas: la he estimado. No hay onces confirmados y casi no hay partes de bajas; mira el once antes de apostar.",
+  "picks": [
+    {
+      "id": "kos-isr",
+      "hora": "15:00",
+      "competicion": "Nations League B · Grupo 3",
+      "local": "Kosovo",
+      "visitante": "Israel",
+      "seleccion": "Kosovo o empate",
+      "mercado": "Doble oportunidad",
+      "cuota": 1.23,
+      "prob": 0.72,
+      "motivo": "Israel no ha ganado (2-7 en goles): perdió 3-1 en Austria y 0-3 en casa con Irlanda. Kosovo ganó 1-0 a Irlanda y le sacó un 1-1 a Austria. La ida fue 0-0.",
+      "riesgo": "Kosovo marca poco (3 goles en 4). Un gol de Israel a la contra lo complica.",
+      "alternativa": "Menos de 2,5 goles (~60 %, ~1,90)"
+    },
+    {
+      "id": "nor-wal",
+      "hora": "18:00",
+      "competicion": "Nations League A · Grupo 4",
+      "local": "Noruega",
+      "visitante": "Gales",
+      "seleccion": "Noruega gana",
+      "mercado": "1X2",
+      "cuota": 1.25,
+      "prob": 0.70,
+      "motivo": "Gales solo ha marcado 2 goles en 4 partidos, y los dos fueron contra Noruega. Noruega marcó 3 a Dinamarca y 1 en cada partido contra Portugal. En Oslo es claro favorito.",
+      "riesgo": "Haaland y Ødegaard no entrenaron el martes (volvieron el miércoles). Strand Larsen, baja. Gales ganó 2-1 en la ida.",
+      "alternativa": "Más de 2,5 goles (~62 %, ~1,46)"
+    },
+    {
+      "id": "geo-hun",
+      "hora": "18:00",
+      "competicion": "Nations League B · Grupo 2",
+      "local": "Georgia",
+      "visitante": "Hungría",
+      "seleccion": "Menos de 2,5 goles",
+      "mercado": "Goles totales",
+      "cuota": 1.67,
+      "prob": 0.66,
+      "motivo": "Georgia no ha marcado en 4 partidos (contra Irlanda del Norte, Ucrania y Hungría). Hungría: 3 goles a favor y 2 en contra. 6 de los 8 partidos del grupo tuvieron 2 goles o menos.",
+      "riesgo": "El 1X2 es un 50-50, por eso voy a goles. Un gol tempranero puede abrir el partido.",
+      "alternativa": "Empate (~29 %, ~3,20)"
+    },
+    {
+      "id": "por-den",
+      "hora": "20:45",
+      "competicion": "Nations League A · Grupo 4",
+      "local": "Portugal",
+      "visitante": "Dinamarca",
+      "seleccion": "Más de 2,5 goles",
+      "mercado": "Goles totales",
+      "cuota": 1.58,
+      "prob": 0.58,
+      "motivo": "3 de los 4 partidos de Portugal tuvieron 3 goles o más (4-2 en Dinamarca, 2-1 y 1-2 con Noruega). Dinamarca necesita puntos y ha marcado en 3 de 4. Solo el 1-0 a Gales fue corto.",
+      "riesgo": "Portugal ya está clasificada y puede rotar. Sin noticias de bajas de ninguno de los dos.",
+      "alternativa": "Portugal gana (~60 %, ~1,50)"
+    },
+    {
+      "id": "nir-ukr",
+      "hora": "20:45",
+      "competicion": "Nations League B · Grupo 2",
+      "local": "Irlanda del Norte",
+      "visitante": "Ucrania",
+      "seleccion": "Menos de 2,5 goles",
+      "mercado": "Goles totales",
+      "cuota": 1.53,
+      "prob": 0.68,
+      "motivo": "Irlanda del Norte no ha encajado en 4 partidos (dos 0-0, con Hungría y Georgia). Ucrania solo ha marcado 2. Grupo de muy pocos goles.",
+      "riesgo": "Irlanda del Norte le metió 3 a Ucrania en Kiev; si se repite, se pasa.",
+      "alternativa": "Irlanda del Norte o empate (~70 %, ~1,35)"
+    },
+    {
+      "id": "aut-irl",
+      "hora": "20:45",
+      "competicion": "Nations League B · Grupo 3",
+      "local": "Austria",
+      "visitante": "Irlanda",
+      "seleccion": "Austria gana",
+      "mercado": "1X2",
+      "cuota": 1.60,
+      "prob": 0.58,
+      "motivo": "Austria es líder invicta. En casa ganó 3-1 a Israel y 3-1 a Kosovo. Irlanda solo ha ganado a Israel.",
+      "riesgo": "Irlanda le empató 2-2 en Dublín y ha marcado en 3 de 4. Sin parte de bajas.",
+      "alternativa": "Austria o empate (~82 %, ~1,20)"
+    },
+    {
+      "id": "rou-pol",
+      "hora": "20:45",
+      "competicion": "Nations League B · Grupo 4",
+      "local": "Rumanía",
+      "visitante": "Polonia",
+      "seleccion": "Polonia o empate",
+      "mercado": "Doble oportunidad",
+      "cuota": 1.28,
+      "prob": 0.76,
+      "motivo": "Rumanía lleva 0 puntos y 3-13 en goles; perdió 2-4 en casa con Bosnia. Polonia le ganó 6-0 en la ida. Ojo: 6 de los 7 goles de Polonia fueron contra Rumanía.",
+      "riesgo": "Polonia fuera de casa le cuesta: perdió 3-1 en Suecia y 1-0 en Bosnia.",
+      "alternativa": "Ambos marcan (~58 %, ~1,61)"
+    },
+    {
+      "id": "swe-bih",
+      "hora": "20:45",
+      "competicion": "Nations League B · Grupo 4",
+      "local": "Suecia",
+      "visitante": "Bosnia",
+      "seleccion": "Suecia o empate",
+      "mercado": "Doble oportunidad",
+      "cuota": 1.28,
+      "prob": 0.74,
+      "motivo": "Suecia es líder (10 puntos) y en casa ganó 2-1 a Rumanía y 3-1 a Polonia. Con el empate le basta para seguir delante. En Bosnia empató 1-1.",
+      "riesgo": "Cuota estimada, no publicada. Bosnia está invicta y necesita ganar.",
+      "alternativa": "Más de 1,5 goles (~75 %)"
+    }
+  ],
+  "combinadas": [
+    {
+      "id": "segura",
+      "nombre": "La segura",
+      "descripcion": "Tres dobles oportunidades de favoritos claros. Cuota de unas 2,0.",
+      "picks": ["kos-isr", "rou-pol", "swe-bih"]
+    },
+    {
+      "id": "equilibrada",
+      "nombre": "La equilibrada",
+      "descripcion": "Noruega en casa y tres partidos de pocos goles o favorito local. Cuota de unas 5,1.",
+      "picks": ["nor-wal", "geo-hun", "nir-ukr", "aut-irl"]
+    },
+    {
+      "id": "sonadora",
+      "nombre": "La soñadora",
+      "descripcion": "Un pick de cada uno de los 8 partidos. Cuota de unas 16. Es un capricho para echar lo mínimo: acertar las 8 es difícil.",
+      "picks": ["kos-isr", "nor-wal", "geo-hun", "por-den", "nir-ukr", "aut-irl", "rou-pol", "swe-bih"]
+    }
+  ]
+}
