@@ -228,6 +228,18 @@ select, input { background: var(--panel-2); border: 1px solid var(--line); borde
 .datos .verde { color: var(--alta); }
 .xs { font-size: 11px; }
 
+/* ---------- prueba hasta el 12 de diciembre ---------- */
+.prueba { display: flex; flex-direction: column; gap: 14px; }
+.prueba .sub { margin: 0; }
+.prueba .pos { color: var(--alta); }
+.prueba .rojo { color: var(--red); }
+.tabla-wrap { overflow-x: auto; }
+.tabla-prueba { width: 100%; border-collapse: collapse; font-size: 14px; }
+.tabla-prueba th, .tabla-prueba td { padding: 8px 10px; text-align: right; border-bottom: 1px solid var(--line); white-space: nowrap; }
+.tabla-prueba th:first-child { text-align: left; }
+.tabla-prueba thead th { font-size: 11px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); font-weight: 700; }
+.tabla-prueba tbody th { font-family: var(--font-display); font-weight: 800; font-size: 16px; text-transform: uppercase; }
+
 /* ---------- resultados ---------- */
 .badge { margin-left: auto; flex-shrink: 0; font-size: 10px; font-weight: 700; letter-spacing: .08em; padding: 2px 8px; color: #000; background: var(--muted); }
 .badge.acierto { background: var(--alta); }
@@ -564,6 +576,48 @@ select, input { background: var(--panel-2); border: 1px solid var(--line); borde
   const mesBonito = m => { const [a, n] = m.split("-"); return `${MESES[+n - 1]} ${a}`; };
   const media = arr => arr.length ? arr.reduce((t, v) => t + v, 0) / arr.length : null;
 
+  // ---------- prueba: todas las combinadas como si se hubiesen jugado (1 € cada una) ----------
+  const PRUEBA = { desde: "2026-11-12", hasta: "2026-12-12", apuesta: 1 };
+  const TIPOS = [["segura", "La segura"], ["equilibrada", "La equilibrada"], ["sonadora", "La soñadora"], ["otras", "Otras"]];
+  const eurS = v => (v > 0 ? "+" : v < 0 ? "−" : "") + Math.abs(v).toFixed(2).replace(".", ",") + " €";
+  function cuentaPrueba(lista) {
+    const dec = lista.filter(c => c.estado !== "pendiente");
+    const gan = dec.filter(c => c.estado === "ganada");
+    const jugado = dec.length * PRUEBA.apuesta;
+    const devuelto = dec.reduce((t, c) => t + (c.estado === "ganada" ? c.cuota * PRUEBA.apuesta : c.estado === "nula" ? PRUEBA.apuesta : 0), 0);
+    const neto = devuelto - jugado;
+    return { n: dec.length, gan: gan.length, per: dec.filter(c => c.estado === "perdida").length, pen: lista.length - dec.length,
+      jugado, neto, roi: jugado ? neto / jugado * 100 : null };
+  }
+  function vistaPrueba() {
+    const combs = st.dias.filter(d => d.fecha >= PRUEBA.desde && d.fecha <= PRUEBA.hasta)
+      .flatMap(d => combinadasDelDia(d).map(c => ({ ...c, fecha: d.fecha })));
+    if (!combs.length) return "";
+    const tot = cuentaPrueba(combs);
+    const tipoDe = c => TIPOS.some(([id]) => id === c.id) ? c.id : "otras";
+    const hoyISO = new Date().toLocaleDateString("sv-SE", { timeZone: "Europe/Madrid" });
+    const faltan = Math.ceil((new Date(PRUEBA.hasta) - new Date(hoyISO)) / 864e5);
+    const plazo = faltan > 0 ? `Quedan ${faltan} día${faltan === 1 ? "" : "s"} · termina el 12 de diciembre` : "Prueba terminada · toca analizarla";
+    const filas = TIPOS.map(([id, nom]) => {
+      const r = cuentaPrueba(combs.filter(c => tipoDe(c) === id));
+      if (!r.n && !r.pen) return "";
+      return `<tr><th>${nom}</th><td>${r.gan}–${r.per}${r.pen ? ` <span class="muted">(${r.pen})</span>` : ""}</td><td>${r.jugado.toFixed(0)} €</td>
+        <td class="${r.neto > 0 ? "pos" : r.neto < 0 ? "rojo" : ""}">${eurS(r.neto)}</td><td>${r.roi === null ? "—" : (r.roi > 0 ? "+" : "") + Math.round(r.roi) + " %"}</td></tr>`;
+    }).join("");
+    return `<h2 class="seccion-t">Prueba hasta el 12 de diciembre</h2>
+      <section class="card prueba">
+        <p class="sub">Todas las combinadas publicadas desde el 12 de noviembre, como si hubieras echado <b>${PRUEBA.apuesta} € a cada una</b>. ${plazo}.</p>
+        <div class="marcador cuatro">
+          <div><span class="m-n ${tot.neto > 0 ? "pos" : tot.neto < 0 ? "rojo" : ""}">${eurS(tot.neto)}</span><span class="m-l">Beneficio simulado</span></div>
+          <div><span class="m-n">${tot.roi === null ? "—" : (tot.roi > 0 ? "+" : "") + Math.round(tot.roi) + " %"}</span><span class="m-l">Rentabilidad (sobre lo jugado)</span></div>
+          <div><span class="m-n">${tot.jugado.toFixed(0)} €</span><span class="m-l">Jugado en ${tot.n} combinadas${tot.pen ? ` · ${tot.pen} pendientes` : ""}</span></div>
+          <div><span class="m-n">${tot.n ? Math.round(tot.gan / tot.n * 100) + " %" : "—"}</span><span class="m-l">Acertadas (${tot.gan} de ${tot.n})</span></div>
+        </div>
+        <div class="tabla-wrap"><table class="tabla-prueba"><thead><tr><th>Tipo</th><th>Gan–Per</th><th>Jugado</th><th>Neto</th><th>Rent.</th></tr></thead><tbody>${filas}</tbody></table></div>
+        <p class="nota">Simulación con las cuotas aproximadas publicadas; las reales de la casa pueden variar un poco. Entre paréntesis, las pendientes.</p>
+      </section>`;
+  }
+
   function vistaResultados() {
     const meses = [...new Set(st.dias.map(d => mesDe(d.fecha)))].sort().reverse();
     if (!meses.length) return vistaVacia();
@@ -595,6 +649,7 @@ select, input { background: var(--panel-2); border: 1px solid var(--line); borde
     }).join("");
     return `<section class="hero">${ESTADIO}<div class="hero-top">${tag("Resultados")}${sel}</div>
         <div><h1>Así van las <em>combinadas</em></h1><p class="sub">${mesBonito(st.mes)} · todas las que he publicado, las jugaras o no</p></div>${marcador}</section>
+      ${vistaPrueba()}
       <h2 class="seccion-t">Día a día</h2>
       ${bloques || `<section class="card vacio"><h2>Aún no hay combinadas este mes</h2></section>`}
       <p class="nota">Los resultados los apunto yo al día siguiente de cada partido. Una combinada se gana si aciertan todas sus selecciones; si se suspende un partido, esa selección cuenta como nula y no cuenta en la cuota.</p>`;
