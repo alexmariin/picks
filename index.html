@@ -299,8 +299,9 @@ select, input { background: var(--panel-2); border: 1px solid var(--line); borde
 
 @media (max-width: 720px) {
   .topbar .inner { gap: 10px; padding-top: 8px; }
-  .tabs { order: 3; width: 100%; margin-left: 0; }
-  .tabs a { flex: 1; justify-content: center; padding: 10px 0; font-size: 15px; letter-spacing: .02em; }
+  .tabs { order: 3; width: 100%; margin-left: 0; overflow-x: auto; scrollbar-width: none; }
+  .tabs::-webkit-scrollbar { display: none; }
+  .tabs a { flex: 1 0 auto; justify-content: center; padding: 10px 8px; font-size: 14px; letter-spacing: 0; }
   .res-lista { grid-template-columns: 1fr; }
   .saldo-chip { margin-left: auto; }
   .hero { padding: 22px 16px 16px; min-height: 200px; }
@@ -335,6 +336,7 @@ select, input { background: var(--panel-2); border: 1px solid var(--line); borde
     <div class="brand"><svg><use href="#balon"/></svg><span>Picks <b>del día</b></span></div>
     <nav class="tabs">
       <a href="#partidos" data-v="partidos">Partidos</a>
+      <a href="#dobles" data-v="dobles">Dobles</a>
       <a href="#combinadas" data-v="combinadas">Combinadas</a>
       <a href="#resultados" data-v="resultados">Resultados</a>
       <a href="#banca" data-v="banca">Banca</a>
@@ -352,7 +354,7 @@ select, input { background: var(--panel-2); border: 1px solid var(--line); borde
 
 <script>
 (() => {
-  const DEF_CFG = { banca_inicial: 50, kelly_fraccion: 0.25, peso_mi_estimacion: 0.5, tope_simple: 0.05, tope_combinada: 0.02, tope_diario: 0.15, margen_casa: 0.05 };
+  const DEF_CFG = { banca_inicial: 50, banca_desde: "", kelly_fraccion: 0.25, peso_mi_estimacion: 0.5, tope_simple: 0.05, tope_combinada: 0.02, tope_diario: 0.15, margen_casa: 0.05, stake_doble: 0.03, max_dobles: 4, dobles_desde: "2026-11-12" };
   const DIAS = ["domingo", "lunes", "martes", "miércoles", "jueves", "viernes", "sábado"];
   const MESES = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"];
   const st = { dias: [], apuestas: [], cfg: DEF_CFG, fecha: null, mes: null, cargado: false, error: null, puedeEscribir: true, db: null, borrarPend: null };
@@ -387,10 +389,11 @@ select, input { background: var(--panel-2); border: 1px solid var(--line); borde
 
   function banca() {
     const cfg = st.cfg, ini = cfg.banca_inicial;
-    const cerradas = st.apuestas.filter(a => ["ganada", "perdida", "nula"].includes(a.estado)).sort((a, b) => a.creada.localeCompare(b.creada));
+    const vale = a => !cfg.banca_desde || (a.fecha || "") >= cfg.banca_desde;
+    const cerradas = st.apuestas.filter(a => vale(a) && ["ganada", "perdida", "nula"].includes(a.estado)).sort((a, b) => a.creada.localeCompare(b.creada));
     let s = ini; const puntos = [{ etiqueta: "Inicio", saldo: ini }];
     for (const a of cerradas) { s += beneficio(a); puntos.push({ etiqueta: `${fechaCorta(a.fecha)} · ${a.descripcion}`, saldo: +s.toFixed(2) }); }
-    const pendiente = st.apuestas.filter(a => a.estado === "pendiente").reduce((t, a) => t + a.importe, 0);
+    const pendiente = st.apuestas.filter(a => vale(a) && a.estado === "pendiente").reduce((t, a) => t + a.importe, 0);
     const dec = cerradas.filter(a => a.estado !== "nula");
     const gan = dec.filter(a => a.estado === "ganada").length;
     const conP = dec.filter(a => a.prob);
@@ -422,7 +425,7 @@ select, input { background: var(--panel-2); border: 1px solid var(--line); borde
   }
 
   // ---------- piezas ----------
-  const vista = () => ["partidos", "combinadas", "resultados", "banca"].includes(location.hash.slice(1)) ? location.hash.slice(1) : "partidos";
+  const vista = () => ["partidos", "dobles", "combinadas", "resultados", "banca"].includes(location.hash.slice(1)) ? location.hash.slice(1) : "partidos";
   const tag = t => `<span class="tag"><span>${esc(t)}</span></span>`;
   const horaTag = h => `<span class="hora"><span>${esc(h)}</span></span>`;
 
@@ -572,6 +575,74 @@ select, input { background: var(--panel-2); border: 1px solid var(--line); borde
       return { ...cb, lista, estado, cuota: estado === "ganada" ? cuotaFinal : cuotaPub };
     });
   }
+  // ---------- dobles (método principal desde el 17/11/2026) ----------
+  // Si el día trae "dobles" (los elige la rutina), se usan; si no, se emparejan solos por fiabilidad corregida.
+  function doblesDelDia(dia) {
+    const cfg = st.cfg, porId = Object.fromEntries((dia.picks || []).map(p => [p.id, p]));
+    let pares = (dia.dobles || []).map(x => ({ id: x.id, ids: x.picks || [] }));
+    if (!pares.length) {
+      const cand = (dia.picks || []).filter(p => p.cuota >= 1.2).map(p => ({ id: p.id, pa: probAj(p.prob, p.cuota, cfg) }))
+        .sort((a, b) => b.pa - a.pa).slice(0, cfg.max_dobles * 2);
+      for (let i = 0; i + 1 < cand.length; i += 2) pares.push({ id: "d" + (i / 2 + 1), ids: [cand[i].id, cand[i + 1].id] });
+    }
+    return pares.slice(0, cfg.max_dobles).map((x, i) => {
+      const lista = x.ids.map(id => porId[id]).filter(Boolean);
+      const estado = estadoComb(lista);
+      const cuotaPub = lista.reduce((t, p) => t * p.cuota, 1);
+      const cuotaFinal = lista.filter(p => p.resultado !== "nulo").reduce((t, p) => t * p.cuota, 1);
+      const pa = lista.reduce((t, p) => t * probAj(p.prob, p.cuota, cfg), 1);
+      return { id: x.id, n: i + 1, lista, estado, pa, cuota: estado === "ganada" ? cuotaFinal : cuotaPub, cuotaPub, auto: !(dia.dobles || []).length };
+    }).filter(x => x.lista.length === 2);
+  }
+  const redondeo = v => Math.max(1, Math.round(v * 2) / 2);
+  function vistaDobles(dia, b) {
+    const cfg = st.cfg, ds = doblesDelDia(dia);
+    let imp = redondeo(b.saldo * cfg.stake_doble);
+    const lim = b.saldo * cfg.tope_diario;
+    if (imp * ds.length > lim && ds.length) imp = Math.max(1, Math.floor(lim / ds.length * 2) / 2);
+    const total = imp * ds.length;
+    const marcador = `<div class="marcador cuatro">
+      <div><span class="m-n">${ds.length}</span><span class="m-l">Dobles hoy</span></div>
+      <div><span class="m-n rojo">${eur(imp)}</span><span class="m-l">Por doble · ${Math.round(cfg.stake_doble * 100)} % de la banca</span></div>
+      <div><span class="m-n">${eur(total)}</span><span class="m-l">En juego · ${b.saldo ? Math.round(total / b.saldo * 100) : 0} % de la banca</span></div>
+      <div><span class="m-n">${eur(b.saldo)}</span><span class="m-l">Banca</span></div></div>`;
+    const cards = ds.map(x => `<article class="boleto res-comb ${x.estado}">
+      <header class="bol-top"><div><h2>Doble ${x.n}</h2><p>${x.estado === "pendiente" ? `Si aciertan las dos, cobras ${eur(imp * x.cuotaPub)}` : { ganada: "Ganada", perdida: "Perdida", nula: "Nula" }[x.estado]}</p></div>
+        <div class="bol-cuota"><span>Cuota</span><b>${cuo(x.cuota)}</b></div></header>
+      <ol class="lista">${x.lista.map(p => `<li>${horaTag(p.hora)}<span class="p">${esc(p.local)} – ${esc(p.visitante)}${p.marcador ? ` <b>${esc(p.marcador)}</b>` : ""}</span><span class="s">${esc(p.seleccion)}${p.resultado ? ` · ${RES_TXT[p.resultado]}` : ""}</span><span class="c">${cuo(p.cuota)}</span></li>`).join("")}</ol>
+      <div class="perfo"></div>
+      <div class="datos">
+        <div><span class="m-l">Acierta</span><span class="m-n">${pct(x.pa)}</span><span class="muted xs">estimación corregida</span></div>
+        <div><span class="m-l">Apostar</span><span class="m-n verde">${eur(imp)}</span></div>
+        <div><span class="m-l">Cobras</span><span class="m-n">${eur(imp * x.cuotaPub)}</span></div>
+      </div>
+      ${formJugar("doble", dia.fecha + "-" + x.id, `Doble ${x.n}: ${x.lista.map(p => p.seleccion).join(" + ")}`, imp, x.cuotaPub, x.pa)}
+    </article>`).join("");
+    // seguimiento: todos los dobles publicados, como si se hubiesen jugado a 1 € cada uno
+    const hist = st.dias.filter(d => d.fecha >= cfg.dobles_desde).flatMap(d => doblesDelDia(d));
+    const r = cuentaPrueba(hist);
+    const seguimiento = `<section class="card prueba"><h2 class="h2">Cómo van los dobles</h2>
+      <p class="sub">Todos los dobles desde el ${fechaCorta(cfg.dobles_desde)}, a 1 € cada uno, los jugaras o no.</p>
+      <div class="marcador cuatro">
+        <div><span class="m-n ${r.neto > 0 ? "pos" : r.neto < 0 ? "rojo" : ""}">${eurS(r.neto)}</span><span class="m-l">Neto a 1 €</span></div>
+        <div><span class="m-n">${r.roi === null ? "—" : (r.roi > 0 ? "+" : "") + Math.round(r.roi) + " %"}</span><span class="m-l">Rentabilidad</span></div>
+        <div><span class="m-n">${r.gan}–${r.per}</span><span class="m-l">Ganados–perdidos${r.pen ? ` · ${r.pen} pendientes` : ""}</span></div>
+        <div><span class="m-n">${r.n ? Math.round(r.gan / r.n * 100) + " %" : "—"}</span><span class="m-l">Acertados</span></div>
+      </div></section>`;
+    const f = fd(dia.fecha);
+    return `<section class="hero">${ESTADIO}<div class="hero-top">${tag("Método: dobles")}${selectorFecha(dia)}</div>
+        <div><h1>Los <em>dobles</em> de hoy</h1><p class="sub">${isNaN(f) ? esc(dia.fecha) : `${DIAS[f.getDay()]} ${f.getDate()} de ${MESES[f.getMonth()]}`} · parejas de picks, mismo importe en cada una</p></div>${marcador}</section>
+      ${ds.length ? `<div class="grid comb">${cards}</div>` : `<section class="card vacio"><h2>Hoy no hay dobles</h2><p class="muted">Hacen falta al menos dos picks.</p></section>`}
+      ${seguimiento}
+      <section class="card reglas"><h2 class="h2">Reglas del método</h2><ul>
+        <li>Cada pick va como mucho en un doble, y nunca dos del mismo partido.</li>
+        <li>Mismo importe en todos: el ${Math.round(cfg.stake_doble * 100)} % de la banca actual, redondeado a 0,50 €. Si la banca sube, sube; si baja, baja. Nunca se recarga para recuperar.</li>
+        <li>Máximo ${cfg.max_dobles} dobles al día y nunca más del ${Math.round(cfg.tope_diario * 100)} % de la banca en juego.</li>
+        <li>Si en tu casa la cuota del doble sale más de un 10 % por debajo de la de aquí, no lo juegues.</li>
+        <li>Apunta cada doble con «La he jugado» y la cuota real: se cierra solo con los resultados.</li>
+      </ul></section>`;
+  }
+
   const mesDe = f => f.slice(0, 7);
   const mesBonito = m => { const [a, n] = m.split("-"); return `${MESES[+n - 1]} ${a}`; };
   const media = arr => arr.length ? arr.reduce((t, v) => t + v, 0) / arr.length : null;
@@ -715,6 +786,7 @@ select, input { background: var(--panel-2); border: 1px solid var(--line); borde
     if (!st.dias.length) { app.innerHTML = vistaVacia(); return; }
     if (v === "resultados") { app.innerHTML = vistaResultados(); return; }
     const raw = st.dias.find(x => x.fecha === st.fecha) || st.dias[0];
+    if (v === "dobles") { app.innerHTML = vistaDobles(raw, b); return; }
     const d = preparar(raw, b.saldo);
     app.innerHTML = v === "combinadas" ? vistaCombinadas(d, b) : vistaPartidos(d, b);
   }
@@ -796,8 +868,8 @@ select, input { background: var(--panel-2); border: 1px solid var(--line); borde
       const dia = st.dias.find(x => x.fecha === a.fecha); if (!dia) return a;
       const id = String(a.ref || "").slice(a.fecha.length + 1);
       let nuevo = null;
-      if (a.tipo === "combinada") {
-        const c = combinadasDelDia(dia).find(x => x.id === id);
+      if (a.tipo === "combinada" || a.tipo === "doble") {
+        const c = (a.tipo === "doble" ? doblesDelDia(dia) : combinadasDelDia(dia)).find(x => x.id === id);
         if (c && c.estado !== "pendiente") nuevo = c.estado;
       } else {
         const p = (dia.picks || []).find(x => x.id === id);
