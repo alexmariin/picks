@@ -54,10 +54,11 @@ def combinadas():
     for f in sorted((BASE / "data" / "dias").glob("*.json")):
         dia = json.loads(f.read_text(encoding="utf-8"))
         por_id = {p["id"]: p for p in dia.get("picks", [])}
-        for cb in dia.get("combinadas", []):
+        grupos = [(cb["id"] if cb["id"] in ("segura", "equilibrada", "sonadora") else "otras", cb) for cb in dia.get("combinadas", [])]
+        grupos += [("dobles", db) for db in dia.get("dobles", [])]
+        for tipo, cb in grupos:
             lista = [por_id[i] for i in cb.get("picks", []) if i in por_id]
             res = [p.get("resultado") for p in lista]
-            tipo = cb["id"] if cb["id"] in ("segura", "equilibrada", "sonadora") else "otras"
             if "fallo" in res:
                 por_tipo[tipo][1] += 1
                 por_tipo[tipo][2] -= 1
