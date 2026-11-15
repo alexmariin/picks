@@ -1,9 +1,13 @@
 {
-  "banca_inicial": 50.0,
+  "banca_inicial": 145.99,
+  "banca_desde": "2026-11-16",
   "kelly_fraccion": 0.25,
   "peso_mi_estimacion": 0.5,
   "tope_simple": 0.05,
   "tope_combinada": 0.02,
   "tope_diario": 0.15,
-  "margen_casa": 0.05
+  "margen_casa": 0.05,
+  "stake_doble": 0.03,
+  "max_dobles": 4,
+  "dobles_desde": "2026-11-12"
 }
