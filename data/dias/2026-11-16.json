@@ -1,0 +1,160 @@
+{
+  "fecha": "2026-11-16",
+  "titulo": "Lunes 16 de noviembre · Nations League (jornada 6)",
+  "generado": "2026-11-16 00:40",
+  "nota": "Hecho de madrugada por la tarea de respaldo: aún no hay onces ni partes de bajas de hoy, así que mira las alineaciones antes de apostar. Las cuotas de 1X2 salen de ESPN; las de goles, ambos marcan y hándicap son estimadas a partir del mercado. Dejo fuera Suiza-Escocia: Suiza ya es primera y puede rotar, es un 50-50.",
+  "picks": [
+    {
+      "id": "fro-mda",
+      "hora": "16:00",
+      "competicion": "Nations League C · Grupo 1",
+      "local": "Islas Feroe",
+      "visitante": "Moldavia",
+      "seleccion": "Más de 1,5 goles",
+      "mercado": "Goles totales",
+      "cuota": 1.33,
+      "prob": 0.74,
+      "motivo": "Feroe lleva 5 empates, todos con gol: 1-1 y 2-2 con Kazajistán, 1-1 y 2-2 con Eslovaquia, 1-1 en Moldavia. Los partidos de Moldavia tuvieron 2, 2, 3, 4 y 3 goles. Los dos se juegan la segunda plaza.",
+      "riesgo": "Aplico la lección de svk-fro: contra Feroe, que empata siempre, evito el 1X2 seco. Un 0-0 o un 1-0 en Tórshavn tumba el pick.",
+      "alternativa": "Ambos marcan (~55 %, ~1,85)"
+    },
+    {
+      "id": "kaz-svk",
+      "hora": "16:00",
+      "competicion": "Nations League C · Grupo 1",
+      "local": "Kazajistán",
+      "visitante": "Eslovaquia",
+      "seleccion": "Ambos marcan",
+      "mercado": "Ambos marcan",
+      "cuota": 1.80,
+      "prob": 0.57,
+      "motivo": "Kazajistán ha marcado en sus 5 partidos (1-1 y 2-2 con Feroe, 1-2 en Eslovaquia). Eslovaquia también marcó en los 5 y encajó con Feroe (1-1 y 2-2) y con Kazajistán (2-1).",
+      "riesgo": "Eslovaquia ya es primera y puede rotar. Lección de rou-pol: es favorita visitante y Kazajistán se juega no ser última, así que evito el 1X2. Pick de riesgo medio.",
+      "alternativa": "Más de 2,5 goles (~52 %, ~1,95)"
+    },
+    {
+      "id": "est-bul",
+      "hora": "18:00",
+      "competicion": "Nations League C · Grupo 2",
+      "local": "Estonia",
+      "visitante": "Bulgaria",
+      "seleccion": "Menos de 2,5 goles",
+      "mercado": "Goles totales",
+      "cuota": 1.55,
+      "prob": 0.64,
+      "motivo": "Los 5 partidos de Estonia acabaron con 2 goles o menos: 1-1 y 0-0 con Islandia, 0-0 en Bulgaria, 1-0 y 1-0 a Luxemburgo. Bulgaria solo marcó a Luxemburgo (1 y 2 goles).",
+      "riesgo": "Los goles altos de Bulgaria (0-3 y 0-5) fueron contra Islandia. Tengo en cuenta la lección de cyp-mne, pero aquí Estonia apenas marca: 3 goles en 5 partidos.",
+      "alternativa": "Estonia o empate (~68 %, ~1,35)"
+    },
+    {
+      "id": "isl-lux",
+      "hora": "18:00",
+      "competicion": "Nations League C · Grupo 2",
+      "local": "Islandia",
+      "visitante": "Luxemburgo",
+      "seleccion": "Islandia gana por 2 o más",
+      "mercado": "Handicap",
+      "cuota": 1.80,
+      "prob": 0.56,
+      "motivo": "Islandia ganó 0-3 en Luxemburgo y 3-0 y 0-5 a Bulgaria. Luxemburgo solo ha marcado 2 goles en 5 partidos, los dos contra Bulgaria. Islandia necesita ganar para asegurar el primer puesto.",
+      "riesgo": "Contra Estonia, Islandia no pasó del 1-1 y del 0-0. Si se adelanta pronto puede bajar el ritmo. Riesgo medio.",
+      "alternativa": "Islandia gana (~78 %, ~1,26)"
+    },
+    {
+      "id": "ltu-lie",
+      "hora": "18:00",
+      "competicion": "Nations League D · Grupo 1",
+      "local": "Lituania",
+      "visitante": "Liechtenstein",
+      "seleccion": "Lituania gana por 2 o más",
+      "mercado": "Handicap",
+      "cuota": 1.55,
+      "prob": 0.62,
+      "motivo": "Liechtenstein no ha marcado en 3 partidos (0-2 con Lituania, 0-0 y 0-1 con Azerbaiyán). Lituania ya le ganó 0-2 fuera y en casa es favorita a 1,10.",
+      "riesgo": "Lituania marca poco: 1-1 y 0-1 con Azerbaiyán. Un 1-0 corto es posible.",
+      "alternativa": "Liechtenstein no marca (~75 %, ~1,30)"
+    },
+    {
+      "id": "ger-ned",
+      "hora": "20:45",
+      "competicion": "Nations League A · Grupo 1",
+      "local": "Alemania",
+      "visitante": "Países Bajos",
+      "seleccion": "Ambos marcan",
+      "mercado": "Ambos marcan",
+      "cuota": 1.60,
+      "prob": 0.62,
+      "motivo": "Países Bajos marcó en sus 5 partidos, también contra Alemania (1-1) y Grecia (2-2 y 7-0). Alemania encajó con Países Bajos, Grecia y Serbia. Alemania necesita ganar para el pase y la casa pone la línea de goles en 3,5.",
+      "riesgo": "No hay parte de bajas de hoy. En el grupo hubo partidos cerrados: Alemania 0-1 y 0-0 con Grecia.",
+      "alternativa": "Más de 2,5 goles (~60 %, ~1,50)"
+    },
+    {
+      "id": "gre-srb",
+      "hora": "20:45",
+      "competicion": "Nations League A · Grupo 1",
+      "local": "Grecia",
+      "visitante": "Serbia",
+      "seleccion": "Grecia gana",
+      "mercado": "1X2",
+      "cuota": 1.42,
+      "prob": 0.64,
+      "motivo": "Serbia lleva 5 derrotas y ya no se juega nada. Grecia ya le ganó 1-2 en Belgrado y necesita ganar para pelear la segunda plaza con Alemania. Juega en Volos.",
+      "riesgo": "Grecia viene de perder 7-0 en Países Bajos. Serbia marcó en 4 de 5 partidos, aunque contra rivales mejores (Alemania y Países Bajos).",
+      "alternativa": "Grecia o empate (~82 %, ~1,12)"
+    },
+    {
+      "id": "gib-mlt",
+      "hora": "20:45",
+      "competicion": "Nations League D · Grupo 2",
+      "local": "Gibraltar",
+      "visitante": "Malta",
+      "seleccion": "Menos de 2,5 goles",
+      "mercado": "Goles totales",
+      "cuota": 1.50,
+      "prob": 0.66,
+      "motivo": "Los 3 partidos de Malta tuvieron 3, 2 y 1 goles (1-1 con Gibraltar en la ida). Los de Gibraltar, 0, 2 y 2. Grupo de muy pocos goles.",
+      "riesgo": "Malta ya es primera y puede jugar suelta (lección de cyp-mne). Por eso no subo del 66 %. Malta es favorita fuera, así que evito el 1X2 (lección de rou-pol).",
+      "alternativa": "Malta o empate (~75 %, ~1,22)"
+    },
+    {
+      "id": "mkd-svn",
+      "hora": "20:45",
+      "competicion": "Nations League B · Grupo 2",
+      "local": "Macedonia del Norte",
+      "visitante": "Eslovenia",
+      "seleccion": "Eslovenia gana",
+      "mercado": "1X2",
+      "cuota": 1.51,
+      "prob": 0.62,
+      "motivo": "Macedonia lleva 5 derrotas y 1 gol a favor (0-3 y 0-3 con Suiza, 0-2 con Eslovenia y Escocia). Eslovenia necesita ganar para asegurar la segunda plaza ante Escocia.",
+      "riesgo": "Eslovenia marca poco: 5 goles en 5 partidos, 2 de ellos a Macedonia. Es favorita fuera, pero Macedonia ya no se juega nada.",
+      "alternativa": "Menos de 2,5 goles (~60 %, ~1,60)"
+    }
+  ],
+  "combinadas": [
+    {
+      "id": "segura",
+      "nombre": "La segura",
+      "descripcion": "Goles en Tórshavn, Grecia en casa ante una Serbia hundida y pocos goles en Gibraltar. Cuota de unas 2,8.",
+      "picks": ["fro-mda", "gre-srb", "gib-mlt"]
+    },
+    {
+      "id": "equilibrada",
+      "nombre": "La equilibrada",
+      "descripcion": "Goles de los dos en Berlín, Eslovenia en Skopje y pocos goles en Tallin. Cuota de unas 3,7.",
+      "picks": ["ger-ned", "mkd-svn", "est-bul"]
+    },
+    {
+      "id": "tarde",
+      "nombre": "La de la tarde",
+      "descripcion": "Los tres partidos de las 16:00 y las 18:00 con más cuota. Cuota de unas 5,0. Riesgo más alto.",
+      "picks": ["kaz-svk", "isl-lux", "ltu-lie"]
+    },
+    {
+      "id": "sonadora",
+      "nombre": "La soñadora",
+      "descripcion": "Un pick de cada uno de los 9 partidos analizados. Cuota de unas 53. Es un capricho para echar lo mínimo: acertar las 9 es muy difícil.",
+      "picks": ["fro-mda", "kaz-svk", "est-bul", "isl-lux", "ltu-lie", "ger-ned", "gre-srb", "gib-mlt", "mkd-svn"]
+    }
+  ]
+}
