@@ -143,6 +143,15 @@ select, input { background: var(--panel-2); border: 1px solid var(--line); borde
 }
 .eq-n { font-family: var(--font-display); font-weight: 800; font-size: 20px; text-transform: uppercase; line-height: 1.05; overflow-wrap: anywhere; }
 .vs { font-family: var(--font-display); font-weight: 900; font-style: italic; font-size: 22px; color: var(--red); }
+.centro { display: flex; flex-direction: column; align-items: center; gap: 2px; }
+.centro .vs { font-size: 13px; letter-spacing: .1em; }
+.centro .hora-g { font-family: var(--font-display); font-weight: 900; font-size: 26px; line-height: 1; }
+.escudo { position: relative; overflow: hidden; }
+.escudo.bandera { width: 60px; height: 60px; }
+.escudo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.escudo.bandera::after { content: ""; position: absolute; inset: 0; border-radius: 50%; background: radial-gradient(circle at 35% 28%, rgba(255,255,255,.35), transparent 50%); box-shadow: inset 0 -8px 14px rgba(0,0,0,.35); }
+.bandi { width: 18px; height: 12px; object-fit: cover; border-radius: 2px; vertical-align: -1px; margin: 0 4px 0 0; box-shadow: 0 0 0 1px rgba(255,255,255,.25); }
+.bandi + .bandi { margin-right: 7px; }
 
 .apuesta { display: flex; align-items: stretch; margin: 0 16px; background: #000; border: 1px solid var(--line); }
 .ap-txt { flex: 1; padding: 10px 12px; min-width: 0; }
@@ -373,7 +382,22 @@ select, input { background: var(--panel-2); border: 1px solid var(--line); borde
   const COLORES = ["#c8102e", "#0b3d91", "#00843d", "#f2a900", "#6a1b9a", "#e35205", "#00808f", "#1d1d1d", "#b5121b", "#003da5", "#2e7d32", "#7b1e3c"];
   const CONOCIDOS = { "españa": "#c60b1e", "francia": "#0055a4", "italia": "#0a4fa3", "inglaterra": "#e8e8ec", "croacia": "#d40f2f", "bélgica": "#c8102e", "turquía": "#e30a17", "alemania": "#1d1d1d", "portugal": "#046a38", "chequia": "#11457e", "real madrid": "#f1f1f4", "barcelona": "#a50044", "atlético": "#cb3524", "arsenal": "#ef0107", "liverpool": "#c8102e", "man city": "#6cabdd", "psg": "#004170", "bayern": "#dc052d", "dortmund": "#fde100", "juventus": "#1d1d1d", "inter": "#0068a8", "milan": "#fb090b" };
   const claro = c => { const n = parseInt(c.slice(1), 16); return ((n >> 16) * 299 + ((n >> 8) & 255) * 587 + (n & 255) * 114) / 1000 > 160; };
+  // Banderas reales de selecciones (flagcdn.com, libre). Los clubes siguen con su escudo de iniciales.
+  const PAISES = { "españa": "es", "portugal": "pt", "francia": "fr", "italia": "it", "alemania": "de", "inglaterra": "gb-eng", "escocia": "gb-sct", "gales": "gb-wls", "irlanda del norte": "gb-nir",
+    "república de irlanda": "ie", "irlanda": "ie", "países bajos": "nl", "holanda": "nl", "bélgica": "be", "suiza": "ch", "austria": "at", "dinamarca": "dk", "noruega": "no", "suecia": "se", "finlandia": "fi",
+    "islandia": "is", "islas feroe": "fo", "polonia": "pl", "república checa": "cz", "chequia": "cz", "eslovaquia": "sk", "hungría": "hu", "rumanía": "ro", "bulgaria": "bg", "grecia": "gr", "turquía": "tr",
+    "croacia": "hr", "serbia": "rs", "eslovenia": "si", "bosnia y herzegovina": "ba", "bosnia": "ba", "montenegro": "me", "macedonia del norte": "mk", "albania": "al", "kosovo": "xk", "ucrania": "ua",
+    "georgia": "ge", "armenia": "am", "azerbaiyán": "az", "kazajistán": "kz", "israel": "il", "chipre": "cy", "malta": "mt", "gibraltar": "gi", "andorra": "ad", "san marino": "sm", "liechtenstein": "li",
+    "luxemburgo": "lu", "lituania": "lt", "letonia": "lv", "estonia": "ee", "moldavia": "md", "bielorrusia": "by", "rusia": "ru", "argentina": "ar", "brasil": "br", "uruguay": "uy", "colombia": "co",
+    "chile": "cl", "perú": "pe", "ecuador": "ec", "paraguay": "py", "bolivia": "bo", "venezuela": "ve", "méxico": "mx", "estados unidos": "us", "canadá": "ca", "marruecos": "ma", "japón": "jp", "corea del sur": "kr" };
+  const banderaUrl = n => { const c = PAISES[(n || "").toLowerCase().trim()]; return c ? `https://flagcdn.com/w160/${c}.png` : ""; };
+  const bandi = n => { const u = banderaUrl(n); return u ? `<img class="bandi" src="${u.replace("w160", "w40")}" alt="" loading="lazy" onerror="this.remove()">` : ""; };
   function escudo(nombre) {
+    const u = banderaUrl(nombre);
+    if (u) return escudoBase(nombre).replace('class="escudo"', 'class="escudo bandera"').replace(/<\/span>$/, `<img src="${u}" alt="" loading="lazy" onerror="this.remove()"></span>`);
+    return escudoBase(nombre);
+  }
+  function escudoBase(nombre) {
     const k = nombre.toLowerCase().trim();
     let c = CONOCIDOS[k];
     if (!c) { let h = 0; for (const ch of k) h = (h * 31 + ch.charCodeAt(0)) >>> 0; c = COLORES[h % COLORES.length]; }
@@ -496,10 +520,10 @@ select, input { background: var(--panel-2); border: 1px solid var(--line); borde
       const on = Math.round(p.pa * 20);
       const segs = Array.from({ length: 20 }, (_, i) => `<i class="${i < on ? "on" : ""}"></i>`).join("");
       return `<article class="pick ${nivel}">
-        <header class="pick-top">${horaTag(p.hora)}<span class="comp">${esc(p.competicion)}</span>${badgePick(p)}</header>
+        <header class="pick-top"><span class="comp">${esc(p.competicion)}</span>${badgePick(p)}</header>
         <div class="equipos">
           <div class="eq">${escudo(p.local)}<span class="eq-n">${esc(p.local)}</span></div>
-          <span class="vs">VS</span>
+          <div class="centro"><span class="vs">VS</span><span class="hora-g">${esc(p.hora || "")}</span></div>
           <div class="eq">${escudo(p.visitante)}<span class="eq-n">${esc(p.visitante)}</span></div>
         </div>
         <div class="apuesta">
@@ -540,7 +564,7 @@ select, input { background: var(--panel-2); border: 1px solid var(--line); borde
     const cards = d.combs.map(cb => `<article class="boleto">
       <header class="bol-top"><div><h2>${esc(cb.nombre)}</h2><p>${esc(cb.descripcion)}</p></div>
         <div class="bol-cuota"><span>Cuota total</span><b>${cuo(cb.cuota)}</b></div></header>
-      <ol class="lista">${cb.lista.map(p => `<li>${horaTag(p.hora)}<span class="p">${esc(p.local)} – ${esc(p.visitante)}</span><span class="s">${esc(p.seleccion)}</span><span class="c">${cuo(p.cuota)}</span></li>`).join("")}</ol>
+      <ol class="lista">${cb.lista.map(p => `<li>${horaTag(p.hora)}<span class="p">${bandi(p.local)}${bandi(p.visitante)}${esc(p.local)} – ${esc(p.visitante)}</span><span class="s">${esc(p.seleccion)}</span><span class="c">${cuo(p.cuota)}</span></li>`).join("")}</ol>
       <div class="perfo"></div>
       <div class="datos">
         <div><span class="m-l">Acierta</span><span class="m-n">${pct(cb.pa)}</span><span class="muted xs">1 de cada ${(1 / cb.pa).toFixed(1).replace(".", ",")}</span></div>
@@ -620,7 +644,7 @@ select, input { background: var(--panel-2); border: 1px solid var(--line); borde
     const cards = ds.map(x => `<article class="boleto res-comb ${x.estado}">
       <header class="bol-top"><div><h2>Doble ${x.n}</h2><p>${x.estado === "pendiente" ? `Si aciertan las dos, cobras ${eur(imp * x.cuotaPub)}` : { ganada: "Ganada", perdida: "Perdida", nula: "Nula" }[x.estado]}</p></div>
         <div class="bol-cuota"><span>Cuota</span><b>${cuo(x.cuota)}</b></div></header>
-      <ol class="lista">${x.lista.map(p => `<li>${horaTag(p.hora)}<span class="p">${esc(p.local)} – ${esc(p.visitante)}${p.marcador ? ` <b>${esc(p.marcador)}</b>` : ""}</span><span class="s">${esc(p.seleccion)}${p.resultado ? ` · ${RES_TXT[p.resultado]}` : ""}</span><span class="c">${cuo(p.cuota)}</span></li>`).join("")}</ol>
+      <ol class="lista">${x.lista.map(p => `<li>${horaTag(p.hora)}<span class="p">${bandi(p.local)}${bandi(p.visitante)}${esc(p.local)} – ${esc(p.visitante)}${p.marcador ? ` <b>${esc(p.marcador)}</b>` : ""}</span><span class="s">${esc(p.seleccion)}${p.resultado ? ` · ${RES_TXT[p.resultado]}` : ""}</span><span class="c">${cuo(p.cuota)}</span></li>`).join("")}</ol>
       <div class="perfo"></div>
       <div class="datos">
         <div><span class="m-l">Acierta</span><span class="m-n">${pct(x.pa)}</span><span class="muted xs">estimación corregida</span></div>
@@ -633,7 +657,7 @@ select, input { background: var(--panel-2); border: 1px solid var(--line); borde
     const cardSo = so ? `<article class="boleto res-comb sonadora-d ${so.estado}">
       <header class="bol-top"><div><h2>La soñadora de los dobles</h2><p>${so.estado === "pendiente" ? `Las ${so.lista.length} selecciones de los dobles en una sola apuesta. Capricho de ${eur(impS)}: si salen todas, cobras ${eur(impS * so.cuotaPub)}` : { ganada: "¡Ganada!", perdida: "Perdida", nula: "Nula" }[so.estado]}</p></div>
         <div class="bol-cuota"><span>Cuota</span><b>${cuo(so.cuota)}</b></div></header>
-      <ol class="lista">${so.lista.map(p => `<li>${horaTag(p.hora)}<span class="p">${esc(p.local)} – ${esc(p.visitante)}${p.marcador ? ` <b>${esc(p.marcador)}</b>` : ""}</span><span class="s">${esc(p.seleccion)}${p.resultado ? ` · ${RES_TXT[p.resultado]}` : ""}</span><span class="c">${cuo(p.cuota)}</span></li>`).join("")}</ol>
+      <ol class="lista">${so.lista.map(p => `<li>${horaTag(p.hora)}<span class="p">${bandi(p.local)}${bandi(p.visitante)}${esc(p.local)} – ${esc(p.visitante)}${p.marcador ? ` <b>${esc(p.marcador)}</b>` : ""}</span><span class="s">${esc(p.seleccion)}${p.resultado ? ` · ${RES_TXT[p.resultado]}` : ""}</span><span class="c">${cuo(p.cuota)}</span></li>`).join("")}</ol>
       <div class="perfo"></div>
       <div class="datos">
         <div><span class="m-l">Acierta</span><span class="m-n">${pct(so.pa)}</span><span class="muted xs">1 de cada ${Math.round(1 / so.pa)}</span></div>
