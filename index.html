@@ -368,7 +368,7 @@ select, input { background: var(--panel-2); border: 1px solid var(--line); borde
 
 <script>
 (() => {
-  const DEF_CFG = { banca_inicial: 50, banca_desde: "", kelly_fraccion: 0.25, peso_mi_estimacion: 0.5, tope_simple: 0.05, tope_combinada: 0.02, tope_diario: 0.15, margen_casa: 0.05, stake_doble: 0.03, max_dobles: 4, dobles_desde: "2026-11-12", sonadora_dobles: 1 };
+  const DEF_CFG = { banca_inicial: 50, banca_desde: "", kelly_fraccion: 0.25, peso_mi_estimacion: 0.5, tope_simple: 0.05, tope_combinada: 0.02, tope_diario: 0.25, margen_casa: 0.05, stake_doble: 0.05, max_dobles: 8, dobles_desde: "2026-11-12", sonadora_dobles: 1 };
   const DIAS = ["domingo", "lunes", "martes", "miércoles", "jueves", "viernes", "sábado"];
   const MESES = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"];
   const st = { dias: [], apuestas: [], cfg: DEF_CFG, fecha: null, mes: null, cargado: false, error: null, puedeEscribir: true, db: null, borrarPend: null };
