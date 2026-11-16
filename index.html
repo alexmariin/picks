@@ -294,6 +294,7 @@ select, input { background: var(--panel-2); border: 1px solid var(--line); borde
 .chip.borrar.confirmar { background: var(--red); color: #fff; }
 .reglas ul { margin: 0; padding-left: 18px; color: var(--ink-2); font-size: 14px; display: flex; flex-direction: column; gap: 6px; }
 .reglas li::marker { color: var(--red); }
+.boleto.sonadora-d { grid-column: 1 / -1; outline: 2px dashed #d4a017; outline-offset: -2px; }
 .vacio { text-align: center; padding: 44px 18px; }
 .vacio h2 { font-size: 30px; margin-bottom: 8px; }
 
@@ -354,7 +355,7 @@ select, input { background: var(--panel-2); border: 1px solid var(--line); borde
 
 <script>
 (() => {
-  const DEF_CFG = { banca_inicial: 50, banca_desde: "", kelly_fraccion: 0.25, peso_mi_estimacion: 0.5, tope_simple: 0.05, tope_combinada: 0.02, tope_diario: 0.15, margen_casa: 0.05, stake_doble: 0.03, max_dobles: 4, dobles_desde: "2026-11-12" };
+  const DEF_CFG = { banca_inicial: 50, banca_desde: "", kelly_fraccion: 0.25, peso_mi_estimacion: 0.5, tope_simple: 0.05, tope_combinada: 0.02, tope_diario: 0.15, margen_casa: 0.05, stake_doble: 0.03, max_dobles: 4, dobles_desde: "2026-11-12", sonadora_dobles: 1 };
   const DIAS = ["domingo", "lunes", "martes", "miércoles", "jueves", "viernes", "sábado"];
   const MESES = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"];
   const st = { dias: [], apuestas: [], cfg: DEF_CFG, fecha: null, mes: null, cargado: false, error: null, puedeEscribir: true, db: null, borrarPend: null };
@@ -594,6 +595,16 @@ select, input { background: var(--panel-2); border: 1px solid var(--line); borde
       return { id: x.id, n: i + 1, lista, estado, pa, cuota: estado === "ganada" ? cuotaFinal : cuotaPub, cuotaPub, auto: !(dia.dobles || []).length };
     }).filter(x => x.lista.length === 2);
   }
+  // La soñadora de los dobles: todos los picks de los dobles del día en una sola combinada (solo si hay 2 dobles o más).
+  function sonadoraDobles(dia, ds) {
+    ds = ds || doblesDelDia(dia);
+    if (ds.length < 2) return null;
+    const lista = ds.flatMap(x => x.lista);
+    const estado = estadoComb(lista);
+    const cuotaPub = lista.reduce((t, p) => t * p.cuota, 1);
+    const cuotaFinal = lista.filter(p => p.resultado !== "nulo").reduce((t, p) => t * p.cuota, 1);
+    return { id: "sonadora", lista, estado, pa: ds.reduce((t, x) => t * x.pa, 1), cuota: estado === "ganada" ? cuotaFinal : cuotaPub, cuotaPub };
+  }
   const redondeo = v => Math.max(1, Math.round(v * 2) / 2);
   function vistaDobles(dia, b) {
     const cfg = st.cfg, ds = doblesDelDia(dia);
@@ -618,9 +629,24 @@ select, input { background: var(--panel-2); border: 1px solid var(--line); borde
       </div>
       ${formJugar("doble", dia.fecha + "-" + x.id, `Doble ${x.n}: ${x.lista.map(p => p.seleccion).join(" + ")}`, imp, x.cuotaPub, x.pa)}
     </article>`).join("");
+    const so = sonadoraDobles(dia, ds), impS = cfg.sonadora_dobles;
+    const cardSo = so ? `<article class="boleto res-comb sonadora-d ${so.estado}">
+      <header class="bol-top"><div><h2>La soñadora de los dobles</h2><p>${so.estado === "pendiente" ? `Las ${so.lista.length} selecciones de los dobles en una sola apuesta. Capricho de ${eur(impS)}: si salen todas, cobras ${eur(impS * so.cuotaPub)}` : { ganada: "¡Ganada!", perdida: "Perdida", nula: "Nula" }[so.estado]}</p></div>
+        <div class="bol-cuota"><span>Cuota</span><b>${cuo(so.cuota)}</b></div></header>
+      <ol class="lista">${so.lista.map(p => `<li>${horaTag(p.hora)}<span class="p">${esc(p.local)} – ${esc(p.visitante)}${p.marcador ? ` <b>${esc(p.marcador)}</b>` : ""}</span><span class="s">${esc(p.seleccion)}${p.resultado ? ` · ${RES_TXT[p.resultado]}` : ""}</span><span class="c">${cuo(p.cuota)}</span></li>`).join("")}</ol>
+      <div class="perfo"></div>
+      <div class="datos">
+        <div><span class="m-l">Acierta</span><span class="m-n">${pct(so.pa)}</span><span class="muted xs">1 de cada ${Math.round(1 / so.pa)}</span></div>
+        <div><span class="m-l">Apostar</span><span class="m-n verde">${eur(impS)}</span><span class="muted xs">fijo, aparte de los dobles</span></div>
+        <div><span class="m-l">Cobras</span><span class="m-n">${eur(impS * so.cuotaPub)}</span></div>
+      </div>
+      ${formJugar("doble", dia.fecha + "-sonadora", `Soñadora de los dobles (${so.lista.length} selecciones)`, impS, so.cuotaPub, so.pa)}
+    </article>` : "";
     // seguimiento: todos los dobles publicados, como si se hubiesen jugado a 1 € cada uno
-    const hist = st.dias.filter(d => d.fecha >= cfg.dobles_desde).flatMap(d => doblesDelDia(d));
+    const diasD = st.dias.filter(d => d.fecha >= cfg.dobles_desde);
+    const hist = diasD.flatMap(d => doblesDelDia(d));
     const r = cuentaPrueba(hist);
+    const rs = cuentaPrueba(diasD.map(d => sonadoraDobles(d)).filter(Boolean));
     const seguimiento = `<section class="card prueba"><h2 class="h2">Cómo van los dobles</h2>
       <p class="sub">Todos los dobles desde el ${fechaCorta(cfg.dobles_desde)}, a 1 € cada uno, los jugaras o no.</p>
       <div class="marcador cuatro">
@@ -628,11 +654,12 @@ select, input { background: var(--panel-2); border: 1px solid var(--line); borde
         <div><span class="m-n">${r.roi === null ? "—" : (r.roi > 0 ? "+" : "") + Math.round(r.roi) + " %"}</span><span class="m-l">Rentabilidad</span></div>
         <div><span class="m-n">${r.gan}–${r.per}</span><span class="m-l">Ganados–perdidos${r.pen ? ` · ${r.pen} pendientes` : ""}</span></div>
         <div><span class="m-n">${r.n ? Math.round(r.gan / r.n * 100) + " %" : "—"}</span><span class="m-l">Acertados</span></div>
-      </div></section>`;
+      </div>
+      <p class="sub" style="margin-top:14px">La soñadora de los dobles, a 1 € cada día: <b>${rs.gan}–${rs.per}</b> (ganadas–perdidas${rs.pen ? ` · ${rs.pen} pendiente${rs.pen > 1 ? "s" : ""}` : ""}) · neto <b>${eurS(rs.neto)}</b></p></section>`;
     const f = fd(dia.fecha);
     return `<section class="hero">${ESTADIO}<div class="hero-top">${tag("Método: dobles")}${selectorFecha(dia)}</div>
         <div><h1>Los <em>dobles</em> de hoy</h1><p class="sub">${isNaN(f) ? esc(dia.fecha) : `${DIAS[f.getDay()]} ${f.getDate()} de ${MESES[f.getMonth()]}`} · parejas de picks, mismo importe en cada una</p></div>${marcador}</section>
-      ${ds.length ? `<div class="grid comb">${cards}</div>` : `<section class="card vacio"><h2>Hoy no hay dobles</h2><p class="muted">Hacen falta al menos dos picks.</p></section>`}
+      ${ds.length ? `<div class="grid comb">${cards}${cardSo}</div>` : `<section class="card vacio"><h2>Hoy no hay dobles</h2><p class="muted">Hacen falta al menos dos picks.</p></section>`}
       ${seguimiento}
       <section class="card reglas"><h2 class="h2">Reglas del método</h2><ul>
         <li>Cada pick va como mucho en un doble, y nunca dos del mismo partido.</li>
@@ -640,6 +667,7 @@ select, input { background: var(--panel-2); border: 1px solid var(--line); borde
         <li>Máximo ${cfg.max_dobles} dobles al día y nunca más del ${Math.round(cfg.tope_diario * 100)} % de la banca en juego.</li>
         <li>Si en tu casa la cuota del doble sale más de un 10 % por debajo de la de aquí, no lo juegues.</li>
         <li>Apunta cada doble con «La he jugado» y la cuota real: se cierra solo con los resultados.</li>
+        <li>La soñadora de los dobles junta todas las selecciones de los dobles del día (solo si hay 2 dobles o más). Es un capricho de ${eur(cfg.sonadora_dobles)} fijos, aparte del método: no cuenta para el tope diario.</li>
       </ul></section>`;
   }
 
@@ -869,7 +897,7 @@ select, input { background: var(--panel-2); border: 1px solid var(--line); borde
       const id = String(a.ref || "").slice(a.fecha.length + 1);
       let nuevo = null;
       if (a.tipo === "combinada" || a.tipo === "doble") {
-        const c = (a.tipo === "doble" ? doblesDelDia(dia) : combinadasDelDia(dia)).find(x => x.id === id);
+        const c = (a.tipo === "doble" ? [...doblesDelDia(dia), sonadoraDobles(dia)].filter(Boolean) : combinadasDelDia(dia)).find(x => x.id === id);
         if (c && c.estado !== "pendiente") nuevo = c.estado;
       } else {
         const p = (dia.picks || []).find(x => x.id === id);
