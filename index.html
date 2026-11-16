@@ -662,7 +662,7 @@ select, input { background: var(--panel-2); border: 1px solid var(--line); borde
       </div>
       ${formJugar("doble", dia.fecha + "-" + x.id, `Doble ${x.n}: ${x.lista.map(p => p.seleccion).join(" + ")}`, imp, x.cuotaPub, x.pa)}
     </article>`).join("");
-    const so = sonadoraDobles(dia, ds), impS = cfg.sonadora_dobles;
+    const so = sonadoraDobles(dia, ds), impS = cfg.sonadora_dobles_pct ? redondeo(b.saldo * cfg.sonadora_dobles_pct) : cfg.sonadora_dobles;
     const cardSo = so ? `<article class="boleto res-comb sonadora-d ${so.estado}">
       <header class="bol-top"><div><h2>La soñadora de los dobles</h2><p>${so.estado === "pendiente" ? `Las ${so.lista.length} selecciones de los dobles en una sola apuesta. Capricho de ${eur(impS)}: si salen todas, cobras ${eur(impS * so.cuotaPub)}` : { ganada: "¡Ganada!", perdida: "Perdida", nula: "Nula" }[so.estado]}</p></div>
         <div class="bol-cuota"><span>Cuota</span><b>${cuo(so.cuota)}</b></div></header>
@@ -670,7 +670,7 @@ select, input { background: var(--panel-2); border: 1px solid var(--line); borde
       <div class="perfo"></div>
       <div class="datos">
         <div><span class="m-l">Acierta</span><span class="m-n">${pct(so.pa)}</span><span class="muted xs">1 de cada ${Math.round(1 / so.pa)}</span></div>
-        <div><span class="m-l">Apostar</span><span class="m-n verde">${eur(impS)}</span><span class="muted xs">fijo, aparte de los dobles</span></div>
+        <div><span class="m-l">Apostar</span><span class="m-n verde">${eur(impS)}</span><span class="muted xs">${cfg.sonadora_dobles_pct ? Math.round(cfg.sonadora_dobles_pct * 100) + " % de la banca, " : "fijo, "}aparte de los dobles</span></div>
         <div><span class="m-l">Cobras</span><span class="m-n">${eur(impS * so.cuotaPub)}</span></div>
       </div>
       ${formJugar("doble", dia.fecha + "-sonadora", `Soñadora de los dobles (${so.lista.length} selecciones)`, impS, so.cuotaPub, so.pa)}
@@ -700,7 +700,7 @@ select, input { background: var(--panel-2); border: 1px solid var(--line); borde
         <li>Máximo ${cfg.max_dobles} dobles al día y nunca más del ${Math.round(cfg.tope_diario * 100)} % de la banca en juego.</li>
         <li>Si en tu casa la cuota del doble sale más de un 10 % por debajo de la de aquí, no lo juegues.</li>
         <li>Apunta cada doble con «La he jugado» y la cuota real: se cierra solo con los resultados.</li>
-        <li>La soñadora de los dobles junta todas las selecciones de los dobles del día (solo si hay 2 dobles o más). Es un capricho de ${eur(cfg.sonadora_dobles)} fijos, aparte del método: no cuenta para el tope diario.</li>
+        <li>La soñadora de los dobles junta todas las selecciones de los dobles del día (solo si hay 2 dobles o más). Es un capricho aparte del método: ${cfg.sonadora_dobles_pct ? `el ${Math.round(cfg.sonadora_dobles_pct * 100)} % de la banca, redondeado a 0,50 €` : `${eur(cfg.sonadora_dobles)} fijos`}, y no cuenta para el tope diario.</li>
       </ul></section>`;
   }
 
