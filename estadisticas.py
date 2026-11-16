@@ -56,6 +56,8 @@ def combinadas():
         por_id = {p["id"]: p for p in dia.get("picks", [])}
         grupos = [(cb["id"] if cb["id"] in ("segura", "equilibrada", "sonadora") else "otras", cb) for cb in dia.get("combinadas", [])]
         grupos += [("dobles", db) for db in dia.get("dobles", [])]
+        if len(dia.get("dobles", [])) >= 2:
+            grupos.append(("sonadora de dobles", {"picks": [i for db in dia["dobles"] for i in db.get("picks", [])]}))
         for tipo, cb in grupos:
             lista = [por_id[i] for i in cb.get("picks", []) if i in por_id]
             res = [p.get("resultado") for p in lista]
