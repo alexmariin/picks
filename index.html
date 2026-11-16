@@ -306,6 +306,19 @@ select, input { background: var(--panel-2); border: 1px solid var(--line); borde
 .chip.borrar.confirmar { background: var(--red); color: #fff; }
 .reglas ul { margin: 0; padding-left: 18px; color: var(--ink-2); font-size: 14px; display: flex; flex-direction: column; gap: 6px; }
 .reglas li::marker { color: var(--red); }
+.jugada { margin: 0 16px 14px; padding: 10px 12px; border: 1px solid #1f8f4e; background: rgba(31,143,78,.12); font-size: 14px; }
+.jugada.perdida { border-color: var(--red); background: rgba(255,30,60,.1); }
+.jugada a { color: var(--muted); margin-left: 6px; }
+.mis-dia { margin-top: 18px; }
+.mis-l { list-style: none; margin: 8px 0 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.mis-l li { padding: 10px 12px; border: 1px solid var(--line); border-left: 3px solid var(--red); background: rgba(255,255,255,.02); }
+.mis-d { font-weight: 600; margin-bottom: 4px; }
+.mis-n { display: flex; flex-wrap: wrap; gap: 4px 18px; align-items: center; font-size: 14px; color: var(--ink-2); }
+.mis-n b { color: var(--ink, #fff); } .mis-n b.c { color: var(--red); }
+.mis-tot { display: flex; flex-wrap: wrap; gap: 10px 28px; margin-top: 10px; padding: 12px; background: #000; border: 1px solid var(--line); }
+.mis-tot > div { display: flex; flex-direction: column; gap: 2px; }
+.mis-tot b { font-family: var(--font-display); font-size: 22px; }
+.mis .pos, .mis-tot .pos { color: #2ecc71; } .mis .neg, .mis-tot .neg { color: var(--red); }
 .boleto.sonadora-d { grid-column: 1 / -1; outline: 2px dashed #d4a017; outline-offset: -2px; }
 .vacio { text-align: center; padding: 44px 18px; }
 .vacio h2 { font-size: 30px; margin-bottom: 8px; }
@@ -508,6 +521,12 @@ select, input { background: var(--panel-2); border: 1px solid var(--line); borde
 
   function formJugar(tipo, ref, desc, importe, cuota, prob) {
     if (!st.puedeEscribir) return "";
+    const ya = st.apuestas.filter(a => a.ref === ref);
+    if (ya.length) {
+      const imp = ya.reduce((t, a) => t + a.importe, 0), cobro = ya.reduce((t, a) => t + a.importe * a.cuota, 0);
+      const est = ya[0].estado;
+      return `<div class="jugada ${est}"><b>✓ Jugada</b> · ${eur(imp)} a cuota ${cuo(ya[0].cuota)} · ${est === "pendiente" ? `si gana cobras <b>${eur(cobro)}</b>` : est === "ganada" ? `has cobrado <b>${eur(cobro)}</b>` : est === "perdida" ? "perdida" : "nula"} <a href="#banca">editar</a></div>`;
+    }
     return `<details class="jugar"><summary>La he jugado</summary>
       <form data-tipo="${tipo}" data-ref="${esc(ref)}" data-desc="${esc(desc)}" data-prob="${prob.toFixed(4)}">
         <label>Importe (€)<input name="importe" id="imp-${esc(ref)}" inputmode="decimal" value="${(importe > 0 ? importe : 1).toFixed(2).replace(".", ",")}"></label>
@@ -750,6 +769,39 @@ select, input { background: var(--panel-2); border: 1px solid var(--line); borde
       </section>`;
   }
 
+  // Lo que has jugado de verdad, día a día, con tu cuota corregida y lo que cobrarías.
+  function misApuestas() {
+    const delMes = st.apuestas.filter(a => a.fecha && mesDe(a.fecha) === st.mes);
+    if (!delMes.length) return `<section class="card mis"><h2 class="h2">Tus apuestas</h2><p class="muted">Aquí salen los dobles y la soñadora que marques con «La he jugado», con tu cuota. Se guardan en este móvil u ordenador.</p></section>`;
+    const fechas = [...new Set(delMes.map(a => a.fecha))].sort().reverse();
+    const ESTX = { pendiente: "Pendiente", ganada: "Ganada", perdida: "Perdida", nula: "Nula" };
+    const cobro = a => a.estado === "nula" ? a.importe : a.importe * a.cuota;
+    const dias = fechas.map(f => {
+      const l = delMes.filter(a => a.fecha === f).sort((a, z) => (a.ref || "").localeCompare(z.ref || ""));
+      const so = l.filter(a => /-sonadora$/.test(a.ref || "")), db = l.filter(a => a.tipo === "doble" && !/-sonadora$/.test(a.ref || ""));
+      const filas = l.map(a => {
+        const bn = beneficio(a);
+        return `<li><div class="mis-d">${esc(a.descripcion)}</div>
+          <div class="mis-n"><span>${eur(a.importe)} × <b class="c">${cuo(a.cuota)}</b></span><span>si gana cobras <b>${eur(a.importe * a.cuota)}</b> <span class="muted xs">(+${eur(a.importe * a.cuota - a.importe)})</span></span>
+          <span><span class="estado-tag ${a.estado}">${ESTX[a.estado] || a.estado}</span>${a.estado !== "pendiente" ? ` <span class="${bn > 0 ? "pos" : bn < 0 ? "neg" : ""}">${bn > 0 ? "+" : ""}${eur(bn)}</span>` : ""}</span></div></li>`;
+      }).join("");
+      const jug = l.reduce((t, a) => t + a.importe, 0);
+      const tD = db.reduce((t, a) => t + a.importe * a.cuota, 0), jD = db.reduce((t, a) => t + a.importe, 0);
+      const tS = so.reduce((t, a) => t + a.importe * a.cuota, 0), jS = so.reduce((t, a) => t + a.importe, 0);
+      const cerrado = l.every(a => a.estado !== "pendiente");
+      const real = l.reduce((t, a) => t + (a.estado === "ganada" || a.estado === "nula" ? cobro(a) : 0), 0);
+      const tot = (t, j) => `<b>${eur(t)}</b> <span class="muted xs">(${t - j >= 0 ? "+" : ""}${eur(t - j)} de beneficio)</span>`;
+      return `<div class="mis-dia"><h3 class="res-fecha">${fechaCorta(f)} · has jugado ${eur(jug)}</h3>
+        <ul class="mis-l">${filas}</ul>
+        <div class="mis-tot">
+          ${db.length ? `<div><span class="m-l">${db.length === 1 ? "Si ganas el doble" : `Si ganas los ${db.length} dobles`}</span>${tot(tD, jD)}</div>` : ""}
+          ${db.length && so.length ? `<div><span class="m-l">Dobles + soñadora (lo máximo)</span>${tot(tD + tS, jD + jS)}</div>` : ""}
+          ${cerrado ? `<div><span class="m-l">Resultado del día</span><b class="${real - jug > 0 ? "pos" : real - jug < 0 ? "neg" : ""}">${real - jug >= 0 ? "+" : ""}${eur(real - jug)}</b> <span class="muted xs">(cobrado ${eur(real)})</span></div>` : ""}
+        </div></div>`;
+    }).join("");
+    return `<section class="card mis"><h2 class="h2">Tus apuestas</h2><p class="sub">Lo que has marcado con «La he jugado», con tu cuota corregida. Se cierran solas con los resultados.</p>${dias}</section>`;
+  }
+
   function vistaResultados() {
     const meses = [...new Set(st.dias.map(d => mesDe(d.fecha)))].sort().reverse();
     if (!meses.length) return vistaVacia();
@@ -781,6 +833,7 @@ select, input { background: var(--panel-2); border: 1px solid var(--line); borde
     }).join("");
     return `<section class="hero">${ESTADIO}<div class="hero-top">${tag("Resultados")}${sel}</div>
         <div><h1>Así van las <em>combinadas</em></h1><p class="sub">${mesBonito(st.mes)} · todas las que he publicado, las jugaras o no</p></div>${marcador}</section>
+      ${misApuestas()}
       ${vistaPrueba()}
       <h2 class="seccion-t">Día a día</h2>
       ${bloques || `<section class="card vacio"><h2>Aún no hay combinadas este mes</h2></section>`}
