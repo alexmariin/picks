@@ -26,7 +26,7 @@
       "visitante": "Eslovaquia",
       "seleccion": "Ambos marcan",
       "mercado": "Ambos marcan",
-      "cuota": 1.80,
+      "cuota": 1.8,
       "prob": 0.57,
       "motivo": "Kazajistán ha marcado en sus 5 partidos (1-1 y 2-2 con Feroe, 1-2 en Eslovaquia). Eslovaquia también marcó en los 5 y encajó con Feroe (1-1 y 2-2) y con Kazajistán (2-1).",
       "riesgo": "Eslovaquia ya es primera y puede rotar. Lección de rou-pol: es favorita visitante y Kazajistán se juega no ser última, así que evito el 1X2. Pick de riesgo medio.",
@@ -54,7 +54,7 @@
       "visitante": "Luxemburgo",
       "seleccion": "Islandia gana por 2 o más",
       "mercado": "Handicap",
-      "cuota": 1.80,
+      "cuota": 1.8,
       "prob": 0.56,
       "motivo": "Islandia ganó 0-3 en Luxemburgo y 3-0 y 0-5 a Bulgaria. Luxemburgo solo ha marcado 2 goles en 5 partidos, los dos contra Bulgaria. Islandia necesita ganar para asegurar el primer puesto.",
       "riesgo": "Contra Estonia, Islandia no pasó del 1-1 y del 0-0. Si se adelanta pronto puede bajar el ritmo. Riesgo medio.",
@@ -82,7 +82,7 @@
       "visitante": "Países Bajos",
       "seleccion": "Ambos marcan",
       "mercado": "Ambos marcan",
-      "cuota": 1.60,
+      "cuota": 1.6,
       "prob": 0.62,
       "motivo": "Países Bajos marcó en sus 5 partidos, también contra Alemania (1-1) y Grecia (2-2 y 7-0). Alemania encajó con Países Bajos, Grecia y Serbia. Alemania necesita ganar para el pase y la casa pone la línea de goles en 3,5.",
       "riesgo": "No hay parte de bajas de hoy. En el grupo hubo partidos cerrados: Alemania 0-1 y 0-0 con Grecia.",
@@ -110,7 +110,7 @@
       "visitante": "Malta",
       "seleccion": "Menos de 2,5 goles",
       "mercado": "Goles totales",
-      "cuota": 1.50,
+      "cuota": 1.5,
       "prob": 0.66,
       "motivo": "Los 3 partidos de Malta tuvieron 3, 2 y 1 goles (1-1 con Gibraltar en la ida). Los de Gibraltar, 0, 2 y 2. Grupo de muy pocos goles.",
       "riesgo": "Malta ya es primera y puede jugar suelta (lección de cyp-mne). Por eso no subo del 66 %. Malta es favorita fuera, así que evito el 1X2 (lección de rou-pol).",
@@ -136,25 +136,77 @@
       "id": "segura",
       "nombre": "La segura",
       "descripcion": "Goles en Tórshavn, Grecia en casa ante una Serbia hundida y pocos goles en Gibraltar. Cuota de unas 2,8.",
-      "picks": ["fro-mda", "gre-srb", "gib-mlt"]
+      "picks": [
+        "fro-mda",
+        "gre-srb",
+        "gib-mlt"
+      ]
     },
     {
       "id": "equilibrada",
       "nombre": "La equilibrada",
       "descripcion": "Goles de los dos en Berlín, Eslovenia en Skopje y pocos goles en Tallin. Cuota de unas 3,7.",
-      "picks": ["ger-ned", "mkd-svn", "est-bul"]
+      "picks": [
+        "ger-ned",
+        "mkd-svn",
+        "est-bul"
+      ]
     },
     {
       "id": "tarde",
       "nombre": "La de la tarde",
       "descripcion": "Los tres partidos de las 16:00 y las 18:00 con más cuota. Cuota de unas 5,0. Riesgo más alto.",
-      "picks": ["kaz-svk", "isl-lux", "ltu-lie"]
+      "picks": [
+        "kaz-svk",
+        "isl-lux",
+        "ltu-lie"
+      ]
     },
     {
       "id": "sonadora",
       "nombre": "La soñadora",
       "descripcion": "Un pick de cada uno de los 9 partidos analizados. Cuota de unas 53. Es un capricho para echar lo mínimo: acertar las 9 es muy difícil.",
-      "picks": ["fro-mda", "kaz-svk", "est-bul", "isl-lux", "ltu-lie", "ger-ned", "gre-srb", "gib-mlt", "mkd-svn"]
+      "picks": [
+        "fro-mda",
+        "kaz-svk",
+        "est-bul",
+        "isl-lux",
+        "ltu-lie",
+        "ger-ned",
+        "gre-srb",
+        "gib-mlt",
+        "mkd-svn"
+      ]
+    }
+  ],
+  "dobles": [
+    {
+      "id": "d1",
+      "picks": [
+        "fro-mda",
+        "gre-srb"
+      ]
+    },
+    {
+      "id": "d2",
+      "picks": [
+        "gib-mlt",
+        "est-bul"
+      ]
+    },
+    {
+      "id": "d3",
+      "picks": [
+        "mkd-svn",
+        "ltu-lie"
+      ]
+    },
+    {
+      "id": "d4",
+      "picks": [
+        "ger-ned",
+        "kaz-svk"
+      ]
     }
   ]
 }
