@@ -9,5 +9,6 @@
   "margen_casa": 0.05,
   "stake_doble": 0.03,
   "max_dobles": 4,
-  "dobles_desde": "2026-11-12"
+  "dobles_desde": "2026-11-12",
+  "sonadora_dobles": 1
 }
