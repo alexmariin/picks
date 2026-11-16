@@ -10,5 +10,6 @@
   "stake_doble": 0.05,
   "max_dobles": 8,
   "dobles_desde": "2026-11-12",
-  "sonadora_dobles": 1
+  "sonadora_dobles": 1,
+  "sonadora_dobles_pct": 0.01
 }
