@@ -445,7 +445,9 @@ select, input { background: var(--panel-2); border: 1px solid var(--line); borde
     const gan = dec.filter(a => a.estado === "ganada").length;
     const conP = dec.filter(a => a.prob);
     return {
-      inicial: ini, saldo: +s.toFixed(2), pendiente, puntos, n: dec.length,
+      // saldo = banca contando lo que está en juego (sirve para calcular importes, así no cambian a mitad de día);
+      // disponible = lo que te queda libre: se le resta cada apuesta en cuanto la marcas.
+      inicial: ini, saldo: +s.toFixed(2), disponible: +(s - pendiente).toFixed(2), pendiente, puntos, n: dec.length,
       rend: ini ? (s - ini) / ini * 100 : 0,
       real: dec.length ? gan / dec.length * 100 : null,
       est: conP.length ? conP.reduce((t, a) => t + a.prob, 0) / conP.length * 100 : null,
@@ -575,7 +577,7 @@ select, input { background: var(--panel-2); border: 1px solid var(--line); borde
     const marcador = `<div class="marcador">
       <div><span class="m-n">${d.picks.length}</span><span class="m-l">Partidos</span></div>
       <div><span class="m-n rojo">${conValor}</span><span class="m-l">Con valor</span></div>
-      <div><span class="m-n">${eur(b.saldo)}</span><span class="m-l">Banca</span></div></div>`;
+      <div><span class="m-n">${eur(b.disponible)}</span><span class="m-l">Disponible${b.pendiente ? ` · ${eur(b.pendiente)} en juego` : ""}</span></div></div>`;
     return `${hero(d, marcador)}
       ${d.factor < 1 ? `<p class="aviso">Los importes se han reducido para no pasar del tope diario del ${Math.round(st.cfg.tope_diario * 100)} % de la banca.</p>` : ""}
       <h2 class="seccion-t">Partidos del día</h2>
@@ -587,7 +589,7 @@ select, input { background: var(--panel-2); border: 1px solid var(--line); borde
     const marcador = `<div class="marcador">
       <div><span class="m-n">${d.combs.length}</span><span class="m-l">Combinadas</span></div>
       <div><span class="m-n rojo">${mejor ? cuo(mejor) : "—"}</span><span class="m-l">Cuota más alta</span></div>
-      <div><span class="m-n">${eur(b.saldo)}</span><span class="m-l">Banca</span></div></div>`;
+      <div><span class="m-n">${eur(b.disponible)}</span><span class="m-l">Disponible${b.pendiente ? ` · ${eur(b.pendiente)} en juego` : ""}</span></div></div>`;
     if (!d.combs.length) return hero(d, marcador) + `<section class="card vacio"><h2>Hoy no hay combinadas</h2><p class="muted">Cuando las haya, salen aquí con su cuota aproximada.</p></section>`;
     const cards = d.combs.map(cb => `<article class="boleto">
       <header class="bol-top"><div><h2>${esc(cb.nombre)}</h2><p>${esc(cb.descripcion)}</p></div>
@@ -668,7 +670,7 @@ select, input { background: var(--panel-2); border: 1px solid var(--line); borde
       <div><span class="m-n">${ds.length}</span><span class="m-l">Dobles hoy</span></div>
       <div><span class="m-n rojo">${eur(imp)}</span><span class="m-l">Por doble · ${Math.round(cfg.stake_doble * 100)} % de la banca</span></div>
       <div><span class="m-n">${eur(total)}</span><span class="m-l">En juego · ${b.saldo ? Math.round(total / b.saldo * 100) : 0} % de la banca</span></div>
-      <div><span class="m-n">${eur(b.saldo)}</span><span class="m-l">Banca</span></div></div>`;
+      <div><span class="m-n">${eur(b.disponible)}</span><span class="m-l">Disponible${b.pendiente ? ` · ${eur(b.pendiente)} en juego` : ""}</span></div></div>`;
     const cards = ds.map(x => `<article class="boleto res-comb ${x.estado}">
       <header class="bol-top"><div><h2>Doble ${x.n}</h2><p>${x.estado === "pendiente" ? `Si aciertan las dos, cobras ${eur(imp * x.cuotaPub)}` : { ganada: "Ganada", perdida: "Perdida", nula: "Nula" }[x.estado]}</p></div>
         <div class="bol-cuota"><span>Cuota</span><b>${cuo(x.cuota)}</b></div></header>
@@ -869,7 +871,7 @@ select, input { background: var(--panel-2); border: 1px solid var(--line); borde
     }).join("");
     const cfg = st.cfg;
     const marcador = `<div class="marcador cuatro">
-      <div><span class="m-n">${eur(b.saldo)}</span><span class="m-l">Saldo · empezó en ${eur(b.inicial)}</span></div>
+      <div><span class="m-n">${eur(b.disponible)}</span><span class="m-l">Disponible · banca ${eur(b.saldo)} contando lo que está en juego · empezó en ${eur(b.inicial)}</span></div>
       <div><span class="m-n ${b.rend > 0 ? "pos" : b.rend < 0 ? "neg" : ""}">${(b.rend > 0 ? "+" : "") + b.rend.toFixed(1).replace(".", ",")} %</span><span class="m-l">Rendimiento</span></div>
       <div><span class="m-n">${eur(b.pendiente)}</span><span class="m-l">En juego</span></div>
       <div>${b.real === null ? `<span class="m-n">—</span><span class="m-l">Acierto · sin apuestas cerradas</span>`
@@ -893,7 +895,7 @@ select, input { background: var(--panel-2); border: 1px solid var(--line); borde
   function render() {
     const v = vista(), b = banca(), app = document.getElementById("app");
     document.querySelectorAll(".tabs a").forEach(a => a.classList.toggle("on", a.dataset.v === v));
-    document.getElementById("saldo-chip").textContent = eur(b.saldo);
+    document.getElementById("saldo-chip").textContent = eur(b.disponible);
     if (st.error && !st.dias.length && v !== "banca") { app.innerHTML = `<section class="card vacio"><h2>No se pueden cargar los datos</h2><p class="muted">${esc(st.error)}</p></section>`; return; }
     if (v === "banca") { app.innerHTML = vistaBanca(b); conectarGrafica(b); return; }
     if (!st.cargado) return;
