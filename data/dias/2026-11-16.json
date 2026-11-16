@@ -16,7 +16,9 @@
       "prob": 0.74,
       "motivo": "Feroe lleva 5 empates, todos con gol: 1-1 y 2-2 con Kazajistán, 1-1 y 2-2 con Eslovaquia, 1-1 en Moldavia. Los partidos de Moldavia tuvieron 2, 2, 3, 4 y 3 goles. Los dos se juegan la segunda plaza.",
       "riesgo": "Aplico la lección de svk-fro: contra Feroe, que empata siempre, evito el 1X2 seco. Un 0-0 o un 1-0 en Tórshavn tumba el pick.",
-      "alternativa": "Ambos marcan (~55 %, ~1,85)"
+      "alternativa": "Ambos marcan (~55 %, ~1,85)",
+      "resultado": "fallo",
+      "marcador": "1-0"
     },
     {
       "id": "kaz-svk",
@@ -30,7 +32,9 @@
       "prob": 0.57,
       "motivo": "Kazajistán ha marcado en sus 5 partidos (1-1 y 2-2 con Feroe, 1-2 en Eslovaquia). Eslovaquia también marcó en los 5 y encajó con Feroe (1-1 y 2-2) y con Kazajistán (2-1).",
       "riesgo": "Eslovaquia ya es primera y puede rotar. Lección de rou-pol: es favorita visitante y Kazajistán se juega no ser última, así que evito el 1X2. Pick de riesgo medio.",
-      "alternativa": "Más de 2,5 goles (~52 %, ~1,95)"
+      "alternativa": "Más de 2,5 goles (~52 %, ~1,95)",
+      "resultado": "acierto",
+      "marcador": "2-2"
     },
     {
       "id": "est-bul",
@@ -44,7 +48,9 @@
       "prob": 0.64,
       "motivo": "Los 5 partidos de Estonia acabaron con 2 goles o menos: 1-1 y 0-0 con Islandia, 0-0 en Bulgaria, 1-0 y 1-0 a Luxemburgo. Bulgaria solo marcó a Luxemburgo (1 y 2 goles).",
       "riesgo": "Los goles altos de Bulgaria (0-3 y 0-5) fueron contra Islandia. Tengo en cuenta la lección de cyp-mne, pero aquí Estonia apenas marca: 3 goles en 5 partidos.",
-      "alternativa": "Estonia o empate (~68 %, ~1,35)"
+      "alternativa": "Estonia o empate (~68 %, ~1,35)",
+      "resultado": "fallo",
+      "marcador": "2-1"
     },
     {
       "id": "isl-lux",
@@ -58,7 +64,9 @@
       "prob": 0.56,
       "motivo": "Islandia ganó 0-3 en Luxemburgo y 3-0 y 0-5 a Bulgaria. Luxemburgo solo ha marcado 2 goles en 5 partidos, los dos contra Bulgaria. Islandia necesita ganar para asegurar el primer puesto.",
       "riesgo": "Contra Estonia, Islandia no pasó del 1-1 y del 0-0. Si se adelanta pronto puede bajar el ritmo. Riesgo medio.",
-      "alternativa": "Islandia gana (~78 %, ~1,26)"
+      "alternativa": "Islandia gana (~78 %, ~1,26)",
+      "resultado": "acierto",
+      "marcador": "3-0"
     },
     {
       "id": "ltu-lie",
@@ -72,7 +80,9 @@
       "prob": 0.62,
       "motivo": "Liechtenstein no ha marcado en 3 partidos (0-2 con Lituania, 0-0 y 0-1 con Azerbaiyán). Lituania ya le ganó 0-2 fuera y en casa es favorita a 1,10.",
       "riesgo": "Lituania marca poco: 1-1 y 0-1 con Azerbaiyán. Un 1-0 corto es posible.",
-      "alternativa": "Liechtenstein no marca (~75 %, ~1,30)"
+      "alternativa": "Liechtenstein no marca (~75 %, ~1,30)",
+      "resultado": "fallo",
+      "marcador": "2-1"
     },
     {
       "id": "ger-ned",
@@ -86,7 +96,9 @@
       "prob": 0.62,
       "motivo": "Países Bajos marcó en sus 5 partidos, también contra Alemania (1-1) y Grecia (2-2 y 7-0). Alemania encajó con Países Bajos, Grecia y Serbia. Alemania necesita ganar para el pase y la casa pone la línea de goles en 3,5.",
       "riesgo": "No hay parte de bajas de hoy. En el grupo hubo partidos cerrados: Alemania 0-1 y 0-0 con Grecia.",
-      "alternativa": "Más de 2,5 goles (~60 %, ~1,50)"
+      "alternativa": "Más de 2,5 goles (~60 %, ~1,50)",
+      "resultado": "fallo",
+      "marcador": "5-0"
     },
     {
       "id": "gre-srb",
@@ -100,7 +112,9 @@
       "prob": 0.64,
       "motivo": "Serbia lleva 5 derrotas y ya no se juega nada. Grecia ya le ganó 1-2 en Belgrado y necesita ganar para pelear la segunda plaza con Alemania. Juega en Volos.",
       "riesgo": "Grecia viene de perder 7-0 en Países Bajos. Serbia marcó en 4 de 5 partidos, aunque contra rivales mejores (Alemania y Países Bajos).",
-      "alternativa": "Grecia o empate (~82 %, ~1,12)"
+      "alternativa": "Grecia o empate (~82 %, ~1,12)",
+      "resultado": "acierto",
+      "marcador": "1-0"
     },
     {
       "id": "gib-mlt",
@@ -114,7 +128,9 @@
       "prob": 0.66,
       "motivo": "Los 3 partidos de Malta tuvieron 3, 2 y 1 goles (1-1 con Gibraltar en la ida). Los de Gibraltar, 0, 2 y 2. Grupo de muy pocos goles.",
       "riesgo": "Malta ya es primera y puede jugar suelta (lección de cyp-mne). Por eso no subo del 66 %. Malta es favorita fuera, así que evito el 1X2 (lección de rou-pol).",
-      "alternativa": "Malta o empate (~75 %, ~1,22)"
+      "alternativa": "Malta o empate (~75 %, ~1,22)",
+      "resultado": "acierto",
+      "marcador": "1-1"
     },
     {
       "id": "mkd-svn",
@@ -128,7 +144,9 @@
       "prob": 0.62,
       "motivo": "Macedonia lleva 5 derrotas y 1 gol a favor (0-3 y 0-3 con Suiza, 0-2 con Eslovenia y Escocia). Eslovenia necesita ganar para asegurar la segunda plaza ante Escocia.",
       "riesgo": "Eslovenia marca poco: 5 goles en 5 partidos, 2 de ellos a Macedonia. Es favorita fuera, pero Macedonia ya no se juega nada.",
-      "alternativa": "Menos de 2,5 goles (~60 %, ~1,60)"
+      "alternativa": "Menos de 2,5 goles (~60 %, ~1,60)",
+      "resultado": "acierto",
+      "marcador": "0-3"
     }
   ],
   "combinadas": [
