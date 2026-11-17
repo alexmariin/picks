@@ -613,7 +613,7 @@ select, input { background: var(--panel-2); border: 1px solid var(--line); borde
   const RES_TXT = { acierto: "Acertado", fallo: "Fallado", nulo: "Nulo" };
   function badgePick(p) {
     if (!p.resultado) return "";
-    return `<span class="badge ${p.resultado}">${RES_TXT[p.resultado] || ""}${p.marcador ? " · " + esc(p.marcador) : ""}</span>`;
+    return `<span class="badge ${p.resultado}">${RES_TXT[p.resultado] || ""}${p.marcador ? " · " + esc(p.marcador) : ""}${p.dato ? " · " + esc(p.dato) : ""}</span>`;
   }
   function estadoComb(lista) {
     if (lista.some(p => p.resultado === "fallo")) return "perdida";
