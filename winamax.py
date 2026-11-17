@@ -8,7 +8,11 @@ Uso (desde la raíz del repo):
     python3 winamax.py mercados <id>                -> lista de todos los mercados de ese partido (solo títulos)
     python3 winamax.py mercados <id> <texto> [...]  -> cuotas de los mercados cuyo título contiene ese texto
         ej.: python3 winamax.py mercados 68932056 "remates a puerta" "tiros a puerta por" goleador tarjetas córneres
+    python3 winamax.py volcar                       -> guarda los mercados clave (remates, remates a puerta, goleador,
+        tarjeta de jugador, tiros por equipo, córners, tarjetas) de los partidos grandes de hoy
 Lo que imprimas con <texto> se guarda en data/cuotas/AAAA-MM-DD-winamax.json (para medir después).
+OJO: la red de la rutina en la nube NO llega a winamax.es. Allí, lee data/cuotas/AAAA-MM-DD-winamax.json,
+que sube el PC del usuario por la mañana con `volcar` (formato: partidos -> mercados -> [[opción, cuota], ...]).
 
 Pide como mucho una página cada 2 segundos y solo los partidos que vayas a analizar.
 En mercados de jugador la cuota es de un solo lado (no hay "no lo hace"), así que no hay probabilidad justa:
@@ -114,11 +118,59 @@ def mercados(mid, textos):
     print(f"\nGuardado en {archivo.relative_to(BASE)}")
 
 
+CLAVE = {"Realiza 1 o más remates a puerta", "Realiza 2 o más remates a puerta", "Realiza 1 o más remates",
+         "Realiza 2 o más remates", "Realiza 3 o más remates", "Goleador", "El jugador recibe una o más tarjetas",
+         "Número total córneres", "Número total de tarjetas", "Córneres - Resultado", "Hándicap asiático córner",
+         "Tiros a puerta - Resultado", "Tiros - Resultado"}
+
+
+def clave(titulo):
+    t = titulo.strip()
+    return t in CLAVE or t.startswith("Número de tiros") or t.startswith("Número total córneres ")
+
+
+def volcar(maximo=25):
+    """Para el PC del usuario: guarda los mercados clave de los partidos grandes de hoy en data/cuotas/AAAA-MM-DD-winamax.json."""
+    st = estado("/sports/1")
+    hoy = datetime.now(MADRID).date()
+    ahora = datetime.now(MADRID).timestamp()
+    lista = [m for m in st.get("matches", {}).values()
+             if m.get("sportId") == 1 and m.get("competitor2Name") and m.get("matchStart", 0) > ahora
+             and hora(m["matchStart"]).date() == hoy and (m.get("moreBets") or 0) >= 150]
+    lista = sorted(lista, key=lambda m: -(m.get("moreBets") or 0))[:maximo]
+    datos = {"fecha": hoy.isoformat(), "generado": datetime.now(MADRID).strftime("%H:%M"), "partidos": {}}
+    for m in sorted(lista, key=lambda m: m["matchStart"]):
+        try:
+            sm = estado(f"/match/{m['matchId']}")
+        except OSError as e:
+            print(f"{m['title']}: error {e}")
+            continue
+        torneo = st.get("tournaments", {}).get(str(m.get("tournamentId")), {}).get("tournamentName", "")
+        p = {"partido": m["title"], "torneo": torneo, "hora": f"{hora(m['matchStart']):%H:%M}", "mercados": {}}
+        for b in sm.get("bets", {}).values():
+            if b.get("matchId") != m["matchId"] or not b.get("available", True) or not clave(b["betTitle"]):
+                continue
+            for o in b.get("outcomes", []):
+                out, cuota = sm.get("outcomes", {}).get(str(o), {}), sm.get("odds", {}).get(str(o))
+                if cuota and out.get("available", True):
+                    eq = {1: m.get("competitor1Name"), 2: m.get("competitor2Name")}.get(out.get("team"))
+                    p["mercados"].setdefault(b["betTitle"].strip(), []).append(
+                        [out.get("label", "").strip() + (f" ({eq})" if eq else ""), cuota])
+        datos["partidos"][str(m["matchId"])] = p
+        print(f"{p['hora']} {p['partido']} · {torneo} · {len(p['mercados'])} mercados guardados")
+    archivo = BASE / "data" / "cuotas" / f"{hoy.isoformat()}-winamax.json"
+    archivo.parent.mkdir(parents=True, exist_ok=True)
+    archivo.write_text(json.dumps(datos, ensure_ascii=False, separators=(",", ":")) + "\n", encoding="utf-8")
+    print(f"Guardado en {archivo.relative_to(BASE)} ({archivo.stat().st_size // 1024} KB)")
+
+
 def main():
-    if len(sys.argv) < 2 or sys.argv[1] not in ("partidos", "mercados"):
+    if len(sys.argv) < 2 or sys.argv[1] not in ("partidos", "mercados", "volcar"):
         sys.exit(__doc__)
     try:
-        if sys.argv[1] == "partidos":
+        if sys.argv[1] == "volcar":
+            volcar()
+        elif sys.argv[1] == "partidos":
             partidos(" ".join(sys.argv[2:]))
         else:
             if len(sys.argv) < 3:
