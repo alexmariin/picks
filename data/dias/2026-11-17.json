@@ -16,7 +16,9 @@
       "prob": 0.68,
       "motivo": "Se juegan el segundo puesto y los cuartos: a Dinamarca le vale el empate, Noruega tiene que ganar. Los 5 partidos de Noruega pasaron de 2,5 goles (3-2 a Dinamarca, 1-2 con Portugal, 2-1 en Gales, 2-1 en Oporto, 3-1 a Gales). Dinamarca marcó 4 en Braga y 2 a Portugal. La ida acabó 3-2. El mercado da un 69 %.",
       "riesgo": "Dinamarca puede cerrarse con el empate. Lección del 16/11: en la última jornada no subo del 70 % en goles por una racha. Cuota baja; mediana del mercado (Winamax no la da).",
-      "alternativa": "Ambos marcan (~62 %, ~1,55)"
+      "alternativa": "Ambos marcan (~62 %, ~1,55)",
+      "resultado": "acierto",
+      "marcador": "2-3"
     },
     {
       "id": "wal-por",
@@ -30,7 +32,9 @@
       "prob": 0.68,
       "motivo": "Portugal necesita no perder para ser primera: si pierde y Dinamarca gana, Dinamarca la supera por el golaverage particular (4-2 y 1-4). Gales ya es última pase lo que pase y solo ha marcado 3 goles en 5 partidos. Portugal ganó 1-0 en la ida y ganó en Oslo.",
       "riesgo": "Winamax paga poco: valor -0,09 frente a Pinnacle (prob justa 67,6 %). Por eso no va en ningún doble. Viene de perder 1-4 con Dinamarca.",
-      "alternativa": "Gales no marca (~55 %)"
+      "alternativa": "Gales no marca (~55 %)",
+      "resultado": "acierto",
+      "marcador": "2-3"
     },
     {
       "id": "hun-nir",
@@ -44,7 +48,9 @@
       "prob": 0.65,
       "motivo": "Final por el ascenso: Irlanda del Norte (11 puntos) sube con el empate, Hungría (10) tiene que ganar. Irlanda del Norte no ha encajado ni un gol en 5 partidos. Hungría: 0-1 con Ucrania, 0-0 en Belfast, 1-0 a Georgia, 1-2 en Ucrania, 0-2 en Georgia. En el grupo van 12 goles en 10 partidos.",
       "riesgo": "Si Hungría marca pronto, Irlanda del Norte tendrá que salir. Lección de cyp-mne: aquí ninguno está clasificado y los dos marcan poco, así que no aplica. Mediana del mercado (prob justa ~61 %).",
-      "alternativa": "Irlanda del Norte o empate (~51 %, ~1,85)"
+      "alternativa": "Irlanda del Norte o empate (~51 %, ~1,85)",
+      "resultado": "acierto",
+      "marcador": "1-1"
     },
     {
       "id": "ukr-geo",
@@ -58,7 +64,9 @@
       "prob": 0.65,
       "motivo": "Georgia no ha marcado en sus 5 partidos (0-1, 0-0, 0-1, 0-0 y 0-2, contra Irlanda del Norte, Ucrania y Hungría). Ucrania solo lleva 2 goles. La ida fue 0-0. 8 de los 10 partidos de los dos tuvieron 2 goles o menos. A Ucrania le vale el empate para no quedar última.",
       "riesgo": "Me alejo 7 puntos del mercado (~58 %) por los datos de gol tan bajos. Georgia tiene que ganar y puede abrirse al final. Mediana del mercado.",
-      "alternativa": "Georgia no marca (~55 %)"
+      "alternativa": "Georgia no marca (~55 %)",
+      "resultado": "acierto",
+      "marcador": "1-0"
     },
     {
       "id": "irl-kos",
@@ -72,7 +80,9 @@
       "prob": 0.63,
       "motivo": "Se juegan el segundo puesto (playoff de ascenso): a Kosovo le vale el empate y se cerrará. Kosovo: 1-0 a Irlanda, 1-3 en Austria, 0-0 con Israel, 1-1 con Austria y 0-0 con Israel; solo 7 goles en sus 5 partidos. Irlanda marcó 0 en Kosovo y en Austria.",
       "riesgo": "Irlanda tiene que ganar en casa y atacará; su 3-0 fue contra Israel. Mediana del mercado (prob justa ~61 %).",
-      "alternativa": "Kosovo o empate (~54 %, ~1,75)"
+      "alternativa": "Kosovo o empate (~54 %, ~1,75)",
+      "resultado": "fallo",
+      "marcador": "3-0"
     },
     {
       "id": "pol-swe",
@@ -86,7 +96,9 @@
       "prob": 0.61,
       "motivo": "Ninguno se juega nada: Suecia ya ha subido y Polonia no puede moverse. Suecia ha marcado en los 5 partidos (10 goles, entre ellos 3-1 a Polonia y 3-2 a Bosnia). Polonia encajó 3 en Suecia y 2 en Rumanía. 3 de 5 partidos de cada uno pasaron de 2,5.",
       "riesgo": "Partido sin nada en juego: puede ser abierto o muy flojo. Lección del 16/11 sobre rachas en la última jornada. Riesgo medio: no va en dobles.",
-      "alternativa": "Ambos marcan (~58 %, ~1,70)"
+      "alternativa": "Ambos marcan (~58 %, ~1,70)",
+      "resultado": "fallo",
+      "marcador": "1-1"
     }
   ],
   "combinadas": [
@@ -94,23 +106,50 @@
       "id": "segura",
       "nombre": "La segura",
       "descripcion": "Goles en Copenhague, Portugal en Cardiff y pocos goles en Budapest. Cuota de unas 2,8.",
-      "picks": ["den-nor", "wal-por", "hun-nir"]
+      "picks": [
+        "den-nor",
+        "wal-por",
+        "hun-nir"
+      ]
     },
     {
       "id": "equilibrada",
       "nombre": "La equilibrada",
       "descripcion": "Pocos goles en Ucrania-Georgia y en Dublín, y goles en Polonia-Suecia. Cuota de unas 3,8.",
-      "picks": ["ukr-geo", "irl-kos", "pol-swe"]
+      "picks": [
+        "ukr-geo",
+        "irl-kos",
+        "pol-swe"
+      ]
     },
     {
       "id": "sonadora",
       "nombre": "La soñadora",
       "descripcion": "Un pick de cada uno de los 6 partidos buenos. Cuota de unas 10,8. Es un capricho para echar lo mínimo.",
-      "picks": ["den-nor", "wal-por", "hun-nir", "ukr-geo", "irl-kos", "pol-swe"]
+      "picks": [
+        "den-nor",
+        "wal-por",
+        "hun-nir",
+        "ukr-geo",
+        "irl-kos",
+        "pol-swe"
+      ]
     }
   ],
   "dobles": [
-    {"id": "d1", "picks": ["den-nor", "hun-nir"]},
-    {"id": "d2", "picks": ["ukr-geo", "irl-kos"]}
+    {
+      "id": "d1",
+      "picks": [
+        "den-nor",
+        "hun-nir"
+      ]
+    },
+    {
+      "id": "d2",
+      "picks": [
+        "ukr-geo",
+        "irl-kos"
+      ]
+    }
   ]
 }
