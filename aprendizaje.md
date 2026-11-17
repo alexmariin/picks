@@ -30,8 +30,8 @@ _Actualizado con 43 picks cerrados (de 2026-11-12 a 2026-11-16)._
 | Goles totales | 17 | 14 | 82% | 66% | +4.58 u (+27%) |
 | 1X2 | 12 | 11 | 92% | 69% | +3.60 u (+30%) |
 | Doble oportunidad | 8 | 6 | 75% | 76% | -0.47 u (-6%) |
-| Ambos marcan | 3 | 2 | 67% | 60% | +0.50 u (+17%) |
 | Handicap | 3 | 2 | 67% | 66% | +0.05 u (+2%) |
+| Ambos marcan | 3 | 2 | 67% | 60% | +0.50 u (+17%) |
 
 ### Por cuota
 | Grupo | Picks | Aciertos | % real | % que dije | Neto a 1 u por pick |
