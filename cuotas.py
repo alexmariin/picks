@@ -13,6 +13,16 @@ Para cada partido saca:
 - La mejor cuota de todas las casas y la mediana.
 - VALOR = prob_justa(Pinnacle) x cuota_Winamax - 1. Si es positivo, Winamax paga más de lo que vale de verdad.
 Guarda todo en data/cuotas/AAAA-MM-DD.json (no lo lee la web; es para el analista y para medir después).
+
+MERCADOS EXTRA DE UN PARTIDO (córners, tarjetas, ambos marcan, doble oportunidad...):
+    python3 cuotas.py partido <liga> <texto de un equipo> [mercados]
+    ej.: python3 cuotas.py partido soccer_spain_la_liga betis
+         python3 cuotas.py partido soccer_epl arsenal alternate_totals_corners,alternate_totals_cards
+Mercados por defecto: alternate_totals_corners,alternate_team_totals_corners.
+Otros: corners_1x2, alternate_spreads_corners, alternate_totals_cards, btts, double_chance, draw_no_bet, team_totals.
+Gasta 1 consulta por cada mercado QUE DEVUELVA (región eu). Úsalo como mucho en 3 partidos al día.
+Si quedan menos de 150 consultas no lo hace (las guarda para el 1X2 y los goles).
+Los mercados de jugador (remates, goleador) solo los dan casas de EE. UU.: no están aquí.
 """
 import json
 import os
@@ -79,9 +89,85 @@ def resumen(partido):
     return out
 
 
+MINIMO_EXTRA = 150
+EXTRA_DEF = "alternate_totals_corners,alternate_team_totals_corners"
+
+
+def extra(liga, texto, mercados, guardado):
+    """Mercados extra de UN partido de hoy. La lista de partidos (/events) no gasta consultas."""
+    eventos, quedan = pedir(f"/sports/{liga}/events/")
+    if quedan is not None and int(quedan) < MINIMO_EXTRA:
+        print(f"Quedan {quedan} consultas: no pido mercados extra (reserva para 1X2 y goles).")
+        return
+    hoy = datetime.now(MADRID).date()
+    t = texto.lower()
+    ev = [e for e in eventos if datetime.fromisoformat(e["commence_time"].replace("Z", "+00:00")).astimezone(MADRID).date() == hoy
+          and (t in e["home_team"].lower() or t in e["away_team"].lower())]
+    if not ev:
+        print(f"No encuentro hoy un partido de {liga} con '{texto}'. Partidos de hoy:")
+        for e in eventos:
+            print("  ", e["home_team"], "-", e["away_team"], e["commence_time"])
+        return
+    e = ev[0]
+    datos, quedan = pedir(f"/sports/{liga}/events/{e['id']}/odds/?regions=eu&markets={mercados}&oddsFormat=decimal")
+    casas = {c["key"]: c for c in datos.get("bookmakers", [])}
+    wina = casas.get("winamax_fr") or casas.get("winamax_de") or {}
+    pinn = casas.get("pinnacle") or {}
+    res = {"local": e["home_team"], "visitante": e["away_team"], "mercados": {}}
+    print(f"\n== {e['home_team']} - {e['away_team']} · casas: {len(casas)} · consultas que quedan: {quedan}")
+
+    def grupos(casa, clave):
+        g = {}
+        for m in casa.get("markets", []):
+            if m["key"] == clave:
+                for o in m["outcomes"]:
+                    g.setdefault((o.get("description", ""), o.get("point")), {})[o["name"]] = o["price"]
+        return g
+
+    claves = sorted({m["key"] for c in casas.values() for m in c.get("markets", [])})
+    for clave in claves:
+        filas = []
+        todas = {}
+        for c in casas.values():
+            for gk, precios in grupos(c, clave).items():
+                for n, v in precios.items():
+                    todas.setdefault((gk, n), []).append(v)
+        w, p = grupos(wina, clave), grupos(pinn, clave)
+        for (gk, n), lista in sorted(todas.items(), key=lambda x: (str(x[0][0][0]), x[0][0][1] or 0, x[0][1])):
+            just = justas(p.get(gk, {})).get(n)
+            wv = w.get(gk, {}).get(n)
+            filas.append({"equipo": gk[0], "linea": gk[1], "opcion": n, "winamax": wv, "mediana": round(statistics.median(lista), 2),
+                          "mejor": max(lista), "pinnacle_justa": round(just, 3) if just else None,
+                          "valor_winamax": round(just * wv - 1, 3) if just and wv else None, "casas": len(lista)})
+        res["mercados"][clave] = filas
+        print(f"  [{clave}]")
+        for f in filas:
+            print(f"   {(f['equipo'] + ' ') if f['equipo'] else ''}{f['opcion']} {f['linea'] if f['linea'] is not None else ''}: "
+                  f"Winamax {f['winamax'] or '—'} | mediana {f['mediana']} ({f['casas']} casas) | prob justa {f['pinnacle_justa'] or '—'}"
+                  f" | valor Winamax {f['valor_winamax'] if f['valor_winamax'] is not None else '—'}")
+    if not claves:
+        print("  Ninguna casa ofrece esos mercados para este partido (no gasta consultas).")
+    guardado.setdefault("extra", []).append(res)
+
+
 def main():
     if len(sys.argv) < 2:
         sys.exit(__doc__)
+    if sys.argv[1] == "partido":
+        if len(sys.argv) < 4:
+            sys.exit(__doc__)
+        hoy = datetime.now(MADRID).date()
+        archivo = BASE / "data" / "cuotas" / f"{hoy.isoformat()}.json"
+        guardado = json.loads(archivo.read_text(encoding="utf-8")) if archivo.exists() else {"fecha": hoy.isoformat(), "ligas": {}}
+        try:
+            extra(sys.argv[2], sys.argv[3], sys.argv[4] if len(sys.argv) > 4 else EXTRA_DEF, guardado)
+        except Exception as e:  # noqa: BLE001
+            print(f"error {e}")
+            return
+        archivo.parent.mkdir(parents=True, exist_ok=True)
+        archivo.write_text(json.dumps(guardado, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        print(f"\nGuardado en {archivo.relative_to(BASE)}")
+        return
     if sys.argv[1] == "ligas":
         datos, _ = pedir("/sports/")
         for s in datos:
