@@ -635,10 +635,23 @@ select, input { background: var(--panel-2); border: 1px solid var(--line); borde
   function doblesDelDia(dia) {
     const cfg = st.cfg, porId = Object.fromEntries((dia.picks || []).map(p => [p.id, p]));
     let pares = (dia.dobles || []).map(x => ({ id: x.id, ids: x.picks || [] }));
-    if (!pares.length) {
+    if (!pares.length && dia.fecha < "2026-11-17") {
+      // emparejado antiguo: se deja igual para no cambiar el historial ya publicado
       const cand = (dia.picks || []).filter(p => p.cuota >= 1.2).map(p => ({ id: p.id, pa: probAj(p.prob, p.cuota, cfg) }))
         .sort((a, b) => b.pa - a.pa).slice(0, cfg.max_dobles * 2);
       for (let i = 0; i + 1 < cand.length; i += 2) pares.push({ id: "d" + (i / 2 + 1), ids: [cand[i].id, cand[i + 1].id] });
+    } else if (!pares.length) {
+      // mismo filtro que la rutina: prob >= 0,62, cuota >= 1,25, nada flojo; un pick por partido; emparejado equilibrado (mejor con peor)
+      const flojo = p => /flojo|50 ?- ?50|50 ?%/i.test(p.riesgo || "");
+      const vistos = new Set();
+      let cand = (dia.picks || [])
+        .filter(p =>p.prob >= 0.62 && p.cuota >= 1.25 && !flojo(p))
+        .map(p => ({ id: p.id, partido: p.local + "|" + p.visitante, pa: probAj(p.prob, p.cuota, cfg) }))
+        .sort((a, b) => b.pa - a.pa)
+        .filter(c => !vistos.has(c.partido) && vistos.add(c.partido))
+        .slice(0, cfg.max_dobles * 2);
+      if (cand.length % 2) cand = cand.slice(0, -1);
+      for (let i = 0; i < cand.length / 2; i++) pares.push({ id: "d" + (i + 1), ids: [cand[i].id, cand[cand.length - 1 - i].id] });
     }
     return pares.slice(0, cfg.max_dobles).map((x, i) => {
       const lista = x.ids.map(id => porId[id]).filter(Boolean);
