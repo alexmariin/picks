@@ -54,8 +54,8 @@ _Actualizado con 49 picks cerrados (de 2026-11-12 a 2026-11-17)._
 ### Por competición
 | Grupo | Picks | Aciertos | % real | % que dije | Neto a 1 u por pick |
 |---|---|---|---|---|---|
-| Nations League A | 16 | 14 | 88% | 68% | +4.26 u (+27%) |
 | Nations League C | 16 | 12 | 75% | 69% | +1.72 u (+11%) |
+| Nations League A | 16 | 14 | 88% | 68% | +4.26 u (+27%) |
 | Nations League B | 13 | 10 | 77% | 67% | +1.70 u (+13%) |
 | Nations League D | 4 | 3 | 75% | 67% | +0.45 u (+11%) |
 

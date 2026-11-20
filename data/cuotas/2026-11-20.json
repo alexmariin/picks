@@ -1,0 +1,462 @@
+{
+  "fecha": "2026-11-20",
+  "ligas": {
+    "soccer_spain_la_liga": {
+      "pedido": "09:14",
+      "partidos": [
+        {
+          "local": "Athletic Bilbao",
+          "visitante": "Espanyol",
+          "hora": "21:00",
+          "winamax": {
+            "1": 1.4,
+            "X": 4.5,
+            "2": 5.75
+          },
+          "pinnacle_justa": {
+            "1": 0.64,
+            "X": 0.209,
+            "2": 0.15
+          },
+          "mejor": {
+            "1": 1.53,
+            "X": 4.7,
+            "2": 7.5,
+            "menos_2.5": 2.26,
+            "mas_2.5": 1.83
+          },
+          "mediana": {
+            "1": 1.48,
+            "X": 4.53,
+            "2": 6.5,
+            "menos_2.5": 2.1,
+            "mas_2.5": 1.73
+          },
+          "valor_winamax": {
+            "1": -0.103,
+            "X": -0.058,
+            "2": -0.136
+          }
+        }
+      ]
+    },
+    "soccer_germany_bundesliga": {
+      "pedido": "09:14",
+      "partidos": [
+        {
+          "local": "Bayern Munich",
+          "visitante": "1. FC Köln",
+          "hora": "20:30",
+          "winamax": {
+            "X": 14.0,
+            "1": 1.04,
+            "2": 18.0
+          },
+          "pinnacle_justa": {
+            "X": 0.062,
+            "1": 0.898,
+            "2": 0.039
+          },
+          "mejor": {
+            "X": 17.5,
+            "1": 1.09,
+            "2": 36.0,
+            "menos_2.5": 6.13,
+            "mas_2.5": 1.13
+          },
+          "mediana": {
+            "X": 13.5,
+            "1": 1.07,
+            "2": 23.0,
+            "menos_2.5": 6.0,
+            "mas_2.5": 1.12
+          },
+          "valor_winamax": {
+            "X": -0.126,
+            "1": -0.066,
+            "2": -0.29
+          }
+        }
+      ]
+    },
+    "soccer_france_ligue_one": {
+      "pedido": "09:14",
+      "partidos": [
+        {
+          "local": "Troyes",
+          "visitante": "Le Havre",
+          "hora": "20:45",
+          "winamax": {
+            "X": 3.3,
+            "2": 3.05,
+            "1": 2.1
+          },
+          "pinnacle_justa": {
+            "X": 0.28,
+            "2": 0.285,
+            "1": 0.435,
+            "menos_2.5": 0.496,
+            "mas_2.5": 0.504
+          },
+          "mejor": {
+            "X": 3.67,
+            "2": 3.45,
+            "1": 2.32,
+            "menos_2.5": 1.98,
+            "mas_2.5": 1.96
+          },
+          "mediana": {
+            "X": 3.35,
+            "2": 3.28,
+            "1": 2.22,
+            "menos_2.5": 1.94,
+            "mas_2.5": 1.85
+          },
+          "valor_winamax": {
+            "X": -0.075,
+            "2": -0.13,
+            "1": -0.087
+          }
+        }
+      ]
+    },
+    "soccer_epl": {
+      "pedido": "09:14",
+      "partidos": []
+    },
+    "soccer_italy_serie_a": {
+      "pedido": "09:14",
+      "partidos": []
+    }
+  },
+  "extra": [
+    {
+      "local": "Bayern Munich",
+      "visitante": "1. FC Köln",
+      "mercados": {
+        "alternate_team_totals_corners": [
+          {
+            "equipo": "1. FC Köln",
+            "linea": 2.5,
+            "opcion": "Over",
+            "winamax": null,
+            "mediana": 1.71,
+            "mejor": 1.71,
+            "pinnacle_justa": 0.539,
+            "valor_winamax": null,
+            "casas": 1
+          },
+          {
+            "equipo": "1. FC Köln",
+            "linea": 2.5,
+            "opcion": "Under",
+            "winamax": null,
+            "mediana": 2.0,
+            "mejor": 2.0,
+            "pinnacle_justa": 0.461,
+            "valor_winamax": null,
+            "casas": 1
+          },
+          {
+            "equipo": "Bayern Munich",
+            "linea": 7.5,
+            "opcion": "Over",
+            "winamax": null,
+            "mediana": 1.82,
+            "mejor": 1.82,
+            "pinnacle_justa": 0.508,
+            "valor_winamax": null,
+            "casas": 1
+          },
+          {
+            "equipo": "Bayern Munich",
+            "linea": 7.5,
+            "opcion": "Under",
+            "winamax": null,
+            "mediana": 1.88,
+            "mejor": 1.88,
+            "pinnacle_justa": 0.492,
+            "valor_winamax": null,
+            "casas": 1
+          }
+        ],
+        "alternate_totals_corners": [
+          {
+            "equipo": "",
+            "linea": 9.5,
+            "opcion": "Over",
+            "winamax": null,
+            "mediana": 1.49,
+            "mejor": 1.49,
+            "pinnacle_justa": 0.605,
+            "valor_winamax": null,
+            "casas": 1
+          },
+          {
+            "equipo": "",
+            "linea": 9.5,
+            "opcion": "Under",
+            "winamax": null,
+            "mediana": 2.28,
+            "mejor": 2.28,
+            "pinnacle_justa": 0.395,
+            "valor_winamax": null,
+            "casas": 1
+          },
+          {
+            "equipo": "",
+            "linea": 10.0,
+            "opcion": "Over",
+            "winamax": null,
+            "mediana": 1.6,
+            "mejor": 1.6,
+            "pinnacle_justa": 0.565,
+            "valor_winamax": null,
+            "casas": 1
+          },
+          {
+            "equipo": "",
+            "linea": 10.0,
+            "opcion": "Under",
+            "winamax": null,
+            "mediana": 2.08,
+            "mejor": 2.08,
+            "pinnacle_justa": 0.435,
+            "valor_winamax": null,
+            "casas": 1
+          },
+          {
+            "equipo": "",
+            "linea": 10.5,
+            "opcion": "Over",
+            "winamax": null,
+            "mediana": 1.81,
+            "mejor": 1.81,
+            "pinnacle_justa": 0.513,
+            "valor_winamax": null,
+            "casas": 1
+          },
+          {
+            "equipo": "",
+            "linea": 10.5,
+            "opcion": "Under",
+            "winamax": null,
+            "mediana": 1.91,
+            "mejor": 1.91,
+            "pinnacle_justa": 0.487,
+            "valor_winamax": null,
+            "casas": 1
+          },
+          {
+            "equipo": "",
+            "linea": 11.0,
+            "opcion": "Over",
+            "winamax": null,
+            "mediana": 1.99,
+            "mejor": 1.99,
+            "pinnacle_justa": 0.455,
+            "valor_winamax": null,
+            "casas": 1
+          },
+          {
+            "equipo": "",
+            "linea": 11.0,
+            "opcion": "Under",
+            "winamax": null,
+            "mediana": 1.66,
+            "mejor": 1.66,
+            "pinnacle_justa": 0.545,
+            "valor_winamax": null,
+            "casas": 1
+          },
+          {
+            "equipo": "",
+            "linea": 11.5,
+            "opcion": "Over",
+            "winamax": null,
+            "mediana": 2.21,
+            "mejor": 2.21,
+            "pinnacle_justa": 0.408,
+            "valor_winamax": null,
+            "casas": 1
+          },
+          {
+            "equipo": "",
+            "linea": 11.5,
+            "opcion": "Under",
+            "winamax": null,
+            "mediana": 1.52,
+            "mejor": 1.52,
+            "pinnacle_justa": 0.592,
+            "valor_winamax": null,
+            "casas": 1
+          }
+        ]
+      }
+    },
+    {
+      "local": "Athletic Bilbao",
+      "visitante": "Espanyol",
+      "mercados": {
+        "alternate_team_totals_corners": [
+          {
+            "equipo": "Athletic Bilbao",
+            "linea": 6.5,
+            "opcion": "Over",
+            "winamax": null,
+            "mediana": 1.98,
+            "mejor": 1.98,
+            "pinnacle_justa": 0.473,
+            "valor_winamax": null,
+            "casas": 1
+          },
+          {
+            "equipo": "Athletic Bilbao",
+            "linea": 6.5,
+            "opcion": "Under",
+            "winamax": null,
+            "mediana": 1.78,
+            "mejor": 1.78,
+            "pinnacle_justa": 0.527,
+            "valor_winamax": null,
+            "casas": 1
+          },
+          {
+            "equipo": "Espanyol",
+            "linea": 3.5,
+            "opcion": "Over",
+            "winamax": null,
+            "mediana": 1.95,
+            "mejor": 1.95,
+            "pinnacle_justa": 0.481,
+            "valor_winamax": null,
+            "casas": 1
+          },
+          {
+            "equipo": "Espanyol",
+            "linea": 3.5,
+            "opcion": "Under",
+            "winamax": null,
+            "mediana": 1.81,
+            "mejor": 1.81,
+            "pinnacle_justa": 0.519,
+            "valor_winamax": null,
+            "casas": 1
+          }
+        ],
+        "alternate_totals_corners": [
+          {
+            "equipo": "",
+            "linea": 9.0,
+            "opcion": "Over",
+            "winamax": null,
+            "mediana": 1.48,
+            "mejor": 1.48,
+            "pinnacle_justa": 0.635,
+            "valor_winamax": null,
+            "casas": 1
+          },
+          {
+            "equipo": "",
+            "linea": 9.0,
+            "opcion": "Under",
+            "winamax": null,
+            "mediana": 2.57,
+            "mejor": 2.57,
+            "pinnacle_justa": 0.365,
+            "valor_winamax": null,
+            "casas": 1
+          },
+          {
+            "equipo": "",
+            "linea": 9.5,
+            "opcion": "Over",
+            "winamax": null,
+            "mediana": 1.68,
+            "mejor": 1.68,
+            "pinnacle_justa": 0.565,
+            "valor_winamax": null,
+            "casas": 1
+          },
+          {
+            "equipo": "",
+            "linea": 9.5,
+            "opcion": "Under",
+            "winamax": null,
+            "mediana": 2.18,
+            "mejor": 2.18,
+            "pinnacle_justa": 0.435,
+            "valor_winamax": null,
+            "casas": 1
+          },
+          {
+            "equipo": "",
+            "linea": 10.0,
+            "opcion": "Over",
+            "winamax": null,
+            "mediana": 1.87,
+            "mejor": 1.87,
+            "pinnacle_justa": 0.512,
+            "valor_winamax": null,
+            "casas": 1
+          },
+          {
+            "equipo": "",
+            "linea": 10.0,
+            "opcion": "Under",
+            "winamax": null,
+            "mediana": 1.96,
+            "mejor": 1.96,
+            "pinnacle_justa": 0.488,
+            "valor_winamax": null,
+            "casas": 1
+          },
+          {
+            "equipo": "",
+            "linea": 10.5,
+            "opcion": "Over",
+            "winamax": null,
+            "mediana": 2.08,
+            "mejor": 2.08,
+            "pinnacle_justa": 0.455,
+            "valor_winamax": null,
+            "casas": 1
+          },
+          {
+            "equipo": "",
+            "linea": 10.5,
+            "opcion": "Under",
+            "winamax": null,
+            "mediana": 1.74,
+            "mejor": 1.74,
+            "pinnacle_justa": 0.545,
+            "valor_winamax": null,
+            "casas": 1
+          },
+          {
+            "equipo": "",
+            "linea": 11.0,
+            "opcion": "Over",
+            "winamax": null,
+            "mediana": 2.4,
+            "mejor": 2.4,
+            "pinnacle_justa": 0.392,
+            "valor_winamax": null,
+            "casas": 1
+          },
+          {
+            "equipo": "",
+            "linea": 11.0,
+            "opcion": "Under",
+            "winamax": null,
+            "mediana": 1.55,
+            "mejor": 1.55,
+            "pinnacle_justa": 0.608,
+            "valor_winamax": null,
+            "casas": 1
+          }
+        ]
+      }
+    }
+  ]
+}
