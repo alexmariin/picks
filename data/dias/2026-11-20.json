@@ -16,7 +16,9 @@
       "prob": 0.71,
       "motivo": "Bayern es líder invicto: 29 goles en 9 jornadas (3,2 por partido) y solo 9 en contra. Pinnacle le da un 90 % de ganar. El Colonia llega sin Hubers, Van den Berg, Skhiri, Dallinga ni Rondic, casi toda su defensa titular y dos delanteros. Las previas dan 3-0 y 4-1.",
       "riesgo": "Bayern sin Neuer (juega Urbig), Davies, Luis Díaz ni Gnabry, y Kane lleva 4 partidos sin marcar. Si marca pronto puede bajar el ritmo. Uso el hándicap porque cumple la lección del 16/11: el Bayern marca más de 2 goles de media. Cuota estimada.",
-      "alternativa": "Más de 8,5 córners en el partido (~68 %, ~1,35)"
+      "alternativa": "Más de 8,5 córners en el partido (~68 %, ~1,35)",
+      "resultado": "fallo",
+      "marcador": "1-1"
     },
     {
       "id": "ath-esp",
@@ -30,7 +32,10 @@
       "prob": 0.64,
       "motivo": "Pinnacle da un 63,5 % al 'más de 9' (con 9 se devuelve), lo que deja el 'más de 8,5' cerca del 67 %. El Athletic ataca por bandas en San Mamés (5 partidos seguidos sin perder en casa) y el Espanyol de Sarabia quiere el balón y no se va a encerrar: partido abierto. Sin delanteros centro, el Athletic centrará más que rematará.",
       "riesgo": "Mercado nuevo, aún sin historial. Le resto 3 puntos al dato de Pinnacle por el margen. Si el Athletic marca pronto y el Espanyol tiene el balón sin profundidad, salen pocos córners. Cuota estimada.",
-      "alternativa": "Athletic gana (~62 %, 1,40 en Winamax, sin valor)"
+      "alternativa": "Athletic gana (~62 %, 1,40 en Winamax, sin valor)",
+      "resultado": "acierto",
+      "marcador": "0-1",
+      "dato": "Córners 9-2"
     },
     {
       "id": "tro-hav",
@@ -44,7 +49,9 @@
       "prob": 0.7,
       "motivo": "Le Havre es último con 2 puntos, sin ganar en 10 jornadas y 22 goles en contra. Troyes (17.º, 8 puntos) juega en casa y ganó 3 de sus últimos 5 en casa contra Le Havre. Pinnacle: 1 al 43,5 % y X al 28 % (71,5 % entre los dos).",
       "riesgo": "Duelo de abajo con nervios. Le Havre estrena entrenador y eso a veces da un empujón. Troyes marca poco (7 goles en 10) y no tiene a Diaz (sancionado). No es un favorito visitante (lección del 14/11), es local. Cuota estimada.",
-      "alternativa": "Menos de 3,5 goles (~73 %, ~1,28)"
+      "alternativa": "Menos de 3,5 goles (~73 %, ~1,28)",
+      "resultado": "acierto",
+      "marcador": "3-1"
     }
   ],
   "combinadas": [
@@ -52,10 +59,20 @@
       "id": "segura",
       "nombre": "La segura",
       "descripcion": "Bayern gana por 2 o más, córners en San Mamés y Troyes no pierde. Tres mercados distintos. Cuota de unas 2,35.",
-      "picks": ["bay-koe", "ath-esp", "tro-hav"]
+      "picks": [
+        "bay-koe",
+        "ath-esp",
+        "tro-hav"
+      ]
     }
   ],
   "dobles": [
-    {"id": "d1", "picks": ["bay-koe", "tro-hav"]}
+    {
+      "id": "d1",
+      "picks": [
+        "bay-koe",
+        "tro-hav"
+      ]
+    }
   ]
 }
