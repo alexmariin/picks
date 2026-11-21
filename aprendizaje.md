@@ -12,7 +12,7 @@ Este archivo es la memoria del analista. Cada día, antes de elegir picks, se le
 ## Lecciones (las escribe el analista, la más nueva arriba)
 - 2026-11-21 · bmg-bvb (Más de 2,5, 0-1): lo elegí porque "el derbi suele tener goles", pero el Gladbach era colista, con 4 puntos y sin ganar en casa. Un colista que apenas marca no aporta su parte al "más". Haré: nunca juego goles por la fama de un partido; miro los goles reales de los dos esta temporada. Si uno de los dos casi no marca, "menos de 3,5" o el favorito gana, no "más de 2,5". (sge-tsg 1-0 fue mala suerte: dos penaltis fallados).
 - 2026-11-21 · Empate no válido: 0 de 3 en un día (ray-val 0-1 fallo; avl-sun 0-0 y sch-vfb 0-0, nulos). Los tres eran favoritos del 66-70 % sin margen contra equipos de la zona baja. El Sunderland se encerró con un bloque bajo (Villa: 73 % de posesión, 17 remates y 0 goles) y el Villa llegaba con 4 partidos sin ganar. Haré: no juego al favorito (ni sin empate) contra un rival de abajo que se encierra si el favorito viene sin ganar; ahí prefiero córners del favorito. Y si el favorito también está en la zona baja (Rayo), no hay pick de ganador. Aún hay pocos picks: es una pista.
-- 2026-11-20/21 · Mercados nuevos: córners 3 de 3. ath-esp (11 córners) y mci-ful (14 córners, 8-6) acertaron aunque el favorito no ganó: al ir por detrás o empatado, sigue atacando. Pocos picks: es una pista, no una regla. Seguir con córners cuando el favorito local ataca por bandas.
+- 2026-11-20/21 · Mercados nuevos: córners 2 de 2. ath-esp (11 córners) y mci-ful (14 córners, 8-6) acertaron aunque el favorito no ganó: al ir por detrás o empatado, sigue atacando. Pocos picks: es una pista, no una regla. Seguir con córners cuando el favorito local ataca por bandas.
 - 2026-11-17 · irl-kos (Menos de 2,5, 3-0): Irlanda tenía que ganar en casa y Kosovo se conformaba con el empate. Irlanda atacó, logró dos penaltis y Kosovo acabó con 10. Lo escribí en el riesgo y lo jugué igual. Haré: si el local está obligado a ganar, no juego "menos de 2,5"; prefiero el local gana o nada. Va con la lección de cyp-mne: el "menos" pide que ninguno de los dos tenga que salir.
 - 2026-11-17 · pol-swe (Más de 2,5, 1-1): partido sin nada en juego (Suecia ya había subido) y salió flojo: 2 goles en 25 minutos y nada más. Haré: en partidos sin nada en juego no juego "más de 2,5"; como mucho "ambos marcan" o "más de 1,5", que aguantan un 1-1.
 - 2026-11-20 · bay-koe (Bayern gana por 2 o más, 1-1) + 2026-11-16 · ltu-lie (Lituania gana por 2 o más, 2-1): el hándicap -1,5 va 2 de 4 y pierde dinero. El Bayern marcaba mucho, pero salió sin Neuer, Davies, Díaz ni Gnabry, con Kane en sequía; el Colonia marcó en el 12' y luego se lesionaron Kane y Olise. Las lesiones fueron mala suerte; las bajas ya se sabían. Haré: hándicap -1,5 solo con un favorito que marque 2 o más goles de media Y con su once casi completo. Con 3 o más titulares fuera, "gana" seco o un mercado de córners. A cuota menor de 1,40 no compensa: un gol tempranero del rival lo tumba.
@@ -37,8 +37,8 @@ _Actualizado con 62 picks cerrados (de 2026-11-12 a 2026-11-21)._
 | Doble oportunidad | 9 | 7 | 78% | 75% | -0.15 u (-2%) |
 | Handicap | 4 | 2 | 50% | 67% | -0.95 u (-24%) |
 | Ambos marcan | 3 | 2 | 67% | 60% | +0.50 u (+17%) |
-| Goles por equipo | 2 | 2 | 100% | 70% | +0.58 u (+29%) |
 | Córners | 2 | 2 | 100% | 65% | +0.74 u (+37%) |
+| Goles por equipo | 2 | 2 | 100% | 70% | +0.58 u (+29%) |
 | Empate no válido | 1 | 0 | 0% | 66% | -1.00 u (-100%) |
 
 ### Por cuota
@@ -60,11 +60,11 @@ _Actualizado con 62 picks cerrados (de 2026-11-12 a 2026-11-21)._
 ### Por competición
 | Grupo | Picks | Aciertos | % real | % que dije | Neto a 1 u por pick |
 |---|---|---|---|---|---|
-| Nations League A | 16 | 14 | 88% | 68% | +4.26 u (+27%) |
 | Nations League C | 16 | 12 | 75% | 69% | +1.72 u (+11%) |
+| Nations League A | 16 | 14 | 88% | 68% | +4.26 u (+27%) |
 | Nations League B | 13 | 10 | 77% | 67% | +1.70 u (+13%) |
-| Nations League D | 4 | 3 | 75% | 67% | +0.45 u (+11%) |
 | Bundesliga | 4 | 1 | 25% | 69% | -2.73 u (-68%) |
+| Nations League D | 4 | 3 | 75% | 67% | +0.45 u (+11%) |
 | Serie A | 3 | 3 | 100% | 67% | +1.03 u (+34%) |
 | LaLiga | 3 | 2 | 67% | 66% | -0.28 u (-9%) |
 | Ligue 1 | 2 | 2 | 100% | 68% | +0.70 u (+35%) |
