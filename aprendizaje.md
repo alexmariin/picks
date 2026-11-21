@@ -10,7 +10,9 @@ Este archivo es la memoria del analista. Cada día, antes de elegir picks, se le
 - Cada lección debe tener fecha y el pick que la originó, y solo se escribe si es una causa concreta y repetible, no mala suerte.
 
 ## Lecciones (las escribe el analista, la más nueva arriba)
-- 2026-11-20 · Mercados nuevos: primer pick de córners, ath-esp (más de 8,5), acertado con holgura (11 córners) aunque el Athletic perdió 0-1: al ir por detrás, el local siguió atacando. Solo 1 pick: es una pista, no una regla. Seguir con córners cuando el favorito local ataca por bandas.
+- 2026-11-21 · bmg-bvb (Más de 2,5, 0-1): lo elegí porque "el derbi suele tener goles", pero el Gladbach era colista, con 4 puntos y sin ganar en casa. Un colista que apenas marca no aporta su parte al "más". Haré: nunca juego goles por la fama de un partido; miro los goles reales de los dos esta temporada. Si uno de los dos casi no marca, "menos de 3,5" o el favorito gana, no "más de 2,5". (sge-tsg 1-0 fue mala suerte: dos penaltis fallados).
+- 2026-11-21 · Empate no válido: 0 de 3 en un día (ray-val 0-1 fallo; avl-sun 0-0 y sch-vfb 0-0, nulos). Los tres eran favoritos del 66-70 % sin margen contra equipos de la zona baja. El Sunderland se encerró con un bloque bajo (Villa: 73 % de posesión, 17 remates y 0 goles) y el Villa llegaba con 4 partidos sin ganar. Haré: no juego al favorito (ni sin empate) contra un rival de abajo que se encierra si el favorito viene sin ganar; ahí prefiero córners del favorito. Y si el favorito también está en la zona baja (Rayo), no hay pick de ganador. Aún hay pocos picks: es una pista.
+- 2026-11-20/21 · Mercados nuevos: córners 3 de 3. ath-esp (11 córners) y mci-ful (14 córners, 8-6) acertaron aunque el favorito no ganó: al ir por detrás o empatado, sigue atacando. Pocos picks: es una pista, no una regla. Seguir con córners cuando el favorito local ataca por bandas.
 - 2026-11-17 · irl-kos (Menos de 2,5, 3-0): Irlanda tenía que ganar en casa y Kosovo se conformaba con el empate. Irlanda atacó, logró dos penaltis y Kosovo acabó con 10. Lo escribí en el riesgo y lo jugué igual. Haré: si el local está obligado a ganar, no juego "menos de 2,5"; prefiero el local gana o nada. Va con la lección de cyp-mne: el "menos" pide que ninguno de los dos tenga que salir.
 - 2026-11-17 · pol-swe (Más de 2,5, 1-1): partido sin nada en juego (Suecia ya había subido) y salió flojo: 2 goles en 25 minutos y nada más. Haré: en partidos sin nada en juego no juego "más de 2,5"; como mucho "ambos marcan" o "más de 1,5", que aguantan un 1-1.
 - 2026-11-20 · bay-koe (Bayern gana por 2 o más, 1-1) + 2026-11-16 · ltu-lie (Lituania gana por 2 o más, 2-1): el hándicap -1,5 va 2 de 4 y pierde dinero. El Bayern marcaba mucho, pero salió sin Neuer, Davies, Díaz ni Gnabry, con Kane en sequía; el Colonia marcó en el 12' y luego se lesionaron Kane y Olise. Las lesiones fueron mala suerte; las bajas ya se sabían. Haré: hándicap -1,5 solo con un favorito que marque 2 o más goles de media Y con su once casi completo. Con 3 o más titulares fuera, "gana" seco o un mercado de córners. A cuota menor de 1,40 no compensa: un gol tempranero del rival lo tumba.
@@ -23,34 +25,36 @@ Este archivo es la memoria del analista. Cada día, antes de elegir picks, se le
 
 ## Números
 <!-- STATS -->
-_Actualizado con 52 picks cerrados (de 2026-11-12 a 2026-11-20)._
+_Actualizado con 62 picks cerrados (de 2026-11-12 a 2026-11-21)._
 
-**Total:** 41 de 52 (79% real frente a 68% que dije).
+**Total:** 48 de 62 (77% real frente a 68% que dije).
 
 ### Por mercado
 | Grupo | Picks | Aciertos | % real | % que dije | Neto a 1 u por pick |
 |---|---|---|---|---|---|
-| Goles totales | 22 | 17 | 77% | 66% | +4.11 u (+19%) |
-| 1X2 | 13 | 12 | 92% | 69% | +3.94 u (+30%) |
+| Goles totales | 27 | 20 | 74% | 66% | +3.12 u (+12%) |
+| 1X2 | 14 | 13 | 93% | 68% | +4.39 u (+31%) |
 | Doble oportunidad | 9 | 7 | 78% | 75% | -0.15 u (-2%) |
 | Handicap | 4 | 2 | 50% | 67% | -0.95 u (-24%) |
 | Ambos marcan | 3 | 2 | 67% | 60% | +0.50 u (+17%) |
-| Córners | 1 | 1 | 100% | 64% | +0.36 u (+36%) |
+| Goles por equipo | 2 | 2 | 100% | 70% | +0.58 u (+29%) |
+| Córners | 2 | 2 | 100% | 65% | +0.74 u (+37%) |
+| Empate no válido | 1 | 0 | 0% | 66% | -1.00 u (-100%) |
 
 ### Por cuota
 | Grupo | Picks | Aciertos | % real | % que dije | Neto a 1 u por pick |
 |---|---|---|---|---|---|
-| < 1,30 | 11 | 9 | 82% | 77% | +0.15 u (+1%) |
-| 1,30 – 1,49 | 14 | 11 | 79% | 71% | +0.99 u (+7%) |
-| 1,50 – 1,79 | 24 | 18 | 75% | 63% | +4.22 u (+18%) |
+| < 1,30 | 13 | 11 | 85% | 77% | +0.69 u (+5%) |
+| 1,30 – 1,49 | 21 | 16 | 76% | 70% | +0.87 u (+4%) |
+| 1,50 – 1,79 | 25 | 18 | 72% | 63% | +3.22 u (+13%) |
 | ≥ 1,80 | 3 | 3 | 100% | 56% | +2.45 u (+82%) |
 
 ### Calibración: por probabilidad que dije
 | Grupo | Picks | Aciertos | % real | % que dije | Neto a 1 u por pick |
 |---|---|---|---|---|---|
 | < 60 % | 6 | 6 | 100% | 57% | +4.28 u (+71%) |
-| 60 – 69 % | 25 | 19 | 76% | 64% | +3.88 u (+16%) |
-| 70 – 79 % | 17 | 12 | 71% | 73% | -1.24 u (-7%) |
+| 60 – 69 % | 32 | 24 | 75% | 65% | +3.76 u (+12%) |
+| 70 – 79 % | 20 | 14 | 70% | 73% | -1.70 u (-8%) |
 | ≥ 80 % | 4 | 4 | 100% | 83% | +0.89 u (+22%) |
 
 ### Por competición
@@ -60,17 +64,19 @@ _Actualizado con 52 picks cerrados (de 2026-11-12 a 2026-11-20)._
 | Nations League C | 16 | 12 | 75% | 69% | +1.72 u (+11%) |
 | Nations League B | 13 | 10 | 77% | 67% | +1.70 u (+13%) |
 | Nations League D | 4 | 3 | 75% | 67% | +0.45 u (+11%) |
-| LaLiga | 1 | 1 | 100% | 64% | +0.36 u (+36%) |
-| Ligue 1 | 1 | 1 | 100% | 70% | +0.32 u (+32%) |
-| Bundesliga | 1 | 0 | 0% | 71% | -1.00 u (-100%) |
+| Bundesliga | 4 | 1 | 25% | 69% | -2.73 u (-68%) |
+| Serie A | 3 | 3 | 100% | 67% | +1.03 u (+34%) |
+| LaLiga | 3 | 2 | 67% | 66% | -0.28 u (-9%) |
+| Ligue 1 | 2 | 2 | 100% | 68% | +0.70 u (+35%) |
+| Premier League | 1 | 1 | 100% | 66% | +0.38 u (+38%) |
 
 ### Combinadas (1 u a cada una)
 | Tipo | Ganadas | Perdidas | Neto |
 |---|---|---|---|
-| dobles | 1 | 6 | -4.89 u |
-| equilibrada | 3 | 3 | +6.28 u |
-| otras | 1 | 2 | +0.26 u |
-| segura | 3 | 4 | +0.23 u |
-| sonadora | 0 | 5 | -5.00 u |
-| sonadora de dobles | 0 | 2 | -2.00 u |
+| dobles | 4 | 8 | -4.97 u |
+| equilibrada | 3 | 4 | +5.28 u |
+| otras | 1 | 3 | -0.74 u |
+| segura | 4 | 4 | +0.84 u |
+| sonadora | 0 | 6 | -6.00 u |
+| sonadora de dobles | 0 | 3 | -3.00 u |
 <!-- /STATS -->
