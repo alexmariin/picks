@@ -1,0 +1,265 @@
+{
+  "fecha": "2026-11-21",
+  "titulo": "Sábado 21 de noviembre · LaLiga, Premier, Serie A, Bundesliga y Ligue 1",
+  "generado": "2026-11-21 09:16",
+  "nota": "Sábado de las cinco grandes ligas. Cuotas de The Odds API (09:15). Winamax solo da el 1X2 en la API y hoy cobra mucho margen en todos los partidos (valor entre -0,04 y -0,30), así que ningún 1X2 de Winamax entra en los dobles. De dónde sale cada cuota: los 'más de 2,5 goles' (Leverkusen, Frankfurt, Gladbach, Niza y Bernabéu) son la MEDIANA del mercado; el Nápoles gana es de WINAMAX; los goles por equipo y los 'empate no válido' son ESTIMADOS con las probabilidades justas de Pinnacle y un 6 % de margen; los córners del City, ESTIMADOS con la línea de córners de Pinnacle y un 10 % de margen. Hoy no hay archivo de cuotas de Winamax de jugadores, córners ni tarjetas, y desde la nube no se llega a Winamax: comprueba en Winamax que pagan al menos esa cuota antes de apostar; si pagan bastante menos, no juegues ese doble. Las bajas salen de las previas del jueves y viernes; no he podido confirmar las del PSG ni las del Leverkusen y el Paderborn: mira los onces antes de jugar. Dejo fuera los partidos 50-50 (Alavés-Deportivo, Sevilla-Betis, Coventry-Palace, Bournemouth-Forest, Chelsea-Leeds, Elversberg-Freiburg, Lille-Lyon, Lens-Toulouse, Estrasburgo-Brest), el Newcastle-Arsenal (cuotas demasiado bajas y Arsenal sin Saka ni Zubimendi), el Lazio-Lecce y el Mónaco-Auxerre (sin valor en Winamax) y el Tottenham-Ipswich (sin una selección con cuota decente).",
+  "picks": [
+    {
+      "id": "mci-ful",
+      "hora": "13:30",
+      "competicion": "Premier League · Jornada 11",
+      "local": "Manchester City",
+      "visitante": "Fulham",
+      "seleccion": "Más de 8,5 córners en el partido",
+      "mercado": "Córners",
+      "cuota": 1.38,
+      "prob": 0.66,
+      "motivo": "Pinnacle da un 60,5 % al 'más de 9,5' y un 55,6 % al 'más de 10': su línea central está en 10-10,5 córners. Eso deja el 'más de 8,5' cerca del 70 %. Pinnacle espera a City con 6,5 córners y a Fulham con 3,5. City (71 % de ganar según Pinnacle) atacará casi todo el partido con Doku y Ndiaye por fuera.",
+      "riesgo": "Le resto 4 puntos al dato de Pinnacle por el margen de la casa. Si City marca pronto y baja el ritmo, salen menos. Es el segundo pick de córners (el primero, el 20/11, acertó): aún es una pista. Cuota estimada.",
+      "alternativa": "Más de 2,5 goles (68 %, 1,40 mediana)"
+    },
+    {
+      "id": "com-cag",
+      "hora": "15:00",
+      "competicion": "Serie A · Jornada 12",
+      "local": "Como",
+      "visitante": "Cagliari",
+      "seleccion": "Como: más de 1,5 goles",
+      "mercado": "Goles por equipo",
+      "cuota": 1.31,
+      "prob": 0.68,
+      "motivo": "Como es 5.º con 23 puntos y Cagliari está abajo. Pinnacle le da un 75 % de ganar y espera unos 2,5 goles del Como (el 'más de 2,5' del partido paga 1,48). Con esos números, que el Como marque 2 o más sale en torno al 72 %.",
+      "riesgo": "Como no tiene a Kean, Addai ni Rodríguez: bajo 4 puntos por eso. Cagliari sin Felici y con Mina y Winks en duda. El 1X2 del Como en Winamax (1,20) no compensa; por eso voy a sus goles. Cuota estimada.",
+      "alternativa": "Más de 2,5 goles (64 %, 1,48 mediana)"
+    },
+    {
+      "id": "lev-pad",
+      "hora": "15:30",
+      "competicion": "Bundesliga · Jornada 10",
+      "local": "Bayer Leverkusen",
+      "visitante": "Paderborn",
+      "seleccion": "Más de 2,5 goles",
+      "mercado": "Goles totales",
+      "cuota": 1.27,
+      "prob": 0.73,
+      "motivo": "El mercado ve mucho gol: el 'más de 2,5' paga 1,27 de mediana (75 % sin margen) y Pinnacle da un 76 % al Leverkusen. Schick lleva 8 goles en liga, tantos como todo el Paderborn. El Leverkusen ganó 2-1 al Colonia en la última jornada.",
+      "riesgo": "Paderborn llega con 4 partidos sin perder (2-2 con el Frankfurt) y puede encerrarse. El Leverkusen no está siendo un rodillo (16 puntos en 9 jornadas). Goles totales es nuestro mercado más fiable (17 de 22).",
+      "alternativa": "Leverkusen gana (76 %, 1,20 Winamax, sin valor)"
+    },
+    {
+      "id": "sge-tsg",
+      "hora": "15:30",
+      "competicion": "Bundesliga · Jornada 10",
+      "local": "Eintracht Frankfurt",
+      "visitante": "Hoffenheim",
+      "seleccion": "Más de 2,5 goles",
+      "mercado": "Goles totales",
+      "cuota": 1.31,
+      "prob": 0.7,
+      "motivo": "Pinnacle lo ve muy igualado (38 % cada uno) pero con muchos goles: el 'más de 2,5' paga 1,31 de mediana (72 % sin margen). Hoffenheim ganó 3 de sus últimos 4 partidos y el Frankfurt empató 2-2 con el Paderborn. Dos equipos que atacan y defienden mal.",
+      "riesgo": "El Frankfurt reparte poco el gol (solo 4 goleadores distintos en liga). Un 1-1 lo tumba. Bajo 2 puntos al dato del mercado.",
+      "alternativa": "Ambos marcan (69 %, ~1,31 estimada)"
+    },
+    {
+      "id": "bmg-bvb",
+      "hora": "15:30",
+      "competicion": "Bundesliga · Jornada 10",
+      "local": "Borussia Mönchengladbach",
+      "visitante": "Borussia Dortmund",
+      "seleccion": "Más de 2,5 goles",
+      "mercado": "Goles totales",
+      "cuota": 1.5,
+      "prob": 0.62,
+      "motivo": "El derbi de los Borussia suele tener goles. El mercado da un 63 % al 'más de 2,5' (1,50 de mediana) y un 60 % al Dortmund. Guirassy parece recuperado para el partido.",
+      "riesgo": "Derbi con tensión: puede salir cerrado. Si Guirassy no juega, el Dortmund pierde gol. Pick flojo: fuera de los dobles.",
+      "alternativa": "Dortmund empate no válido (76 %, ~1,24 estimada)"
+    },
+    {
+      "id": "avl-sun",
+      "hora": "16:00",
+      "competicion": "Premier League · Jornada 11",
+      "local": "Aston Villa",
+      "visitante": "Sunderland",
+      "seleccion": "Aston Villa (empate no válido)",
+      "mercado": "Empate no válido",
+      "cuota": 1.29,
+      "prob": 0.7,
+      "motivo": "Pinnacle da un 55 % al Villa y solo un 20 % al Sunderland: sin el empate, el Villa gana el 73 % de las veces. Sunderland viaja sin Xhaka ni Brobbey, su centrocampista y su delantero titulares.",
+      "riesgo": "Villa sin Cash (conmoción), Onana ni Ruggeri. Si empatan, se devuelve el dinero. Prefiero esto al 1X2 de Winamax (1,66, valor -0,09). Cuota estimada.",
+      "alternativa": "Más de 1,5 goles (78 %, ~1,21 estimada)"
+    },
+    {
+      "id": "ray-val",
+      "hora": "16:15",
+      "competicion": "LaLiga · Jornada 13",
+      "local": "Rayo Vallecano",
+      "visitante": "Valencia",
+      "seleccion": "Rayo Vallecano (empate no válido)",
+      "mercado": "Empate no válido",
+      "cuota": 1.39,
+      "prob": 0.66,
+      "motivo": "Pinnacle da un 50 % al Rayo y un 23 % al Valencia: sin el empate, un 68 % para el Rayo. El Valencia viene de perder 0-3 en casa con el Real Madrid y en Vallecas el Rayo aprieta mucho.",
+      "riesgo": "Partido de campo pequeño y muchas faltas. Si empatan, se devuelve. No es un favorito visitante (lección del 14/11). Cuota estimada.",
+      "alternativa": "Rayo gana (50 %, 1,82 Winamax)"
+    },
+    {
+      "id": "nic-psg",
+      "hora": "17:15",
+      "competicion": "Ligue 1 · Jornada 13",
+      "local": "Niza",
+      "visitante": "PSG",
+      "seleccion": "Más de 2,5 goles",
+      "mercado": "Goles totales",
+      "cuota": 1.38,
+      "prob": 0.67,
+      "motivo": "Pinnacle da un 65 % al PSG fuera y el 'más de 2,5' paga 1,38 de mediana (69 % sin margen). El PSG suele marcar 2 o más y el Niza en casa sale a por el partido, lo que abre espacios.",
+      "riesgo": "No he podido confirmar las bajas del PSG para hoy. Si el PSG gana 0-1 o 0-2 y controla, no llega. Mira el once antes de jugar.",
+      "alternativa": "PSG gana (65 %, 1,38 Winamax, valor -0,10)"
+    },
+    {
+      "id": "par-rom",
+      "hora": "18:00",
+      "competicion": "Serie A · Jornada 12",
+      "local": "Parma",
+      "visitante": "Roma",
+      "seleccion": "Roma: más de 1,5 goles",
+      "mercado": "Goles por equipo",
+      "cuota": 1.27,
+      "prob": 0.71,
+      "motivo": "Roma es 3.ª con 27 puntos y el Parma, penúltimo con 8. Pinnacle da un 78 % a la Roma y espera unos 2,7 goles suyos: que marque 2 o más sale en torno al 74 %. Vuelven Dybala y Koné, y el Parma pierde a Ndiaye (sancionado), Bernabé y Romero.",
+      "riesgo": "La Roma de este año gana mucho pero a veces por la mínima. Le resto 3 puntos. El 1X2 de la Roma en Winamax (1,17) no compensa. Cuota estimada.",
+      "alternativa": "Roma gana (78 %, 1,17 Winamax)"
+    },
+    {
+      "id": "sch-vfb",
+      "hora": "18:30",
+      "competicion": "Bundesliga · Jornada 10",
+      "local": "Schalke 04",
+      "visitante": "Stuttgart",
+      "seleccion": "Stuttgart (empate no válido)",
+      "mercado": "Empate no válido",
+      "cuota": 1.37,
+      "prob": 0.66,
+      "motivo": "Pinnacle da un 52 % al Stuttgart y solo un 24 % al Schalke: sin el empate, un 69 % para el Stuttgart. Es el mejor equipo sobre el papel y el Schalke está recién ascendido.",
+      "riesgo": "Es favorito visitante: no paso del 70 % (lección del 14/11). El Schalke en casa, con su ambiente, aprieta. Si empatan, se devuelve. Cuota estimada.",
+      "alternativa": "Más de 2,5 goles (63 %, 1,49 mediana)"
+    },
+    {
+      "id": "nap-tor",
+      "hora": "20:45",
+      "competicion": "Serie A · Jornada 12",
+      "local": "Nápoles",
+      "visitante": "Torino",
+      "seleccion": "Nápoles gana",
+      "mercado": "1X2",
+      "cuota": 1.45,
+      "prob": 0.63,
+      "motivo": "Pinnacle da un 63,5 % al Nápoles en casa. Juegan De Bruyne, McTominay, Højlund y Lang.",
+      "riesgo": "Winamax paga 1,45 con valor -0,08: fuera de los dobles. El Torino suele defender bien atrás. Solo para la soñadora.",
+      "alternativa": "Nápoles: más de 1,5 goles (62 %, ~1,52 estimada)"
+    },
+    {
+      "id": "rma-cel",
+      "hora": "21:00",
+      "competicion": "LaLiga · Jornada 13",
+      "local": "Real Madrid",
+      "visitante": "Celta",
+      "seleccion": "Más de 2,5 goles",
+      "mercado": "Goles totales",
+      "cuota": 1.36,
+      "prob": 0.69,
+      "motivo": "El Madrid de Mourinho lleva 8 victorias seguidas (la última, 0-3 en Mestalla). Pinnacle le da un 83 % y el 'más de 2,5' paga 1,36 de mediana (70 % sin margen). Vuelve Vinícius tras su sanción y está Mbappé. El Celta no tiene a Borja Iglesias.",
+      "riesgo": "Si el Madrid gana 2-0 y para, no llega. Faltan Rodrygo y Asencio; Tchouaméni y Mendy, en duda. Uso goles y no el hándicap -1,5 (lección del 20/11: va 2 de 4).",
+      "alternativa": "Real Madrid gana por 2 o más (65 %, ~1,45 estimada)"
+    }
+  ],
+  "combinadas": [
+    {
+      "id": "segura",
+      "nombre": "La segura",
+      "descripcion": "Goles en Leverkusen, goles de la Roma en Parma y el Villa sin empate. Tres mercados distintos. Cuota de unas 2,08.",
+      "picks": [
+        "lev-pad",
+        "par-rom",
+        "avl-sun"
+      ]
+    },
+    {
+      "id": "equilibrada",
+      "nombre": "La equilibrada",
+      "descripcion": "Goles en el Bernabéu, córners en el Etihad, el Rayo y el Stuttgart sin empate. Cuota de unas 3,57.",
+      "picks": [
+        "rma-cel",
+        "mci-ful",
+        "ray-val",
+        "sch-vfb"
+      ]
+    },
+    {
+      "id": "tarde",
+      "nombre": "La de la tarde",
+      "descripcion": "De 15:00 a 17:15: goles del Como, goles en Frankfurt y en Niza. Cuota de unas 2,37.",
+      "picks": [
+        "com-cag",
+        "sge-tsg",
+        "nic-psg"
+      ]
+    },
+    {
+      "id": "sonadora",
+      "nombre": "La soñadora",
+      "descripcion": "Un pick de cada partido bueno del día (12 selecciones). Cuota de unas 38. Capricho: cantidad mínima.",
+      "picks": [
+        "mci-ful",
+        "com-cag",
+        "lev-pad",
+        "sge-tsg",
+        "bmg-bvb",
+        "avl-sun",
+        "ray-val",
+        "nic-psg",
+        "par-rom",
+        "sch-vfb",
+        "nap-tor",
+        "rma-cel"
+      ]
+    }
+  ],
+  "dobles": [
+    {
+      "id": "d1",
+      "picks": [
+        "avl-sun",
+        "rma-cel"
+      ]
+    },
+    {
+      "id": "d2",
+      "picks": [
+        "lev-pad",
+        "ray-val"
+      ]
+    },
+    {
+      "id": "d3",
+      "picks": [
+        "par-rom",
+        "nic-psg"
+      ]
+    },
+    {
+      "id": "d4",
+      "picks": [
+        "sge-tsg",
+        "sch-vfb"
+      ]
+    },
+    {
+      "id": "d5",
+      "picks": [
+        "com-cag",
+        "mci-ful"
+      ]
+    }
+  ]
+}

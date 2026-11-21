@@ -60,9 +60,9 @@ _Actualizado con 52 picks cerrados (de 2026-11-12 a 2026-11-20)._
 | Nations League C | 16 | 12 | 75% | 69% | +1.72 u (+11%) |
 | Nations League B | 13 | 10 | 77% | 67% | +1.70 u (+13%) |
 | Nations League D | 4 | 3 | 75% | 67% | +0.45 u (+11%) |
-| Bundesliga | 1 | 0 | 0% | 71% | -1.00 u (-100%) |
 | LaLiga | 1 | 1 | 100% | 64% | +0.36 u (+36%) |
 | Ligue 1 | 1 | 1 | 100% | 70% | +0.32 u (+32%) |
+| Bundesliga | 1 | 0 | 0% | 71% | -1.00 u (-100%) |
 
 ### Combinadas (1 u a cada una)
 | Tipo | Ganadas | Perdidas | Neto |
