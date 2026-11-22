@@ -37,8 +37,8 @@ _Actualizado con 62 picks cerrados (de 2026-11-12 a 2026-11-21)._
 | Doble oportunidad | 9 | 7 | 78% | 75% | -0.15 u (-2%) |
 | Handicap | 4 | 2 | 50% | 67% | -0.95 u (-24%) |
 | Ambos marcan | 3 | 2 | 67% | 60% | +0.50 u (+17%) |
-| Córners | 2 | 2 | 100% | 65% | +0.74 u (+37%) |
 | Goles por equipo | 2 | 2 | 100% | 70% | +0.58 u (+29%) |
+| Córners | 2 | 2 | 100% | 65% | +0.74 u (+37%) |
 | Empate no válido | 1 | 0 | 0% | 66% | -1.00 u (-100%) |
 
 ### Por cuota
@@ -63,8 +63,8 @@ _Actualizado con 62 picks cerrados (de 2026-11-12 a 2026-11-21)._
 | Nations League C | 16 | 12 | 75% | 69% | +1.72 u (+11%) |
 | Nations League A | 16 | 14 | 88% | 68% | +4.26 u (+27%) |
 | Nations League B | 13 | 10 | 77% | 67% | +1.70 u (+13%) |
-| Bundesliga | 4 | 1 | 25% | 69% | -2.73 u (-68%) |
 | Nations League D | 4 | 3 | 75% | 67% | +0.45 u (+11%) |
+| Bundesliga | 4 | 1 | 25% | 69% | -2.73 u (-68%) |
 | Serie A | 3 | 3 | 100% | 67% | +1.03 u (+34%) |
 | LaLiga | 3 | 2 | 67% | 66% | -0.28 u (-9%) |
 | Ligue 1 | 2 | 2 | 100% | 68% | +0.70 u (+35%) |

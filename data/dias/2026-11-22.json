@@ -1,0 +1,242 @@
+{
+  "fecha": "2026-11-22",
+  "titulo": "Domingo 22 de noviembre · LaLiga, Premier, Serie A, Bundesliga y Ligue 1",
+  "generado": "2026-11-22 09:16",
+  "nota": "Domingo de las cinco grandes ligas. Cuotas de The Odds API (09:15). Winamax solo da el 1X2 en la API y hoy vuelve a cobrar mucho margen en todos los partidos (valor entre -0,04 y -0,30), así que ningún 1X2 de Winamax entra en los dobles. De dónde sale cada cuota: los 'más de 2,5 goles' (Augsburgo, Racing, Milan y Atalanta) son la MEDIANA del mercado; Paris FC, Marsella y Atlético ganan son de WINAMAX; los goles del Barça y el Brighton sin empate son ESTIMADOS con las probabilidades justas de Pinnacle y un 6 % de margen; los córners de Juventus-Venezia y Liverpool-United, ESTIMADOS con la línea de córners de Pinnacle y un 10 % de margen. Hoy no hay archivo de cuotas de Winamax de jugadores, córners ni tarjetas, y desde la nube no se llega a Winamax: comprueba en Winamax que pagan al menos esa cuota antes de apostar; si pagan bastante menos, no juegues ese doble. Las bajas salen de las previas del sábado; mira los onces antes de jugar (sobre todo Lautaro, Højbjerg y Cubarsí). Dejo fuera los partidos 50-50 (Sassuolo-Genoa, Lorient-Rennes, Bolonia-Udinese) y Osasuna-Málaga (los dos están abajo: lección del 21/11) y el Werder-Hamburgo (derbi, el Werder sin Weiser ni Grüll y sin una selección con cuota decente).",
+  "picks": [
+    {
+      "id": "juv-ven",
+      "hora": "12:30",
+      "competicion": "Serie A · Jornada 12",
+      "local": "Juventus",
+      "visitante": "Venezia",
+      "seleccion": "Más de 8,5 córners en el partido",
+      "mercado": "Córners",
+      "cuota": 1.44,
+      "prob": 0.63,
+      "motivo": "Pinnacle da un 56 % al 'más de 9,5' y un 63 % al 'más de 9': el 'más de 8,5' sale cerca del 67 %. Espera unos 6,5 córners de la Juve y 2,5 del Venezia, colista. La Juve (68 % de ganar según Pinnacle) atacará casi todo el partido.",
+      "riesgo": "La Juve no tiene a Yildiz, Thuram, Locatelli ni Kalulu: por eso no juego su victoria seca (1,30 en Winamax, valor -0,11). Le resto 4 puntos a Pinnacle por el margen. Si marca pronto y baja el ritmo, salen menos. Córners va 2 de 2: aún es una pista. Cuota estimada.",
+      "alternativa": "Juventus gana (66 %, 1,30 Winamax, valor -0,11)"
+    },
+    {
+      "id": "bar-vil",
+      "hora": "14:00",
+      "competicion": "LaLiga · Jornada 13",
+      "local": "Barcelona",
+      "visitante": "Villarreal",
+      "seleccion": "Barcelona: más de 1,5 goles",
+      "mercado": "Goles por equipo",
+      "cuota": 1.28,
+      "prob": 0.72,
+      "motivo": "Pinnacle da un 82 % al Barça y el 'más de 2,5' paga 1,15 de mediana: espera unos 3,5 goles, 2,5 del Barça. Que el Barça marque 2 o más sale cerca del 75 %. Vuelven Raphinha, Koundé y Eric García. El Villarreal no tiene a Foyth, Gerard Moreno, Akhomach ni Diatta.",
+      "riesgo": "El Barça perdió 3 de sus últimos 5 partidos de liga en casa contra el Villarreal. Atrás falta Christensen y Cubarsí empieza en el banquillo (psoas). Bajo 3 puntos. El 1X2 de Winamax (1,13) no compensa. Cuota estimada.",
+      "alternativa": "Más de 8,5 córners (72 %, ~1,26 estimada con la línea de Pinnacle)"
+    },
+    {
+      "id": "hul-bri",
+      "hora": "15:00",
+      "competicion": "Premier League · Jornada 11",
+      "local": "Hull City",
+      "visitante": "Brighton",
+      "seleccion": "Brighton (empate no válido)",
+      "mercado": "Empate no válido",
+      "cuota": 1.26,
+      "prob": 0.72,
+      "motivo": "Pinnacle da un 64 % al Brighton y solo un 14 % al Hull: sin el empate, el Brighton gana el 82 % de las veces. El Brighton es 3.º con 22 puntos y llega con 4 victorias en sus últimos 5 partidos. El Hull (13.º, 11 puntos) no tiene a Matazo, Targett, Ansah, Morita ni a Crooks (sancionado).",
+      "riesgo": "Favorito visitante (lección del 14/11), pero el Brighton gana fuera y el Hull no se juega nada especial. No es un favorito sin ganar contra un bloque bajo (lección del 21/11). Si empatan, se devuelve. Bajo bastante la cifra de Pinnacle. Cuota estimada.",
+      "alternativa": "Brighton gana (64 %, 1,43 Winamax, valor -0,08)"
+    },
+    {
+      "id": "pfc-ang",
+      "hora": "15:00",
+      "competicion": "Ligue 1 · Jornada 11",
+      "local": "Paris FC",
+      "visitante": "Angers",
+      "seleccion": "Paris FC gana",
+      "mercado": "1X2",
+      "cuota": 1.25,
+      "prob": 0.71,
+      "motivo": "Pinnacle da un 73 % al Paris FC en casa. El Paris FC llega casi con todo el equipo (solo duda Chergui). El Angers no tiene a Diatta (lesión) ni a Lefort (sancionado), y su portero Pona está enfermo.",
+      "riesgo": "Cuota de Winamax baja (valor -0,085): fuera de los dobles, solo para la segura. Un empate lo tumba.",
+      "alternativa": "Más de 2,5 goles (64 %, 1,44 mediana)"
+    },
+    {
+      "id": "aug-m05",
+      "hora": "15:30",
+      "competicion": "Bundesliga · Jornada 11",
+      "local": "Augsburgo",
+      "visitante": "Mainz",
+      "seleccion": "Más de 2,5 goles",
+      "mercado": "Goles totales",
+      "cuota": 1.41,
+      "prob": 0.68,
+      "motivo": "Los partidos del Augsburgo salen a 4,4 goles de media (20 a favor y 20 en contra en 9 jornadas, el máximo de la liga). El Mainz va 18-19 en 10 jornadas (3,7 por partido). Los dos están abajo y defienden mal. El mercado da un 69 % al 'más de 2,5' (1,41 de mediana).",
+      "riesgo": "Partido entre dos de abajo: puede salir nervioso. Esta vez no juego goles por fama: miro los goles reales (lección del 21/11), y los dos marcan y encajan mucho. Bajo 1 punto.",
+      "alternativa": "Ambos marcan (66 %, ~1,43 estimada)"
+    },
+    {
+      "id": "rac-rso",
+      "hora": "16:15",
+      "competicion": "LaLiga · Jornada 13",
+      "local": "Racing de Santander",
+      "visitante": "Real Sociedad",
+      "seleccion": "Más de 2,5 goles",
+      "mercado": "Goles totales",
+      "cuota": 1.39,
+      "prob": 0.66,
+      "motivo": "El mercado da un 70 % al 'más de 2,5' (1,39 de mediana), muy alto para LaLiga. La Real (5.ª, 22 puntos) marca mucho pero encaja mucho. El Racing, recién ascendido, ganó 2-1 al Málaga y Zabiri lleva 7 goles.",
+      "riesgo": "La Real no tiene a Andrés Martín y duda Aihen. Las fuentes no coinciden en los goles exactos de cada uno: bajo 4 puntos a la cifra del mercado.",
+      "alternativa": "Ambos marcan (64 %, ~1,47 estimada)"
+    },
+    {
+      "id": "liv-mun",
+      "hora": "17:30",
+      "competicion": "Premier League · Jornada 11",
+      "local": "Liverpool",
+      "visitante": "Manchester United",
+      "seleccion": "Más de 8,5 córners en el partido",
+      "mercado": "Córners",
+      "cuota": 1.42,
+      "prob": 0.64,
+      "motivo": "Pinnacle da un 57 % al 'más de 9,5' y un 64 % al 'más de 9': el 'más de 8,5' sale cerca del 68 %. Espera unos 6 córners del Liverpool y 4 del United. El Liverpool (56 % de ganar) jugará en campo rival y el United de Pochettino, en su primer partido, saldrá a la contra.",
+      "riesgo": "El Liverpool no tiene a Ekitike, Bradley ni Leoni; el United, sin Rashford, Sesko, Baleba, Ugarte ni Shaw. Le resto 4 puntos por el margen. Derbi: puede ser trabado y cortado. Cuota estimada.",
+      "alternativa": "Más de 2,5 goles (63 %, 1,50 mediana)"
+    },
+    {
+      "id": "mil-fro",
+      "hora": "18:00",
+      "competicion": "Serie A · Jornada 12",
+      "local": "AC Milan",
+      "visitante": "Frosinone",
+      "seleccion": "Más de 2,5 goles",
+      "mercado": "Goles totales",
+      "cuota": 1.41,
+      "prob": 0.67,
+      "motivo": "El Frosinone es la sorpresa: 6.º con 24 goles a favor y 15 en contra en 11 jornadas (3,5 goles por partido). El Milan va 23-13 (3,3 por partido). El mercado da un 69 % al 'más de 2,5' (1,41 de mediana). El Frosinone no se encierra: ataca.",
+      "riesgo": "Al Milan le faltan Saelemaekers, Tomori, Gabbia, Loftus-Cheek y Chukwueze; al Frosinone, Bracaglia (sancionado), Raimondo y Grillitsch. Un 1-0 o un 2-0 del Milan lo tumba. Bajo 2 puntos.",
+      "alternativa": "Ambos marcan (63 %, ~1,50 estimada)"
+    },
+    {
+      "id": "ata-int",
+      "hora": "20:45",
+      "competicion": "Serie A · Jornada 12",
+      "local": "Atalanta",
+      "visitante": "Inter de Milán",
+      "seleccion": "Más de 2,5 goles",
+      "mercado": "Goles totales",
+      "cuota": 1.4,
+      "prob": 0.66,
+      "motivo": "El Inter, 2.º, lleva 28 goles a favor y 13 en contra en 11 jornadas (3,7 por partido). La Atalanta va 17-20 (3,4 por partido) y encaja mucho. El mercado da un 69 % al 'más de 2,5' (1,40 de mediana) y Pinnacle un 63 % al Inter.",
+      "riesgo": "Lautaro, en duda o en el banquillo. Sin sancionados. La Atalanta no tiene a Hien ni a Kossounou, lo que debilita su defensa. Bajo 3 puntos.",
+      "alternativa": "Inter empate no válido (78 %, ~1,21 estimada)"
+    },
+    {
+      "id": "om-lem",
+      "hora": "20:45",
+      "competicion": "Ligue 1 · Jornada 11",
+      "local": "Marsella",
+      "visitante": "Le Mans",
+      "seleccion": "Marsella gana",
+      "mercado": "1X2",
+      "cuota": 1.4,
+      "prob": 0.66,
+      "motivo": "Pinnacle da un 65 % al Marsella. Llega con 5 victorias seguidas y el Le Mans (16.º, 8 puntos, recién ascendido) no ha ganado fuera esta temporada. Vuelven todos los internacionales.",
+      "riesgo": "Faltan Emerson y Cornelius; Højbjerg, en duda. Valor de Winamax -0,09: fuera de los dobles, solo para combinadas.",
+      "alternativa": "Más de 2,5 goles (63 %, 1,52 mediana)"
+    },
+    {
+      "id": "get-atm",
+      "hora": "21:00",
+      "competicion": "LaLiga · Jornada 13",
+      "local": "Getafe",
+      "visitante": "Atlético de Madrid",
+      "seleccion": "Atlético de Madrid gana",
+      "mercado": "1X2",
+      "cuota": 1.4,
+      "prob": 0.6,
+      "motivo": "Pinnacle da un 63 % al Atlético. Ha ganado sus últimos 4 partidos de liga fuera. Al Getafe le faltan Juanmi, Uche y Gudelj (sancionado).",
+      "riesgo": "Pick flojo: favorito visitante en un campo muy duro (lección del 14/11), y el Atlético llega de perder con el Bayern y el Barça, sin Romero, Pubill ni Lookman. Valor de Winamax -0,115. Fuera de los dobles y de las combinadas.",
+      "alternativa": "Menos de 2,5 goles (55 %, 1,74 mediana)"
+    }
+  ],
+  "combinadas": [
+    {
+      "id": "segura",
+      "nombre": "La segura",
+      "descripcion": "Goles del Barça, el Brighton sin empate y el Paris FC gana. Tres mercados distintos. Cuota de unas 2,02.",
+      "picks": [
+        "bar-vil",
+        "hul-bri",
+        "pfc-ang"
+      ]
+    },
+    {
+      "id": "equilibrada",
+      "nombre": "La equilibrada",
+      "descripcion": "Goles en San Siro, córners en Anfield y en Turín, y el Marsella gana. Cuota de unas 4,04.",
+      "picks": [
+        "mil-fro",
+        "liv-mun",
+        "om-lem",
+        "juv-ven"
+      ]
+    },
+    {
+      "id": "tarde",
+      "nombre": "La de la tarde-noche",
+      "descripcion": "Goles en Augsburgo, en el Sardinero y en Bérgamo: tres partidos de equipos que marcan y encajan mucho. Cuota de unas 2,74.",
+      "picks": [
+        "aug-m05",
+        "rac-rso",
+        "ata-int"
+      ]
+    },
+    {
+      "id": "sonadora",
+      "nombre": "La soñadora",
+      "descripcion": "Un pick de cada partido bueno del día (10 selecciones). Cuota de unas 22. Capricho: cantidad mínima.",
+      "picks": [
+        "juv-ven",
+        "bar-vil",
+        "hul-bri",
+        "pfc-ang",
+        "aug-m05",
+        "rac-rso",
+        "liv-mun",
+        "mil-fro",
+        "ata-int",
+        "om-lem"
+      ]
+    }
+  ],
+  "dobles": [
+    {
+      "id": "d1",
+      "picks": [
+        "bar-vil",
+        "mil-fro"
+      ]
+    },
+    {
+      "id": "d2",
+      "picks": [
+        "hul-bri",
+        "aug-m05"
+      ]
+    },
+    {
+      "id": "d3",
+      "picks": [
+        "ata-int",
+        "liv-mun"
+      ]
+    },
+    {
+      "id": "d4",
+      "picks": [
+        "rac-rso",
+        "juv-ven"
+      ]
+    }
+  ]
+}
