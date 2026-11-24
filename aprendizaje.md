@@ -10,6 +10,8 @@ Este archivo es la memoria del analista. Cada día, antes de elegir picks, se le
 - Cada lección debe tener fecha y el pick que la originó, y solo se escribe si es una causa concreta y repetible, no mala suerte.
 
 ## Lecciones (las escribe el analista, la más nueva arriba)
+- 2026-11-24 · "Más de 2,5" con el favorito sin delanteros (bod-las 1-0 y com-aek 1-0): los dos partidos acabaron 1-0. Al Bodø le faltaban Evjen y Mikkelsen y venía de un 0-0 en casa; al Como, Kean y Diao (y falló un penalti). Lo puse en el riesgo y lo jugué igual, y a cuota 1,26-1,34. Haré: si al favorito le faltan 2 o más atacantes titulares, no juego "más de 2,5"; como mucho "más de 1,5" o el favorito gana. La lección de bajas (juv-ven, om-lem) vale también para los mercados de goles.
+- 2026-11-24 · Ambos marcan "FLOJO" (gal-avl 1-0 y fey-por 0-1): ambos marcan va 2 de 5 y -30 %. Los dos los marqué yo como casi 50-50; al Galatasaray le faltaba todo su ataque y el Oporto llegaba con 3 derrotas fuera. Haré: un pick que yo mismo llamo FLOJO (menos del 60 %) no se publica; y no juego "ambos marcan" si a uno de los dos le falta su delantero titular. Aún es pista (menos de 20 picks).
 - 2026-11-22 · Bajas del favorito (juv-ven y om-lem, 2 fallos): en los dos ya sabía las bajas y jugué igual. La Juve sin Yildiz, Thuram, Locatelli ni Kalulu fue lenta: 0-0 al descanso, 59 % de posesión y pocas llegadas; luego marcó 4 en 18 minutos y bajó el ritmo. Solo 7 córners (5-2). El Marsella sin Emerson, Cornelius y con Højbjerg tocado ganaba 2-0 y encajó 3 (el Le Mans remató más y tuvo más xG). Haré: si al favorito le faltan 3 o más titulares (en ataque para córners; en defensa para su victoria), no juego "más córners" ni su victoria seca a cuota de 1,40 o menos. Y un pick con valor negativo en la casa no entra en ninguna combinada. Va con la lección del hándicap (bay-koe).
 - 2026-11-21 · bmg-bvb (Más de 2,5, 0-1): lo elegí porque "el derbi suele tener goles", pero el Gladbach era colista, con 4 puntos y sin ganar en casa. Un colista que apenas marca no aporta su parte al "más". Haré: nunca juego goles por la fama de un partido; miro los goles reales de los dos esta temporada. Si uno de los dos casi no marca, "menos de 3,5" o el favorito gana, no "más de 2,5". (sge-tsg 1-0 fue mala suerte: dos penaltis fallados).
 - 2026-11-21 · Empate no válido: 0 de 3 en un día (ray-val 0-1 fallo; avl-sun 0-0 y sch-vfb 0-0, nulos). Los tres eran favoritos del 66-70 % sin margen contra equipos de la zona baja. El Sunderland se encerró con un bloque bajo (Villa: 73 % de posesión, 17 remates y 0 goles) y el Villa llegaba con 4 partidos sin ganar. Haré: no juego al favorito (ni sin empate) contra un rival de abajo que se encierra si el favorito viene sin ganar; ahí prefiero córners del favorito. Y si el favorito también está en la zona baja (Rayo), no hay pick de ganador. Aún hay pocos picks: es una pista. (2026-11-22 · hul-bri 2-0: mala suerte, el Brighton tuvo más xG, el portero del Hull hizo 7 paradas y los goles llegaron en el 90+2 y 90+5 tras una roja al Brighton. Empate no válido va 0 de 3 con 2 nulos: vigilar.)
@@ -26,58 +28,59 @@ Este archivo es la memoria del analista. Cada día, antes de elegir picks, se le
 
 ## Números
 <!-- STATS -->
-_Actualizado con 73 picks cerrados (de 2026-11-12 a 2026-11-22)._
+_Actualizado con 82 picks cerrados (de 2026-11-12 a 2026-11-24)._
 
-**Total:** 56 de 73 (77% real frente a 68% que dije).
+**Total:** 61 de 82 (74% real frente a 68% que dije).
 
 ### Por mercado
 | Grupo | Picks | Aciertos | % real | % que dije | Neto a 1 u por pick |
 |---|---|---|---|---|---|
-| Goles totales | 31 | 24 | 77% | 66% | +4.73 u (+15%) |
+| Goles totales | 34 | 25 | 74% | 67% | +3.13 u (+9%) |
 | 1X2 | 17 | 15 | 88% | 68% | +4.04 u (+24%) |
 | Doble oportunidad | 9 | 7 | 78% | 75% | -0.15 u (-2%) |
-| Handicap | 4 | 2 | 50% | 67% | -0.95 u (-24%) |
+| Goles por equipo | 6 | 6 | 100% | 71% | +1.73 u (+29%) |
+| Handicap | 5 | 3 | 60% | 66% | -0.52 u (-10%) |
+| Ambos marcan | 5 | 2 | 40% | 59% | -1.50 u (-30%) |
 | Córners | 4 | 3 | 75% | 64% | +0.16 u (+4%) |
-| Goles por equipo | 3 | 3 | 100% | 70% | +0.86 u (+29%) |
-| Ambos marcan | 3 | 2 | 67% | 60% | +0.50 u (+17%) |
 | Empate no válido | 2 | 0 | 0% | 69% | -2.00 u (-100%) |
 
 ### Por cuota
 | Grupo | Picks | Aciertos | % real | % que dije | Neto a 1 u por pick |
 |---|---|---|---|---|---|
-| < 1,30 | 16 | 13 | 81% | 76% | +0.22 u (+1%) |
-| 1,30 – 1,49 | 29 | 22 | 76% | 68% | +1.30 u (+4%) |
-| 1,50 – 1,79 | 25 | 18 | 72% | 63% | +3.22 u (+13%) |
+| < 1,30 | 19 | 15 | 79% | 75% | -0.22 u (-1%) |
+| 1,30 – 1,49 | 33 | 25 | 76% | 68% | +1.44 u (+4%) |
+| 1,50 – 1,79 | 27 | 18 | 67% | 63% | +1.22 u (+5%) |
 | ≥ 1,80 | 3 | 3 | 100% | 56% | +2.45 u (+82%) |
 
 ### Calibración: por probabilidad que dije
 | Grupo | Picks | Aciertos | % real | % que dije | Neto a 1 u por pick |
 |---|---|---|---|---|---|
-| < 60 % | 6 | 6 | 100% | 57% | +4.28 u (+71%) |
-| 60 – 69 % | 40 | 30 | 75% | 65% | +4.19 u (+10%) |
-| 70 – 79 % | 23 | 16 | 70% | 73% | -2.17 u (-9%) |
+| < 60 % | 8 | 6 | 75% | 57% | +2.28 u (+29%) |
+| 60 – 69 % | 43 | 32 | 74% | 65% | +4.02 u (+9%) |
+| 70 – 79 % | 27 | 19 | 70% | 73% | -2.30 u (-9%) |
 | ≥ 80 % | 4 | 4 | 100% | 83% | +0.89 u (+22%) |
 
 ### Por competición
 | Grupo | Picks | Aciertos | % real | % que dije | Neto a 1 u por pick |
 |---|---|---|---|---|---|
-| Nations League C | 16 | 12 | 75% | 69% | +1.72 u (+11%) |
 | Nations League A | 16 | 14 | 88% | 68% | +4.26 u (+27%) |
+| Nations League C | 16 | 12 | 75% | 69% | +1.72 u (+11%) |
 | Nations League B | 13 | 10 | 77% | 67% | +1.70 u (+13%) |
-| LaLiga | 6 | 5 | 83% | 66% | +0.79 u (+13%) |
+| Champions League | 9 | 5 | 56% | 67% | -2.30 u (-26%) |
 | Serie A | 6 | 5 | 83% | 66% | +0.84 u (+14%) |
+| LaLiga | 6 | 5 | 83% | 66% | +0.79 u (+13%) |
 | Bundesliga | 5 | 2 | 40% | 69% | -2.32 u (-46%) |
-| Ligue 1 | 4 | 3 | 75% | 68% | -0.05 u (-1%) |
 | Nations League D | 4 | 3 | 75% | 67% | +0.45 u (+11%) |
+| Ligue 1 | 4 | 3 | 75% | 68% | -0.05 u (-1%) |
 | Premier League | 3 | 2 | 67% | 67% | -0.20 u (-7%) |
 
 ### Combinadas (1 u a cada una)
 | Tipo | Ganadas | Perdidas | Neto |
 |---|---|---|---|
-| dobles | 6 | 10 | -5.18 u |
-| equilibrada | 3 | 5 | +4.28 u |
+| dobles | 7 | 12 | -6.40 u |
+| equilibrada | 3 | 6 | +3.28 u |
 | otras | 2 | 3 | +1.01 u |
-| segura | 4 | 5 | -0.16 u |
-| sonadora | 0 | 7 | -7.00 u |
-| sonadora de dobles | 0 | 4 | -4.00 u |
+| segura | 4 | 6 | -1.16 u |
+| sonadora | 0 | 8 | -8.00 u |
+| sonadora de dobles | 0 | 5 | -5.00 u |
 <!-- /STATS -->
