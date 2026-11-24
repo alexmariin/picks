@@ -1,0 +1,159 @@
+{
+  "fecha": "2026-11-24",
+  "titulo": "Martes 24 de noviembre · Champions League (jornada 5)",
+  "generado": "2026-11-24 09:20",
+  "nota": "Jornada 5 de la Champions, 9 partidos. Cuotas de The Odds API (09:12). Winamax solo da el 1X2 en la API y hoy cobra mucho margen en todos (valor entre -0,04 y -0,27): ningún 1X2 de Winamax entra en los dobles. De dónde sale cada cuota: los 'más de 2,5 goles' de Bodø-LASK y Como-AEK son la MEDIANA del mercado; el resto (goles por equipo, menos de 3,5 en el Emirates, hándicap del Madrid y ambos marcan) son ESTIMADAS con las probabilidades justas de Pinnacle y un 6 % de margen. Miré los córners de City-Nápoles, Como-AEK y Arsenal-Dortmund con Pinnacle: la línea está en 9 y ninguno llega al 65 %, así que hoy no hay pick de córners. No hay archivo de cuotas de Winamax de jugadores, córners ni tarjetas, y desde la nube no se llega a Winamax: comprueba en Winamax que pagan al menos esa cuota; si pagan bastante menos, no juegues ese doble. Las bajas salen de las previas del lunes; mira los onces antes de jugar (sobre todo Haaland, Mbappé y si Mourinho rota). Marco como flojos Galatasaray-Aston Villa y Feyenoord-Porto (partidos abiertos, casi 50-50).",
+  "picks": [
+    {
+      "id": "bod-las",
+      "hora": "18:45",
+      "competicion": "Champions League · Jornada 5",
+      "local": "Bodø/Glimt",
+      "visitante": "LASK",
+      "seleccion": "Más de 2,5 goles",
+      "mercado": "Goles totales",
+      "cuota": 1.26,
+      "prob": 0.73,
+      "motivo": "El mercado da un 76 % al 'más de 2,5' y Pinnacle un 66 % al Bodø. El LASK marca y encaja mucho: más de 3,5 goles en 3 de sus 4 partidos de Champions (3-2 en Alvalade al Sporting, 4-0 al Slovan). En Aspmyra, con césped artificial, el Bodø ganó al Dortmund.",
+      "riesgo": "El Bodø empató 0-0 en casa con el Lille en la última jornada y no tiene a Evjen ni Mikkelsen. Cuota baja (mediana 1,26): el valor es justo.",
+      "alternativa": "Ambos marcan (65 %, ~1,45 estimada)"
+    },
+    {
+      "id": "gal-avl",
+      "hora": "18:45",
+      "competicion": "Champions League · Jornada 5",
+      "local": "Galatasaray",
+      "visitante": "Aston Villa",
+      "seleccion": "Ambos marcan",
+      "mercado": "Ambos marcan",
+      "cuota": 1.6,
+      "prob": 0.58,
+      "motivo": "El mercado da un 64 % al 'más de 2,5'. El Villa (43 % de ganar según Pinnacle) llega al campo del Galatasaray, que en casa suele marcar; Batrakov lleva 4 goles en Champions.",
+      "riesgo": "FLOJO, casi 50-50. Al Galatasaray le faltan Osimhen, Leão y Sallai (todo su ataque titular) y el Villa viene de un 0-0 con el Sunderland y un 3-0 en Barcelona. No va en dobles ni combinadas. Cuota estimada.",
+      "alternativa": "Más de 2,5 goles (60 %, 1,49 mediana)"
+    },
+    {
+      "id": "ars-bvb",
+      "hora": "21:00",
+      "competicion": "Champions League · Jornada 5",
+      "local": "Arsenal",
+      "visitante": "Borussia Dortmund",
+      "seleccion": "Menos de 3,5 goles",
+      "mercado": "Goles totales",
+      "cuota": 1.4,
+      "prob": 0.68,
+      "motivo": "Con las cuotas de Pinnacle (Arsenal 66 %, 'más de 2,5' al 55 %) el 'menos de 3,5' sale cerca del 67 %. El Arsenal es de las defensas que menos encaja de Europa y sin Saka ni Zubimendi pierde gol y control. Guirassy vuelve tocado al Dortmund.",
+      "riesgo": "Sin Raya juega Kepa. Por la lección del 22/11 no juego al Arsenal gana (le faltan 3 titulares y paga 1,35 en Winamax, valor -0,11) ni sus córners. Un 3-1 o un 2-2 ya lo tumba. Cuota estimada.",
+      "alternativa": "Arsenal empate no válido (82 %, ~1,15 estimada)"
+    },
+    {
+      "id": "mci-nap",
+      "hora": "21:00",
+      "competicion": "Champions League · Jornada 5",
+      "local": "Manchester City",
+      "visitante": "Nápoles",
+      "seleccion": "Manchester City: más de 1,5 goles",
+      "mercado": "Goles por equipo",
+      "cuota": 1.27,
+      "prob": 0.72,
+      "motivo": "Pinnacle da un 75 % al City y el 'más de 2,5' paga 1,31 de mediana: espera unos 2,7 goles del City. Al Nápoles (27.º, 3 puntos) le faltan Di Lorenzo y Rafa Marín (sancionado) y Buongiorno es duda: defensa de circunstancias. Haaland ha marcado en sus 4 partidos de Champions.",
+      "riesgo": "Falta Semenyo y Nunes es duda. El modelo dice 77 %; bajo 5 puntos porque el City viene de perder. Cuota estimada; el 1X2 de Winamax (1,20, valor -0,10) no compensa.",
+      "alternativa": "Haaland marca (58 %, ~1,57 estimada)"
+    },
+    {
+      "id": "rma-psv",
+      "hora": "21:00",
+      "competicion": "Champions League · Jornada 5",
+      "local": "Real Madrid",
+      "visitante": "PSV",
+      "seleccion": "Real Madrid gana por 2 o más",
+      "mercado": "Handicap",
+      "cuota": 1.43,
+      "prob": 0.63,
+      "motivo": "Pinnacle da un 85 % al Madrid y el 'más de 2,5' paga 1,14: el mercado espera más de 3,5 goles, unos 3 del Madrid. Lleva 4 de 4 en esta Champions y vuelve Vinícius de la sanción, con Mbappé. Al PSV le faltan hasta 4 jugadores.",
+      "riesgo": "El hándicap va 2 de 4 (lección bay-koe): aquí el once está casi completo (solo faltan Rodrygo, Asencio y Mendy), pero Mourinho puede rotar a Bellingham y Güler. Un gol tempranero del PSV lo complica. No lo meto en dobles. Cuota estimada.",
+      "alternativa": "Mbappé marca (62 %, ~1,47 estimada)"
+    },
+    {
+      "id": "com-aek",
+      "hora": "21:00",
+      "competicion": "Champions League · Jornada 5",
+      "local": "Como",
+      "visitante": "AEK Atenas",
+      "seleccion": "Más de 2,5 goles",
+      "mercado": "Goles totales",
+      "cuota": 1.34,
+      "prob": 0.69,
+      "motivo": "El mercado da un 71 % al 'más de 2,5' y Pinnacle un 77 % al Como, que ganó 7 de sus últimos 8 partidos y le metió 9 al Lens fuera. El AEK (29.º, -6 de diferencia) no ha ganado fuera en esta Champions.",
+      "riesgo": "Al Como le faltan Kean y Diao y Caqueret es duda: menos gol arriba. Si el AEK se encierra y el Como gana 2-0, falla.",
+      "alternativa": "Como: más de 1,5 goles (70 %, ~1,28 estimada)"
+    },
+    {
+      "id": "fey-por",
+      "hora": "21:00",
+      "competicion": "Champions League · Jornada 5",
+      "local": "Feyenoord",
+      "visitante": "Oporto",
+      "seleccion": "Ambos marcan",
+      "mercado": "Ambos marcan",
+      "cuota": 1.65,
+      "prob": 0.57,
+      "motivo": "El Feyenoord lleva 6 partidos sin ganar y encaja mucho (3-2 en casa con el Excelsior). El Oporto ganó 4-1 al Nápoles, pero perdió sus 3 últimos partidos fuera en Champions. Los dos tienen gol y los dos fallan atrás.",
+      "riesgo": "FLOJO: partido abierto, Pinnacle 30-26-44. No va en dobles ni combinadas. Hadj Moussa es duda. Cuota estimada.",
+      "alternativa": "Más de 2,5 goles (56 %, 1,65 mediana)"
+    },
+    {
+      "id": "rbl-len",
+      "hora": "21:00",
+      "competicion": "Champions League · Jornada 5",
+      "local": "RB Leipzig",
+      "visitante": "Lens",
+      "seleccion": "RB Leipzig: más de 1,5 goles",
+      "mercado": "Goles por equipo",
+      "cuota": 1.31,
+      "prob": 0.7,
+      "motivo": "Pinnacle da un 71 % al Leipzig y el 'más de 2,5' paga 1,29: espera unos 2,7 goles del Leipzig. El Lens encaja en 15 partidos seguidos, lleva 4 sin ganar y perdió 1-9 en casa con el Como. El Leipzig marcó en sus últimos 7 en casa.",
+      "riesgo": "Faltan Guiu y Ouédraogo, y Lukeba es duda. El Lens juega sin su afición (sanción de la UEFA). Cuota estimada; la victoria del Leipzig en Winamax (1,28, valor -0,10) no compensa.",
+      "alternativa": "Más de 2,5 goles (72 %, 1,29 mediana)"
+    },
+    {
+      "id": "slo-bet",
+      "hora": "21:00",
+      "competicion": "Champions League · Jornada 5",
+      "local": "Slovan Bratislava",
+      "visitante": "Betis",
+      "seleccion": "Betis: más de 1,5 goles",
+      "mercado": "Goles por equipo",
+      "cuota": 1.29,
+      "prob": 0.71,
+      "motivo": "Pinnacle da un 77 % al Betis y el 'más de 2,5' paga 1,37: espera unos 2,5 goles del Betis. El Slovan lleva 0 puntos y -16 de diferencia en 4 partidos (le encaja 4 de media a rivales como el LASK, que le ganó 4-0). Vuelve Antony.",
+      "riesgo": "El Betis no tiene a Ceballos ni Morante y viene de perder el derbi. Cuota estimada; el 1X2 de Winamax (1,17, valor -0,10) no compensa.",
+      "alternativa": "Betis gana por 2 o más (54 %, ~1,75 estimada)"
+    }
+  ],
+  "combinadas": [
+    {
+      "id": "segura",
+      "nombre": "La segura",
+      "descripcion": "Goles en Bodø y goles del City y del Betis: las tres más sólidas del día (71-73 %). Cuota de unas 2,06.",
+      "picks": ["bod-las", "mci-nap", "slo-bet"]
+    },
+    {
+      "id": "equilibrada",
+      "nombre": "La equilibrada",
+      "descripcion": "Pocos goles en el Emirates, goles del Leipzig, goles en Como y el Madrid gana por 2. Mezcla 'menos', 'más' y hándicap para que un mismo guion no la tumbe. Cuota de unas 3,51.",
+      "picks": ["ars-bvb", "rbl-len", "com-aek", "rma-psv"]
+    },
+    {
+      "id": "sonadora",
+      "nombre": "La soñadora",
+      "descripcion": "Un pick de cada partido bueno del día (7 selecciones). Cuota de unas 7,25. Capricho: cantidad mínima.",
+      "picks": ["bod-las", "ars-bvb", "mci-nap", "rma-psv", "com-aek", "rbl-len", "slo-bet"]
+    }
+  ],
+  "dobles": [
+    {"id": "d1", "picks": ["bod-las", "rbl-len"]},
+    {"id": "d2", "picks": ["mci-nap", "ars-bvb"]},
+    {"id": "d3", "picks": ["slo-bet", "com-aek"]}
+  ]
+}
