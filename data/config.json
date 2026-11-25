@@ -7,8 +7,8 @@
   "tope_combinada": 0.02,
   "tope_diario": 0.25,
   "margen_casa": 0.05,
-  "stake_doble": 0.05,
-  "max_dobles": 8,
+  "stake_doble": 0.03,
+  "max_dobles": 4,
   "dobles_desde": "2026-11-12",
   "sonadora_dobles": 1,
   "sonadora_dobles_pct": 0.02
