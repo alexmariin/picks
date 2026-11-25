@@ -1,0 +1,117 @@
+{
+  "fecha": "2026-11-25",
+  "titulo": "Miércoles 25 de noviembre · Champions League (jornada 5)",
+  "generado": "2026-11-25 09:30",
+  "nota": "Segundo día de la jornada 5 de la Champions, 9 partidos. Cuotas de The Odds API (09:14). Winamax solo da el 1X2 en la API y hoy cobra mucho margen en todos (valor entre -0,03 y -0,38): ningún 1X2 de Winamax entra en dobles ni combinadas. De dónde sale cada cuota: los 'más de 2,5 goles' de Atlético-Viking, Brujas-Liverpool e Inter-Stuttgart son la MEDIANA del mercado; los goles por equipo del Barça y del PSG y el Sporting o empate son ESTIMADAS con las probabilidades justas de Pinnacle y un 6 % de margen. Miré los córners de Inter-Stuttgart y Atlético-Viking con Pinnacle: ninguno llega al 66 % con cuota que compense, así que hoy no hay pick de córners. No hay archivo de cuotas de Winamax de jugadores, córners ni tarjetas, y desde la nube no se llega a Winamax: comprueba en Winamax que pagan al menos esa cuota; si pagan bastante menos, no juegues ese doble. Hoy casi no hay previas con bajas confirmadas: mira los onces una hora antes (sobre todo si Liverpool rota y si el Barça guarda a titulares). Dejo fuera Slavia-Villarreal y Shakhtar-Fenerbahçe (casi 50-50) y Lille-Bayern (no sé con qué once llega el Bayern tras las lesiones de Kane y Olise del día 20).",
+  "picks": [
+    {
+      "id": "sab-bar",
+      "hora": "18:45",
+      "competicion": "Champions League · Jornada 5",
+      "local": "Sabah",
+      "visitante": "Barcelona",
+      "seleccion": "Barcelona: más de 2,5 goles",
+      "mercado": "Goles por equipo",
+      "cuota": 1.52,
+      "prob": 0.62,
+      "motivo": "Pinnacle da un 90 % al Barça y el 'más de 2,5' del partido paga 1,13: espera unos 3 goles del Barça. Ha marcado 3 o más en 3 de 4 partidos (5-1 al Feyenoord, 4-1 en Estambul, 3-0 al Aston Villa; 2 en París). El Sabah (30.º) encajó 4 del United y 4 del Viking.",
+      "riesgo": "En Bakú el Sabah solo perdió 1-2 con el Dortmund y ganó 2-0 al Slavia. Si el Barça marca pronto y rota, puede quedarse en 2. Cuota estimada. Elijo esto y no 'gana por 2' porque la lección del hándicap dice que a menos de 1,40 no compensa.",
+      "alternativa": "Barcelona gana por 2 o más (70 %, ~1,35 estimada)"
+    },
+    {
+      "id": "atm-vik",
+      "hora": "21:00",
+      "competicion": "Champions League · Jornada 5",
+      "local": "Atlético de Madrid",
+      "visitante": "Viking",
+      "seleccion": "Más de 2,5 goles",
+      "mercado": "Goles totales",
+      "cuota": 1.26,
+      "prob": 0.7,
+      "motivo": "El mercado da un 76 % al 'más de 2,5' y Pinnacle un 87 % al Atlético. Los cuatro partidos del Viking tuvieron 4 o más goles (1-3 en Stuttgart, 3-3 con el Bayern, 1-3 en Villa Park, 4-1 al Sabah): marca en todos y fuera encaja 3.",
+      "riesgo": "El Atlético va mal en Champions: 4 goles en 4 partidos y ninguno de sus partidos pasó de 2 goles. Bajo 6 puntos respecto al mercado por eso. Cuota baja (mediana 1,26). No sé si le falta algún delantero: si faltan dos atacantes titulares, no lo juegues (lección del 24/11).",
+      "alternativa": "Más de 9 córners (63 %, mediana 1,43)"
+    },
+    {
+      "id": "psg-rom",
+      "hora": "21:00",
+      "competicion": "Champions League · Jornada 5",
+      "local": "PSG",
+      "visitante": "Roma",
+      "seleccion": "PSG: más de 1,5 goles",
+      "mercado": "Goles por equipo",
+      "cuota": 1.35,
+      "prob": 0.7,
+      "motivo": "El PSG es líder con 12 puntos y 20 goles en 4 partidos: 6-1 al Slovan, 4-2 en el Etihad, 4-2 al Barça y 0-6 en Villarreal. Marcó 4 o más en todos, también contra rivales fuertes. La Roma encajó 4 del Madrid y 3 en Old Trafford.",
+      "riesgo": "Pinnacle da un 64 % al PSG: el mercado espera unos 2,2 goles suyos, menos que su media. La Roma marca en todos sus partidos y puede obligar al PSG a defender. Cuota estimada.",
+      "alternativa": "Más de 2,5 goles (72 %, mediana 1,36)"
+    },
+    {
+      "id": "bru-liv",
+      "hora": "21:00",
+      "competicion": "Champions League · Jornada 5",
+      "local": "Club Brujas",
+      "visitante": "Liverpool",
+      "seleccion": "Más de 2,5 goles",
+      "mercado": "Goles totales",
+      "cuota": 1.33,
+      "prob": 0.72,
+      "motivo": "Los 8 partidos de Champions de los dos pasaron de 2,5 goles. El Liverpool encajó en los cuatro (3 del LASK, 3 del Villarreal, 3 en Estambul) y el Brujas marcó en los cuatro (4 en San Siro, 2 en Eindhoven). El mercado da un 73 %.",
+      "riesgo": "El Liverpool juega Premier en 3 días y puede rotar. Los dos van con 9 puntos y un empate les vale poco, pero si el partido se cierra puede quedarse en 2 goles.",
+      "alternativa": "Ambos marcan (66 %, ~1,43 estimada)"
+    },
+    {
+      "id": "int-stu",
+      "hora": "21:00",
+      "competicion": "Champions League · Jornada 5",
+      "local": "Inter",
+      "visitante": "Stuttgart",
+      "seleccion": "Más de 2,5 goles",
+      "mercado": "Goles totales",
+      "cuota": 1.26,
+      "prob": 0.73,
+      "motivo": "El mercado da un 77 % al 'más de 2,5' y Pinnacle un 68 % al Inter. El Inter marca y encaja: 3-4 con el Brujas, 3-0 en Rotterdam, 1-2 en el Bernabéu. El Stuttgart marcó 3 al Viking y 3 al Slovan, y Demirović lleva 4 goles en 163 minutos.",
+      "riesgo": "Dos de los cuatro partidos del Stuttgart acabaron con 2 goles (1-1 con el Atlético y 2-0 en Estambul), y el Inter ganó 1-0 al Shakhtar. Cuota baja (mediana 1,26). El 1X2 del Inter en Winamax (1,30, valor -0,12) no compensa.",
+      "alternativa": "Más de 8,5 córners (62 % según Pinnacle, mediana 1,52)"
+    },
+    {
+      "id": "spo-mun",
+      "hora": "21:00",
+      "competicion": "Champions League · Jornada 5",
+      "local": "Sporting de Portugal",
+      "visitante": "Manchester United",
+      "seleccion": "Sporting o empate",
+      "mercado": "Doble oportunidad",
+      "cuota": 1.48,
+      "prob": 0.65,
+      "motivo": "Pinnacle da un 64 % al Sporting o empate. En casa ganó 3-1 al Galatasaray y fuera ganó en Lens y Donetsk; Suárez lleva 4 goles en 339 minutos. El United perdió sus dos partidos fuera (0-2 en el Metropolitano, 4-1 en Como) y Pochettino llegó el 18 de noviembre: es su segundo partido en 3 días, tras jugar en Anfield.",
+      "riesgo": "Al Sporting le ganó el LASK en casa (2-3). El United tiene a Bruno, Cunha y Mbeumo y un entrenador nuevo puede dar un empujón. Cuota estimada.",
+      "alternativa": "Más de 2,5 goles (62 %, mediana 1,50)"
+    }
+  ],
+  "combinadas": [
+    {
+      "id": "segura",
+      "nombre": "La segura",
+      "descripcion": "Goles en Brujas, goles del PSG y goles en San Siro: las tres más sólidas del día (70-73 %). Cuota de unas 2,26.",
+      "picks": ["bru-liv", "psg-rom", "int-stu"]
+    },
+    {
+      "id": "equilibrada",
+      "nombre": "La equilibrada",
+      "descripcion": "Sporting o empate, el Barça marca 3 en Bakú y goles en el Metropolitano. Mezcla doble oportunidad, goles de un equipo y goles totales. Cuota de unas 2,83.",
+      "picks": ["spo-mun", "sab-bar", "atm-vik"]
+    },
+    {
+      "id": "sonadora",
+      "nombre": "La soñadora",
+      "descripcion": "Un pick de cada partido bueno del día (6 selecciones). Cuota de unas 6,40. Capricho: cantidad mínima.",
+      "picks": ["sab-bar", "atm-vik", "psg-rom", "bru-liv", "int-stu", "spo-mun"]
+    }
+  ],
+  "dobles": [
+    {"id": "d1", "picks": ["bru-liv", "psg-rom"]},
+    {"id": "d2", "picks": ["int-stu", "spo-mun"]},
+    {"id": "d3", "picks": ["sab-bar", "atm-vik"]}
+  ]
+}
