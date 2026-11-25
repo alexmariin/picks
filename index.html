@@ -4,345 +4,319 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow">
-<meta name="theme-color" content="#000000">
+<meta name="theme-color" content="#0b3b2c">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
 <meta name="apple-mobile-web-app-title" content="Picks">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23ff1e3c'/%3E%3Ccircle cx='16' cy='16' r='11' fill='%23fff'/%3E%3Cpath d='M16 10l5 3.6-1.9 5.9h-6.2L11 13.6z' fill='%23000'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23f6c90e'/%3E%3Ccircle cx='16' cy='16' r='11' fill='%23fff'/%3E%3Cpath d='M16 10l5 3.6-1.9 5.9h-6.2L11 13.6z' fill='%23000'/%3E%3C/svg%3E">
 <title>Picks del día</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;1,700;1,800;1,900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-/* Layout: noche de partido. Fondo negro con focos y rayas rojas en diagonal, cabecera tipo estadio,
-   tarjetas de partido con la cuota en un bloque rojo y combinadas en formato boleto. Un solo tema (oscuro) a propósito. */
+/* Picks · sportsbook. Barra superior verde oscuro con acento ámbar, contenido en paneles claros y densos
+   (filas de evento con la cuota en botón), boleto lateral en escritorio. Tema claro y oscuro. */
 :root {
-  --bg: #07070a;
-  --panel: #111116;
-  --panel-2: #1a1a21;
-  --panel-3: #23232c;
-  --ink: #f6f6f8;
-  --ink-2: #b9b9c4;
-  --muted: #7d7d8a;
-  --line: #2a2a33;
-  --red: #ff1e3c;
-  --red-2: #c4001f;
-  --red-glow: rgba(255, 30, 60, .35);
-  --alta: #2ee28a;
-  --media: #ffb31f;
-  --baja: #ff6b3d;
-  --font-display: "Barlow Condensed", "Arial Narrow", "Inter", system-ui, sans-serif;
-  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
-  color-scheme: dark;
+  --top: #0b3b2c; --top-2: #124a37; --top-3: #1a5c45; --top-ink: #ffffff; --top-ink-2: #b9d3c8;
+  --acc: #f6c90e; --acc-ink: #1b1600; --acc-soft: #fff6cc;
+  --bg: #e6eae8; --panel: #ffffff; --panel-2: #f5f7f6; --panel-3: #edf1ef; --line: #dbe1de; --line-2: #c9d2ce;
+  --ink: #15201b; --ink-2: #44534c; --muted: #77867f;
+  --odd-bg: #eef2f0; --odd-bg-h: #e2e9e5; --odd-ink: #0a6a46;
+  --win: #11975a; --win-soft: #e3f5ec; --lose: #d23b3b; --lose-soft: #fbe9e9; --pend: #b07c00; --pend-soft: #fdf3d6; --void: #6b7a73;
+  --liga: #2b3a34; --liga-ink: #ffffff;
+  --shadow: 0 1px 2px rgba(10, 30, 22, .08), 0 2px 8px rgba(10, 30, 22, .05);
+  --r: 6px;
+  --mono: "Barlow Condensed", "Inter", system-ui, sans-serif;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --top: #0a2c21; --top-2: #0f3a2c; --top-3: #164c3a; --top-ink-2: #9fc2b4;
+    --acc-soft: #3a3210;
+    --bg: #0c1311; --panel: #141d19; --panel-2: #18231e; --panel-3: #1d2a24; --line: #24322c; --line-2: #2f3f38;
+    --ink: #e8efeb; --ink-2: #b3c2bb; --muted: #7d8e86;
+    --odd-bg: #1d2a24; --odd-bg-h: #24352d; --odd-ink: #5fe0a2;
+    --win: #34c47e; --win-soft: #14301f; --lose: #f06464; --lose-soft: #3a1b1b; --pend: #e2b23b; --pend-soft: #33290d; --void: #8c9b94;
+    --liga: #1f2c26;
+    --shadow: 0 1px 2px rgba(0, 0, 0, .4);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --top: #0a2c21; --top-2: #0f3a2c; --top-3: #164c3a; --top-ink-2: #9fc2b4; --acc-soft: #3a3210;
+  --bg: #0c1311; --panel: #141d19; --panel-2: #18231e; --panel-3: #1d2a24; --line: #24322c; --line-2: #2f3f38;
+  --ink: #e8efeb; --ink-2: #b3c2bb; --muted: #7d8e86; --odd-bg: #1d2a24; --odd-bg-h: #24352d; --odd-ink: #5fe0a2;
+  --win: #34c47e; --win-soft: #14301f; --lose: #f06464; --lose-soft: #3a1b1b; --pend: #e2b23b; --pend-soft: #33290d; --void: #8c9b94;
+  --liga: #1f2c26; --shadow: 0 1px 2px rgba(0, 0, 0, .4); color-scheme: dark;
 }
 * { box-sizing: border-box; }
-html { background: var(--bg); }
-body {
-  margin: 0; color: var(--ink); background: var(--bg);
-  font: 15px/1.5 var(--font-body); font-variant-numeric: tabular-nums;
-  background-image:
-    radial-gradient(900px 500px at 85% -10%, rgba(255, 30, 60, .16), transparent 60%),
-    radial-gradient(700px 420px at -10% 30%, rgba(255, 30, 60, .08), transparent 60%),
-    repeating-linear-gradient(-58deg, transparent 0 46px, rgba(255, 30, 60, .045) 46px 48px, transparent 48px 140px);
-  background-attachment: fixed;
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 14px/1.45 Inter, system-ui, -apple-system, "Segoe UI", sans-serif; font-feature-settings: "tnum"; }
+a { color: inherit; }
+button, input, select { font: inherit; color: inherit; }
+.muted { color: var(--muted); } .xs { font-size: 12px; } .pos { color: var(--win); } .neg, .rojo { color: var(--lose); }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+
+/* ---- barra superior ---- */
+.top { background: var(--top); color: var(--top-ink); position: sticky; top: 0; z-index: 20; box-shadow: 0 1px 0 rgba(0,0,0,.25); }
+.top-in { max-width: 1320px; margin: 0 auto; padding: 0 16px; height: 54px; display: flex; align-items: center; gap: 16px; }
+.marca { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--top-ink); }
+.marca svg { width: 30px; height: 30px; flex: none; }
+.marca b { font: 800 22px/1 var(--mono); letter-spacing: .04em; text-transform: uppercase; }
+.marca b i { font-style: normal; color: var(--acc); }
+.marca small { display: block; font: 600 10px/1 Inter, sans-serif; letter-spacing: .14em; text-transform: uppercase; color: var(--top-ink-2); margin-top: 3px; }
+.cuenta { margin-left: auto; display: flex; align-items: center; gap: 8px; }
+.cuenta .c-b { text-align: right; line-height: 1.1; text-decoration: none; padding: 6px 10px; border-radius: var(--r); background: var(--top-2); }
+.cuenta .c-b span { display: block; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--top-ink-2); }
+.cuenta .c-b strong { font: 700 17px/1.1 var(--mono); }
+.cuenta .c-b.jugado strong { color: var(--acc); }
+.tabs-bar { background: var(--top-2); border-top: 1px solid rgba(255,255,255,.06); }
+.tabs { max-width: 1320px; margin: 0 auto; padding: 0 8px; display: flex; overflow-x: auto; scrollbar-width: none; }
+.tabs::-webkit-scrollbar { display: none; }
+.tabs a { flex: none; padding: 12px 16px 11px; color: var(--top-ink-2); text-decoration: none; font: 700 13px/1 Inter, sans-serif; letter-spacing: .03em; text-transform: uppercase; border-bottom: 3px solid transparent; white-space: nowrap; }
+.tabs a:hover { color: #fff; background: var(--top-3); }
+.tabs a.on { color: #fff; border-bottom-color: var(--acc); }
+.tabs a .n { display: inline-block; min-width: 18px; padding: 2px 5px; margin-left: 6px; border-radius: 9px; background: var(--acc); color: var(--acc-ink); font-size: 11px; text-align: center; }
+
+/* ---- estructura ---- */
+.shell { max-width: 1320px; margin: 0 auto; padding: 14px 16px 40px; display: grid; grid-template-columns: 220px minmax(0, 1fr) 300px; gap: 14px; align-items: start; }
+.lado { position: sticky; top: 112px; display: grid; gap: 12px; }
+#app { min-width: 0; display: grid; gap: 14px; }
+@media (max-width: 1180px) { .shell { grid-template-columns: 200px minmax(0, 1fr); } .lado.der { display: none; } }
+@media (max-width: 860px) { .shell { grid-template-columns: minmax(0, 1fr); padding: 10px 10px 90px; } .lado { display: none; } }
+
+.panel { background: var(--panel); border-radius: var(--r); box-shadow: var(--shadow); overflow: hidden; }
+.panel-h { display: flex; align-items: center; gap: 8px; padding: 10px 14px; background: var(--panel-3); border-bottom: 1px solid var(--line); font: 700 12px/1.2 Inter, sans-serif; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-2); }
+.panel-h .r { margin-left: auto; font-weight: 600; letter-spacing: 0; text-transform: none; color: var(--muted); }
+.panel-b { padding: 14px; }
+.panel-b > p:first-child { margin-top: 0; }
+
+/* lateral izquierdo */
+.menu { list-style: none; margin: 0; padding: 4px 0; }
+.menu button, .menu a { width: 100%; display: flex; align-items: center; gap: 8px; padding: 9px 14px; border: 0; background: none; text-align: left; cursor: pointer; text-decoration: none; color: var(--ink); font-size: 13px; }
+.menu button:hover, .menu a:hover { background: var(--panel-2); }
+.menu .on { background: var(--acc-soft); box-shadow: inset 3px 0 0 var(--acc); font-weight: 700; }
+.menu .cnt { margin-left: auto; font-size: 12px; color: var(--muted); }
+.menu .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--line-2); flex: none; }
+.menu .dot.v { background: var(--win); } .menu .dot.r { background: var(--lose); } .menu .dot.p { background: var(--pend); }
+
+/* cabecera de página */
+.cab { background: linear-gradient(100deg, var(--top) 0%, var(--top-2) 60%, var(--top-3) 100%); color: #fff; border-radius: var(--r); padding: 16px 18px; position: relative; overflow: hidden; }
+.cab::after { content: ""; position: absolute; right: -60px; top: -60px; width: 260px; height: 260px; border-radius: 50%; border: 34px solid rgba(255,255,255,.04); }
+.cab-top { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; position: relative; z-index: 1; }
+.cab h1 { margin: 0; font: 800 26px/1.05 var(--mono); letter-spacing: .02em; text-transform: uppercase; }
+.cab h1 em { font-style: normal; color: var(--acc); }
+.cab .sub { margin: 4px 0 0; color: var(--top-ink-2); font-size: 13px; position: relative; z-index: 1; }
+.cab .chip-l { font: 700 10px/1 Inter, sans-serif; letter-spacing: .14em; text-transform: uppercase; padding: 5px 8px; border-radius: 3px; background: var(--acc); color: var(--acc-ink); }
+.cab .sel { margin-left: auto; }
+.cab .sel select { background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.2); color: #fff; border-radius: var(--r); padding: 6px 10px; }
+.cab .sel select option { color: #000; }
+.kpis { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1px; margin-top: 14px; background: rgba(255,255,255,.12); border-radius: var(--r); overflow: hidden; position: relative; z-index: 1; }
+.kpis.tres { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.kpi { background: rgba(5, 25, 18, .35); padding: 10px 12px; min-width: 0; }
+.kpi-l { display: block; font-size: 10px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--top-ink-2); }
+.kpi-v { display: block; font: 700 22px/1.15 var(--mono); margin-top: 3px; white-space: nowrap; }
+.kpi-v.acc { color: var(--acc); } .kpi-v.pos { color: #6ff0ae; } .kpi-v.neg { color: #ff9a9a; }
+.kpi-s { display: block; font-size: 11px; color: var(--top-ink-2); margin-top: 2px; overflow: hidden; text-overflow: ellipsis; }
+@media (max-width: 640px) { .kpis, .kpis.tres { grid-template-columns: repeat(2, minmax(0, 1fr)); } .cab h1 { font-size: 22px; } }
+.nota-dia { margin: 12px 0 0; border-radius: var(--r); background: rgba(0,0,0,.18); color: #dfece6; font-size: 12.5px; position: relative; z-index: 1; }
+.nota-dia > summary { list-style: none; cursor: pointer; padding: 8px 12px; font-weight: 700; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--top-ink-2); display: flex; align-items: center; gap: 8px; }
+.nota-dia > summary::-webkit-details-marker { display: none; }
+.nota-dia > summary::after { content: "+"; margin-left: auto; font-size: 16px; line-height: 1; color: var(--acc); }
+.nota-dia[open] > summary::after { content: "−"; }
+.nota-dia p { margin: 0; padding: 0 12px 10px; line-height: 1.5; }
+
+/* tira de días */
+.dias { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; padding: 2px; }
+.dias::-webkit-scrollbar { display: none; }
+.dia { flex: none; min-width: 58px; border: 1px solid var(--line); background: var(--panel); border-radius: var(--r); padding: 6px 8px; cursor: pointer; text-align: center; line-height: 1.1; }
+.dia span { display: block; font-size: 10px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.dia b { display: block; font: 700 19px/1.1 var(--mono); }
+.dia.on { background: var(--top); border-color: var(--top); color: #fff; } .dia.on span { color: var(--acc); }
+@media (min-width: 861px) { .dias { display: none; } }
+
+/* ---- lista de eventos ---- */
+.liga-h { display: flex; align-items: center; gap: 8px; padding: 9px 14px; background: var(--liga); color: var(--liga-ink); font: 700 12.5px/1.2 Inter, sans-serif; letter-spacing: .02em; }
+.liga-h svg { width: 15px; height: 15px; flex: none; }
+.liga-h .r { margin-left: auto; font-weight: 500; opacity: .7; font-size: 12px; }
+.cols { display: grid; grid-template-columns: 64px minmax(0, 1fr) minmax(0, 1.1fr) 84px; gap: 10px; padding: 6px 14px; background: var(--panel-2); border-bottom: 1px solid var(--line); font-size: 10.5px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.cols span:last-child { text-align: center; }
+.ev { border-bottom: 1px solid var(--line); }
+.ev:last-child { border-bottom: 0; }
+.ev-f { display: grid; grid-template-columns: 64px minmax(0, 1fr) minmax(0, 1.1fr) 84px; gap: 10px; align-items: center; padding: 10px 14px; }
+.ev-h { font: 700 15px/1 var(--mono); color: var(--ink-2); }
+.ev-h small { display: block; margin-top: 4px; font: 600 10px/1 Inter, sans-serif; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+.ev-eqs { display: grid; gap: 5px; min-width: 0; }
+.ev-eq { display: flex; align-items: center; gap: 8px; min-width: 0; font-weight: 600; }
+.ev-eq > span:last-child { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ev-mk { min-width: 0; }
+.ev-mk .mk { display: block; font-size: 11px; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: .05em; }
+.ev-mk .sel { display: block; font-weight: 700; color: var(--ink); }
+.odd { display: grid; place-items: center; min-height: 44px; border-radius: 4px; background: var(--odd-bg); border: 1px solid var(--line); color: var(--odd-ink); font: 700 18px/1 var(--mono); }
+.odd small { display: block; font: 600 9.5px/1 Inter, sans-serif; letter-spacing: .06em; color: var(--muted); text-transform: uppercase; margin-top: 3px; }
+.odd.valor { background: var(--acc-soft); border-color: var(--acc); color: var(--ink); }
+.ev.acierto .odd { background: var(--win-soft); border-color: var(--win); color: var(--win); }
+.ev.fallo .odd { background: var(--lose-soft); border-color: var(--lose); color: var(--lose); }
+.ev.fallo .ev-mk .sel { text-decoration: line-through; text-decoration-color: var(--lose); }
+@media (max-width: 640px) {
+  .cols { display: none; }
+  .ev-f { grid-template-columns: minmax(0, 1fr) 76px; grid-template-areas: "h h" "e o" "m o"; row-gap: 6px; }
+  .ev-h { grid-area: h; display: flex; gap: 8px; align-items: baseline; font-size: 13px; }
+  .ev-h small { margin: 0; }
+  .ev-eqs { grid-area: e; } .ev-mk { grid-area: m; } .odd { grid-area: o; align-self: stretch; }
 }
-body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 20; background: #000; }
-h1, h2, h3 { margin: 0; font-family: var(--font-display); text-transform: uppercase; letter-spacing: .01em; line-height: 1; text-wrap: balance; }
-p { margin: 0; }
-button, select, input { font: inherit; color: inherit; }
-:focus-visible { outline: 2px solid var(--red); outline-offset: 2px; }
-.muted { color: var(--muted); }
-.pos { color: var(--alta); }
-.neg { color: var(--baja); }
-.inner { max-width: 1200px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+/* escudos */
+.escudo { width: 22px; height: 22px; border-radius: 50%; display: inline-grid; place-items: center; flex: none; font: 800 8.5px/1 Inter, sans-serif; position: relative; overflow: hidden; }
+.escudo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; background: var(--panel); }
+.escudo.bandera img { object-fit: cover; }
+.escudo.bandera { border-radius: 3px; width: 24px; height: 17px; box-shadow: 0 0 0 1px var(--line); }
+.escudo.club { background: transparent !important; color: transparent !important; } .escudo.club img { background: transparent; }
+.bandi { width: 16px; height: 12px; object-fit: cover; border-radius: 2px; vertical-align: -1px; margin-right: 3px; box-shadow: 0 0 0 1px var(--line); }
+.bandi.club { width: 14px; height: 14px; object-fit: contain; box-shadow: none; vertical-align: -2px; }
+/* detalle desplegable del evento */
+.mas { border-top: 1px dashed var(--line); }
+.mas > summary { list-style: none; cursor: pointer; display: flex; align-items: center; gap: 12px; padding: 7px 14px; font-size: 12px; color: var(--ink-2); flex-wrap: wrap; }
+.mas > summary::-webkit-details-marker { display: none; }
+.mas > summary::after { content: "Ver análisis"; margin-left: auto; font-weight: 700; color: var(--odd-ink); }
+.mas[open] > summary::after { content: "Ocultar"; }
+.mas > summary .fb { display: inline-flex; align-items: center; gap: 6px; }
+.barra { width: 70px; height: 5px; border-radius: 3px; background: var(--line); overflow: hidden; display: inline-block; }
+.barra i { display: block; height: 100%; background: var(--win); }
+.barra.media i { background: var(--pend); } .barra.baja i { background: var(--lose); }
+.mas-b { padding: 4px 14px 14px; display: grid; gap: 10px; }
+.mas-b p { margin: 0; }
+.bloque { padding: 9px 11px; border-radius: var(--r); background: var(--panel-2); border-left: 3px solid var(--line-2); font-size: 13px; }
+.bloque b { display: block; font-size: 10.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin-bottom: 2px; }
+.bloque.riesgo { border-left-color: var(--pend); } .bloque.alt { border-left-color: var(--odd-ink); }
+.apostar-f { display: flex; flex-wrap: wrap; gap: 8px 18px; align-items: baseline; font-size: 13px; }
+.apostar-f strong { font: 700 18px/1 var(--mono); }
+.badge { display: inline-block; padding: 3px 7px; border-radius: 3px; font: 700 10.5px/1.2 Inter, sans-serif; letter-spacing: .04em; text-transform: uppercase; }
+.badge.acierto { background: var(--win); color: #fff; } .badge.fallo { background: var(--lose); color: #fff; } .badge.nulo { background: var(--void); color: #fff; }
 
-/* ---------- barra superior ---------- */
-.topbar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 10; background: rgba(0, 0, 0, .88); backdrop-filter: blur(12px); border-bottom: 2px solid var(--red); }
-.topbar .inner { display: flex; align-items: center; gap: 16px; padding-block: 0; flex-wrap: wrap; min-height: 58px; }
-.brand { display: flex; align-items: center; gap: 10px; font-family: var(--font-display); font-weight: 900; font-style: italic; font-size: 24px; text-transform: uppercase; letter-spacing: .02em; }
-.brand svg { width: 28px; height: 28px; flex-shrink: 0; }
-.brand b { color: var(--red); font-weight: 900; }
-.tabs { display: flex; margin-left: auto; align-self: stretch; }
-.tabs a {
-  display: flex; align-items: center; text-decoration: none; padding: 0 16px; color: var(--ink-2);
-  font-family: var(--font-display); font-weight: 700; font-size: 18px; text-transform: uppercase; letter-spacing: .04em;
-  border-bottom: 3px solid transparent; margin-bottom: -2px;
-}
-.tabs a:hover { color: var(--ink); }
-.tabs a.on { color: var(--ink); border-bottom-color: var(--red); background: linear-gradient(to top, rgba(255, 30, 60, .18), transparent 70%); }
-.saldo-chip {
-  text-decoration: none; font-family: var(--font-display); font-weight: 800; font-size: 19px;
-  padding: 4px 14px; background: var(--red); color: #fff; transform: skewX(-12deg); white-space: nowrap;
-}
-.saldo-chip span { display: inline-block; transform: skewX(12deg); }
+/* ---- boletos (dobles y combinadas) ---- */
+.boletos { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 12px; }
+.bol { background: var(--panel); border-radius: var(--r); box-shadow: var(--shadow); overflow: hidden; display: flex; flex-direction: column; border-top: 3px solid var(--top-3); }
+.bol.ganada { border-top-color: var(--win); } .bol.perdida { border-top-color: var(--lose); } .bol.nula { border-top-color: var(--void); }
+.bol.oro { border-top-color: var(--acc); background: linear-gradient(180deg, var(--acc-soft), var(--panel) 90px); }
+.bol-h { display: flex; align-items: center; gap: 10px; padding: 11px 14px 8px; }
+.bol-h h3 { margin: 0; font: 800 16px/1.1 var(--mono); letter-spacing: .03em; text-transform: uppercase; }
+.bol-h p { margin: 2px 0 0; font-size: 12px; color: var(--muted); }
+.bol-h .q { margin-left: auto; text-align: right; flex: none; }
+.bol-h .q span { display: block; font-size: 10px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+.bol-h .q b { font: 800 24px/1 var(--mono); color: var(--odd-ink); }
+.est { display: inline-block; padding: 3px 7px; border-radius: 3px; font: 700 10px/1.2 Inter, sans-serif; letter-spacing: .06em; text-transform: uppercase; background: var(--pend-soft); color: var(--pend); }
+.est.ganada { background: var(--win); color: #fff; } .est.perdida { background: var(--lose); color: #fff; } .est.nula { background: var(--void); color: #fff; }
+.legs { list-style: none; margin: 0; padding: 0 14px; }
+.leg { display: grid; grid-template-columns: 16px minmax(0, 1fr) auto; gap: 8px; align-items: start; padding: 8px 0; border-top: 1px solid var(--line); }
+.leg-i { width: 16px; height: 16px; border-radius: 50%; margin-top: 2px; border: 2px solid var(--line-2); display: grid; place-items: center; font-size: 10px; font-weight: 800; color: #fff; }
+.leg.acierto .leg-i { background: var(--win); border-color: var(--win); } .leg.fallo .leg-i { background: var(--lose); border-color: var(--lose); } .leg.nulo .leg-i { background: var(--void); border-color: var(--void); }
+.leg-t { min-width: 0; }
+.leg-t b { display: block; font-size: 13.5px; }
+.leg-t span { display: block; font-size: 12px; color: var(--muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.leg-c { font: 700 16px/1.2 var(--mono); color: var(--ink); }
+.leg.fallo .leg-t b { text-decoration: line-through; text-decoration-color: var(--lose); }
+.bol-f { margin-top: auto; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--line); background: var(--panel-2); }
+.bol-f div { padding: 9px 12px; min-width: 0; }
+.bol-f div + div { border-left: 1px solid var(--line); }
+.bol-f span { display: block; font-size: 10px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.bol-f b { font: 700 17px/1.2 var(--mono); white-space: nowrap; }
+.bol-f b.ret { color: var(--odd-ink); }
+.bol-f small { display: block; font-size: 11px; color: var(--muted); }
+/* jugar */
+.jugar { border-top: 1px solid var(--line); }
+.jugar > summary { list-style: none; cursor: pointer; margin: 10px 14px; padding: 10px; border-radius: 4px; background: var(--acc); color: var(--acc-ink); text-align: center; font: 800 13px/1 Inter, sans-serif; letter-spacing: .06em; text-transform: uppercase; }
+.jugar > summary::-webkit-details-marker { display: none; }
+.jugar > summary:hover { filter: brightness(.96); }
+.jugar[open] > summary { background: var(--panel-3); color: var(--ink-2); }
+.jugar form { display: grid; grid-template-columns: 1fr 1fr auto; gap: 8px; padding: 0 14px 12px; align-items: end; }
+.jugar label { font-size: 10.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); display: grid; gap: 4px; }
+.jugar input { width: 100%; padding: 9px 10px; border: 1px solid var(--line-2); border-radius: 4px; background: var(--panel); font: 700 15px/1 var(--mono); }
+.jugar input:focus { outline: 2px solid var(--acc); outline-offset: 0; border-color: var(--acc); }
+.btn { padding: 10px 14px; border: 0; border-radius: 4px; background: var(--top); color: #fff; font: 700 13px/1 Inter, sans-serif; cursor: pointer; }
+.btn:disabled { opacity: .5; }
+.ok-msg { margin: 0 14px 12px; font-size: 12px; color: var(--win); font-weight: 600; }
+.jugada { margin: 10px 14px; padding: 9px 11px; border-radius: 4px; background: var(--win-soft); color: var(--ink); font-size: 12.5px; border-left: 3px solid var(--win); }
+.jugada.perdida { background: var(--lose-soft); border-left-color: var(--lose); } .jugada.pendiente { background: var(--pend-soft); border-left-color: var(--pend); }
+.jugada a { color: var(--odd-ink); font-weight: 700; }
 
-main.inner { padding-block: 22px 44px; display: flex; flex-direction: column; gap: 22px; }
-.pie { padding-block: 0 32px; color: var(--muted); font-size: 12px; }
+/* ---- boleto lateral ---- */
+.slip .panel-h { background: var(--top); color: #fff; border-bottom: 0; }
+.slip .panel-h .r { color: var(--acc); }
+.slip-l { list-style: none; margin: 0; padding: 0; }
+.slip-l li { padding: 9px 14px; border-bottom: 1px solid var(--line); display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 2px 8px; font-size: 12.5px; }
+.slip-l li b { font-size: 13px; } .slip-l li .c { font: 700 15px/1.2 var(--mono); color: var(--odd-ink); text-align: right; }
+.slip-l li .s { grid-column: 1 / -1; color: var(--muted); font-size: 11.5px; }
+.slip-t { padding: 12px 14px; display: grid; gap: 6px; background: var(--panel-2); font-size: 13px; }
+.slip-t div { display: flex; justify-content: space-between; gap: 8px; }
+.slip-t strong { font: 700 17px/1.1 var(--mono); }
+.slip-t .ret strong { color: var(--odd-ink); font-size: 20px; }
+.slip-go { display: block; margin: 0 14px 14px; padding: 11px; text-align: center; background: var(--acc); color: var(--acc-ink); border-radius: 4px; font: 800 12.5px/1 Inter, sans-serif; letter-spacing: .06em; text-transform: uppercase; text-decoration: none; }
 
-/* ---------- cabecera tipo estadio ---------- */
-.hero {
-  position: relative; overflow: hidden; border-radius: 4px; isolation: isolate;
-  background: linear-gradient(180deg, #0d0d12 0%, #050507 100%);
-  border: 1px solid var(--line); padding: 28px 24px 22px; min-height: 230px;
-  display: flex; flex-direction: column; justify-content: flex-end; gap: 16px;
-}
-.hero-art { position: absolute; inset: 0; z-index: -1; width: 100%; height: 100%; }
-.hero::after {
-  content: ""; position: absolute; z-index: -1; right: -60px; top: -40px; width: 340px; height: 140%;
-  background: repeating-linear-gradient(-62deg, var(--red) 0 10px, transparent 10px 26px);
-  opacity: .9; transform: skewX(-22deg); mask-image: linear-gradient(to left, #000 20%, transparent 95%); -webkit-mask-image: linear-gradient(to left, #000 20%, transparent 95%);
-}
-.hero-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; flex-wrap: wrap; }
-.tag {
-  display: inline-block; background: var(--red); color: #fff; font-family: var(--font-display); font-weight: 800; font-style: italic;
-  text-transform: uppercase; letter-spacing: .06em; font-size: 15px; padding: 3px 14px; transform: skewX(-12deg);
-}
-.tag > span { display: inline-block; transform: skewX(12deg); }
-.hero h1 { font-size: clamp(38px, 7vw, 76px); font-weight: 900; font-style: italic; text-shadow: 0 4px 30px rgba(0, 0, 0, .7); }
-.hero h1 em { color: var(--red); font-style: italic; }
-.hero .sub { font-family: var(--font-display); font-size: clamp(18px, 2.4vw, 24px); font-weight: 700; text-transform: uppercase; color: var(--ink-2); letter-spacing: .03em; margin-top: 6px; }
-.nota { color: var(--ink-2); font-size: 13px; max-width: 75ch; }
-.selector { display: flex; gap: 8px; align-items: center; font-size: 13px; }
-select, input { background: var(--panel-2); border: 1px solid var(--line); border-radius: 3px; padding: 7px 10px; }
-
-.marcador { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; border: 1px solid var(--line); background: rgba(0, 0, 0, .55); backdrop-filter: blur(6px); }
-.marcador.cuatro { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-.marcador > div { padding: 12px 16px; display: flex; flex-direction: column; border-left: 1px solid var(--line); min-width: 0; }
-.marcador > div:first-child { border-left: 0; }
-.m-n { font-family: var(--font-display); font-weight: 800; font-size: 34px; line-height: 1; }
-.m-n.rojo { color: var(--red); }
-.m-l { color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: .08em; margin-top: 4px; }
-
-.seccion-t { display: flex; align-items: center; gap: 12px; font-family: var(--font-display); font-weight: 800; font-style: italic; font-size: 26px; text-transform: uppercase; }
-.seccion-t::after { content: ""; flex: 1; height: 6px; background: repeating-linear-gradient(-60deg, var(--red) 0 4px, transparent 4px 10px); opacity: .8; }
-
-.aviso { border-left: 4px solid var(--red); background: var(--panel); padding: 10px 14px; font-size: 13px; color: var(--ink-2); }
-
-/* ---------- tarjetas de partido ---------- */
-.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); gap: 18px; }
-.pick {
-  position: relative; overflow: hidden; background: linear-gradient(160deg, var(--panel-2) 0%, var(--panel) 55%);
-  border: 1px solid var(--line); border-radius: 4px; display: flex; flex-direction: column; min-width: 0;
-  transition: transform .15s ease, border-color .15s ease, box-shadow .15s ease;
-}
-.pick:hover { transform: translateY(-2px); border-color: #3a3a46; box-shadow: 0 10px 30px rgba(0, 0, 0, .5), 0 0 0 1px rgba(255, 30, 60, .15); }
-.pick::before {
-  content: ""; position: absolute; top: 0; right: 0; width: 120px; height: 100%; pointer-events: none;
-  background: repeating-linear-gradient(-60deg, rgba(255, 30, 60, .10) 0 3px, transparent 3px 14px);
-  mask-image: linear-gradient(to left, #000, transparent); -webkit-mask-image: linear-gradient(to left, #000, transparent);
-}
-.pick-top { display: flex; align-items: center; gap: 10px; padding: 12px 16px 0; font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: .07em; font-weight: 600; }
-.hora { font-family: var(--font-display); font-weight: 800; font-size: 17px; background: var(--ink); color: #000; padding: 1px 10px; transform: skewX(-12deg); letter-spacing: 0; }
-.hora > span { display: inline-block; transform: skewX(12deg); }
-.comp { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.equipos { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 10px; padding: 16px 16px 14px; }
-.eq { display: flex; flex-direction: column; align-items: center; gap: 8px; text-align: center; min-width: 0; }
-.escudo {
-  width: 54px; height: 54px; border-radius: 50%; display: grid; place-items: center;
-  font-family: var(--font-display); font-weight: 900; font-size: 20px; color: #fff; letter-spacing: .02em;
-  border: 2px solid rgba(255, 255, 255, .18); box-shadow: inset 0 -8px 16px rgba(0, 0, 0, .35), 0 6px 18px rgba(0, 0, 0, .5);
-}
-.eq-n { font-family: var(--font-display); font-weight: 800; font-size: 20px; text-transform: uppercase; line-height: 1.05; overflow-wrap: anywhere; }
-.vs { font-family: var(--font-display); font-weight: 900; font-style: italic; font-size: 22px; color: var(--red); }
-.centro { display: flex; flex-direction: column; align-items: center; gap: 2px; }
-.centro .vs { font-size: 13px; letter-spacing: .1em; }
-.centro .hora-g { font-family: var(--font-display); font-weight: 900; font-size: 26px; line-height: 1; }
-.escudo { position: relative; overflow: hidden; }
-.escudo.bandera { width: 60px; height: 60px; }
-.escudo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-.escudo.bandera::after { content: ""; position: absolute; inset: 0; border-radius: 50%; background: radial-gradient(circle at 35% 28%, rgba(255,255,255,.35), transparent 50%); box-shadow: inset 0 -8px 14px rgba(0,0,0,.35); }
-.bandi { width: 18px; height: 12px; object-fit: cover; border-radius: 2px; vertical-align: -1px; margin: 0 4px 0 0; box-shadow: 0 0 0 1px rgba(255,255,255,.25); }
-.bandi + .bandi { margin-right: 7px; }
-.escudo.club { width: 60px; height: 60px; }
-.escudo.club img { background: #fff; padding: 7px; object-fit: contain; border-radius: 50%; }
-.bandi.club { width: 16px; height: 16px; object-fit: contain; background: #fff; border-radius: 50%; padding: 1px; vertical-align: -3px; box-shadow: none; }
-
-.apuesta { display: flex; align-items: stretch; margin: 0 16px; background: #000; border: 1px solid var(--line); }
-.ap-txt { flex: 1; padding: 10px 12px; min-width: 0; }
-.ap-m { font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: .1em; font-weight: 600; }
-.ap-s { font-family: var(--font-display); font-weight: 800; font-size: 21px; text-transform: uppercase; line-height: 1.1; }
-.cuota {
-  display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 6px 18px 6px 22px; min-width: 92px;
-  background: var(--red); color: #fff; clip-path: polygon(12px 0, 100% 0, 100% 100%, 0 100%);
-  box-shadow: 0 0 24px var(--red-glow);
-}
-.cuota-l { font-size: 9px; text-transform: uppercase; letter-spacing: .12em; font-weight: 700; opacity: .85; }
-.cuota-n { font-family: var(--font-display); font-weight: 900; font-size: 32px; line-height: 1; }
-
-.cuerpo { padding: 14px 16px 0; display: flex; flex-direction: column; gap: 12px; flex: 1; }
-.fiab-top { display: flex; justify-content: space-between; align-items: baseline; font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; font-weight: 600; margin-bottom: 6px; }
-.fiab-top b { font-family: var(--font-display); font-size: 22px; letter-spacing: 0; color: var(--ink); }
-.segs { display: grid; grid-template-columns: repeat(20, 1fr); gap: 2px; }
-.segs i { height: 8px; background: var(--panel-3); transform: skewX(-20deg); }
-.alta .segs i.on { background: var(--alta); }
-.media .segs i.on { background: var(--media); }
-.baja .segs i.on { background: var(--baja); }
-.alta .fiab-top b { color: var(--alta); }
-.media .fiab-top b { color: var(--media); }
-.baja .fiab-top b { color: var(--baja); }
-.fiab-sub { font-size: 11px; color: var(--muted); margin-top: 5px; }
-.motivo { font-size: 14px; color: var(--ink-2); }
-.riesgo { font-size: 13px; color: var(--ink-2); display: flex; gap: 8px; }
-.riesgo::before { content: "!"; flex-shrink: 0; width: 18px; height: 18px; display: grid; place-items: center; background: var(--media); color: #000; font-weight: 800; font-size: 12px; transform: skewX(-12deg); margin-top: 1px; }
-.alt { font-size: 13px; color: var(--ink-2); }
-.alt b { color: var(--muted); font-weight: 600; text-transform: uppercase; font-size: 10px; letter-spacing: .1em; margin-right: 4px; }
-
-.stake { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-top: auto; padding: 12px 16px; border-top: 1px solid var(--line); background: rgba(0, 0, 0, .35); }
-.stake-l { font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: .12em; font-weight: 600; display: block; }
-.stake-n { font-family: var(--font-display); font-size: 28px; font-weight: 900; color: var(--alta); line-height: 1; }
-.stake-n.cero { color: var(--muted); }
-.stake-pct { font-size: 12px; color: var(--muted); text-align: right; }
-
-.jugar { padding: 0 16px 14px; background: rgba(0, 0, 0, .35); }
-.jugar summary { cursor: pointer; list-style: none; font-family: var(--font-display); font-weight: 800; font-size: 15px; text-transform: uppercase; letter-spacing: .06em; color: var(--red); }
-.jugar summary::-webkit-details-marker { display: none; }
-.jugar summary::before { content: "+ "; }
-.jugar[open] summary::before { content: "– "; }
-.jugar form { display: grid; grid-template-columns: 1fr 1fr auto; gap: 8px; align-items: end; margin-top: 8px; }
-.jugar label { display: flex; flex-direction: column; font-size: 10px; color: var(--muted); gap: 3px; text-transform: uppercase; letter-spacing: .08em; min-width: 0; }
-.jugar input { width: 100%; }
-.btn {
-  cursor: pointer; border: 0; background: var(--red); color: #fff; padding: 8px 16px;
-  font-family: var(--font-display); font-weight: 800; font-size: 16px; text-transform: uppercase; letter-spacing: .05em;
-  clip-path: polygon(8px 0, 100% 0, calc(100% - 8px) 100%, 0 100%);
-}
-.btn:hover { background: #ff3b55; }
-.btn:disabled { opacity: .5; cursor: default; }
-.ok-msg { font-size: 12px; color: var(--alta); margin-top: 6px; }
-
-/* ---------- combinadas (boleto) ---------- */
-.grid.comb { grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); }
-.boleto { position: relative; background: var(--panel); border: 1px solid var(--line); border-radius: 4px; overflow: hidden; display: flex; flex-direction: column; min-width: 0; }
-.bol-top {
-  position: relative; padding: 16px 18px; display: flex; justify-content: space-between; gap: 12px; align-items: flex-start;
-  background: linear-gradient(110deg, var(--red-2) 0%, var(--red) 55%, #ff4d63 100%); overflow: hidden;
-}
-.bol-top::after { content: ""; position: absolute; inset: 0; background: repeating-linear-gradient(-60deg, rgba(0, 0, 0, .14) 0 6px, transparent 6px 18px); pointer-events: none; }
-.bol-top > * { position: relative; z-index: 1; }
-.bol-top h2 { font-size: 30px; font-weight: 900; font-style: italic; }
-.bol-top p { font-size: 13px; color: rgba(255, 255, 255, .85); margin-top: 4px; max-width: 32ch; }
-.bol-cuota { text-align: right; flex-shrink: 0; }
-.bol-cuota span { display: block; font-size: 10px; text-transform: uppercase; letter-spacing: .12em; font-weight: 700; color: rgba(255, 255, 255, .85); }
-.bol-cuota b { font-family: var(--font-display); font-weight: 900; font-size: 52px; line-height: .9; color: #fff; text-shadow: 0 3px 0 rgba(0, 0, 0, .25); }
-.perfo { height: 0; border-top: 2px dashed var(--line); margin: 0 14px; position: relative; }
-.perfo::before, .perfo::after { content: ""; position: absolute; top: -11px; width: 20px; height: 20px; border-radius: 50%; background: var(--bg); }
-.perfo::before { left: -25px; }
-.perfo::after { right: -25px; }
-.lista { list-style: none; margin: 0; padding: 14px 16px; display: flex; flex-direction: column; gap: 8px; }
-.lista li { display: grid; grid-template-columns: auto 1fr auto; grid-template-areas: "h p c" "h s c"; column-gap: 12px; align-items: center; padding: 8px 10px; background: var(--panel-2); border-left: 3px solid var(--red); }
-.lista .hora { grid-area: h; font-size: 15px; }
-.lista .p { grid-area: p; font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; font-weight: 600; min-width: 0; }
-.lista .s { grid-area: s; font-family: var(--font-display); font-weight: 800; font-size: 18px; text-transform: uppercase; line-height: 1.1; }
-.lista .c { grid-area: c; font-family: var(--font-display); font-weight: 900; font-size: 22px; color: var(--red); }
-.datos { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--line); }
-.datos div { padding: 12px 16px; display: flex; flex-direction: column; border-left: 1px solid var(--line); min-width: 0; }
-.datos div:first-child { border-left: 0; }
-.datos .m-n { font-size: 28px; }
-.datos .verde { color: var(--alta); }
-.xs { font-size: 11px; }
-
-/* ---------- prueba hasta el 12 de diciembre ---------- */
-.prueba { display: flex; flex-direction: column; gap: 14px; }
-.prueba .sub { margin: 0; }
-.prueba .pos { color: var(--alta); }
-.prueba .rojo { color: var(--red); }
+/* ---- tablas, listas, varios ---- */
 .tabla-wrap { overflow-x: auto; }
-.tabla-prueba { width: 100%; border-collapse: collapse; font-size: 14px; }
-.tabla-prueba th, .tabla-prueba td { padding: 8px 10px; text-align: right; border-bottom: 1px solid var(--line); white-space: nowrap; }
-.tabla-prueba th:first-child { text-align: left; }
-.tabla-prueba thead th { font-size: 11px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); font-weight: 700; }
-.tabla-prueba tbody th { font-family: var(--font-display); font-weight: 800; font-size: 16px; text-transform: uppercase; }
+table.t { width: 100%; border-collapse: collapse; font-size: 13px; }
+table.t th { text-align: left; padding: 8px 12px; font-size: 10.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); background: var(--panel-2); border-bottom: 1px solid var(--line); white-space: nowrap; }
+table.t td { padding: 9px 12px; border-bottom: 1px solid var(--line); vertical-align: middle; }
+table.t tr:last-child td { border-bottom: 0; }
+table.t .num { text-align: right; font-family: var(--mono); font-size: 15px; font-weight: 700; white-space: nowrap; }
+table.t tbody tr:hover { background: var(--panel-2); }
+.chips { display: flex; gap: 4px; flex-wrap: wrap; }
+.chip { padding: 4px 8px; border-radius: 3px; border: 1px solid var(--line-2); background: var(--panel); font-size: 11.5px; font-weight: 600; cursor: pointer; }
+.chip.on.pendiente { background: var(--pend); border-color: var(--pend); color: #fff; } .chip.on.ganada { background: var(--win); border-color: var(--win); color: #fff; }
+.chip.on.perdida { background: var(--lose); border-color: var(--lose); color: #fff; } .chip.on.nula { background: var(--void); border-color: var(--void); color: #fff; }
+.chip.borrar.confirmar { background: var(--lose); color: #fff; border-color: var(--lose); }
+.chip:disabled { cursor: default; opacity: .7; }
+.historial { list-style: none; margin: 0; padding: 0; }
+.historial li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px 12px; padding: 10px 14px; border-bottom: 1px solid var(--line); border-left: 3px solid var(--pend); }
+.historial li.ganada { border-left-color: var(--win); } .historial li.perdida { border-left-color: var(--lose); } .historial li.nula { border-left-color: var(--void); }
+.historial .d { font-weight: 600; font-size: 13px; }
+.historial .n { font-size: 12px; color: var(--muted); }
+.historial .r { text-align: right; font: 700 16px/1.2 var(--mono); grid-row: span 2; align-self: center; }
+.dia-h { display: flex; align-items: center; gap: 8px; padding: 8px 14px; background: var(--panel-3); font-size: 12px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--ink-2); border-bottom: 1px solid var(--line); }
+.dia-h .r { margin-left: auto; text-transform: none; letter-spacing: 0; font-weight: 600; }
+.totales { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 1px; background: var(--line); border-bottom: 1px solid var(--line); }
+.totales div { background: var(--panel-2); padding: 9px 14px; }
+.totales span { display: block; font-size: 10.5px; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; color: var(--muted); }
+.totales b { font: 700 17px/1.3 var(--mono); }
+.reglas ul { margin: 0; padding: 0 0 0 18px; display: grid; gap: 6px; font-size: 13px; color: var(--ink-2); }
+.vacio { text-align: center; padding: 36px 18px; }
+.vacio h2 { margin: 0 0 6px; font: 800 20px/1.2 var(--mono); text-transform: uppercase; }
+.aviso { margin: 0; padding: 10px 14px; border-radius: var(--r); background: var(--pend-soft); color: var(--ink); font-size: 13px; border-left: 3px solid var(--pend); }
+.pie-n { font-size: 12px; color: var(--muted); margin: 0; }
+.stat-g { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1px; background: var(--line); }
+.stat-g div { background: var(--panel); padding: 12px 14px; }
+.stat-g span { display: block; font-size: 10.5px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.stat-g b { display: block; font: 700 22px/1.2 var(--mono); margin-top: 2px; }
+.stat-g small { color: var(--muted); font-size: 11.5px; }
+@media (max-width: 640px) { .stat-g { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+/* gráfica */
+.grafica { position: relative; padding: 10px 14px 14px; }
+.grafica svg { width: 100%; height: auto; display: block; }
+.grafica .grid-l { stroke: var(--line); stroke-width: 1; }
+.grafica .base-l { stroke: var(--muted); stroke-dasharray: 4 4; stroke-width: 1; }
+.grafica .eje { fill: var(--muted); font: 600 11px Inter, sans-serif; }
+.grafica .linea { fill: none; stroke: var(--odd-ink); stroke-width: 2.5; stroke-linejoin: round; }
+.grafica .punto { fill: var(--panel); stroke: var(--odd-ink); stroke-width: 2; }
+.grafica .hit { fill: transparent; cursor: pointer; }
+.tip { position: absolute; z-index: 2; max-width: 220px; padding: 8px 10px; border-radius: 4px; background: var(--top); color: #fff; font-size: 12px; pointer-events: none; box-shadow: 0 4px 14px rgba(0,0,0,.25); }
 
-/* ---------- resultados ---------- */
-.badge { margin-left: auto; flex-shrink: 0; font-size: 10px; font-weight: 700; letter-spacing: .08em; padding: 2px 8px; color: #000; background: var(--muted); }
-.badge.acierto { background: var(--alta); }
-.badge.fallo { background: var(--red); color: #fff; }
-.res-dia { display: flex; flex-direction: column; gap: 10px; }
-.res-fecha { font-size: 20px; font-weight: 800; font-style: italic; color: var(--ink-2); }
-.res-lista { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 14px; }
-.res-comb { background: var(--panel); border: 1px solid var(--line); border-left: 4px solid var(--muted); border-radius: 4px; min-width: 0; }
-.res-comb.ganada { border-left-color: var(--alta); }
-.res-comb.perdida { border-left-color: var(--red); }
-.res-comb header { display: flex; align-items: center; gap: 10px; padding: 12px 14px; border-bottom: 1px solid var(--line); }
-.res-comb h4 { margin: 0; font-family: var(--font-display); font-weight: 800; font-size: 20px; text-transform: uppercase; flex: 1; min-width: 0; }
-.res-cuota { font-family: var(--font-display); font-weight: 900; font-size: 30px; line-height: 1; color: var(--red); }
-.res-comb.ganada .res-cuota { color: var(--alta); }
-.estado-tag { font-family: var(--font-display); font-weight: 800; font-style: italic; font-size: 14px; text-transform: uppercase; padding: 2px 10px; transform: skewX(-12deg); background: var(--panel-3); color: var(--ink-2); }
-.estado-tag.ganada { background: var(--alta); color: #000; }
-.estado-tag.perdida { background: var(--red); color: #fff; }
-.res-comb ul { list-style: none; margin: 0; padding: 8px 14px 12px; display: flex; flex-direction: column; gap: 6px; }
-.res-comb li { display: grid; grid-template-columns: 22px 1fr auto; grid-template-areas: "i p c" "i s c"; column-gap: 8px; align-items: center; font-size: 13px; }
-.res-comb .ico { grid-area: i; width: 20px; height: 20px; display: grid; place-items: center; font-weight: 800; font-size: 12px; background: var(--panel-3); color: var(--muted); }
-.res-comb li.acierto .ico { background: var(--alta); color: #000; }
-.res-comb li.fallo .ico { background: var(--red); color: #fff; }
-.r-p { grid-area: p; color: var(--muted); font-size: 11px; text-transform: uppercase; letter-spacing: .05em; font-weight: 600; min-width: 0; }
-.r-p b { color: var(--ink); }
-.r-s { grid-area: s; font-weight: 600; color: var(--ink); }
-.r-c { grid-area: c; font-family: var(--font-display); font-weight: 800; font-size: 18px; color: var(--ink-2); }
-.res-comb li.fallo .r-s { text-decoration: line-through; text-decoration-color: var(--red); }
-
-/* ---------- banca ---------- */
-.card { background: var(--panel); border: 1px solid var(--line); border-radius: 4px; padding: 18px; min-width: 0; }
-.h2 { font-size: 22px; font-weight: 800; font-style: italic; margin-bottom: 14px; }
-.grafica { position: relative; }
-.grafica svg { width: 100%; height: auto; display: block; overflow: visible; }
-.grid-l { stroke: var(--line); stroke-width: 1; }
-.base-l { stroke: var(--muted); stroke-width: 1; stroke-dasharray: 4 4; }
-.eje { fill: var(--muted); font-size: 11px; font-family: var(--font-body); }
-.linea { fill: none; stroke: var(--red); stroke-width: 2.5; stroke-linejoin: round; stroke-linecap: round; filter: drop-shadow(0 0 6px var(--red-glow)); }
-.punto { fill: var(--red); stroke: var(--panel); stroke-width: 2; }
-.hit { fill: transparent; cursor: pointer; }
-.tip { position: absolute; pointer-events: none; background: #fff; color: #000; padding: 6px 10px; font-size: 12px; max-width: 220px; line-height: 1.35; }
-.tabla-wrap { overflow-x: auto; }
-.tabla { width: 100%; border-collapse: collapse; font-size: 14px; }
-.tabla th { text-align: left; font-size: 10px; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); font-weight: 600; padding: 8px; border-bottom: 2px solid var(--red); }
-.tabla td { padding: 11px 8px; border-bottom: 1px solid var(--line); vertical-align: middle; }
-.tabla .num { text-align: right; white-space: nowrap; font-family: var(--font-display); font-weight: 700; font-size: 17px; }
-.estados { display: flex; gap: 4px; flex-wrap: wrap; }
-.chip { border: 0; cursor: pointer; background: var(--panel-3); color: var(--ink-2); padding: 4px 10px; font-size: 12px; font-weight: 600; }
-.chip.on.ganada { background: var(--alta); color: #000; }
-.chip.on.perdida { background: var(--red); color: #fff; }
-.chip.on.pendiente, .chip.on.nula { background: var(--ink); color: #000; }
-.chip.borrar { background: transparent; color: var(--muted); }
-.chip.borrar.confirmar { background: var(--red); color: #fff; }
-.reglas ul { margin: 0; padding-left: 18px; color: var(--ink-2); font-size: 14px; display: flex; flex-direction: column; gap: 6px; }
-.reglas li::marker { color: var(--red); }
-.jugada { margin: 0 16px 14px; padding: 10px 12px; border: 1px solid #1f8f4e; background: rgba(31,143,78,.12); font-size: 14px; }
-.jugada.perdida { border-color: var(--red); background: rgba(255,30,60,.1); }
-.jugada a { color: var(--muted); margin-left: 6px; }
-.mis-dia { margin-top: 18px; }
-.mis-l { list-style: none; margin: 8px 0 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
-.mis-l li { padding: 10px 12px; border: 1px solid var(--line); border-left: 3px solid var(--red); background: rgba(255,255,255,.02); }
-.mis-d { font-weight: 600; margin-bottom: 4px; }
-.mis-n { display: flex; flex-wrap: wrap; gap: 4px 18px; align-items: center; font-size: 14px; color: var(--ink-2); }
-.mis-n b { color: var(--ink, #fff); } .mis-n b.c { color: var(--red); }
-.mis-tot { display: flex; flex-wrap: wrap; gap: 10px 28px; margin-top: 10px; padding: 12px; background: #000; border: 1px solid var(--line); }
-.mis-tot > div { display: flex; flex-direction: column; gap: 2px; }
-.mis-tot b { font-family: var(--font-display); font-size: 22px; }
-.mis .pos, .mis-tot .pos { color: #2ecc71; } .mis .neg, .mis-tot .neg { color: var(--red); }
-.boleto.sonadora-d { grid-column: 1 / -1; outline: 2px dashed #d4a017; outline-offset: -2px; }
-.vacio { text-align: center; padding: 44px 18px; }
-.vacio h2 { font-size: 30px; margin-bottom: 8px; }
-
-@media (max-width: 720px) {
-  .topbar .inner { gap: 10px; padding-top: 8px; }
-  .tabs { order: 3; width: 100%; margin-left: 0; overflow-x: auto; scrollbar-width: none; }
-  .tabs::-webkit-scrollbar { display: none; }
-  .tabs a { flex: 1 0 auto; justify-content: center; padding: 10px 8px; font-size: 14px; letter-spacing: 0; }
-  .res-lista { grid-template-columns: 1fr; }
-  .saldo-chip { margin-left: auto; }
-  .hero { padding: 22px 16px 16px; min-height: 200px; }
-  .hero::after { width: 200px; right: -80px; }
-  .marcador, .marcador.cuatro { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .marcador > div:nth-child(3) { border-left: 0; }
-  .marcador > div:nth-child(n+3) { border-top: 1px solid var(--line); }
-  .m-n { font-size: 26px; }
-  .grid, .grid.comb { grid-template-columns: 1fr; }
-  .bol-cuota b { font-size: 42px; }
-  main.inner { padding-block: 16px 32px; }
+/* barra inferior en móvil */
+.abajo { display: none; }
+@media (max-width: 860px) {
+  .tabs-bar { display: none; }
+  .abajo { display: grid; grid-template-columns: repeat(5, 1fr); position: fixed; left: 0; right: 0; bottom: 0; z-index: 30; background: var(--top); padding-bottom: env(safe-area-inset-bottom); box-shadow: 0 -1px 0 rgba(0,0,0,.25); }
+  .abajo a { display: grid; justify-items: center; gap: 3px; padding: 8px 2px 7px; text-decoration: none; color: var(--top-ink-2); font: 700 10px/1 Inter, sans-serif; letter-spacing: .04em; text-transform: uppercase; border-top: 3px solid transparent; }
+  .abajo a svg { width: 20px; height: 20px; }
+  .abajo a.on { color: #fff; border-top-color: var(--acc); }
+  .cuenta .c-b.jugado { display: none; }
+  .marca small { display: none; }
 }
-@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
-:root { padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
 [hidden] { display: none !important; }
+.cab h1 { position: relative; z-index: 1; margin-top: 10px; }
+.menu .cnt.pos { color: var(--win); } .menu .cnt.neg { color: var(--lose); } .menu .cnt b { color: var(--ink); }
+.vacio p { margin: 0; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+.pie { max-width: 1320px; margin: 0 auto; padding: 0 16px 28px; font-size: 11.5px; color: var(--muted); }
+@media (max-width: 860px) { .pie { padding-bottom: 90px; } }
 </style>
 <script src="escudos.js"></script>
 </head>
@@ -358,27 +332,48 @@ select, input { background: var(--panel-2); border: 1px solid var(--line); borde
   </defs>
 </svg>
 
-<header class="topbar">
-  <div class="inner">
-    <div class="brand"><svg><use href="#balon"/></svg><span>Picks <b>del día</b></span></div>
-    <nav class="tabs">
+<header class="top">
+  <div class="top-in">
+    <a class="marca" href="#partidos" aria-label="Picks, inicio">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7" fill="#f6c90e"/><circle cx="16" cy="16" r="10.5" fill="#0b3b2c"/><path d="M16 10.2l4.8 3.5-1.8 5.6h-6l-1.8-5.6z" fill="#f6c90e"/></svg>
+      <span><b>Picks<i>Día</i></b><small>Análisis diario de fútbol</small></span>
+    </a>
+    <div class="cuenta">
+      <a class="c-b jugado" href="#banca"><span>En juego</span><strong id="juego-chip">0,00 €</strong></a>
+      <a class="c-b" href="#banca"><span>Disponible</span><strong id="saldo-chip">—</strong></a>
+    </div>
+  </div>
+  <div class="tabs-bar">
+    <nav class="tabs" aria-label="Secciones">
       <a href="#partidos" data-v="partidos">Partidos</a>
-      <a href="#dobles" data-v="dobles">Dobles</a>
+      <a href="#dobles" data-v="dobles">Dobles<span class="n" id="n-dobles" hidden></span></a>
       <a href="#combinadas" data-v="combinadas">Combinadas</a>
       <a href="#resultados" data-v="resultados">Resultados</a>
-      <a href="#banca" data-v="banca">Banca</a>
+      <a href="#banca" data-v="banca">Mi banca</a>
     </nav>
-    <a class="saldo-chip" href="#banca"><span id="saldo-chip">50,00 €</span></a>
   </div>
 </header>
-<main class="inner" id="app">
-  <section class="card vacio">
-    <h2>Cargando los picks…</h2>
-    <p class="muted">Aquí salen los partidos del día con su selección, la fiabilidad y cuánto apostar.</p>
-  </section>
-</main>
-<footer class="inner pie">Estimaciones propias, no garantías. Las cuotas son aproximadas: manda la de tu casa de apuestas. Juega solo lo que estés dispuesto a perder · +18</footer>
 
+<div class="shell">
+  <aside class="lado izq" id="lado-izq" aria-label="Jornadas"></aside>
+  <main id="app">
+    <section class="panel vacio">
+      <h2>Cargando los picks…</h2>
+      <p class="muted">Aquí salen los partidos del día con su selección, la fiabilidad y cuánto apostar.</p>
+    </section>
+  </main>
+  <aside class="lado der" id="lado-der" aria-label="Boleto del día"></aside>
+</div>
+
+<footer class="pie">Estimaciones propias, no garantías. Las cuotas son aproximadas: manda la de tu casa de apuestas. Juega solo lo que estés dispuesto a perder · +18</footer>
+
+<nav class="abajo" aria-label="Secciones">
+  <a href="#partidos" data-v="partidos"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7.5l4 2.9-1.5 4.6h-5L8 10.4z"/></svg>Partidos</a>
+  <a href="#dobles" data-v="dobles"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="5" width="13" height="9" rx="1.5"/><rect x="8.5" y="10" width="13" height="9" rx="1.5"/></svg>Dobles</a>
+  <a href="#combinadas" data-v="combinadas"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M9 6h12M9 12h12M9 18h12"/><circle cx="4.5" cy="6" r="1.2"/><circle cx="4.5" cy="12" r="1.2"/><circle cx="4.5" cy="18" r="1.2"/></svg>Combis</a>
+  <a href="#resultados" data-v="resultados"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M5 20v-8M12 20V5M19 20v-11M2.5 20.5h19"/></svg>Resultados</a>
+  <a href="#banca" data-v="banca"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18M16 14.5h2"/></svg>Banca</a>
+</nav>
 <script>
 (() => {
   const DEF_CFG = { banca_inicial: 50, banca_desde: "", kelly_fraccion: 0.25, peso_mi_estimacion: 0.5, tope_simple: 0.05, tope_combinada: 0.02, tope_diario: 0.25, margen_casa: 0.05, stake_doble: 0.03, max_dobles: 4, dobles_desde: "2026-11-12", sonadora_dobles: 1 };
@@ -475,50 +470,72 @@ select, input { background: var(--panel-2); border: 1px solid var(--line); borde
 
   // ---------- piezas ----------
   const vista = () => ["partidos", "dobles", "combinadas", "resultados", "banca"].includes(location.hash.slice(1)) ? location.hash.slice(1) : "partidos";
-  const tag = t => `<span class="tag"><span>${esc(t)}</span></span>`;
-  const horaTag = h => `<span class="hora"><span>${esc(h)}</span></span>`;
+  const ICO_BALON = `<svg viewBox="0 0 32 32" aria-hidden="true"><use href="#balon"/></svg>`;
+  const cap = s => s.charAt(0).toUpperCase() + s.slice(1);
+  const fechaLarga = f => { const d = fd(f); return isNaN(d) ? f : cap(`${DIAS[d.getDay()]} ${d.getDate()} de ${MESES[d.getMonth()]}`); };
+  const tituloDia = f => { const d = fd(f); return isNaN(d) ? esc(f) : `${cap(DIAS[d.getDay()])} <em>${d.getDate()}</em> de ${MESES[d.getMonth()]}`; };
+  const subDia = d => { const partes = String(d.titulo || "").split("·"); return (partes.length > 1 ? partes.slice(1).join("·") : "").trim(); };
+  const signo = v => (v > 0 ? "pos" : v < 0 ? "neg" : "");
+  const roiTxt = r => r === null ? "—" : (r > 0 ? "+" : "") + Math.round(r) + " %";
+  const kpi = (l, v, s, cls) => `<div class="kpi"><span class="kpi-l">${l}</span><span class="kpi-v ${cls || ""}">${v}</span>${s ? `<span class="kpi-s">${s}</span>` : ""}</div>`;
 
-  // estadio de noche dibujado: focos, gradas y líneas del campo en perspectiva
-  const ESTADIO = `<svg class="hero-art" viewBox="0 0 1200 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-    <defs>
-      <radialGradient id="foco1" cx="18%" cy="0%" r="55%"><stop offset="0" stop-color="#fff" stop-opacity=".22"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
-      <radialGradient id="foco2" cx="62%" cy="0%" r="50%"><stop offset="0" stop-color="#fff" stop-opacity=".16"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
-      <linearGradient id="cesped" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0c3b22"/><stop offset="1" stop-color="#03130a"/></linearGradient>
-      <linearGradient id="fade" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#050507" stop-opacity=".92"/><stop offset=".55" stop-color="#050507" stop-opacity=".45"/><stop offset="1" stop-color="#050507" stop-opacity=".2"/></linearGradient>
-      <pattern id="gente" width="8" height="6" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.3" fill="#2a2a35"/><circle cx="6" cy="4" r="1.3" fill="#22222b"/></pattern>
-    </defs>
-    <rect width="1200" height="300" fill="#060609"/>
-    <path d="M0 40 L1200 40 L1200 150 L0 150 Z" fill="url(#gente)" opacity=".9"/>
-    <path d="M0 150 L1200 150 L1200 300 L0 300 Z" fill="url(#cesped)"/>
-    <g fill="#ffffff" opacity=".04"><path d="M0 150h1200v18H0z"/><path d="M0 190h1200v24H0z"/><path d="M0 240h1200v30H0z"/></g>
-    <g fill="none" stroke="#fff" stroke-opacity=".35" stroke-width="2">
-      <path d="M90 300 L260 150 L940 150 L1110 300"/>
-      <path d="M600 150 L600 300"/>
-      <ellipse cx="600" cy="205" rx="120" ry="34"/>
-      <path d="M430 150 L405 182 L795 182 L770 150"/>
-    </g>
-    <g fill="#fff"><circle cx="210" cy="18" r="5" opacity=".9"/><circle cx="228" cy="18" r="5" opacity=".9"/><circle cx="246" cy="18" r="5" opacity=".9"/><circle cx="740" cy="14" r="5" opacity=".8"/><circle cx="758" cy="14" r="5" opacity=".8"/><circle cx="776" cy="14" r="5" opacity=".8"/></g>
-    <rect width="1200" height="300" fill="url(#foco1)"/><rect width="1200" height="300" fill="url(#foco2)"/>
-    <rect width="1200" height="300" fill="url(#fade)"/>
-  </svg>`;
-
-  function selectorFecha(d) {
-    if (st.dias.length < 2) return "";
-    const opts = st.dias.map(x => `<option value="${esc(x.fecha)}" ${x.fecha === d.fecha ? "selected" : ""}>${fechaCorta(x.fecha)}</option>`).join("");
-    return `<label class="selector"><span class="muted">Otro día</span><select id="sel-fecha">${opts}</select></label>`;
+  function cab({ chip, titulo, sub, sel, kpis, nota }) {
+    return `<section class="cab">
+      <div class="cab-top">${chip ? `<span class="chip-l">${esc(chip)}</span>` : ""}${sel ? `<div class="sel">${sel}</div>` : ""}</div>
+      <h1>${titulo}</h1>${sub ? `<p class="sub">${sub}</p>` : ""}
+      ${kpis && kpis.length ? `<div class="kpis ${kpis.length === 3 ? "tres" : ""}">${kpis.join("")}</div>` : ""}
+      ${nota ? `<details class="nota-dia"><summary>Nota del análisis</summary><p>${esc(nota)}</p></details>` : ""}
+    </section>`;
   }
 
-  function hero(d, marcador) {
-    const f = fd(d.fecha);
-    const grande = isNaN(f) ? esc(d.fecha) : `${DIAS[f.getDay()]} <em>${f.getDate()}</em> ${MESES[f.getMonth()].slice(0, 3)}`;
-    const partes = String(d.titulo || "").split("·");
-    const sub = (partes.length > 1 ? partes.slice(1).join("·") : partes[0]).trim();
-    return `<section class="hero">${ESTADIO}
-      <div class="hero-top">${tag("Noche de partido")}${selectorFecha(d)}</div>
-      <div><h1>${grande}</h1>${sub ? `<p class="sub">${esc(sub)}</p>` : ""}</div>
-      ${marcador}
-      ${d.nota ? `<p class="nota">${esc(d.nota)}</p>` : ""}
-    </section>`;
+  // estado de un día para el punto del menú: p = quedan pendientes, v = más aciertos que fallos, r = al revés
+  function estadoDia(d) {
+    const ps = d.picks || []; if (!ps.length) return "";
+    if (ps.some(p => !p.resultado)) return "p";
+    const a = ps.filter(p => p.resultado === "acierto").length, f = ps.filter(p => p.resultado === "fallo").length;
+    return a >= f ? "v" : "r";
+  }
+  // tira de días (solo en móvil; en escritorio está el menú lateral)
+  function tiraDias(d) {
+    if (st.dias.length < 2) return "";
+    return `<div class="dias" aria-label="Días">${st.dias.slice(0, 21).map(x => { const f = fd(x.fecha);
+      return `<button class="dia ${x.fecha === d.fecha ? "on" : ""}" data-fecha="${esc(x.fecha)}"><span>${isNaN(f) ? "" : DIAS[f.getDay()].slice(0, 3)}</span><b>${isNaN(f) ? esc(x.fecha) : f.getDate()}</b></button>`; }).join("")}</div>`;
+  }
+
+  function ladoIzq(b) {
+    const conDia = ["partidos", "dobles", "combinadas"].includes(vista());
+    const dias = st.dias.slice(0, 21).map(x => `<li><button class="${conDia && x.fecha === st.fecha ? "on" : ""}" data-fecha="${esc(x.fecha)}"><span class="dot ${estadoDia(x)}"></span>${fechaCorta(x.fecha)}<span class="cnt">${(x.picks || []).length}</span></button></li>`).join("");
+    return `<section class="panel"><div class="panel-h">Jornadas<span class="r">${st.dias.length || ""}</span></div>
+        <ul class="menu">${dias || `<li><span class="muted xs" style="display:block;padding:9px 14px">Sin días todavía</span></li>`}</ul></section>
+      <section class="panel"><div class="panel-h">Mi banca</div><ul class="menu">
+        <li><a href="#banca">Disponible<span class="cnt"><b>${eur(b.disponible)}</b></span></a></li>
+        <li><a href="#banca">En juego<span class="cnt">${eur(b.pendiente)}</span></a></li>
+        <li><a href="#banca">Rendimiento<span class="cnt ${signo(b.rend)}">${(b.rend > 0 ? "+" : "") + b.rend.toFixed(1).replace(".", ",")} %</span></a></li>
+      </ul></section>`;
+  }
+
+  // importe de cada doble: % fijo de la banca, redondeado a 0,50 €, sin pasar del tope diario
+  function importeDoble(ds, b) {
+    const cfg = st.cfg; let imp = redondeo(b.saldo * cfg.stake_doble);
+    const lim = b.saldo * cfg.tope_diario;
+    if (imp * ds.length > lim && ds.length) imp = Math.max(1, Math.floor(lim / ds.length * 2) / 2);
+    return imp;
+  }
+
+  function boletoLateral(raw, b) {
+    const ds = doblesDelDia(raw), imp = importeDoble(ds, b);
+    const pot = ds.reduce((t, x) => t + imp * x.cuotaPub, 0);
+    const items = ds.map(x => `<li><b>Doble ${x.n}${x.estado !== "pendiente" ? ` · <span class="${x.estado === "ganada" ? "pos" : x.estado === "perdida" ? "neg" : "muted"}">${EST_TXT[x.estado]}</span>` : ""}</b><span class="c">${cuo(x.cuota)}</span>
+      <span class="s">${x.lista.map(p => esc(p.seleccion)).join(" + ")}</span></li>`).join("");
+    return `<section class="panel slip"><div class="panel-h">Boleto del día<span class="r">${fechaCorta(raw.fecha)}</span></div>
+      ${ds.length ? `<ul class="slip-l">${items}</ul>
+        <div class="slip-t">
+          <div><span>Apuestas</span><strong>${ds.length} × ${eur(imp)}</strong></div>
+          <div><span>Total en juego</span><strong>${eur(imp * ds.length)}</strong></div>
+          <div class="ret"><span>Si aciertan todos</span><strong>${eur(pot)}</strong></div>
+        </div>
+        ${vista() === "dobles" ? "" : `<a class="slip-go" href="#dobles">Ver los dobles</a>`}`
+      : `<div class="panel-b"><p class="muted xs" style="margin:0">Este día no hay dobles.</p></div>`}</section>`;
   }
 
   function formJugar(tipo, ref, desc, importe, cuota, prob) {
@@ -527,7 +544,7 @@ select, input { background: var(--panel-2); border: 1px solid var(--line); borde
     if (ya.length) {
       const imp = ya.reduce((t, a) => t + a.importe, 0), cobro = ya.reduce((t, a) => t + a.importe * a.cuota, 0);
       const est = ya[0].estado;
-      return `<div class="jugada ${est}"><b>✓ Jugada</b> · ${eur(imp)} a cuota ${cuo(ya[0].cuota)} · ${est === "pendiente" ? `si gana cobras <b>${eur(cobro)}</b>` : est === "ganada" ? `has cobrado <b>${eur(cobro)}</b>` : est === "perdida" ? "perdida" : "nula"} <a href="#banca">editar</a></div>`;
+      return `<div class="jugada ${est}"><b>✓ Jugada</b> · ${eur(imp)} a cuota ${cuo(ya[0].cuota)} · ${est === "pendiente" ? `si gana cobras <b>${eur(cobro)}</b>` : est === "ganada" ? `has cobrado <b>${eur(cobro)}</b>` : est === "perdida" ? "perdida" : "nula"} · <a href="#banca">editar</a></div>`;
     }
     return `<details class="jugar"><summary>La he jugado</summary>
       <form data-tipo="${tipo}" data-ref="${esc(ref)}" data-desc="${esc(desc)}" data-prob="${prob.toFixed(4)}">
@@ -537,78 +554,81 @@ select, input { background: var(--panel-2); border: 1px solid var(--line); borde
       </form></details>`;
   }
 
+  // boleto (dobles, combinadas, resultados)
+  const ICO_RES = { acierto: "✓", fallo: "✕", nulo: "–" };
+  const EST_TXT = { ganada: "Ganada", perdida: "Perdida", nula: "Nula", pendiente: "Pendiente" };
+  const legs = lista => `<ul class="legs">${lista.map(p => `<li class="leg ${p.resultado || ""}"><span class="leg-i" aria-hidden="true">${ICO_RES[p.resultado] || ""}</span>
+      <div class="leg-t"><b>${esc(p.seleccion)}</b><span>${bandi(p.local)}${esc(p.local)} – ${bandi(p.visitante)}${esc(p.visitante)} · ${p.marcador ? `<strong>${esc(p.marcador)}</strong>` : esc(p.hora || "")}${p.dato ? " · " + esc(p.dato) : ""}</span></div>
+      <span class="leg-c">${cuo(p.cuota)}</span></li>`).join("")}</ul>`;
+  // sin etiqueta mientras no haya ningún resultado
+  const estadoVisible = (estado, lista) => estado === "pendiente" && !lista.some(p => p.resultado) ? "" : estado;
+  function boleto({ cls = "", titulo, sub, cuota, estado, lista, pie, form }) {
+    return `<article class="bol ${estado && estado !== "pendiente" ? estado : ""} ${cls}">
+      <header class="bol-h"><div><h3>${titulo}</h3><p>${estado ? `<span class="est ${estado}">${EST_TXT[estado]}</span> ` : ""}${sub || ""}</p></div>
+        <div class="q"><span>Cuota</span><b>${cuo(cuota)}</b></div></header>
+      ${legs(lista)}
+      ${pie ? `<div class="bol-f">${pie.map(([l, v, s, c]) => `<div><span>${l}</span><b class="${c || ""}">${v}</b>${s ? `<small>${s}</small>` : ""}</div>`).join("")}</div>` : ""}
+      ${form || ""}
+    </article>`;
+  }
+
   // ---------- vistas ----------
   function vistaVacia() {
-    return `<section class="hero">${ESTADIO}<div>${tag("Sin partidos")}</div>
-      <div><h1>Todavía no hay <em>picks</em></h1><p class="sub">Champions martes y miércoles · Europa los jueves · Ligas de viernes a domingo</p></div></section>`;
+    return cab({ chip: "Sin partidos", titulo: "Todavía no hay <em>picks</em>", sub: "Champions martes y miércoles · Europa los jueves · Ligas de viernes a domingo" });
   }
 
   function vistaPartidos(d, b) {
     const conValor = d.picks.filter(p => p.importe > 0).length;
-    const tarjetas = d.picks.map(p => {
-      const nivel = p.pa >= 0.8 ? "alta" : p.pa >= 0.68 ? "media" : "baja";
-      const on = Math.round(p.pa * 20);
-      const segs = Array.from({ length: 20 }, (_, i) => `<i class="${i < on ? "on" : ""}"></i>`).join("");
-      return `<article class="pick ${nivel}">
-        <header class="pick-top"><span class="comp">${esc(p.competicion)}</span>${badgePick(p)}</header>
-        <div class="equipos">
-          <div class="eq">${escudo(p.local)}<span class="eq-n">${esc(p.local)}</span></div>
-          <div class="centro"><span class="vs">VS</span><span class="hora-g">${esc(p.hora || "")}</span></div>
-          <div class="eq">${escudo(p.visitante)}<span class="eq-n">${esc(p.visitante)}</span></div>
+    const hechos = d.picks.filter(p => p.resultado && p.resultado !== "nulo"), ac = hechos.filter(p => p.resultado === "acierto").length;
+    const grupos = [];
+    for (const p of d.picks) { const k = p.competicion || "Otros"; let g = grupos.find(x => x.k === k); if (!g) grupos.push(g = { k, ps: [] }); g.ps.push(p); }
+    const ev = p => {
+      const nivel = p.pa >= 0.8 ? "" : p.pa >= 0.68 ? "media" : "baja";
+      return `<div class="ev ${p.resultado || ""}">
+        <div class="ev-f">
+          <div class="ev-h">${esc(p.hora || "")}<small>${p.marcador ? "Final " + esc(p.marcador) : p.resultado === "nulo" ? "Nulo" : ""}</small></div>
+          <div class="ev-eqs"><div class="ev-eq">${escudo(p.local)}<span>${esc(p.local)}</span></div><div class="ev-eq">${escudo(p.visitante)}<span>${esc(p.visitante)}</span></div></div>
+          <div class="ev-mk"><span class="mk">${esc(p.mercado)}</span><span class="sel">${esc(p.seleccion)}</span></div>
+          <div class="odd ${p.importe > 0 && !p.resultado ? "valor" : ""}" title="Cuota aproximada · fiabilidad corregida">${cuo(p.cuota)}<small>${pct(p.pa)}</small></div>
         </div>
-        <div class="apuesta">
-          <div class="ap-txt"><p class="ap-m">${esc(p.mercado)}</p><p class="ap-s">${esc(p.seleccion)}</p></div>
-          <div class="cuota"><span class="cuota-l">Cuota aprox.</span><span class="cuota-n">${cuo(p.cuota)}</span></div>
-        </div>
-        <div class="cuerpo">
-          <div><div class="fiab-top"><span>Fiabilidad</span><b>${pct(p.pa)}</b></div>
-            <div class="segs" role="img" aria-label="Fiabilidad ${pct(p.pa)}">${segs}</div>
-            <p class="fiab-sub">Mi estimación ${pct(p.prob)}, corregida con la cuota</p></div>
-          <p class="motivo">${esc(p.motivo)}</p>
-          ${p.riesgo ? `<p class="riesgo">${esc(p.riesgo)}</p>` : ""}
-          ${p.alternativa ? `<p class="alt"><b>Alternativa</b>${esc(p.alternativa)}</p>` : ""}
-        </div>
-        <footer class="stake"><div><span class="stake-l">Apostar</span>
-          <span class="stake-n ${p.importe > 0 ? "" : "cero"}">${p.importe > 0 ? eur(p.importe) : "0 €"}</span></div>
-          <span class="stake-pct">${p.importe > 0 ? (p.pctB * 100).toFixed(1).replace(".", ",") + " % de la banca" : "Sin valor a esta cuota"}</span></footer>
-        ${formJugar("simple", d.fecha + "-" + p.id, `${p.local} – ${p.visitante}: ${p.seleccion}`, p.importe, p.cuota, p.pa)}
-      </article>`;
-    }).join("");
-    const marcador = `<div class="marcador">
-      <div><span class="m-n">${d.picks.length}</span><span class="m-l">Partidos</span></div>
-      <div><span class="m-n rojo">${conValor}</span><span class="m-l">Con valor</span></div>
-      <div><span class="m-n">${eur(b.disponible)}</span><span class="m-l">Disponible${b.pendiente ? ` · ${eur(b.pendiente)} en juego` : ""}</span></div></div>`;
-    return `${hero(d, marcador)}
-      ${d.factor < 1 ? `<p class="aviso">Los importes se han reducido para no pasar del tope diario del ${Math.round(st.cfg.tope_diario * 100)} % de la banca.</p>` : ""}
-      <h2 class="seccion-t">Partidos del día</h2>
-      <div class="grid">${tarjetas}</div>`;
+        <details class="mas"><summary><span class="fb">Fiabilidad <span class="barra ${nivel}"><i style="width:${Math.round(p.pa * 100)}%"></i></span> <b>${pct(p.pa)}</b></span>${badgePick(p)}</summary>
+          <div class="mas-b">
+            <div class="bloque"><b>Por qué</b>${esc(p.motivo)}</div>
+            ${p.riesgo ? `<div class="bloque riesgo"><b>Riesgo</b>${esc(p.riesgo)}</div>` : ""}
+            ${p.alternativa ? `<div class="bloque alt"><b>Alternativa</b>${esc(p.alternativa)}</div>` : ""}
+            <div class="apostar-f"><span class="muted">Mi estimación <strong>${pct(p.prob)}</strong></span><span class="muted">Corregida <strong>${pct(p.pa)}</strong></span>
+              <span class="muted">Apuesta simple <strong>${p.importe > 0 ? eur(p.importe) : "0 €"}</strong>${p.importe > 0 ? ` · ${(p.pctB * 100).toFixed(1).replace(".", ",")} % de la banca` : " · sin valor a esta cuota"}</span></div>
+          </div>
+          ${formJugar("simple", d.fecha + "-" + p.id, `${p.local} – ${p.visitante}: ${p.seleccion}`, p.importe, p.cuota, p.pa)}
+        </details></div>`;
+    };
+    const lista = grupos.map(g => `<section class="panel"><div class="liga-h">${ICO_BALON}${esc(g.k)}<span class="r">${g.ps.length} ${g.ps.length === 1 ? "partido" : "partidos"}</span></div>
+      <div class="cols"><span>Hora</span><span>Partido</span><span>Selección</span><span>Cuota</span></div>${g.ps.map(ev).join("")}</section>`).join("");
+    return tiraDias(d) + cab({
+      chip: "Partidos del día", titulo: tituloDia(d.fecha), sub: esc(subDia(d)), nota: d.nota,
+      kpis: [kpi("Partidos", d.picks.length), kpi("Con valor", conValor, "a la cuota publicada", "acc"),
+        kpi("Acertados", hechos.length ? `${ac}/${hechos.length}` : "—", hechos.length ? pct(ac / hechos.length) : "sin resultados aún"),
+        kpi("Disponible", eur(b.disponible), b.pendiente ? `${eur(b.pendiente)} en juego` : "")],
+    }) + (d.factor < 1 ? `<p class="aviso">Los importes se han reducido para no pasar del tope diario del ${Math.round(st.cfg.tope_diario * 100)} % de la banca.</p>` : "") + lista;
   }
 
   function vistaCombinadas(d, b) {
     const mejor = d.combs.reduce((m, c) => Math.max(m, c.cuota), 0);
-    const marcador = `<div class="marcador">
-      <div><span class="m-n">${d.combs.length}</span><span class="m-l">Combinadas</span></div>
-      <div><span class="m-n rojo">${mejor ? cuo(mejor) : "—"}</span><span class="m-l">Cuota más alta</span></div>
-      <div><span class="m-n">${eur(b.disponible)}</span><span class="m-l">Disponible${b.pendiente ? ` · ${eur(b.pendiente)} en juego` : ""}</span></div></div>`;
-    if (!d.combs.length) return hero(d, marcador) + `<section class="card vacio"><h2>Hoy no hay combinadas</h2><p class="muted">Cuando las haya, salen aquí con su cuota aproximada.</p></section>`;
-    const cards = d.combs.map(cb => `<article class="boleto">
-      <header class="bol-top"><div><h2>${esc(cb.nombre)}</h2><p>${esc(cb.descripcion)}</p></div>
-        <div class="bol-cuota"><span>Cuota total</span><b>${cuo(cb.cuota)}</b></div></header>
-      <ol class="lista">${cb.lista.map(p => `<li>${horaTag(p.hora)}<span class="p">${bandi(p.local)}${bandi(p.visitante)}${esc(p.local)} – ${esc(p.visitante)}</span><span class="s">${esc(p.seleccion)}</span><span class="c">${cuo(p.cuota)}</span></li>`).join("")}</ol>
-      <div class="perfo"></div>
-      <div class="datos">
-        <div><span class="m-l">Acierta</span><span class="m-n">${pct(cb.pa)}</span><span class="muted xs">1 de cada ${(1 / cb.pa).toFixed(1).replace(".", ",")}</span></div>
-        <div><span class="m-l">Con 10 € cobras</span><span class="m-n">${eur(cb.cuota * 10)}</span></div>
-        <div><span class="m-l">Apostar</span>${cb.importe > 0
-          ? `<span class="m-n verde">${eur(cb.importe)}</span><span class="muted xs">${(cb.pctB * 100).toFixed(1).replace(".", ",")} % de la banca</span>`
-          : `<span class="m-n muted">0 €</span><span class="muted xs">sin valor</span>`}</div>
-      </div>
-      ${formJugar("combinada", d.fecha + "-" + cb.id, `Combinada «${cb.nombre}» (${cb.lista.length} selecciones)`, cb.importe, cb.cuota, cb.pa)}
-    </article>`).join("");
-    return `${hero(d, marcador)}<h2 class="seccion-t">Combinadas</h2><div class="grid comb">${cards}</div>
-      <p class="nota">La cuota total es la multiplicación de las cuotas aproximadas. En la casa de apuestas puede variar un poco: apunta la real al guardarla.</p>`;
+    const cabeza = tiraDias(d) + cab({
+      chip: "Combinadas", titulo: "Las <em>combinadas</em>", sub: fechaLarga(d.fecha),
+      kpis: [kpi("Combinadas", d.combs.length), kpi("Cuota más alta", mejor ? cuo(mejor) : "—", "", "acc"), kpi("Disponible", eur(b.disponible), b.pendiente ? `${eur(b.pendiente)} en juego` : "")],
+    });
+    if (!d.combs.length) return cabeza + `<section class="panel vacio"><h2>Hoy no hay combinadas</h2><p class="muted">Cuando las haya, salen aquí con su cuota aproximada.</p></section>`;
+    const cards = d.combs.map(cb => boleto({
+      cls: cb.id === "sonadora" ? "oro" : "", titulo: esc(cb.nombre), sub: esc(cb.descripcion), cuota: cb.cuota,
+      estado: estadoVisible(estadoComb(cb.lista), cb.lista), lista: cb.lista,
+      pie: [["Acierta", pct(cb.pa), `1 de cada ${(1 / cb.pa).toFixed(1).replace(".", ",")}`], ["Con 10 € cobras", eur(cb.cuota * 10), "", "ret"],
+        ["Apostar", cb.importe > 0 ? eur(cb.importe) : "0 €", cb.importe > 0 ? `${(cb.pctB * 100).toFixed(1).replace(".", ",")} % de la banca` : "sin valor"]],
+      form: formJugar("combinada", d.fecha + "-" + cb.id, `Combinada «${cb.nombre}» (${cb.lista.length} selecciones)`, cb.importe, cb.cuota, cb.pa),
+    })).join("");
+    return cabeza + `<div class="boletos">${cards}</div>
+      <p class="pie-n">La cuota total es la multiplicación de las cuotas aproximadas. En la casa de apuestas puede variar un poco: apunta la real al guardarla.</p>`;
   }
-
   // ---------- resultados (seguimiento de los picks publicados, sin dinero) ----------
   const RES_TXT = { acierto: "Acertado", fallo: "Fallado", nulo: "Nulo" };
   function badgePick(p) {
@@ -675,68 +695,45 @@ select, input { background: var(--panel-2); border: 1px solid var(--line); borde
   }
   const redondeo = v => Math.max(1, Math.round(v * 2) / 2);
   function vistaDobles(dia, b) {
-    const cfg = st.cfg, ds = doblesDelDia(dia);
-    let imp = redondeo(b.saldo * cfg.stake_doble);
-    const lim = b.saldo * cfg.tope_diario;
-    if (imp * ds.length > lim && ds.length) imp = Math.max(1, Math.floor(lim / ds.length * 2) / 2);
-    const total = imp * ds.length;
-    const marcador = `<div class="marcador cuatro">
-      <div><span class="m-n">${ds.length}</span><span class="m-l">Dobles hoy</span></div>
-      <div><span class="m-n rojo">${eur(imp)}</span><span class="m-l">Por doble · ${Math.round(cfg.stake_doble * 100)} % de la banca</span></div>
-      <div><span class="m-n">${eur(total)}</span><span class="m-l">En juego · ${b.saldo ? Math.round(total / b.saldo * 100) : 0} % de la banca</span></div>
-      <div><span class="m-n">${eur(b.disponible)}</span><span class="m-l">Disponible${b.pendiente ? ` · ${eur(b.pendiente)} en juego` : ""}</span></div></div>`;
-    const cards = ds.map(x => `<article class="boleto res-comb ${x.estado}">
-      <header class="bol-top"><div><h2>Doble ${x.n}</h2><p>${x.estado === "pendiente" ? `Si aciertan las dos, cobras ${eur(imp * x.cuotaPub)}` : { ganada: "Ganada", perdida: "Perdida", nula: "Nula" }[x.estado]}</p></div>
-        <div class="bol-cuota"><span>Cuota</span><b>${cuo(x.cuota)}</b></div></header>
-      <ol class="lista">${x.lista.map(p => `<li>${horaTag(p.hora)}<span class="p">${bandi(p.local)}${bandi(p.visitante)}${esc(p.local)} – ${esc(p.visitante)}${p.marcador ? ` <b>${esc(p.marcador)}</b>` : ""}</span><span class="s">${esc(p.seleccion)}${p.resultado ? ` · ${RES_TXT[p.resultado]}` : ""}</span><span class="c">${cuo(p.cuota)}</span></li>`).join("")}</ol>
-      <div class="perfo"></div>
-      <div class="datos">
-        <div><span class="m-l">Acierta</span><span class="m-n">${pct(x.pa)}</span><span class="muted xs">estimación corregida</span></div>
-        <div><span class="m-l">Apostar</span><span class="m-n verde">${eur(imp)}</span></div>
-        <div><span class="m-l">Cobras</span><span class="m-n">${eur(imp * x.cuotaPub)}</span></div>
-      </div>
-      ${formJugar("doble", dia.fecha + "-" + x.id, `Doble ${x.n}: ${x.lista.map(p => p.seleccion).join(" + ")}`, imp, x.cuotaPub, x.pa)}
-    </article>`).join("");
+    const cfg = st.cfg, ds = doblesDelDia(dia), imp = importeDoble(ds, b), total = imp * ds.length;
+    const cards = ds.map(x => boleto({
+      titulo: `Doble ${x.n}`, sub: x.estado === "pendiente" ? `Si aciertan las dos, cobras ${eur(imp * x.cuotaPub)}` : "",
+      cuota: x.cuota, estado: estadoVisible(x.estado, x.lista), lista: x.lista,
+      pie: [["Acierta", pct(x.pa), "estimación corregida"], ["Apostar", eur(imp), `${Math.round(cfg.stake_doble * 100)} % de la banca`], ["Cobras", eur(imp * x.cuotaPub), "si aciertan las dos", "ret"]],
+      form: formJugar("doble", dia.fecha + "-" + x.id, `Doble ${x.n}: ${x.lista.map(p => p.seleccion).join(" + ")}`, imp, x.cuotaPub, x.pa),
+    })).join("");
     const so = sonadoraDobles(dia, ds), impS = cfg.sonadora_dobles_pct ? redondeo(b.saldo * cfg.sonadora_dobles_pct) : cfg.sonadora_dobles;
-    const cardSo = so ? `<article class="boleto res-comb sonadora-d ${so.estado}">
-      <header class="bol-top"><div><h2>La soñadora de los dobles</h2><p>${so.estado === "pendiente" ? `Las ${so.lista.length} selecciones de los dobles en una sola apuesta. Capricho de ${eur(impS)}: si salen todas, cobras ${eur(impS * so.cuotaPub)}` : { ganada: "¡Ganada!", perdida: "Perdida", nula: "Nula" }[so.estado]}</p></div>
-        <div class="bol-cuota"><span>Cuota</span><b>${cuo(so.cuota)}</b></div></header>
-      <ol class="lista">${so.lista.map(p => `<li>${horaTag(p.hora)}<span class="p">${bandi(p.local)}${bandi(p.visitante)}${esc(p.local)} – ${esc(p.visitante)}${p.marcador ? ` <b>${esc(p.marcador)}</b>` : ""}</span><span class="s">${esc(p.seleccion)}${p.resultado ? ` · ${RES_TXT[p.resultado]}` : ""}</span><span class="c">${cuo(p.cuota)}</span></li>`).join("")}</ol>
-      <div class="perfo"></div>
-      <div class="datos">
-        <div><span class="m-l">Acierta</span><span class="m-n">${pct(so.pa)}</span><span class="muted xs">1 de cada ${Math.round(1 / so.pa)}</span></div>
-        <div><span class="m-l">Apostar</span><span class="m-n verde">${eur(impS)}</span><span class="muted xs">${cfg.sonadora_dobles_pct ? Math.round(cfg.sonadora_dobles_pct * 100) + " % de la banca, " : "fijo, "}aparte de los dobles</span></div>
-        <div><span class="m-l">Cobras</span><span class="m-n">${eur(impS * so.cuotaPub)}</span></div>
-      </div>
-      ${formJugar("doble", dia.fecha + "-sonadora", `Soñadora de los dobles (${so.lista.length} selecciones)`, impS, so.cuotaPub, so.pa)}
-    </article>` : "";
+    const cardSo = so ? boleto({
+      cls: "oro", titulo: "La soñadora de los dobles", sub: so.estado === "pendiente" ? `Las ${so.lista.length} selecciones en una sola apuesta. Capricho aparte del método.` : "",
+      cuota: so.cuota, estado: estadoVisible(so.estado, so.lista), lista: so.lista,
+      pie: [["Acierta", pct(so.pa), `1 de cada ${Math.round(1 / so.pa)}`], ["Apostar", eur(impS), cfg.sonadora_dobles_pct ? `${Math.round(cfg.sonadora_dobles_pct * 100)} % de la banca, aparte` : "fijo, aparte"], ["Cobras", eur(impS * so.cuotaPub), "si salen todas", "ret"]],
+      form: formJugar("doble", dia.fecha + "-sonadora", `Soñadora de los dobles (${so.lista.length} selecciones)`, impS, so.cuotaPub, so.pa),
+    }) : "";
     // seguimiento: todos los dobles publicados, como si se hubiesen jugado a 1 € cada uno
     const diasD = st.dias.filter(d => d.fecha >= cfg.dobles_desde);
-    const hist = diasD.flatMap(d => doblesDelDia(d));
-    const r = cuentaPrueba(hist);
+    const r = cuentaPrueba(diasD.flatMap(d => doblesDelDia(d)));
     const rs = cuentaPrueba(diasD.map(d => sonadoraDobles(d)).filter(Boolean));
-    const seguimiento = `<section class="card prueba"><h2 class="h2">Cómo van los dobles</h2>
-      <p class="sub">Todos los dobles desde el ${fechaCorta(cfg.dobles_desde)}, a 1 € cada uno, los jugaras o no.</p>
-      <div class="marcador cuatro">
-        <div><span class="m-n ${r.neto > 0 ? "pos" : r.neto < 0 ? "rojo" : ""}">${eurS(r.neto)}</span><span class="m-l">Neto a 1 €</span></div>
-        <div><span class="m-n">${r.roi === null ? "—" : (r.roi > 0 ? "+" : "") + Math.round(r.roi) + " %"}</span><span class="m-l">Rentabilidad</span></div>
-        <div><span class="m-n">${r.gan}–${r.per}</span><span class="m-l">Ganados–perdidos${r.pen ? ` · ${r.pen} pendientes` : ""}</span></div>
-        <div><span class="m-n">${r.n ? Math.round(r.gan / r.n * 100) + " %" : "—"}</span><span class="m-l">Acertados</span></div>
+    const seguimiento = `<section class="panel"><div class="panel-h">Cómo van los dobles<span class="r">desde el ${fechaCorta(cfg.dobles_desde)} · a 1 € cada uno</span></div>
+      <div class="stat-g">
+        <div><span>Neto a 1 €</span><b class="${signo(r.neto)}">${eurS(r.neto)}</b><small>los jugaras o no</small></div>
+        <div><span>Rentabilidad</span><b class="${signo(r.roi || 0)}">${roiTxt(r.roi)}</b><small>sobre lo jugado</small></div>
+        <div><span>Ganados–perdidos</span><b>${r.gan}–${r.per}</b><small>${r.pen ? `${r.pen} pendientes` : "&nbsp;"}</small></div>
+        <div><span>Acertados</span><b>${r.n ? Math.round(r.gan / r.n * 100) + " %" : "—"}</b><small>de ${r.n} cerrados</small></div>
       </div>
-      <p class="sub" style="margin-top:14px">La soñadora de los dobles, a 1 € cada día: <b>${rs.gan}–${rs.per}</b> (ganadas–perdidas${rs.pen ? ` · ${rs.pen} pendiente${rs.pen > 1 ? "s" : ""}` : ""}) · neto <b>${eurS(rs.neto)}</b></p></section>`;
-    const f = fd(dia.fecha);
-    return `<section class="hero">${ESTADIO}<div class="hero-top">${tag("Método: dobles")}${selectorFecha(dia)}</div>
-        <div><h1>Los <em>dobles</em> de hoy</h1><p class="sub">${isNaN(f) ? esc(dia.fecha) : `${DIAS[f.getDay()]} ${f.getDate()} de ${MESES[f.getMonth()]}`} · parejas de picks, mismo importe en cada una</p></div>${marcador}</section>
-      ${ds.length ? `<div class="grid comb">${cards}${cardSo}</div>` : `<section class="card vacio"><h2>Hoy no hay dobles</h2><p class="muted">Hacen falta al menos dos picks.</p></section>`}
-      ${seguimiento}
-      <section class="card reglas"><h2 class="h2">Reglas del método</h2><ul>
+      <div class="panel-b"><p class="pie-n">La soñadora de los dobles, a 1 € cada día: <b>${rs.gan}–${rs.per}</b>${rs.pen ? ` (${rs.pen} pendiente${rs.pen > 1 ? "s" : ""})` : ""} · neto <b class="${signo(rs.neto)}">${eurS(rs.neto)}</b></p></div></section>`;
+    return tiraDias(dia) + cab({
+      chip: "Método: dobles", titulo: "Los <em>dobles</em> del día", sub: `${fechaLarga(dia.fecha)} · parejas de picks, mismo importe en cada una`,
+      kpis: [kpi("Dobles", ds.length, `máximo ${cfg.max_dobles}`), kpi("Por doble", eur(imp), `${Math.round(cfg.stake_doble * 100)} % de la banca`, "acc"),
+        kpi("En juego", eur(total), `${b.saldo ? Math.round(total / b.saldo * 100) : 0} % de la banca`), kpi("Disponible", eur(b.disponible), b.pendiente ? `${eur(b.pendiente)} en juego` : "")],
+    }) + (ds.length ? `<div class="boletos">${cards}${cardSo}</div>` : `<section class="panel vacio"><h2>Hoy no hay dobles</h2><p class="muted">Ningún pick cumple los requisitos (fiabilidad ≥ 62 % y cuota ≥ 1,30).</p></section>`)
+      + seguimiento + `<section class="panel reglas"><div class="panel-h">Reglas del método</div><div class="panel-b"><ul>
         <li>Cada pick va como mucho en un doble, y nunca dos del mismo partido.</li>
         <li>Mismo importe en todos: el ${Math.round(cfg.stake_doble * 100)} % de la banca actual, redondeado a 0,50 €. Si la banca sube, sube; si baja, baja. Nunca se recarga para recuperar.</li>
         <li>Máximo ${cfg.max_dobles} dobles al día y nunca más del ${Math.round(cfg.tope_diario * 100)} % de la banca en juego.</li>
         <li>Si en tu casa la cuota del doble sale más de un 10 % por debajo de la de aquí, no lo juegues.</li>
         <li>Apunta cada doble con «La he jugado» y la cuota real: se cierra solo con los resultados.</li>
         <li>La soñadora de los dobles junta todas las selecciones de los dobles del día (solo si hay 2 dobles o más). Es un capricho aparte del método: ${cfg.sonadora_dobles_pct ? `el ${Math.round(cfg.sonadora_dobles_pct * 100)} % de la banca, redondeado a 0,50 €` : `${eur(cfg.sonadora_dobles)} fijos`}, y no cuenta para el tope diario.</li>
-      </ul></section>`;
+      </ul></div></section>`;
   }
 
   const mesDe = f => f.slice(0, 7);
@@ -764,58 +761,53 @@ select, input { background: var(--panel-2); border: 1px solid var(--line); borde
     const tipoDe = c => TIPOS.some(([id]) => id === c.id) ? c.id : "otras";
     const hoyISO = new Date().toLocaleDateString("sv-SE", { timeZone: "Europe/Madrid" });
     const faltan = Math.ceil((new Date(PRUEBA.hasta) - new Date(hoyISO)) / 864e5);
-    const plazo = faltan > 0 ? `Quedan ${faltan} día${faltan === 1 ? "" : "s"} · termina el 12 de diciembre` : "Prueba terminada · toca analizarla";
+    const plazo = faltan > 0 ? `quedan ${faltan} día${faltan === 1 ? "" : "s"}` : "terminada · toca analizarla";
     const filas = TIPOS.map(([id, nom]) => {
       const r = cuentaPrueba(combs.filter(c => tipoDe(c) === id));
       if (!r.n && !r.pen) return "";
-      return `<tr><th>${nom}</th><td>${r.gan}–${r.per}${r.pen ? ` <span class="muted">(${r.pen})</span>` : ""}</td><td>${r.jugado.toFixed(0)} €</td>
-        <td class="${r.neto > 0 ? "pos" : r.neto < 0 ? "rojo" : ""}">${eurS(r.neto)}</td><td>${r.roi === null ? "—" : (r.roi > 0 ? "+" : "") + Math.round(r.roi) + " %"}</td></tr>`;
+      return `<tr><td><b>${nom}</b></td><td class="num">${r.gan}–${r.per}${r.pen ? ` <span class="muted xs">(${r.pen})</span>` : ""}</td><td class="num">${r.jugado.toFixed(0)} €</td>
+        <td class="num ${signo(r.neto)}">${eurS(r.neto)}</td><td class="num ${signo(r.roi || 0)}">${roiTxt(r.roi)}</td></tr>`;
     }).join("");
-    return `<h2 class="seccion-t">Prueba hasta el 12 de diciembre</h2>
-      <section class="card prueba">
-        <p class="sub">Todas las combinadas publicadas desde el 12 de noviembre, como si hubieras echado <b>${PRUEBA.apuesta} € a cada una</b>. ${plazo}.</p>
-        <div class="marcador cuatro">
-          <div><span class="m-n ${tot.neto > 0 ? "pos" : tot.neto < 0 ? "rojo" : ""}">${eurS(tot.neto)}</span><span class="m-l">Beneficio simulado</span></div>
-          <div><span class="m-n">${tot.roi === null ? "—" : (tot.roi > 0 ? "+" : "") + Math.round(tot.roi) + " %"}</span><span class="m-l">Rentabilidad (sobre lo jugado)</span></div>
-          <div><span class="m-n">${tot.jugado.toFixed(0)} €</span><span class="m-l">Jugado en ${tot.n} combinadas${tot.pen ? ` · ${tot.pen} pendientes` : ""}</span></div>
-          <div><span class="m-n">${tot.n ? Math.round(tot.gan / tot.n * 100) + " %" : "—"}</span><span class="m-l">Acertadas (${tot.gan} de ${tot.n})</span></div>
-        </div>
-        <div class="tabla-wrap"><table class="tabla-prueba"><thead><tr><th>Tipo</th><th>Gan–Per</th><th>Jugado</th><th>Neto</th><th>Rent.</th></tr></thead><tbody>${filas}</tbody></table></div>
-        <p class="nota">Simulación con las cuotas aproximadas publicadas; las reales de la casa pueden variar un poco. Entre paréntesis, las pendientes.</p>
-      </section>`;
+    return `<section class="panel"><div class="panel-h">Prueba de combinadas hasta el 12/12<span class="r">${plazo}</span></div>
+      <div class="stat-g">
+        <div><span>Beneficio simulado</span><b class="${signo(tot.neto)}">${eurS(tot.neto)}</b><small>a ${PRUEBA.apuesta} € cada una</small></div>
+        <div><span>Rentabilidad</span><b class="${signo(tot.roi || 0)}">${roiTxt(tot.roi)}</b><small>sobre lo jugado</small></div>
+        <div><span>Jugado</span><b>${tot.jugado.toFixed(0)} €</b><small>${tot.n} combinadas${tot.pen ? ` · ${tot.pen} pendientes` : ""}</small></div>
+        <div><span>Acertadas</span><b>${tot.n ? Math.round(tot.gan / tot.n * 100) + " %" : "—"}</b><small>${tot.gan} de ${tot.n}</small></div>
+      </div>
+      <div class="tabla-wrap"><table class="t"><thead><tr><th>Tipo</th><th class="num">Gan–Per</th><th class="num">Jugado</th><th class="num">Neto</th><th class="num">Rent.</th></tr></thead><tbody>${filas}</tbody></table></div>
+      <div class="panel-b"><p class="pie-n">Todas las combinadas publicadas desde el 12 de noviembre, con las cuotas aproximadas. Entre paréntesis, las pendientes.</p></div></section>`;
   }
 
   // Lo que has jugado de verdad, día a día, con tu cuota corregida y lo que cobrarías.
   function misApuestas() {
     const delMes = st.apuestas.filter(a => a.fecha && mesDe(a.fecha) === st.mes);
-    if (!delMes.length) return `<section class="card mis"><h2 class="h2">Tus apuestas</h2><p class="muted">Aquí salen los dobles y la soñadora que marques con «La he jugado», con tu cuota. Se guardan en este móvil u ordenador.</p></section>`;
+    if (!delMes.length) return `<section class="panel"><div class="panel-h">Mis apuestas</div><div class="panel-b"><p class="muted" style="margin:0">Aquí salen los dobles y la soñadora que marques con «La he jugado», con tu cuota. Se guardan en este móvil u ordenador.</p></div></section>`;
     const fechas = [...new Set(delMes.map(a => a.fecha))].sort().reverse();
-    const ESTX = { pendiente: "Pendiente", ganada: "Ganada", perdida: "Perdida", nula: "Nula" };
     const cobro = a => a.estado === "nula" ? a.importe : a.importe * a.cuota;
     const dias = fechas.map(f => {
       const l = delMes.filter(a => a.fecha === f).sort((a, z) => (a.ref || "").localeCompare(z.ref || ""));
       const so = l.filter(a => /-sonadora$/.test(a.ref || "")), db = l.filter(a => a.tipo === "doble" && !/-sonadora$/.test(a.ref || ""));
       const filas = l.map(a => {
         const bn = beneficio(a);
-        return `<li><div class="mis-d">${esc(a.descripcion)}</div>
-          <div class="mis-n"><span>${eur(a.importe)} × <b class="c">${cuo(a.cuota)}</b></span><span>si gana cobras <b>${eur(a.importe * a.cuota)}</b> <span class="muted xs">(+${eur(a.importe * a.cuota - a.importe)})</span></span>
-          <span><span class="estado-tag ${a.estado}">${ESTX[a.estado] || a.estado}</span>${a.estado !== "pendiente" ? ` <span class="${bn > 0 ? "pos" : bn < 0 ? "neg" : ""}">${bn > 0 ? "+" : ""}${eur(bn)}</span>` : ""}</span></div></li>`;
+        return `<li class="${a.estado}"><span class="d">${esc(a.descripcion)}</span>
+          <span class="r ${a.estado === "pendiente" ? "" : signo(bn)}">${a.estado === "pendiente" ? eur(a.importe * a.cuota) : (bn > 0 ? "+" : "") + eur(bn)}</span>
+          <span class="n">${eur(a.importe)} × ${cuo(a.cuota)} · <span class="est ${a.estado}">${EST_TXT[a.estado] || a.estado}</span>${a.estado === "pendiente" ? " · cobro si gana" : ""}</span></li>`;
       }).join("");
       const jug = l.reduce((t, a) => t + a.importe, 0);
       const tD = db.reduce((t, a) => t + a.importe * a.cuota, 0), jD = db.reduce((t, a) => t + a.importe, 0);
       const tS = so.reduce((t, a) => t + a.importe * a.cuota, 0), jS = so.reduce((t, a) => t + a.importe, 0);
       const cerrado = l.every(a => a.estado !== "pendiente");
       const real = l.reduce((t, a) => t + (a.estado === "ganada" || a.estado === "nula" ? cobro(a) : 0), 0);
-      const tot = (t, j) => `<b>${eur(t)}</b> <span class="muted xs">(${t - j >= 0 ? "+" : ""}${eur(t - j)} de beneficio)</span>`;
-      return `<div class="mis-dia"><h3 class="res-fecha">${fechaCorta(f)} · has jugado ${eur(jug)}</h3>
-        <ul class="mis-l">${filas}</ul>
-        <div class="mis-tot">
-          ${db.length ? `<div><span class="m-l">${db.length === 1 ? "Si ganas el doble" : `Si ganas los ${db.length} dobles`}</span>${tot(tD, jD)}</div>` : ""}
-          ${db.length && so.length ? `<div><span class="m-l">Dobles + soñadora (lo máximo)</span>${tot(tD + tS, jD + jS)}</div>` : ""}
-          ${cerrado ? `<div><span class="m-l">Resultado del día</span><b class="${real - jug > 0 ? "pos" : real - jug < 0 ? "neg" : ""}">${real - jug >= 0 ? "+" : ""}${eur(real - jug)}</b> <span class="muted xs">(cobrado ${eur(real)})</span></div>` : ""}
-        </div></div>`;
+      const tot = (t, j) => `<b>${eur(t)}</b> <small class="muted">${t - j >= 0 ? "+" : ""}${eur(t - j)}</small>`;
+      const celdas = [
+        db.length ? `<div><span>${db.length === 1 ? "Si ganas el doble" : `Si ganas los ${db.length} dobles`}</span>${tot(tD, jD)}</div>` : "",
+        db.length && so.length ? `<div><span>Dobles + soñadora</span>${tot(tD + tS, jD + jS)}</div>` : "",
+        cerrado ? `<div><span>Resultado del día</span><b class="${signo(real - jug)}">${real - jug >= 0 ? "+" : ""}${eur(real - jug)}</b> <small class="muted">cobrado ${eur(real)}</small></div>` : "",
+      ].join("");
+      return `<div class="dia-h">${fechaLarga(f)}<span class="r">Jugado ${eur(jug)}</span></div><ul class="historial">${filas}</ul>${celdas ? `<div class="totales">${celdas}</div>` : ""}`;
     }).join("");
-    return `<section class="card mis"><h2 class="h2">Tus apuestas</h2><p class="sub">Lo que has marcado con «La he jugado», con tu cuota corregida. Se cierran solas con los resultados.</p>${dias}</section>`;
+    return `<section class="panel"><div class="panel-h">Mis apuestas<span class="r">se cierran solas con los resultados</span></div>${dias}</section>`;
   }
 
   function vistaResultados() {
@@ -829,42 +821,33 @@ select, input { background: var(--panel-2); border: 1px solid var(--line); borde
     const pa = picks.filter(p => p.resultado === "acierto").length, pf = picks.filter(p => p.resultado === "fallo").length;
     const decididas = gan.length + per.length;
     const fmtC = v => v === null ? "—" : cuo(v);
-    const sel = meses.length > 1 ? `<label class="selector"><span class="muted">Mes</span><select id="sel-mes">${meses.map(m => `<option value="${m}" ${m === st.mes ? "selected" : ""}>${mesBonito(m)}</option>`).join("")}</select></label>` : "";
-    const marcador = `<div class="marcador cuatro">
-      <div><span class="m-n pos">${gan.length}</span><span class="m-l">Ganadas · cuota media ${fmtC(media(gan.map(c => c.cuota)))}</span></div>
-      <div><span class="m-n rojo">${per.length}</span><span class="m-l">Perdidas · cuota media ${fmtC(media(per.map(c => c.cuota)))}</span></div>
-      <div><span class="m-n">${decididas ? Math.round(gan.length / decididas * 100) + " %" : "—"}</span><span class="m-l">Combinadas acertadas${pen.length ? ` · ${pen.length} pendientes` : ""}</span></div>
-      <div><span class="m-n">${pa + pf ? Math.round(pa / (pa + pf) * 100) + " %" : "—"}</span><span class="m-l">Picks sueltos acertados (${pa} de ${pa + pf})</span></div></div>`;
+    const sel = meses.length > 1 ? `<select id="sel-mes" aria-label="Mes">${meses.map(m => `<option value="${m}" ${m === st.mes ? "selected" : ""}>${cap(mesBonito(m))}</option>`).join("")}</select>` : "";
     const bloques = dias.map(d => {
       const cs = combinadasDelDia(d);
       if (!cs.length) return "";
-      return `<section class="res-dia"><h3 class="res-fecha">${fechaCorta(d.fecha)}</h3><div class="res-lista">${cs.map(c => `
-        <article class="res-comb ${c.estado}">
-          <header><span class="estado-tag ${c.estado}">${{ ganada: "Ganada", perdida: "Perdida", pendiente: "Pendiente", nula: "Nula" }[c.estado]}</span>
-            <h4>${esc(c.nombre)}</h4><span class="res-cuota">${cuo(c.cuota)}</span></header>
-          <ul>${c.lista.map(p => `<li class="${p.resultado || "pend"}"><span class="ico" aria-hidden="true">${p.resultado === "acierto" ? "✓" : p.resultado === "fallo" ? "✕" : p.resultado === "nulo" ? "–" : "·"}</span>
-            <span class="r-p">${esc(p.local)} – ${esc(p.visitante)}${p.marcador ? ` <b>${esc(p.marcador)}</b>` : ""}</span>
-            <span class="r-s">${esc(p.seleccion)}</span><span class="r-c">${cuo(p.cuota)}</span></li>`).join("")}</ul>
-        </article>`).join("")}</div></section>`;
+      const g = cs.filter(c => c.estado === "ganada").length, cerr = cs.filter(c => c.estado !== "pendiente").length;
+      return `<section class="panel"><div class="panel-h">${fechaLarga(d.fecha)}<span class="r">${cerr ? `${g} de ${cerr} ganadas` : "pendientes"}</span></div>
+        <div class="panel-b"><div class="boletos">${cs.map(c => boleto({ cls: c.id === "sonadora" ? "oro" : "", titulo: esc(c.nombre), cuota: c.cuota, estado: c.estado, lista: c.lista })).join("")}</div></div></section>`;
     }).join("");
-    return `<section class="hero">${ESTADIO}<div class="hero-top">${tag("Resultados")}${sel}</div>
-        <div><h1>Así van las <em>combinadas</em></h1><p class="sub">${mesBonito(st.mes)} · todas las que he publicado, las jugaras o no</p></div>${marcador}</section>
-      ${misApuestas()}
-      ${vistaPrueba()}
-      <h2 class="seccion-t">Día a día</h2>
-      ${bloques || `<section class="card vacio"><h2>Aún no hay combinadas este mes</h2></section>`}
-      <p class="nota">Los resultados los apunto yo al día siguiente de cada partido. Una combinada se gana si aciertan todas sus selecciones; si se suspende un partido, esa selección cuenta como nula y no cuenta en la cuota.</p>`;
+    return cab({
+      chip: "Resultados", sel, titulo: "Así van las <em>combinadas</em>", sub: `${cap(mesBonito(st.mes))} · todas las publicadas, las jugaras o no`,
+      kpis: [kpi("Ganadas", gan.length, `cuota media ${fmtC(media(gan.map(c => c.cuota)))}`, "pos"), kpi("Perdidas", per.length, `cuota media ${fmtC(media(per.map(c => c.cuota)))}`, "neg"),
+        kpi("Combinadas acertadas", decididas ? Math.round(gan.length / decididas * 100) + " %" : "—", pen.length ? `${pen.length} pendientes` : ""),
+        kpi("Picks acertados", pa + pf ? Math.round(pa / (pa + pf) * 100) + " %" : "—", `${pa} de ${pa + pf}`, "acc")],
+    }) + misApuestas() + vistaPrueba()
+      + (bloques || `<section class="panel vacio"><h2>Aún no hay combinadas este mes</h2></section>`)
+      + `<p class="pie-n">Los resultados se apuntan al día siguiente de cada partido. Una combinada se gana si aciertan todas sus selecciones; si se suspende un partido, esa selección cuenta como nula y no cuenta en la cuota.</p>`;
   }
 
   function grafica(b) {
     const pts = b.puntos;
-    if (pts.length < 2) return `<p class="muted">La gráfica aparece cuando cierres la primera apuesta (ganada o perdida).</p>`;
+    if (pts.length < 2) return `<div class="panel-b"><p class="muted" style="margin:0">La gráfica aparece cuando cierres la primera apuesta (ganada o perdida).</p></div>`;
     const vals = pts.map(p => p.saldo);
     let lo = Math.min(...vals, b.inicial), hi = Math.max(...vals, b.inicial);
     const pad = hi > lo ? (hi - lo) * 0.15 : 5; lo -= pad; hi += pad;
     const W = 640, H = 220, L = 44, R = 12, T = 12, B = 16, n = pts.length - 1;
     const x = i => L + (W - L - R) * i / n, y = v => T + (H - T - B) * (1 - (v - lo) / (hi - lo));
-    let s = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Evolución del saldo de la banca"><defs><linearGradient id="ar" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff1e3c" stop-opacity=".35"/><stop offset="1" stop-color="#ff1e3c" stop-opacity="0"/></linearGradient></defs>`;
+    let s = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Evolución del saldo de la banca"><defs><linearGradient id="ar" x1="0" y1="0" x2="0" y2="1"><stop offset="0" style="stop-color:var(--odd-ink);stop-opacity:.28"/><stop offset="1" style="stop-color:var(--odd-ink);stop-opacity:0"/></linearGradient></defs>`;
     for (let k = 0; k <= 4; k++) { const v = lo + (hi - lo) * k / 4, yy = y(v); s += `<line class="grid-l" x1="${L}" x2="${W - R}" y1="${yy}" y2="${yy}"/><text class="eje" x="${L - 6}" y="${yy + 4}" text-anchor="end">${Math.round(v)}</text>`; }
     s += `<line class="base-l" x1="${L}" x2="${W - R}" y1="${y(b.inicial)}" y2="${y(b.inicial)}"/>`;
     const poly = pts.map((p, i) => `${x(i)},${y(p.saldo)}`).join(" ");
@@ -879,43 +862,47 @@ select, input { background: var(--panel-2); border: 1px solid var(--line); borde
       const est = [["pendiente", "Pendiente"], ["ganada", "Ganada"], ["perdida", "Perdida"], ["nula", "Nula"]]
         .map(([e, t]) => `<button class="chip ${e} ${a.estado === e ? "on" : ""}" data-estado="${e}" data-id="${esc(a.id)}" ${st.puedeEscribir ? "" : "disabled"}>${t}</button>`).join("");
       const borrar = st.puedeEscribir ? `<button class="chip borrar ${st.borrarPend === a.id ? "confirmar" : ""}" data-borrar="${esc(a.id)}" aria-label="Borrar apuesta">${st.borrarPend === a.id ? "¿Borrar?" : "✕"}</button>` : "";
-      return `<tr><td>${fechaCorta(a.fecha)}</td><td>${esc(a.descripcion)}</td><td class="num">${eur(a.importe)}</td><td class="num">${cuo(a.cuota)}</td>
-        <td class="num ${bn > 0 ? "pos" : bn < 0 ? "neg" : ""}">${a.estado === "pendiente" ? "—" : (bn > 0 ? "+" : "") + eur(bn)}</td>
-        <td><div class="estados">${est}${borrar}</div></td></tr>`;
+      return `<tr><td style="white-space:nowrap">${fechaCorta(a.fecha)}</td><td>${esc(a.descripcion)}</td><td class="num">${eur(a.importe)}</td><td class="num">${cuo(a.cuota)}</td>
+        <td class="num ${signo(bn)}">${a.estado === "pendiente" ? "—" : (bn > 0 ? "+" : "") + eur(bn)}</td>
+        <td><div class="chips">${est}${borrar}</div></td></tr>`;
     }).join("");
     const cfg = st.cfg;
-    const marcador = `<div class="marcador cuatro">
-      <div><span class="m-n">${eur(b.disponible)}</span><span class="m-l">Disponible · banca ${eur(b.saldo)} contando lo que está en juego · empezó en ${eur(b.inicial)}</span></div>
-      <div><span class="m-n ${b.rend > 0 ? "pos" : b.rend < 0 ? "neg" : ""}">${(b.rend > 0 ? "+" : "") + b.rend.toFixed(1).replace(".", ",")} %</span><span class="m-l">Rendimiento</span></div>
-      <div><span class="m-n">${eur(b.pendiente)}</span><span class="m-l">En juego</span></div>
-      <div>${b.real === null ? `<span class="m-n">—</span><span class="m-l">Acierto · sin apuestas cerradas</span>`
-        : `<span class="m-n">${Math.round(b.real)} %</span><span class="m-l">Acierto real${b.est !== null ? ` · estimado ${Math.round(b.est)} %` : ""} (${b.n})</span>`}</div></div>`;
-    return `<section class="hero">${ESTADIO}<div>${tag("Seguimiento")}</div>
-        <div><h1>Tu <em>banca</em></h1><p class="sub">Cada euro apuntado, ganado o perdido</p></div>${marcador}</section>
-      <section class="card"><h2 class="h2">Evolución del saldo</h2>${grafica(b)}</section>
-      <section class="card"><h2 class="h2">Apuestas</h2>
-        ${filas ? `<div class="tabla-wrap"><table class="tabla"><thead><tr><th>Día</th><th>Apuesta</th><th class="num">Importe</th><th class="num">Cuota</th><th class="num">Resultado</th><th>Estado</th></tr></thead><tbody>${filas}</tbody></table></div>`
-          : `<p class="muted">Todavía no has guardado ninguna apuesta. En cada partido o combinada pulsa «La he jugado».</p>`}
+    return cab({
+      chip: "Seguimiento", titulo: "Mi <em>banca</em>", sub: `Empezó en ${eur(b.inicial)}${cfg.banca_desde ? ` el ${fechaCorta(cfg.banca_desde)}` : ""} · cada euro apuntado, ganado o perdido`,
+      kpis: [kpi("Disponible", eur(b.disponible), `banca ${eur(b.saldo)} con lo que está en juego`, "acc"),
+        kpi("Rendimiento", (b.rend > 0 ? "+" : "") + b.rend.toFixed(1).replace(".", ",") + " %", `${b.saldo - b.inicial >= 0 ? "+" : ""}${eur(b.saldo - b.inicial)}`, b.rend > 0 ? "pos" : b.rend < 0 ? "neg" : ""),
+        kpi("En juego", eur(b.pendiente)),
+        b.real === null ? kpi("Acierto", "—", "sin apuestas cerradas") : kpi("Acierto real", Math.round(b.real) + " %", `${b.est !== null ? `estimado ${Math.round(b.est)} % · ` : ""}${b.n} cerradas`)],
+    }) + `<section class="panel"><div class="panel-h">Evolución del saldo<span class="r">línea discontinua: banca inicial</span></div>${grafica(b)}</section>
+      <section class="panel"><div class="panel-h">Mis apuestas<span class="r">${st.apuestas.length}</span></div>
+        ${filas ? `<div class="tabla-wrap"><table class="t"><thead><tr><th>Día</th><th>Apuesta</th><th class="num">Importe</th><th class="num">Cuota</th><th class="num">Resultado</th><th>Estado</th></tr></thead><tbody>${filas}</tbody></table></div>`
+          : `<div class="panel-b"><p class="muted" style="margin:0">Todavía no has guardado ninguna apuesta. En cada doble o combinada pulsa «La he jugado».</p></div>`}
       </section>
-      <section class="card reglas"><h2 class="h2">Cómo se calcula cuánto apostar</h2><ul>
-        <li>Corrijo mi probabilidad acercándola a la que da la cuota (mitad y mitad), porque mis estimaciones suelen ser optimistas.</li>
+      <section class="panel reglas"><div class="panel-h">Cómo se calcula cuánto apostar</div><div class="panel-b"><ul>
+        <li>Dobles: el ${Math.round(cfg.stake_doble * 100)} % de la banca en cada uno, máximo ${cfg.max_dobles} al día.</li>
+        <li>Para simples y combinadas, corrijo mi probabilidad acercándola a la que da la cuota (mitad y mitad), porque mis estimaciones suelen ser optimistas.</li>
         <li>Si probabilidad × cuota no pasa de 1, no hay valor: 0 €, aunque parezca segura.</li>
         <li>Importe = ¼ de Kelly sobre la banca actual. Topes: ${Math.round(cfg.tope_simple * 100)} % por apuesta simple, ${Math.round(cfg.tope_combinada * 100)} % por combinada y ${Math.round(cfg.tope_diario * 100)} % en total al día.</li>
         <li>Los ${eur(cfg.banca_inicial).replace(",00", "")} son la banca entera. Si baja, no se recarga para recuperar.</li>
         <li>Las apuestas que apuntas se guardan en este dispositivo. Si borras los datos del navegador, se pierden.</li>
-      </ul></section>`;
+      </ul></div></section>`;
   }
 
   function render() {
     const v = vista(), b = banca(), app = document.getElementById("app");
-    document.querySelectorAll(".tabs a").forEach(a => a.classList.toggle("on", a.dataset.v === v));
+    document.querySelectorAll(".tabs a, .abajo a").forEach(a => a.classList.toggle("on", a.dataset.v === v));
     document.getElementById("saldo-chip").textContent = eur(b.disponible);
-    if (st.error && !st.dias.length && v !== "banca") { app.innerHTML = `<section class="card vacio"><h2>No se pueden cargar los datos</h2><p class="muted">${esc(st.error)}</p></section>`; return; }
+    document.getElementById("juego-chip").textContent = eur(b.pendiente);
+    const raw = st.dias.find(x => x.fecha === st.fecha) || st.dias[0];
+    document.getElementById("lado-izq").innerHTML = ladoIzq(b);
+    document.getElementById("lado-der").innerHTML = st.cargado && raw ? boletoLateral(raw, b) : "";
+    const nd = document.getElementById("n-dobles");
+    if (nd) { const n = raw ? doblesDelDia(raw).length : 0; nd.textContent = n; nd.hidden = !n; }
+    if (st.error && !st.dias.length && v !== "banca") { app.innerHTML = `<section class="panel vacio"><h2>No se pueden cargar los datos</h2><p class="muted">${esc(st.error)}</p></section>`; return; }
     if (v === "banca") { app.innerHTML = vistaBanca(b); conectarGrafica(b); return; }
     if (!st.cargado) return;
     if (!st.dias.length) { app.innerHTML = vistaVacia(); return; }
     if (v === "resultados") { app.innerHTML = vistaResultados(); return; }
-    const raw = st.dias.find(x => x.fecha === st.fecha) || st.dias[0];
     if (v === "dobles") { app.innerHTML = vistaDobles(raw, b); return; }
     const d = preparar(raw, b.saldo);
     app.innerHTML = v === "combinadas" ? vistaCombinadas(d, b) : vistaPartidos(d, b);
@@ -936,7 +923,6 @@ select, input { background: var(--panel-2); border: 1px solid var(--line); borde
     });
     g.addEventListener("mouseleave", () => { tip.hidden = true; });
   }
-
   // ---------- eventos ----------
   window.addEventListener("hashchange", () => { st.borrarPend = null; render(); window.scrollTo(0, 0); });
   document.addEventListener("change", e => {
@@ -961,6 +947,12 @@ select, input { background: var(--panel-2); border: 1px solid var(--line); borde
   });
   function aviso(f, txt) { let m = f.parentElement.querySelector(".ok-msg"); if (!m) { m = document.createElement("p"); m.className = "ok-msg"; f.parentElement.appendChild(m); } m.textContent = txt; }
   document.addEventListener("click", async e => {
+    const bDia = e.target.closest("[data-fecha]");
+    if (bDia) {
+      st.fecha = bDia.dataset.fecha;
+      if (["resultados", "banca"].includes(vista())) location.hash = "#partidos"; else { render(); window.scrollTo(0, 0); }
+      return;
+    }
     const bEst = e.target.closest("[data-estado]"), bBor = e.target.closest("[data-borrar]");
     if (bEst && st.db) { st.borrarPend = null; const id = bEst.dataset.id; const a = st.apuestas.find(x => x.id === id); if (!a || a.estado === bEst.dataset.estado) return;
       try { await st.db.doc("apuestas/" + id).update({ estado: bEst.dataset.estado }); } catch { /* el snapshot mantiene el estado real */ } }
