@@ -381,7 +381,7 @@ select, input { background: var(--panel-2); border: 1px solid var(--line); borde
 
 <script>
 (() => {
-  const DEF_CFG = { banca_inicial: 50, banca_desde: "", kelly_fraccion: 0.25, peso_mi_estimacion: 0.5, tope_simple: 0.05, tope_combinada: 0.02, tope_diario: 0.25, margen_casa: 0.05, stake_doble: 0.05, max_dobles: 8, dobles_desde: "2026-11-12", sonadora_dobles: 1 };
+  const DEF_CFG = { banca_inicial: 50, banca_desde: "", kelly_fraccion: 0.25, peso_mi_estimacion: 0.5, tope_simple: 0.05, tope_combinada: 0.02, tope_diario: 0.25, margen_casa: 0.05, stake_doble: 0.03, max_dobles: 4, dobles_desde: "2026-11-12", sonadora_dobles: 1 };
   const DIAS = ["domingo", "lunes", "martes", "miércoles", "jueves", "viernes", "sábado"];
   const MESES = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"];
   const st = { dias: [], apuestas: [], cfg: DEF_CFG, fecha: null, mes: null, cargado: false, error: null, puedeEscribir: true, db: null, borrarPend: null };
@@ -645,7 +645,7 @@ select, input { background: var(--panel-2); border: 1px solid var(--line); borde
       const flojo = p => /flojo|50 ?- ?50|50 ?%/i.test(p.riesgo || "");
       const vistos = new Set();
       let cand = (dia.picks || [])
-        .filter(p =>p.prob >= 0.62 && p.cuota >= 1.25 && !flojo(p))
+        .filter(p =>p.prob >= 0.62 && p.cuota >= (dia.fecha >= "2026-11-26" ? 1.30 : 1.25) && !flojo(p))
         .map(p => ({ id: p.id, partido: p.local + "|" + p.visitante, pa: probAj(p.prob, p.cuota, cfg) }))
         .sort((a, b) => b.pa - a.pa)
         .filter(c => !vistos.has(c.partido) && vistos.add(c.partido))
@@ -653,7 +653,8 @@ select, input { background: var(--panel-2); border: 1px solid var(--line); borde
       if (cand.length % 2) cand = cand.slice(0, -1);
       for (let i = 0; i < cand.length / 2; i++) pares.push({ id: "d" + (i + 1), ids: [cand[i].id, cand[cand.length - 1 - i].id] });
     }
-    return pares.slice(0, cfg.max_dobles).map((x, i) => {
+    // el tope de 4 dobles empieza el 26/11/2026; los días anteriores conservan todos sus dobles (y las apuestas apuntadas)
+    return pares.slice(0, dia.fecha >= "2026-11-26" ? cfg.max_dobles : 8).map((x, i) => {
       const lista = x.ids.map(id => porId[id]).filter(Boolean);
       const estado = estadoComb(lista);
       const cuotaPub = lista.reduce((t, p) => t * p.cuota, 1);
