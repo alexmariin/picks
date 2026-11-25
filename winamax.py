@@ -21,14 +21,51 @@ En mercados de jugador la cuota es de un solo lado (no hay "no lo hace"), así q
 import json
 import sys
 import time
+import urllib.error
 import urllib.request
-from datetime import datetime
+import ssl
+from datetime import datetime, timedelta, timezone, tzinfo
 from pathlib import Path
-from zoneinfo import ZoneInfo
+
+
+class _HoraEspana(tzinfo):
+    """Hora peninsular sin depender del paquete tzdata (en Windows a veces falta)."""
+
+    @staticmethod
+    def _ultimo_domingo(anio, mes):
+        d = datetime(anio, mes + 1, 1) - timedelta(days=1) if mes < 12 else datetime(anio, 12, 31)
+        return d - timedelta(days=(d.weekday() + 1) % 7)
+
+    def _verano(self, utc):
+        ini = self._ultimo_domingo(utc.year, 3).replace(hour=1)
+        fin = self._ultimo_domingo(utc.year, 10).replace(hour=1)
+        return ini <= utc.replace(tzinfo=None) < fin
+
+    def utcoffset(self, dt):
+        utc = dt.replace(tzinfo=None) - timedelta(hours=1)
+        return timedelta(hours=2 if self._verano(utc) else 1)
+
+    def fromutc(self, dt):
+        return dt + timedelta(hours=2 if self._verano(dt.replace(tzinfo=None)) else 1)
+
+    def dst(self, dt):
+        return self.utcoffset(dt) - timedelta(hours=1)
+
+    def tzname(self, dt):
+        return "CEST" if self.dst(dt) else "CET"
+
+
+try:
+    from zoneinfo import ZoneInfo
+    MADRID = ZoneInfo("Europe/Madrid")
+except Exception:  # noqa: BLE001  (falta tzdata)
+    MADRID = _HoraEspana()
 
 BASE = Path(__file__).parent
 WEB = "https://www.winamax.es/apuestas-deportivas"
-MADRID = ZoneInfo("Europe/Madrid")
+BLOQUEO = ("La red de este ordenador no deja abrir Winamax (un filtro de la red, por ejemplo de la universidad o el "
+           "trabajo, bloquea las webs de apuestas). Hoy no hay cuotas de Winamax: la rutina usará cuotas estimadas. "
+           "Funcionará cuando el PC esté en una red sin ese filtro (por ejemplo en casa).")
 UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36"
 _ultima = [0.0]
 
@@ -39,8 +76,13 @@ def estado(ruta):
         time.sleep(espera)
     _ultima[0] = time.time()
     req = urllib.request.Request(f"{WEB}{ruta}", headers={"User-Agent": UA, "Accept-Language": "es-ES,es;q=0.9"})
-    with urllib.request.urlopen(req, timeout=40) as r:
-        html = r.read().decode("utf-8", "replace")
+    try:
+        with urllib.request.urlopen(req, timeout=40) as r:
+            html = r.read().decode("utf-8", "replace")
+    except (ssl.SSLError, urllib.error.URLError) as e:
+        if isinstance(e, ssl.SSLError) or isinstance(getattr(e, "reason", None), ssl.SSLError):
+            sys.exit(BLOQUEO)
+        raise
     marca = "PRELOADED_STATE = "
     i = html.find(marca)
     if i < 0:
