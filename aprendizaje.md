@@ -10,6 +10,7 @@ Este archivo es la memoria del analista. Cada día, antes de elegir picks, se le
 - Cada lección debe tener fecha y el pick que la originó, y solo se escribe si es una causa concreta y repetible, no mala suerte.
 
 ## Lecciones (las escribe el analista, la más nueva arriba)
+- 2026-11-26 · Goles por equipo "más de 1,5" (plz-ben 4-0, fer-cel 0-0, esc-cop 2-0): 3 fallos en un día, los tres al 67-70 % y con cuota ESTIMADA (no había mercado real). Me fié solo de la racha de "2 o más en todos sus partidos". El Benfica era favorito visitante contra un Plzeň que necesitaba puntuar (lo escribí en el riesgo) y se llevó 4. El Copenhague también jugaba fuera (acabó con 9, eso sí fue mala suerte). Goles por equipo va 9 de 12 y neto 0: a cuota de 1,35-1,40 no compensa. Haré: "más de 1,5 del equipo" solo con favorito LOCAL y como máximo al 65 % si la cuota es estimada. Con favorito visitante contra un local que necesita puntuar, ni su victoria ni sus goles (amplía la lección del 14/11). Y como mucho uno de estos en "la segura".
 - 2026-11-25 · "Más de 2,5" a cuota 1,26 en Champions (atm-vik 2-0 e int-stu 2-0): los dos con favorito que gana 2-0 y el rival sin marcar. El Atlético marcó 2 en 24 minutos y bajó el ritmo (segunda parte sin nada); en Champions ninguno de sus partidos había pasado de 2 goles y lo escribí en el riesgo. El Inter llevaba 2 victorias seguidas sin encajar y yo usé datos viejos ("marca y encaja"). Las cuotas < 1,30 ya van 21 picks y -11 % de neto: ya no es solo pista. Haré: no publico picks a cuota < 1,30 salvo que diga 80 % o más. Y "más de 2,5" solo si los partidos recientes de los DOS equipos (últimos 3) pasan de 2 goles; si el favorito no encaja o sus partidos se quedan cortos, mejor "favorito gana" o "más de 1,5".
 - 2026-11-24 · "Más de 2,5" con el favorito sin delanteros (bod-las 1-0 y com-aek 1-0): los dos partidos acabaron 1-0. Al Bodø le faltaban Evjen y Mikkelsen y venía de un 0-0 en casa; al Como, Kean y Diao (y falló un penalti). Lo puse en el riesgo y lo jugué igual, y a cuota 1,26-1,34. Haré: si al favorito le faltan 2 o más atacantes titulares, no juego "más de 2,5"; como mucho "más de 1,5" o el favorito gana. La lección de bajas (juv-ven, om-lem) vale también para los mercados de goles.
 - 2026-11-24 · Ambos marcan "FLOJO" (gal-avl 1-0 y fey-por 0-1): ambos marcan va 2 de 5 y -30 %. Los dos los marqué yo como casi 50-50; al Galatasaray le faltaba todo su ataque y el Oporto llegaba con 3 derrotas fuera. Haré: un pick que yo mismo llamo FLOJO (menos del 60 %) no se publica; y no juego "ambos marcan" si a uno de los dos le falta su delantero titular. Aún es pista (menos de 20 picks).
@@ -29,18 +30,18 @@ Este archivo es la memoria del analista. Cada día, antes de elegir picks, se le
 
 ## Números
 <!-- STATS -->
-_Actualizado con 88 picks cerrados (de 2026-11-12 a 2026-11-25)._
+_Actualizado con 95 picks cerrados (de 2026-11-12 a 2026-11-26)._
 
-**Total:** 65 de 88 (74% real frente a 68% que dije).
+**Total:** 69 de 95 (73% real frente a 68% que dije).
 
 ### Por mercado
 | Grupo | Picks | Aciertos | % real | % que dije | Neto a 1 u por pick |
 |---|---|---|---|---|---|
-| Goles totales | 37 | 26 | 70% | 67% | +1.46 u (+4%) |
-| 1X2 | 17 | 15 | 88% | 68% | +4.04 u (+24%) |
+| Goles totales | 38 | 27 | 71% | 67% | +1.85 u (+5%) |
+| 1X2 | 18 | 16 | 89% | 67% | +4.60 u (+26%) |
+| Goles por equipo | 12 | 9 | 75% | 69% | -0.05 u (-0%) |
 | Doble oportunidad | 10 | 8 | 80% | 74% | +0.33 u (+3%) |
-| Goles por equipo | 8 | 8 | 100% | 70% | +2.60 u (+32%) |
-| Ambos marcan | 5 | 2 | 40% | 59% | -1.50 u (-30%) |
+| Ambos marcan | 6 | 3 | 50% | 59% | -0.90 u (-15%) |
 | Handicap | 5 | 3 | 60% | 66% | -0.52 u (-10%) |
 | Córners | 4 | 3 | 75% | 64% | +0.16 u (+4%) |
 | Empate no válido | 2 | 0 | 0% | 69% | -2.00 u (-100%) |
@@ -49,16 +50,16 @@ _Actualizado con 88 picks cerrados (de 2026-11-12 a 2026-11-25)._
 | Grupo | Picks | Aciertos | % real | % que dije | Neto a 1 u por pick |
 |---|---|---|---|---|---|
 | < 1,30 | 21 | 15 | 71% | 75% | -2.22 u (-11%) |
-| 1,30 – 1,49 | 36 | 28 | 78% | 68% | +2.60 u (+7%) |
-| 1,50 – 1,79 | 28 | 19 | 68% | 63% | +1.74 u (+6%) |
+| 1,30 – 1,49 | 41 | 30 | 73% | 68% | +0.34 u (+1%) |
+| 1,50 – 1,79 | 30 | 21 | 70% | 63% | +2.90 u (+10%) |
 | ≥ 1,80 | 3 | 3 | 100% | 56% | +2.45 u (+82%) |
 
 ### Calibración: por probabilidad que dije
 | Grupo | Picks | Aciertos | % real | % que dije | Neto a 1 u por pick |
 |---|---|---|---|---|---|
 | < 60 % | 8 | 6 | 75% | 57% | +2.28 u (+29%) |
-| 60 – 69 % | 45 | 34 | 76% | 65% | +5.02 u (+11%) |
-| 70 – 79 % | 31 | 21 | 68% | 72% | -3.62 u (-12%) |
+| 60 – 69 % | 50 | 38 | 76% | 65% | +5.92 u (+12%) |
+| 70 – 79 % | 33 | 21 | 64% | 72% | -5.62 u (-17%) |
 | ≥ 80 % | 4 | 4 | 100% | 83% | +0.89 u (+22%) |
 
 ### Por competición
@@ -72,16 +73,18 @@ _Actualizado con 88 picks cerrados (de 2026-11-12 a 2026-11-25)._
 | Serie A | 6 | 5 | 83% | 66% | +0.84 u (+14%) |
 | Bundesliga | 5 | 2 | 40% | 69% | -2.32 u (-46%) |
 | Nations League D | 4 | 3 | 75% | 67% | +0.45 u (+11%) |
+| Europa League | 4 | 2 | 50% | 69% | -1.26 u (-32%) |
 | Ligue 1 | 4 | 3 | 75% | 68% | -0.05 u (-1%) |
 | Premier League | 3 | 2 | 67% | 67% | -0.20 u (-7%) |
+| Conference League | 3 | 2 | 67% | 63% | +0.16 u (+5%) |
 
 ### Combinadas (1 u a cada una)
 | Tipo | Ganadas | Perdidas | Neto |
 |---|---|---|---|
-| dobles | 8 | 14 | -7.60 u |
-| equilibrada | 3 | 7 | +2.28 u |
+| dobles | 9 | 16 | -8.73 u |
+| equilibrada | 4 | 7 | +4.75 u |
 | otras | 2 | 3 | +1.01 u |
-| segura | 4 | 7 | -2.16 u |
-| sonadora | 0 | 9 | -9.00 u |
-| sonadora de dobles | 0 | 6 | -6.00 u |
+| segura | 4 | 8 | -3.16 u |
+| sonadora | 0 | 10 | -10.00 u |
+| sonadora de dobles | 0 | 7 | -7.00 u |
 <!-- /STATS -->

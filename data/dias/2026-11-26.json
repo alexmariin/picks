@@ -16,7 +16,9 @@
       "prob": 0.7,
       "motivo": "El Benfica es líder con 12 puntos y 13-3 en goles: marcó 2 en Milán, 4 al Celtic, 4 en Chipre al Omonia y 3 al Lech. Ha marcado 2 o más en sus 4 partidos. El Plzeň encajó 3 del Union en casa y 2 del Levski en casa, y no tiene a Vydra (rotura de ligamento). Con las cuotas de Pinnacle, el Benfica marca 2 o más un 68 %.",
       "riesgo": "Favorito visitante: el Plzeň (3 puntos) necesita puntuar. Por eso no juego la victoria (Winamax paga 1,40 con valor -0,08) sino los goles del Benfica, que aguantan un empate 2-2. Cuota estimada.",
-      "alternativa": "Benfica gana (66 %, 1,40 en Winamax)"
+      "alternativa": "Benfica gana (66 %, 1,40 en Winamax)",
+      "resultado": "fallo",
+      "marcador": "4-0"
     },
     {
       "id": "usg-lec",
@@ -30,7 +32,9 @@
       "prob": 0.68,
       "motivo": "El Union no ha perdido en Europa (3-0 en Plzeň, 1-1 con la Real Sociedad, 4-0 al Hapoel, 2-1 en Vigo). El Lech tiene 1 punto y ha encajado 12 goles en 4 partidos: 0-4 en Londres con el Palace, 0-4 con el Leverkusen y 1-3 en Lisboa. Encajó 2 o más en 3 de 4. Pinnacle da un 72 % al Union; con su línea de goles, el Union marca 2 o más un 70 %.",
       "riesgo": "Los dos juegan liga el domingo y pueden rotar. En su liga el Lech va mejor (4 victorias en los últimos 5). Cuota estimada.",
-      "alternativa": "Union gana (72 %, 1,28 en Winamax: demasiado baja)"
+      "alternativa": "Union gana (72 %, 1,28 en Winamax: demasiado baja)",
+      "resultado": "acierto",
+      "marcador": "2-2"
     },
     {
       "id": "hea-mon",
@@ -44,7 +48,9 @@
       "prob": 0.62,
       "motivo": "El Mónaco lleva 3 de 3 y 7-1 en goles (2-1 en Sofía al CSKA, 3-0 al Friburgo, 2-0 al Nordsjælland). El Hearts tiene 1 punto y 2-6: perdió 0-2 en Trebisonda y 1-3 en Thun. Pinnacle da un 62 % al Mónaco; voy con eso.",
       "riesgo": "Favorito visitante contra un local que necesita puntuar (lección del 14/11): no paso del 62 % y lo dejo fuera de los dobles. Tynecastle aprieta y el Mónaco tuvo bajas en octubre (Dier, Idumbo). Cuota: mediana del mercado (Winamax no da cuotas de la Conference en la API).",
-      "alternativa": "Mónaco: más de 1,5 goles (60 %, ~1,57 estimada)"
+      "alternativa": "Mónaco: más de 1,5 goles (60 %, ~1,57 estimada)",
+      "resultado": "acierto",
+      "marcador": "2-3"
     },
     {
       "id": "fer-cel",
@@ -58,7 +64,9 @@
       "prob": 0.7,
       "motivo": "El Ferencváros va 4 de 4 (12 puntos, 11-3) y ha marcado 2 o más en los 4: 3-1 en Glasgow al Celtic, 2-1 al Plzeň, 4-1 al Torreense y 2-0 en San Siro al Milan. No pierde en casa en Europa en 12 partidos. El Celje ha encajado 2 o más en sus 4 partidos (0-2 en Leverkusen, 0-3 con el Omonia, 2-2 con el Salzburgo, 3-2 en Graz). Con Pinnacle, el Ferencváros marca 2 o más un 67 %.",
       "riesgo": "Puede faltar un jugador expulsado en Milán (sin confirmar). El Celje marca fuera (3 goles en Graz) y obliga a defender. Cuota estimada.",
-      "alternativa": "Más de 2,5 goles (62 %, 1,52 mediana)"
+      "alternativa": "Más de 2,5 goles (62 %, 1,52 mediana)",
+      "resultado": "fallo",
+      "marcador": "0-0"
     },
     {
       "id": "juv-omo",
@@ -72,7 +80,9 @@
       "prob": 0.68,
       "motivo": "La Juve marca mucho: 5-0 al NEC y 2-2 con el Rennes en casa en Europa, y en sus 3 últimos partidos 4-0 al Venezia, 2-2 en Florencia y 2-1 en Alkmaar (todos con 3 goles o más). Los 3 últimos partidos del Omonia en Europa también pasaron de 2 goles (3-0 en Celje, 1-4 con el Benfica, 3-1 en Nimega). Cumple la lección del 25/11: los últimos partidos de los dos pasan de 2 goles. Pinnacle: la Juve gana un 82 %.",
       "riesgo": "La Juve juega en Como el domingo y puede rotar. Si marca pronto y baja el ritmo, puede quedarse en 2-0 (lo que pasó al Atlético y al Inter el día 25). Cuota: mediana del mercado.",
-      "alternativa": "Juventus gana por 2 o más (60 %, ~1,55 estimada)"
+      "alternativa": "Juventus gana por 2 o más (60 %, ~1,55 estimada)",
+      "resultado": "acierto",
+      "marcador": "4-1"
     },
     {
       "id": "esc-cop",
@@ -86,7 +96,9 @@
       "prob": 0.67,
       "motivo": "El Escaldes (Andorra) tiene 0 puntos y ha encajado 2 o más en sus 3 partidos (0-2 en Mjällby, 1-3 con el Craiova, 1-2 en Belgrado). El Copenhague va con 7 puntos y ha marcado 2 o más en los 3 (3-0 al Braga, 2-2 en Belgrado, 2-1 al Iberia). Pinnacle da un 75 % al Copenhague; con su línea de goles, marca 2 o más un 68 %.",
       "riesgo": "El Copenhague recibe al Midtjylland el domingo y puede rotar. Campo pequeño y rival que se encierra. Cuota estimada.",
-      "alternativa": "Copenhague gana (75 %, 1,22 mediana: demasiado baja)"
+      "alternativa": "Copenhague gana (75 %, 1,22 mediana: demasiado baja)",
+      "resultado": "fallo",
+      "marcador": "2-0"
     },
     {
       "id": "hof-stu",
@@ -114,7 +126,9 @@
       "prob": 0.61,
       "motivo": "El Braga no encaja en casa: 2-0 al Gent en Europa y 3-0 al Famalicão en liga, además de un 0-0 en Aarhus. El KuPS no ha marcado fuera (0-2 en Banja Luka) y lleva 6 partidos sin ganar. Pinnacle da un 83 % al Braga; con su línea de goles, el KuPS no marca un 56 % y 'ambos no' sale un 59 %.",
       "riesgo": "Ambos marcan va mal en mis números (2 de 5), pero esos eran 'sí'. El KuPS marcó 2 al Trabzonspor en casa. Probabilidad justa: no va en dobles. Cuota estimada.",
-      "alternativa": "Braga gana por 2 o más (60 %, ~1,57 estimada)"
+      "alternativa": "Braga gana por 2 o más (60 %, ~1,57 estimada)",
+      "resultado": "acierto",
+      "marcador": "4-0"
     }
   ],
   "combinadas": [
