@@ -1101,5 +1101,340 @@
         }
       ]
     }
-  }
+  },
+  "extra": [
+    {
+      "local": "TSG Hoffenheim",
+      "visitante": "SK Sturm Graz",
+      "mercados": {
+        "alternate_team_totals_corners": [
+          {
+            "equipo": "SK Sturm Graz",
+            "linea": 3.5,
+            "opcion": "Over",
+            "winamax": null,
+            "mediana": 2.14,
+            "mejor": 2.14,
+            "pinnacle_justa": 0.441,
+            "valor_winamax": null,
+            "casas": 1
+          },
+          {
+            "equipo": "SK Sturm Graz",
+            "linea": 3.5,
+            "opcion": "Under",
+            "winamax": null,
+            "mediana": 1.69,
+            "mejor": 1.69,
+            "pinnacle_justa": 0.559,
+            "valor_winamax": null,
+            "casas": 1
+          },
+          {
+            "equipo": "TSG Hoffenheim",
+            "linea": 6.5,
+            "opcion": "Over",
+            "winamax": null,
+            "mediana": 1.83,
+            "mejor": 1.83,
+            "pinnacle_justa": 0.517,
+            "valor_winamax": null,
+            "casas": 1
+          },
+          {
+            "equipo": "TSG Hoffenheim",
+            "linea": 6.5,
+            "opcion": "Under",
+            "winamax": null,
+            "mediana": 1.96,
+            "mejor": 1.96,
+            "pinnacle_justa": 0.483,
+            "valor_winamax": null,
+            "casas": 1
+          }
+        ],
+        "alternate_totals_corners": [
+          {
+            "equipo": "",
+            "linea": 9.0,
+            "opcion": "Over",
+            "winamax": null,
+            "mediana": 1.49,
+            "mejor": 1.49,
+            "pinnacle_justa": 0.637,
+            "valor_winamax": null,
+            "casas": 1
+          },
+          {
+            "equipo": "",
+            "linea": 9.0,
+            "opcion": "Under",
+            "winamax": null,
+            "mediana": 2.61,
+            "mejor": 2.61,
+            "pinnacle_justa": 0.363,
+            "valor_winamax": null,
+            "casas": 1
+          },
+          {
+            "equipo": "",
+            "linea": 9.5,
+            "opcion": "Over",
+            "winamax": null,
+            "mediana": 1.67,
+            "mejor": 1.67,
+            "pinnacle_justa": 0.57,
+            "valor_winamax": null,
+            "casas": 1
+          },
+          {
+            "equipo": "",
+            "linea": 9.5,
+            "opcion": "Under",
+            "winamax": null,
+            "mediana": 2.21,
+            "mejor": 2.21,
+            "pinnacle_justa": 0.43,
+            "valor_winamax": null,
+            "casas": 1
+          },
+          {
+            "equipo": "",
+            "linea": 10.0,
+            "opcion": "Over",
+            "winamax": null,
+            "mediana": 1.85,
+            "mejor": 1.85,
+            "pinnacle_justa": 0.516,
+            "valor_winamax": null,
+            "casas": 1
+          },
+          {
+            "equipo": "",
+            "linea": 10.0,
+            "opcion": "Under",
+            "winamax": null,
+            "mediana": 1.97,
+            "mejor": 1.97,
+            "pinnacle_justa": 0.484,
+            "valor_winamax": null,
+            "casas": 1
+          },
+          {
+            "equipo": "",
+            "linea": 10.5,
+            "opcion": "Over",
+            "winamax": null,
+            "mediana": 2.07,
+            "mejor": 2.07,
+            "pinnacle_justa": 0.46,
+            "valor_winamax": null,
+            "casas": 1
+          },
+          {
+            "equipo": "",
+            "linea": 10.5,
+            "opcion": "Under",
+            "winamax": null,
+            "mediana": 1.76,
+            "mejor": 1.76,
+            "pinnacle_justa": 0.54,
+            "valor_winamax": null,
+            "casas": 1
+          },
+          {
+            "equipo": "",
+            "linea": 11.0,
+            "opcion": "Over",
+            "winamax": null,
+            "mediana": 2.38,
+            "mejor": 2.38,
+            "pinnacle_justa": 0.397,
+            "valor_winamax": null,
+            "casas": 1
+          },
+          {
+            "equipo": "",
+            "linea": 11.0,
+            "opcion": "Under",
+            "winamax": null,
+            "mediana": 1.57,
+            "mejor": 1.57,
+            "pinnacle_justa": 0.603,
+            "valor_winamax": null,
+            "casas": 1
+          }
+        ]
+      }
+    },
+    {
+      "local": "Sunderland",
+      "visitante": "Jagiellonia Białystok",
+      "mercados": {
+        "alternate_team_totals_corners": [
+          {
+            "equipo": "Jagiellonia Białystok",
+            "linea": 2.5,
+            "opcion": "Over",
+            "winamax": null,
+            "mediana": 1.75,
+            "mejor": 1.75,
+            "pinnacle_justa": 0.538,
+            "valor_winamax": null,
+            "casas": 1
+          },
+          {
+            "equipo": "Jagiellonia Białystok",
+            "linea": 2.5,
+            "opcion": "Under",
+            "winamax": null,
+            "mediana": 2.04,
+            "mejor": 2.04,
+            "pinnacle_justa": 0.462,
+            "valor_winamax": null,
+            "casas": 1
+          },
+          {
+            "equipo": "Sunderland",
+            "linea": 6.5,
+            "opcion": "Over",
+            "winamax": null,
+            "mediana": 1.92,
+            "mejor": 1.92,
+            "pinnacle_justa": 0.493,
+            "valor_winamax": null,
+            "casas": 1
+          },
+          {
+            "equipo": "Sunderland",
+            "linea": 6.5,
+            "opcion": "Under",
+            "winamax": null,
+            "mediana": 1.87,
+            "mejor": 1.87,
+            "pinnacle_justa": 0.507,
+            "valor_winamax": null,
+            "casas": 1
+          }
+        ],
+        "alternate_totals_corners": [
+          {
+            "equipo": "",
+            "linea": 8.5,
+            "opcion": "Over",
+            "winamax": null,
+            "mediana": 1.56,
+            "mejor": 1.56,
+            "pinnacle_justa": 0.607,
+            "valor_winamax": null,
+            "casas": 1
+          },
+          {
+            "equipo": "",
+            "linea": 8.5,
+            "opcion": "Under",
+            "winamax": null,
+            "mediana": 2.41,
+            "mejor": 2.41,
+            "pinnacle_justa": 0.393,
+            "valor_winamax": null,
+            "casas": 1
+          },
+          {
+            "equipo": "",
+            "linea": 9.0,
+            "opcion": "Over",
+            "winamax": null,
+            "mediana": 1.7,
+            "mejor": 1.7,
+            "pinnacle_justa": 0.558,
+            "valor_winamax": null,
+            "casas": 1
+          },
+          {
+            "equipo": "",
+            "linea": 9.0,
+            "opcion": "Under",
+            "winamax": null,
+            "mediana": 2.15,
+            "mejor": 2.15,
+            "pinnacle_justa": 0.442,
+            "valor_winamax": null,
+            "casas": 1
+          },
+          {
+            "equipo": "",
+            "linea": 9.5,
+            "opcion": "Over",
+            "winamax": null,
+            "mediana": 1.93,
+            "mejor": 1.93,
+            "pinnacle_justa": 0.493,
+            "valor_winamax": null,
+            "casas": 1
+          },
+          {
+            "equipo": "",
+            "linea": 9.5,
+            "opcion": "Under",
+            "winamax": null,
+            "mediana": 1.88,
+            "mejor": 1.88,
+            "pinnacle_justa": 0.507,
+            "valor_winamax": null,
+            "casas": 1
+          },
+          {
+            "equipo": "",
+            "linea": 10.0,
+            "opcion": "Over",
+            "winamax": null,
+            "mediana": 2.2,
+            "mejor": 2.2,
+            "pinnacle_justa": 0.433,
+            "valor_winamax": null,
+            "casas": 1
+          },
+          {
+            "equipo": "",
+            "linea": 10.0,
+            "opcion": "Under",
+            "winamax": null,
+            "mediana": 1.68,
+            "mejor": 1.68,
+            "pinnacle_justa": 0.567,
+            "valor_winamax": null,
+            "casas": 1
+          },
+          {
+            "equipo": "",
+            "linea": 10.5,
+            "opcion": "Over",
+            "winamax": null,
+            "mediana": 2.45,
+            "mejor": 2.45,
+            "pinnacle_justa": 0.386,
+            "valor_winamax": null,
+            "casas": 1
+          },
+          {
+            "equipo": "",
+            "linea": 10.5,
+            "opcion": "Under",
+            "winamax": null,
+            "mediana": 1.54,
+            "mejor": 1.54,
+            "pinnacle_justa": 0.614,
+            "valor_winamax": null,
+            "casas": 1
+          }
+        ]
+      }
+    },
+    {
+      "local": "Brighton and Hove Albion",
+      "visitante": "Universitatea Craiova",
+      "mercados": {}
+    }
+  ]
 }
