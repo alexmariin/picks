@@ -1,0 +1,1105 @@
+{
+  "fecha": "2026-11-26",
+  "ligas": {
+    "soccer_uefa_europa_league": {
+      "pedido": "09:13",
+      "partidos": [
+        {
+          "local": "Olympiakos Piraeus",
+          "visitante": "AC Milan",
+          "hora": "18:45",
+          "winamax": {
+            "1": 2.8,
+            "X": 3.35,
+            "2": 2.2
+          },
+          "pinnacle_justa": {
+            "1": 0.311,
+            "X": 0.275,
+            "2": 0.414,
+            "mas_2.5": 0.509,
+            "menos_2.5": 0.491
+          },
+          "mejor": {
+            "1": 3.25,
+            "X": 3.65,
+            "2": 2.45,
+            "mas_2.5": 1.97,
+            "menos_2.5": 2.0
+          },
+          "mediana": {
+            "1": 2.98,
+            "X": 3.45,
+            "2": 2.33,
+            "mas_2.5": 1.88,
+            "menos_2.5": 1.92
+          },
+          "valor_winamax": {
+            "1": -0.13,
+            "X": -0.08,
+            "2": -0.088
+          }
+        },
+        {
+          "local": "Dinamo Zagreb",
+          "visitante": "Bayer Leverkusen",
+          "hora": "18:45",
+          "winamax": {
+            "2": 1.58,
+            "1": 4.0,
+            "X": 4.1
+          },
+          "pinnacle_justa": {
+            "2": 0.572,
+            "1": 0.21,
+            "X": 0.218
+          },
+          "mejor": {
+            "2": 1.73,
+            "1": 5.0,
+            "X": 4.6,
+            "mas_2.5": 1.5,
+            "menos_2.5": 2.62
+          },
+          "mediana": {
+            "2": 1.67,
+            "1": 4.64,
+            "X": 4.25,
+            "mas_2.5": 1.49,
+            "menos_2.5": 2.6
+          },
+          "valor_winamax": {
+            "2": -0.097,
+            "1": -0.158,
+            "X": -0.106
+          }
+        },
+        {
+          "local": "Viktoria Plzeň",
+          "visitante": "Benfica",
+          "hora": "18:45",
+          "winamax": {
+            "1": 5.3,
+            "2": 1.4,
+            "X": 4.9
+          },
+          "pinnacle_justa": {
+            "1": 0.157,
+            "2": 0.659,
+            "X": 0.185
+          },
+          "mejor": {
+            "1": 6.8,
+            "2": 1.49,
+            "X": 5.5,
+            "mas_2.5": 1.42,
+            "menos_2.5": 2.86
+          },
+          "mediana": {
+            "1": 6.03,
+            "2": 1.45,
+            "X": 4.93,
+            "mas_2.5": 1.41,
+            "menos_2.5": 2.82
+          },
+          "valor_winamax": {
+            "1": -0.17,
+            "2": -0.078,
+            "X": -0.095
+          }
+        },
+        {
+          "local": "Besiktas JK",
+          "visitante": "Hapoel Be'er Sheva",
+          "hora": "18:45",
+          "winamax": {
+            "1": 1.2,
+            "2": 8.5,
+            "X": 6.0
+          },
+          "pinnacle_justa": {
+            "1": 0.766,
+            "2": 0.095,
+            "X": 0.14
+          },
+          "mejor": {
+            "1": 1.28,
+            "2": 12.5,
+            "X": 7.0,
+            "mas_2.5": 1.37,
+            "menos_2.5": 3.08
+          },
+          "mediana": {
+            "1": 1.25,
+            "2": 10.34,
+            "X": 6.55,
+            "mas_2.5": 1.37,
+            "menos_2.5": 3.05
+          },
+          "valor_winamax": {
+            "1": -0.081,
+            "2": -0.195,
+            "X": -0.161
+          }
+        },
+        {
+          "local": "Celta Vigo",
+          "visitante": "Bournemouth",
+          "hora": "18:45",
+          "winamax": {
+            "2": 1.84,
+            "1": 3.65,
+            "X": 3.45
+          },
+          "pinnacle_justa": {
+            "2": 0.492,
+            "1": 0.242,
+            "X": 0.266,
+            "mas_2.5": 0.496,
+            "menos_2.5": 0.504
+          },
+          "mejor": {
+            "2": 2.07,
+            "1": 4.05,
+            "X": 3.7,
+            "mas_2.5": 2.02,
+            "menos_2.5": 1.95
+          },
+          "mediana": {
+            "2": 1.98,
+            "1": 3.77,
+            "X": 3.58,
+            "mas_2.5": 1.92,
+            "menos_2.5": 1.91
+          },
+          "valor_winamax": {
+            "2": -0.095,
+            "1": -0.116,
+            "X": -0.082
+          }
+        },
+        {
+          "local": "Salzburg",
+          "visitante": "FC Ararat-Armenia",
+          "hora": "18:45",
+          "winamax": {
+            "2": 11.0,
+            "1": 1.11,
+            "X": 7.5
+          },
+          "pinnacle_justa": {
+            "2": 0.06,
+            "1": 0.837,
+            "X": 0.103
+          },
+          "mejor": {
+            "2": 19.5,
+            "1": 1.19,
+            "X": 10.5,
+            "mas_2.5": 1.29,
+            "menos_2.5": 3.57
+          },
+          "mediana": {
+            "2": 16.0,
+            "1": 1.16,
+            "X": 8.25,
+            "mas_2.5": 1.29,
+            "menos_2.5": 3.55
+          },
+          "valor_winamax": {
+            "2": -0.344,
+            "1": -0.071,
+            "X": -0.225
+          }
+        },
+        {
+          "local": "Union Saint-Gilloise",
+          "visitante": "Lech Poznań",
+          "hora": "18:45",
+          "winamax": {
+            "1": 1.28,
+            "2": 7.0,
+            "X": 5.5
+          },
+          "pinnacle_justa": {
+            "1": 0.717,
+            "2": 0.115,
+            "X": 0.168
+          },
+          "mejor": {
+            "1": 1.37,
+            "2": 9.0,
+            "X": 6.0,
+            "mas_2.5": 1.47,
+            "menos_2.5": 2.7
+          },
+          "mediana": {
+            "1": 1.35,
+            "2": 8.35,
+            "X": 5.5,
+            "mas_2.5": 1.46,
+            "menos_2.5": 2.69
+          },
+          "valor_winamax": {
+            "1": -0.082,
+            "2": -0.196,
+            "X": -0.076
+          }
+        },
+        {
+          "local": "Marseille",
+          "visitante": "PFC Levski Sofia",
+          "hora": "18:45",
+          "winamax": {
+            "2": 7.25,
+            "X": 5.4,
+            "1": 1.28
+          },
+          "pinnacle_justa": {
+            "2": 0.115,
+            "X": 0.171,
+            "1": 0.714
+          },
+          "mejor": {
+            "2": 10.0,
+            "X": 5.8,
+            "1": 1.38,
+            "mas_2.5": 1.63,
+            "menos_2.5": 2.4
+          },
+          "mediana": {
+            "2": 8.38,
+            "X": 5.4,
+            "1": 1.33,
+            "mas_2.5": 1.59,
+            "menos_2.5": 2.35
+          },
+          "valor_winamax": {
+            "2": -0.165,
+            "X": -0.076,
+            "1": -0.086
+          }
+        },
+        {
+          "local": "Sparta Prague",
+          "visitante": "AZ Alkmaar",
+          "hora": "21:00",
+          "winamax": {
+            "2": 2.15,
+            "X": 3.5,
+            "1": 2.75
+          },
+          "pinnacle_justa": {
+            "2": 0.413,
+            "X": 0.266,
+            "1": 0.321
+          },
+          "mejor": {
+            "2": 2.4,
+            "X": 3.75,
+            "1": 3.1,
+            "mas_2.5": 1.69,
+            "menos_2.5": 2.27
+          },
+          "mediana": {
+            "2": 2.29,
+            "X": 3.65,
+            "1": 2.95,
+            "mas_2.5": 1.65,
+            "menos_2.5": 2.21
+          },
+          "valor_winamax": {
+            "2": -0.112,
+            "X": -0.07,
+            "1": -0.116
+          }
+        },
+        {
+          "local": "OFI Crete",
+          "visitante": "Anderlecht",
+          "hora": "21:00",
+          "winamax": {
+            "1": 3.95,
+            "2": 1.72,
+            "X": 3.7
+          },
+          "pinnacle_justa": {
+            "1": 0.217,
+            "2": 0.534,
+            "X": 0.249
+          },
+          "mejor": {
+            "1": 4.7,
+            "2": 1.85,
+            "X": 4.0,
+            "mas_2.5": 1.73,
+            "menos_2.5": 2.23
+          },
+          "mediana": {
+            "1": 4.45,
+            "2": 1.8,
+            "X": 3.75,
+            "mas_2.5": 1.67,
+            "menos_2.5": 2.17
+          },
+          "valor_winamax": {
+            "1": -0.144,
+            "2": -0.081,
+            "X": -0.078
+          }
+        },
+        {
+          "local": "Torreense",
+          "visitante": "Celtic",
+          "hora": "21:00",
+          "winamax": {
+            "1": 4.4,
+            "2": 1.54,
+            "X": 4.1
+          },
+          "pinnacle_justa": {
+            "1": 0.194,
+            "2": 0.59,
+            "X": 0.216
+          },
+          "mejor": {
+            "1": 5.2,
+            "2": 1.68,
+            "X": 4.6,
+            "mas_2.5": 1.5,
+            "menos_2.5": 2.69
+          },
+          "mediana": {
+            "1": 4.93,
+            "2": 1.62,
+            "X": 4.4,
+            "mas_2.5": 1.48,
+            "menos_2.5": 2.65
+          },
+          "valor_winamax": {
+            "1": -0.147,
+            "2": -0.091,
+            "X": -0.114
+          }
+        },
+        {
+          "local": "Crystal Palace",
+          "visitante": "Real Sociedad",
+          "hora": "21:00",
+          "winamax": {
+            "2": 2.95,
+            "1": 1.94,
+            "X": 3.75
+          },
+          "pinnacle_justa": {
+            "2": 0.287,
+            "1": 0.473,
+            "X": 0.24
+          },
+          "mejor": {
+            "2": 3.45,
+            "1": 2.14,
+            "X": 4.04,
+            "mas_2.5": 1.62,
+            "menos_2.5": 2.5
+          },
+          "mediana": {
+            "2": 3.2,
+            "1": 2.06,
+            "X": 3.9,
+            "mas_2.5": 1.56,
+            "menos_2.5": 2.4
+          },
+          "valor_winamax": {
+            "2": -0.154,
+            "1": -0.082,
+            "X": -0.1
+          }
+        },
+        {
+          "local": "Ferencváros TC",
+          "visitante": "NK Celje",
+          "hora": "21:00",
+          "winamax": {
+            "1": 1.3,
+            "2": 6.5,
+            "X": 5.2
+          },
+          "pinnacle_justa": {
+            "1": 0.7,
+            "2": 0.124,
+            "X": 0.176
+          },
+          "mejor": {
+            "1": 1.4,
+            "2": 8.8,
+            "X": 5.6,
+            "mas_2.5": 1.53,
+            "menos_2.5": 2.5
+          },
+          "mediana": {
+            "1": 1.36,
+            "2": 7.79,
+            "X": 5.28,
+            "mas_2.5": 1.52,
+            "menos_2.5": 2.48
+          },
+          "valor_winamax": {
+            "1": -0.09,
+            "2": -0.193,
+            "X": -0.087
+          }
+        },
+        {
+          "local": "Sunderland",
+          "visitante": "Jagiellonia Białystok",
+          "hora": "21:00",
+          "winamax": {
+            "2": 8.5,
+            "X": 6.0,
+            "1": 1.19
+          },
+          "pinnacle_justa": {
+            "2": 0.079,
+            "X": 0.153,
+            "1": 0.768
+          },
+          "mejor": {
+            "2": 13.5,
+            "X": 6.8,
+            "1": 1.28,
+            "mas_2.5": 1.55,
+            "menos_2.5": 2.45
+          },
+          "mediana": {
+            "2": 12.0,
+            "X": 6.17,
+            "1": 1.25,
+            "mas_2.5": 1.52,
+            "menos_2.5": 2.42
+          },
+          "valor_winamax": {
+            "2": -0.327,
+            "X": -0.08,
+            "1": -0.087
+          }
+        },
+        {
+          "local": "Juventus",
+          "visitante": "Omonoia FC",
+          "hora": "21:00",
+          "winamax": {
+            "1": 1.11,
+            "2": 12.5,
+            "X": 8.0
+          },
+          "pinnacle_justa": {
+            "1": 0.823,
+            "2": 0.062,
+            "X": 0.115
+          },
+          "mejor": {
+            "1": 1.21,
+            "2": 18.5,
+            "X": 8.6,
+            "mas_2.5": 1.39,
+            "menos_2.5": 2.98
+          },
+          "mediana": {
+            "1": 1.17,
+            "2": 15.3,
+            "X": 7.6,
+            "mas_2.5": 1.39,
+            "menos_2.5": 2.95
+          },
+          "valor_winamax": {
+            "1": -0.086,
+            "2": -0.224,
+            "X": -0.081
+          }
+        },
+        {
+          "local": "Lyon",
+          "visitante": "Lillestrom",
+          "hora": "21:00",
+          "winamax": {
+            "2": 10.0,
+            "1": 1.16,
+            "X": 6.75
+          },
+          "pinnacle_justa": {
+            "2": 0.074,
+            "1": 0.798,
+            "X": 0.128
+          },
+          "mejor": {
+            "2": 14.0,
+            "1": 1.25,
+            "X": 7.8,
+            "mas_2.5": 1.37,
+            "menos_2.5": 3.08
+          },
+          "mediana": {
+            "2": 12.99,
+            "1": 1.2,
+            "X": 7.25,
+            "mas_2.5": 1.37,
+            "menos_2.5": 3.05
+          },
+          "valor_winamax": {
+            "2": -0.256,
+            "1": -0.074,
+            "X": -0.138
+          }
+        },
+        {
+          "local": "NEC Nijmegen",
+          "visitante": "Rennes",
+          "hora": "21:00",
+          "winamax": {
+            "2": 2.0,
+            "1": 2.9,
+            "X": 3.8
+          },
+          "pinnacle_justa": {
+            "2": 0.458,
+            "1": 0.301,
+            "X": 0.241
+          },
+          "mejor": {
+            "2": 2.18,
+            "1": 3.3,
+            "X": 4.02,
+            "mas_2.5": 1.5,
+            "menos_2.5": 2.6
+          },
+          "mediana": {
+            "2": 2.12,
+            "1": 3.09,
+            "X": 3.83,
+            "mas_2.5": 1.5,
+            "menos_2.5": 2.58
+          },
+          "valor_winamax": {
+            "2": -0.085,
+            "1": -0.126,
+            "X": -0.083
+          }
+        },
+        {
+          "local": "TSG Hoffenheim",
+          "visitante": "SK Sturm Graz",
+          "hora": "21:00",
+          "winamax": {
+            "1": 1.27,
+            "2": 6.75,
+            "X": 5.5
+          },
+          "pinnacle_justa": {
+            "1": 0.727,
+            "2": 0.115,
+            "X": 0.158
+          },
+          "mejor": {
+            "1": 1.35,
+            "2": 9.4,
+            "X": 6.4,
+            "mas_2.5": 1.37,
+            "menos_2.5": 3.08
+          },
+          "mediana": {
+            "1": 1.32,
+            "2": 8.25,
+            "X": 5.75,
+            "mas_2.5": 1.37,
+            "menos_2.5": 3.05
+          },
+          "valor_winamax": {
+            "1": -0.077,
+            "2": -0.222,
+            "X": -0.13
+          }
+        }
+      ]
+    },
+    "soccer_uefa_europa_conference_league": {
+      "pedido": "09:13",
+      "partidos": [
+        {
+          "local": "FC Kairat",
+          "visitante": "Mjällby AIF",
+          "hora": "16:30",
+          "winamax": {},
+          "pinnacle_justa": {
+            "1": 0.427,
+            "2": 0.294,
+            "X": 0.278,
+            "mas_2.5": 0.499,
+            "menos_2.5": 0.501
+          },
+          "mejor": {
+            "1": 2.28,
+            "2": 3.45,
+            "X": 3.6,
+            "mas_2.5": 2.0,
+            "menos_2.5": 1.93
+          },
+          "mediana": {
+            "1": 2.21,
+            "2": 3.26,
+            "X": 3.34,
+            "mas_2.5": 1.91,
+            "menos_2.5": 1.89
+          },
+          "valor_winamax": {}
+        },
+        {
+          "local": "SK Brann",
+          "visitante": "AGF Aarhus",
+          "hora": "18:45",
+          "winamax": {},
+          "pinnacle_justa": {
+            "1": 0.436,
+            "2": 0.317,
+            "X": 0.247
+          },
+          "mejor": {
+            "1": 2.25,
+            "2": 3.2,
+            "X": 4.0,
+            "mas_2.5": 1.5,
+            "menos_2.5": 2.62
+          },
+          "mediana": {
+            "1": 2.19,
+            "2": 3.0,
+            "X": 3.7,
+            "mas_2.5": 1.5,
+            "menos_2.5": 2.52
+          },
+          "valor_winamax": {}
+        },
+        {
+          "local": "Hearts",
+          "visitante": "AS Monaco",
+          "hora": "18:45",
+          "winamax": {},
+          "pinnacle_justa": {
+            "2": 0.617,
+            "1": 0.168,
+            "X": 0.215
+          },
+          "mejor": {
+            "2": 1.63,
+            "1": 6.2,
+            "X": 4.6,
+            "mas_2.5": 1.62,
+            "menos_2.5": 2.5
+          },
+          "mediana": {
+            "2": 1.56,
+            "1": 5.62,
+            "X": 4.35,
+            "mas_2.5": 1.56,
+            "menos_2.5": 2.44
+          },
+          "valor_winamax": {}
+        },
+        {
+          "local": "Ajax",
+          "visitante": "FC Thun",
+          "hora": "18:45",
+          "winamax": {},
+          "pinnacle_justa": {
+            "2": 0.08,
+            "1": 0.805,
+            "X": 0.115
+          },
+          "mejor": {
+            "2": 16.5,
+            "1": 1.2,
+            "X": 9.0,
+            "mas_2.5": 1.24,
+            "menos_2.5": 4.33
+          },
+          "mediana": {
+            "2": 14.0,
+            "1": 1.16,
+            "X": 7.9,
+            "mas_2.5": 1.24,
+            "menos_2.5": 3.95
+          },
+          "valor_winamax": {}
+        },
+        {
+          "local": "Brighton and Hove Albion",
+          "visitante": "Universitatea Craiova",
+          "hora": "18:45",
+          "winamax": {},
+          "pinnacle_justa": {
+            "1": 0.866,
+            "2": 0.043,
+            "X": 0.092
+          },
+          "mejor": {
+            "1": 1.13,
+            "2": 29.0,
+            "X": 10.5,
+            "mas_2.5": 1.37,
+            "menos_2.5": 3.05
+          },
+          "mediana": {
+            "1": 1.11,
+            "2": 20.0,
+            "X": 9.2,
+            "mas_2.5": 1.36,
+            "menos_2.5": 3.04
+          },
+          "valor_winamax": {}
+        },
+        {
+          "local": "FC Iberia 1999",
+          "visitante": "Getafe",
+          "hora": "18:45",
+          "winamax": {},
+          "pinnacle_justa": {
+            "1": 0.134,
+            "X": 0.221,
+            "2": 0.646
+          },
+          "mejor": {
+            "1": 8.5,
+            "X": 4.5,
+            "2": 1.51,
+            "mas_2.5": 2.13,
+            "menos_2.5": 1.82
+          },
+          "mediana": {
+            "1": 7.3,
+            "X": 4.2,
+            "2": 1.45,
+            "mas_2.5": 2.02,
+            "menos_2.5": 1.76
+          },
+          "valor_winamax": {}
+        },
+        {
+          "local": "FK Jablonec",
+          "visitante": "FC Lugano",
+          "hora": "18:45",
+          "winamax": {},
+          "pinnacle_justa": {
+            "2": 0.448,
+            "1": 0.291,
+            "X": 0.261
+          },
+          "mejor": {
+            "2": 2.22,
+            "1": 3.5,
+            "X": 3.75,
+            "mas_2.5": 1.82,
+            "menos_2.5": 2.15
+          },
+          "mediana": {
+            "2": 2.1,
+            "1": 3.22,
+            "X": 3.6,
+            "mas_2.5": 1.73,
+            "menos_2.5": 2.08
+          },
+          "valor_winamax": {}
+        },
+        {
+          "local": "Pafos FC",
+          "visitante": "FC Midtjylland",
+          "hora": "18:45",
+          "winamax": {},
+          "pinnacle_justa": {
+            "1": 0.324,
+            "2": 0.411,
+            "X": 0.265
+          },
+          "mejor": {
+            "1": 3.1,
+            "2": 2.42,
+            "X": 3.85,
+            "mas_2.5": 1.62,
+            "menos_2.5": 2.38
+          },
+          "mediana": {
+            "1": 2.97,
+            "2": 2.28,
+            "X": 3.55,
+            "mas_2.5": 1.58,
+            "menos_2.5": 2.32
+          },
+          "valor_winamax": {}
+        },
+        {
+          "local": "FK Kauno Žalgiris",
+          "visitante": "Riga FC",
+          "hora": "18:45",
+          "winamax": {},
+          "pinnacle_justa": {
+            "2": 0.452,
+            "1": 0.26,
+            "X": 0.288,
+            "mas_2.5": 0.492,
+            "menos_2.5": 0.508
+          },
+          "mejor": {
+            "2": 2.18,
+            "1": 3.71,
+            "X": 3.55,
+            "mas_2.5": 1.99,
+            "menos_2.5": 1.95
+          },
+          "mediana": {
+            "2": 2.12,
+            "1": 3.4,
+            "X": 3.35,
+            "mas_2.5": 1.9,
+            "menos_2.5": 1.89
+          },
+          "valor_winamax": {}
+        },
+        {
+          "local": "KF Egnatia",
+          "visitante": "Lincoln Red Imps FC",
+          "hora": "18:45",
+          "winamax": {},
+          "pinnacle_justa": {
+            "1": 0.59,
+            "X": 0.211,
+            "2": 0.199
+          },
+          "mejor": {
+            "1": 1.64,
+            "X": 4.57,
+            "2": 5.7,
+            "mas_2.5": 1.67,
+            "menos_2.5": 2.4
+          },
+          "mediana": {
+            "1": 1.57,
+            "X": 4.3,
+            "2": 5.1,
+            "mas_2.5": 1.6,
+            "menos_2.5": 2.26
+          },
+          "valor_winamax": {}
+        },
+        {
+          "local": "FK Borac Banja Luka",
+          "visitante": "Atalanta BC",
+          "hora": "21:00",
+          "winamax": {},
+          "pinnacle_justa": {
+            "2": 0.673,
+            "1": 0.141,
+            "X": 0.186
+          },
+          "mejor": {
+            "2": 1.47,
+            "1": 7.5,
+            "X": 5.4,
+            "mas_2.5": 1.47,
+            "menos_2.5": 2.62
+          },
+          "mediana": {
+            "2": 1.41,
+            "1": 6.7,
+            "X": 4.9,
+            "mas_2.5": 1.47,
+            "menos_2.5": 2.62
+          },
+          "valor_winamax": {}
+        },
+        {
+          "local": "Inter Club d'Escaldes",
+          "visitante": "FC Copenhagen",
+          "hora": "21:00",
+          "winamax": {},
+          "pinnacle_justa": {
+            "1": 0.085,
+            "2": 0.753,
+            "X": 0.162
+          },
+          "mejor": {
+            "1": 14.5,
+            "2": 1.27,
+            "X": 6.6,
+            "mas_2.5": 1.67,
+            "menos_2.5": 2.38
+          },
+          "mediana": {
+            "1": 12.75,
+            "2": 1.22,
+            "X": 5.87,
+            "mas_2.5": 1.62,
+            "menos_2.5": 2.25
+          },
+          "valor_winamax": {}
+        },
+        {
+          "local": "FC Nordsjaelland",
+          "visitante": "Panathinaikos FC",
+          "hora": "21:00",
+          "winamax": {},
+          "pinnacle_justa": {
+            "1": 0.372,
+            "2": 0.361,
+            "X": 0.268
+          },
+          "mejor": {
+            "1": 2.69,
+            "2": 2.74,
+            "X": 3.7,
+            "mas_2.5": 1.71,
+            "menos_2.5": 2.21
+          },
+          "mediana": {
+            "1": 2.55,
+            "2": 2.62,
+            "X": 3.5,
+            "mas_2.5": 1.67,
+            "menos_2.5": 2.14
+          },
+          "valor_winamax": {}
+        },
+        {
+          "local": "SC Freiburg",
+          "visitante": "FC Twente Enschede",
+          "hora": "21:00",
+          "winamax": {},
+          "pinnacle_justa": {
+            "1": 0.509,
+            "2": 0.253,
+            "X": 0.238
+          },
+          "mejor": {
+            "1": 1.95,
+            "2": 4.2,
+            "X": 4.03,
+            "mas_2.5": 1.63,
+            "menos_2.5": 2.36
+          },
+          "mediana": {
+            "1": 1.87,
+            "2": 3.7,
+            "X": 3.85,
+            "mas_2.5": 1.62,
+            "menos_2.5": 2.27
+          },
+          "valor_winamax": {}
+        },
+        {
+          "local": "Gent",
+          "visitante": "Red Star Belgrade",
+          "hora": "21:00",
+          "winamax": {},
+          "pinnacle_justa": {
+            "2": 0.29,
+            "1": 0.438,
+            "X": 0.272,
+            "mas_2.5": 0.523,
+            "menos_2.5": 0.477
+          },
+          "mejor": {
+            "2": 3.45,
+            "1": 2.22,
+            "X": 3.7,
+            "mas_2.5": 1.87,
+            "menos_2.5": 2.1
+          },
+          "mediana": {
+            "2": 3.3,
+            "1": 2.17,
+            "X": 3.4,
+            "mas_2.5": 1.8,
+            "menos_2.5": 2.01
+          },
+          "valor_winamax": {}
+        },
+        {
+          "local": "Hajduk Split",
+          "visitante": "Sint Truiden",
+          "hora": "21:00",
+          "winamax": {},
+          "pinnacle_justa": {
+            "2": 0.291,
+            "1": 0.448,
+            "X": 0.261
+          },
+          "mejor": {
+            "2": 3.45,
+            "1": 2.23,
+            "X": 3.95,
+            "mas_2.5": 1.77,
+            "menos_2.5": 2.18
+          },
+          "mediana": {
+            "2": 3.25,
+            "1": 2.12,
+            "X": 3.5,
+            "mas_2.5": 1.73,
+            "menos_2.5": 2.09
+          },
+          "valor_winamax": {}
+        },
+        {
+          "local": "SC Braga",
+          "visitante": "KuPS Kuopio",
+          "hora": "21:00",
+          "winamax": {},
+          "pinnacle_justa": {
+            "1": 0.834,
+            "X": 0.111,
+            "2": 0.054
+          },
+          "mejor": {
+            "1": 1.16,
+            "X": 9.85,
+            "2": 27.0,
+            "mas_2.5": 1.47,
+            "menos_2.5": 2.75
+          },
+          "mediana": {
+            "1": 1.11,
+            "X": 8.56,
+            "2": 21.0,
+            "mas_2.5": 1.47,
+            "menos_2.5": 2.62
+          },
+          "valor_winamax": {}
+        },
+        {
+          "local": "PFC CSKA Sofia",
+          "visitante": "Trabzonspor",
+          "hora": "21:00",
+          "winamax": {},
+          "pinnacle_justa": {
+            "2": 0.549,
+            "1": 0.214,
+            "X": 0.237
+          },
+          "mejor": {
+            "2": 1.82,
+            "1": 4.5,
+            "X": 4.1,
+            "mas_2.5": 1.63,
+            "menos_2.5": 2.48
+          },
+          "mediana": {
+            "2": 1.74,
+            "1": 4.25,
+            "X": 3.92,
+            "mas_2.5": 1.55,
+            "menos_2.5": 2.38
+          },
+          "valor_winamax": {}
+        }
+      ]
+    }
+  }
+}
