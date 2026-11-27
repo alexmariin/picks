@@ -30,9 +30,9 @@ Este archivo es la memoria del analista. Cada día, antes de elegir picks, se le
 
 ## Números
 <!-- STATS -->
-_Actualizado con 95 picks cerrados (de 2026-11-12 a 2026-11-26)._
+_Actualizado con 96 picks cerrados (de 2026-11-12 a 2026-11-26)._
 
-**Total:** 69 de 95 (73% real frente a 68% que dije).
+**Total:** 70 de 96 (73% real frente a 68% que dije).
 
 ### Por mercado
 | Grupo | Picks | Aciertos | % real | % que dije | Neto a 1 u por pick |
@@ -43,14 +43,14 @@ _Actualizado con 95 picks cerrados (de 2026-11-12 a 2026-11-26)._
 | Doble oportunidad | 10 | 8 | 80% | 74% | +0.33 u (+3%) |
 | Ambos marcan | 6 | 3 | 50% | 59% | -0.90 u (-15%) |
 | Handicap | 5 | 3 | 60% | 66% | -0.52 u (-10%) |
-| Córners | 4 | 3 | 75% | 64% | +0.16 u (+4%) |
+| Córners | 5 | 4 | 80% | 65% | +0.52 u (+10%) |
 | Empate no válido | 2 | 0 | 0% | 69% | -2.00 u (-100%) |
 
 ### Por cuota
 | Grupo | Picks | Aciertos | % real | % que dije | Neto a 1 u por pick |
 |---|---|---|---|---|---|
 | < 1,30 | 21 | 15 | 71% | 75% | -2.22 u (-11%) |
-| 1,30 – 1,49 | 41 | 30 | 73% | 68% | +0.34 u (+1%) |
+| 1,30 – 1,49 | 42 | 31 | 74% | 68% | +0.70 u (+2%) |
 | 1,50 – 1,79 | 30 | 21 | 70% | 63% | +2.90 u (+10%) |
 | ≥ 1,80 | 3 | 3 | 100% | 56% | +2.45 u (+82%) |
 
@@ -59,7 +59,7 @@ _Actualizado con 95 picks cerrados (de 2026-11-12 a 2026-11-26)._
 |---|---|---|---|---|---|
 | < 60 % | 8 | 6 | 75% | 57% | +2.28 u (+29%) |
 | 60 – 69 % | 50 | 38 | 76% | 65% | +5.92 u (+12%) |
-| 70 – 79 % | 33 | 21 | 64% | 72% | -5.62 u (-17%) |
+| 70 – 79 % | 34 | 22 | 65% | 72% | -5.26 u (-15%) |
 | ≥ 80 % | 4 | 4 | 100% | 83% | +0.89 u (+22%) |
 
 ### Por competición
@@ -69,12 +69,12 @@ _Actualizado con 95 picks cerrados (de 2026-11-12 a 2026-11-26)._
 | Nations League C | 16 | 12 | 75% | 69% | +1.72 u (+11%) |
 | Champions League | 15 | 9 | 60% | 68% | -2.62 u (-17%) |
 | Nations League B | 13 | 10 | 77% | 67% | +1.70 u (+13%) |
-| LaLiga | 6 | 5 | 83% | 66% | +0.79 u (+13%) |
 | Serie A | 6 | 5 | 83% | 66% | +0.84 u (+14%) |
+| LaLiga | 6 | 5 | 83% | 66% | +0.79 u (+13%) |
+| Europa League | 5 | 3 | 60% | 69% | -0.90 u (-18%) |
 | Bundesliga | 5 | 2 | 40% | 69% | -2.32 u (-46%) |
-| Nations League D | 4 | 3 | 75% | 67% | +0.45 u (+11%) |
-| Europa League | 4 | 2 | 50% | 69% | -1.26 u (-32%) |
 | Ligue 1 | 4 | 3 | 75% | 68% | -0.05 u (-1%) |
+| Nations League D | 4 | 3 | 75% | 67% | +0.45 u (+11%) |
 | Premier League | 3 | 2 | 67% | 67% | -0.20 u (-7%) |
 | Conference League | 3 | 2 | 67% | 63% | +0.16 u (+5%) |
 

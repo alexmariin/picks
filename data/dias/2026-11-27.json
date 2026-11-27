@@ -1,0 +1,52 @@
+{
+  "fecha": "2026-11-27",
+  "titulo": "Viernes 27 de noviembre · Bundesliga, Premier y Serie A",
+  "generado": "2026-11-27 09:40",
+  "nota": "Viernes flojo: 5 partidos y casi todos parejos. Cuotas de The Odds API (09:15). Winamax solo da el 1X2 y cobra mucho margen en todos (valor entre -0,06 y -0,19), así que ningún 1X2 de Winamax entra en dobles ni combinadas (lección del 22/11). De dónde sale cada cuota: Werder gana es de WINAMAX; los córners del Forest-Chelsea son la MEDIANA (una sola casa: Pinnacle; Winamax suele pagar algo menos); Bologna o empate es ESTIMADA a partir del 1X2 de Winamax (3,10 el empate y 2,30 el Bologna dan unos 1,32). Hoy no hay archivo de cuotas de Winamax de jugadores, córners ni tarjetas. HOY NO HAY DOBLES NI COMBINADAS: ningún par de picks cumple las reglas (el Bologna o empate tiene un valor de unos -0,07 en Winamax y los córners no pueden ir dos en el mismo doble). Es mejor no jugar que jugar mal. Dejo fuera Levante-Racing (el Levante lleva 1-1, 0-0 y 0-2: no cumple la lección de los goles y el 1X2 es un 50-50) y Brest-Paris FC (Pinnacle lo da al 50 % en goles y casi a tercios en el 1X2). Los córners del Werder tampoco: le faltan Stage, Topp, Agu y N'Diaye (lección del 22/11). Mira los onces una hora antes.",
+  "picks": [
+    {
+      "id": "wer-bmg",
+      "hora": "20:30",
+      "competicion": "Bundesliga · Jornada 11",
+      "local": "Werder Bremen",
+      "visitante": "Borussia Mönchengladbach",
+      "seleccion": "Werder Bremen gana",
+      "mercado": "1X2",
+      "cuota": 1.6,
+      "prob": 0.6,
+      "motivo": "El Werder es 6.º, no ha perdido en casa (5 partidos) y viene de golear 4-0 al Hamburgo. El Gladbach es 18.º: 4 puntos de los últimos 15, 12 goles a favor y 26 en contra, y perdió 0-1 en Dortmund. Le faltan Kleindienst (su delantero), Leopold y Ullrich. Pinnacle da un 58 % al Werder; subo un poco por la baja de Kleindienst.",
+      "riesgo": "Al Werder también le faltan Stage, Topp, Musah, Agu y N'Diaye. Valor de Winamax -0,08: la casa paga poco, por eso no va en dobles ni combinadas. Juega solo si quieres un sencillo.",
+      "alternativa": "Más de 8,5 córners en el partido (62 %, mediana 1,46)"
+    },
+    {
+      "id": "nfo-che",
+      "hora": "21:00",
+      "competicion": "Premier League · Jornada 13",
+      "local": "Nottingham Forest",
+      "visitante": "Chelsea",
+      "seleccion": "Más de 8,5 córners en el partido",
+      "mercado": "Córners",
+      "cuota": 1.48,
+      "prob": 0.63,
+      "motivo": "Los partidos del Forest dan 8,8 córners de media (saca 4,7 y concede 4,1). El Chelsea saca 5,6 por partido y sus partidos de liga rondan los 11. Los dos necesitan ganar (Forest 17.º; Chelsea viene de perder 4-1 con el Leeds): partido abierto, unos 10 córners esperados. Pinnacle da un 63 %.",
+      "riesgo": "Al Chelsea le faltan Reece James (centros y córners) y quizá João Pedro. Si alguien marca pronto y el otro se encierra, puede quedarse en 8. Córners va 4 de 5: aún pocos picks. Cuota de una sola casa; si Winamax paga menos de 1,40, no compensa.",
+      "alternativa": "Ambos marcan (55 %, ~1,75 estimada)"
+    },
+    {
+      "id": "ven-bol",
+      "hora": "20:45",
+      "competicion": "Serie A · Jornada 13",
+      "local": "Venezia",
+      "visitante": "Bologna",
+      "seleccion": "Bologna o empate",
+      "mercado": "Doble oportunidad",
+      "cuota": 1.32,
+      "prob": 0.68,
+      "motivo": "El Venezia es último: 2 victorias en 12, 8 goles a favor y 25 en contra, y viene de perder 4-0 en Turín. El Bologna lleva 5 sin perder (4 victorias, entre ellas 2-4 en San Siro, y 1-1 con el Udinese). Pinnacle da un 70 % a 'Bologna o empate'.",
+      "riesgo": "Favorito visitante contra un local que necesita puntuar (lección del 14/11): no paso del 68 %. A 1,32 y con valor de unos -0,07 en Winamax, no va en dobles ni combinadas. El Venezia ganó 2-1 al Udinese en casa este mes.",
+      "alternativa": "Bologna: más de 0,5 goles (74 %, ~1,27 estimada)"
+    }
+  ],
+  "combinadas": [],
+  "dobles": []
+}

@@ -1,0 +1,534 @@
+{
+  "fecha": "2026-11-27",
+  "ligas": {
+    "soccer_spain_la_liga": {
+      "pedido": "09:13",
+      "partidos": [
+        {
+          "local": "Levante",
+          "visitante": "Real Racing Club de Santander",
+          "hora": "21:00",
+          "winamax": {
+            "1": 1.92,
+            "X": 3.8,
+            "2": 3.05
+          },
+          "pinnacle_justa": {
+            "1": 0.478,
+            "X": 0.235,
+            "2": 0.287
+          },
+          "mejor": {
+            "1": 2.08,
+            "X": 4.12,
+            "2": 3.5,
+            "mas_2.5": 1.41,
+            "menos_2.5": 2.95
+          },
+          "mediana": {
+            "1": 2.0,
+            "X": 3.95,
+            "2": 3.35,
+            "mas_2.5": 1.4,
+            "menos_2.5": 2.92
+          },
+          "valor_winamax": {
+            "1": -0.083,
+            "X": -0.106,
+            "2": -0.125
+          }
+        }
+      ]
+    },
+    "soccer_epl": {
+      "pedido": "09:13",
+      "partidos": [
+        {
+          "local": "Nottingham Forest",
+          "visitante": "Chelsea",
+          "hora": "21:00",
+          "winamax": {
+            "1": 2.4,
+            "X": 3.2,
+            "2": 2.55
+          },
+          "pinnacle_justa": {
+            "1": 0.374,
+            "X": 0.288,
+            "2": 0.338,
+            "mas_2.5": 0.497,
+            "menos_2.5": 0.503
+          },
+          "mejor": {
+            "1": 2.68,
+            "X": 3.72,
+            "2": 2.95,
+            "mas_2.5": 1.98,
+            "menos_2.5": 2.06
+          },
+          "mediana": {
+            "1": 2.55,
+            "X": 3.4,
+            "2": 2.82,
+            "mas_2.5": 1.87,
+            "menos_2.5": 1.94
+          },
+          "valor_winamax": {
+            "1": -0.101,
+            "X": -0.079,
+            "2": -0.138
+          }
+        }
+      ]
+    },
+    "soccer_italy_serie_a": {
+      "pedido": "09:13",
+      "partidos": [
+        {
+          "local": "Venezia",
+          "visitante": "Bologna",
+          "hora": "20:45",
+          "winamax": {
+            "X": 3.1,
+            "1": 2.8,
+            "2": 2.3
+          },
+          "pinnacle_justa": {
+            "X": 0.304,
+            "1": 0.3,
+            "2": 0.397
+          },
+          "mejor": {
+            "X": 3.55,
+            "1": 3.3,
+            "2": 2.54,
+            "mas_2.5": 2.22,
+            "menos_2.5": 1.83
+          },
+          "mediana": {
+            "X": 3.2,
+            "1": 3.1,
+            "2": 2.4,
+            "mas_2.5": 2.09,
+            "menos_2.5": 1.73
+          },
+          "valor_winamax": {
+            "X": -0.059,
+            "1": -0.16,
+            "2": -0.088
+          }
+        }
+      ]
+    },
+    "soccer_germany_bundesliga": {
+      "pedido": "09:13",
+      "partidos": [
+        {
+          "local": "Werder Bremen",
+          "visitante": "Borussia Monchengladbach",
+          "hora": "20:30",
+          "winamax": {
+            "1": 1.6,
+            "X": 4.1,
+            "2": 4.0
+          },
+          "pinnacle_justa": {
+            "1": 0.576,
+            "X": 0.222,
+            "2": 0.202
+          },
+          "mejor": {
+            "1": 1.73,
+            "X": 4.6,
+            "2": 4.95,
+            "mas_2.5": 1.53,
+            "menos_2.5": 2.54
+          },
+          "mediana": {
+            "1": 1.67,
+            "X": 4.2,
+            "2": 4.5,
+            "mas_2.5": 1.5,
+            "menos_2.5": 2.5
+          },
+          "valor_winamax": {
+            "1": -0.078,
+            "X": -0.092,
+            "2": -0.191
+          }
+        }
+      ]
+    },
+    "soccer_france_ligue_one": {
+      "pedido": "09:13",
+      "partidos": [
+        {
+          "local": "Brest",
+          "visitante": "Paris FC",
+          "hora": "20:45",
+          "winamax": {
+            "1": 3.1,
+            "X": 3.25,
+            "2": 2.05
+          },
+          "pinnacle_justa": {
+            "1": 0.278,
+            "X": 0.285,
+            "2": 0.437,
+            "mas_2.5": 0.494,
+            "menos_2.5": 0.506
+          },
+          "mejor": {
+            "1": 3.55,
+            "X": 3.68,
+            "2": 2.26,
+            "mas_2.5": 1.97,
+            "menos_2.5": 2.04
+          },
+          "mediana": {
+            "1": 3.32,
+            "X": 3.38,
+            "2": 2.16,
+            "mas_2.5": 1.85,
+            "menos_2.5": 1.92
+          },
+          "valor_winamax": {
+            "1": -0.139,
+            "X": -0.073,
+            "2": -0.104
+          }
+        }
+      ]
+    }
+  },
+  "extra": [
+    {
+      "local": "Werder Bremen",
+      "visitante": "Borussia Monchengladbach",
+      "mercados": {
+        "alternate_team_totals_corners": [
+          {
+            "equipo": "Borussia Monchengladbach",
+            "linea": 3.5,
+            "opcion": "Over",
+            "winamax": null,
+            "mediana": 1.7,
+            "mejor": 1.7,
+            "pinnacle_justa": 0.55,
+            "valor_winamax": null,
+            "casas": 1
+          },
+          {
+            "equipo": "Borussia Monchengladbach",
+            "linea": 3.5,
+            "opcion": "Under",
+            "winamax": null,
+            "mediana": 2.08,
+            "mejor": 2.08,
+            "pinnacle_justa": 0.45,
+            "valor_winamax": null,
+            "casas": 1
+          },
+          {
+            "equipo": "Werder Bremen",
+            "linea": 5.5,
+            "opcion": "Over",
+            "winamax": null,
+            "mediana": 1.86,
+            "mejor": 1.86,
+            "pinnacle_justa": 0.505,
+            "valor_winamax": null,
+            "casas": 1
+          },
+          {
+            "equipo": "Werder Bremen",
+            "linea": 5.5,
+            "opcion": "Under",
+            "winamax": null,
+            "mediana": 1.9,
+            "mejor": 1.9,
+            "pinnacle_justa": 0.495,
+            "valor_winamax": null,
+            "casas": 1
+          }
+        ],
+        "alternate_totals_corners": [
+          {
+            "equipo": "",
+            "linea": 8.5,
+            "opcion": "Over",
+            "winamax": null,
+            "mediana": 1.46,
+            "mejor": 1.46,
+            "pinnacle_justa": 0.64,
+            "valor_winamax": null,
+            "casas": 1
+          },
+          {
+            "equipo": "",
+            "linea": 8.5,
+            "opcion": "Under",
+            "winamax": null,
+            "mediana": 2.59,
+            "mejor": 2.59,
+            "pinnacle_justa": 0.36,
+            "valor_winamax": null,
+            "casas": 1
+          },
+          {
+            "equipo": "",
+            "linea": 9.0,
+            "opcion": "Over",
+            "winamax": null,
+            "mediana": 1.59,
+            "mejor": 1.59,
+            "pinnacle_justa": 0.592,
+            "valor_winamax": null,
+            "casas": 1
+          },
+          {
+            "equipo": "",
+            "linea": 9.0,
+            "opcion": "Under",
+            "winamax": null,
+            "mediana": 2.31,
+            "mejor": 2.31,
+            "pinnacle_justa": 0.408,
+            "valor_winamax": null,
+            "casas": 1
+          },
+          {
+            "equipo": "",
+            "linea": 9.5,
+            "opcion": "Over",
+            "winamax": null,
+            "mediana": 1.81,
+            "mejor": 1.81,
+            "pinnacle_justa": 0.525,
+            "valor_winamax": null,
+            "casas": 1
+          },
+          {
+            "equipo": "",
+            "linea": 9.5,
+            "opcion": "Under",
+            "winamax": null,
+            "mediana": 2.0,
+            "mejor": 2.0,
+            "pinnacle_justa": 0.475,
+            "valor_winamax": null,
+            "casas": 1
+          },
+          {
+            "equipo": "",
+            "linea": 10.0,
+            "opcion": "Over",
+            "winamax": null,
+            "mediana": 2.02,
+            "mejor": 2.02,
+            "pinnacle_justa": 0.468,
+            "valor_winamax": null,
+            "casas": 1
+          },
+          {
+            "equipo": "",
+            "linea": 10.0,
+            "opcion": "Under",
+            "winamax": null,
+            "mediana": 1.78,
+            "mejor": 1.78,
+            "pinnacle_justa": 0.532,
+            "valor_winamax": null,
+            "casas": 1
+          },
+          {
+            "equipo": "",
+            "linea": 10.5,
+            "opcion": "Over",
+            "winamax": null,
+            "mediana": 2.25,
+            "mejor": 2.25,
+            "pinnacle_justa": 0.417,
+            "valor_winamax": null,
+            "casas": 1
+          },
+          {
+            "equipo": "",
+            "linea": 10.5,
+            "opcion": "Under",
+            "winamax": null,
+            "mediana": 1.61,
+            "mejor": 1.61,
+            "pinnacle_justa": 0.583,
+            "valor_winamax": null,
+            "casas": 1
+          }
+        ]
+      }
+    },
+    {
+      "local": "Nottingham Forest",
+      "visitante": "Chelsea",
+      "mercados": {
+        "alternate_team_totals_corners": [
+          {
+            "equipo": "Chelsea",
+            "linea": 4.5,
+            "opcion": "Over",
+            "winamax": null,
+            "mediana": 1.88,
+            "mejor": 1.88,
+            "pinnacle_justa": 0.5,
+            "valor_winamax": null,
+            "casas": 1
+          },
+          {
+            "equipo": "Chelsea",
+            "linea": 4.5,
+            "opcion": "Under",
+            "winamax": null,
+            "mediana": 1.88,
+            "mejor": 1.88,
+            "pinnacle_justa": 0.5,
+            "valor_winamax": null,
+            "casas": 1
+          },
+          {
+            "equipo": "Nottingham Forest",
+            "linea": 4.5,
+            "opcion": "Over",
+            "winamax": null,
+            "mediana": 1.69,
+            "mejor": 1.69,
+            "pinnacle_justa": 0.553,
+            "valor_winamax": null,
+            "casas": 1
+          },
+          {
+            "equipo": "Nottingham Forest",
+            "linea": 4.5,
+            "opcion": "Under",
+            "winamax": null,
+            "mediana": 2.09,
+            "mejor": 2.09,
+            "pinnacle_justa": 0.447,
+            "valor_winamax": null,
+            "casas": 1
+          }
+        ],
+        "alternate_totals_corners": [
+          {
+            "equipo": "",
+            "linea": 8.5,
+            "opcion": "Over",
+            "winamax": null,
+            "mediana": 1.48,
+            "mejor": 1.48,
+            "pinnacle_justa": 0.634,
+            "valor_winamax": null,
+            "casas": 1
+          },
+          {
+            "equipo": "",
+            "linea": 8.5,
+            "opcion": "Under",
+            "winamax": null,
+            "mediana": 2.56,
+            "mejor": 2.56,
+            "pinnacle_justa": 0.366,
+            "valor_winamax": null,
+            "casas": 1
+          },
+          {
+            "equipo": "",
+            "linea": 9.0,
+            "opcion": "Over",
+            "winamax": null,
+            "mediana": 1.62,
+            "mejor": 1.62,
+            "pinnacle_justa": 0.585,
+            "valor_winamax": null,
+            "casas": 1
+          },
+          {
+            "equipo": "",
+            "linea": 9.0,
+            "opcion": "Under",
+            "winamax": null,
+            "mediana": 2.28,
+            "mejor": 2.28,
+            "pinnacle_justa": 0.415,
+            "valor_winamax": null,
+            "casas": 1
+          },
+          {
+            "equipo": "",
+            "linea": 9.5,
+            "opcion": "Over",
+            "winamax": null,
+            "mediana": 1.85,
+            "mejor": 1.85,
+            "pinnacle_justa": 0.517,
+            "valor_winamax": null,
+            "casas": 1
+          },
+          {
+            "equipo": "",
+            "linea": 9.5,
+            "opcion": "Under",
+            "winamax": null,
+            "mediana": 1.98,
+            "mejor": 1.98,
+            "pinnacle_justa": 0.483,
+            "valor_winamax": null,
+            "casas": 1
+          },
+          {
+            "equipo": "",
+            "linea": 10.0,
+            "opcion": "Over",
+            "winamax": null,
+            "mediana": 2.07,
+            "mejor": 2.07,
+            "pinnacle_justa": 0.458,
+            "valor_winamax": null,
+            "casas": 1
+          },
+          {
+            "equipo": "",
+            "linea": 10.0,
+            "opcion": "Under",
+            "winamax": null,
+            "mediana": 1.75,
+            "mejor": 1.75,
+            "pinnacle_justa": 0.542,
+            "valor_winamax": null,
+            "casas": 1
+          },
+          {
+            "equipo": "",
+            "linea": 10.5,
+            "opcion": "Over",
+            "winamax": null,
+            "mediana": 2.3,
+            "mejor": 2.3,
+            "pinnacle_justa": 0.41,
+            "valor_winamax": null,
+            "casas": 1
+          },
+          {
+            "equipo": "",
+            "linea": 10.5,
+            "opcion": "Under",
+            "winamax": null,
+            "mediana": 1.6,
+            "mejor": 1.6,
+            "pinnacle_justa": 0.59,
+            "valor_winamax": null,
+            "casas": 1
+          }
+        ]
+      }
+    }
+  ]
+}
