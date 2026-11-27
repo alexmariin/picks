@@ -16,7 +16,9 @@
       "prob": 0.6,
       "motivo": "El Werder es 6.º, no ha perdido en casa (5 partidos) y viene de golear 4-0 al Hamburgo. El Gladbach es 18.º: 4 puntos de los últimos 15, 12 goles a favor y 26 en contra, y perdió 0-1 en Dortmund. Le faltan Kleindienst (su delantero), Leopold y Ullrich. Pinnacle da un 58 % al Werder; subo un poco por la baja de Kleindienst.",
       "riesgo": "Al Werder también le faltan Stage, Topp, Musah, Agu y N'Diaye. Valor de Winamax -0,08: la casa paga poco, por eso no va en dobles ni combinadas. Juega solo si quieres un sencillo.",
-      "alternativa": "Más de 8,5 córners en el partido (62 %, mediana 1,46)"
+      "alternativa": "Más de 8,5 córners en el partido (62 %, mediana 1,46)",
+      "resultado": "fallo",
+      "marcador": "3-3"
     },
     {
       "id": "nfo-che",
@@ -30,7 +32,10 @@
       "prob": 0.63,
       "motivo": "Los partidos del Forest dan 8,8 córners de media (saca 4,7 y concede 4,1). El Chelsea saca 5,6 por partido y sus partidos de liga rondan los 11. Los dos necesitan ganar (Forest 17.º; Chelsea viene de perder 4-1 con el Leeds): partido abierto, unos 10 córners esperados. Pinnacle da un 63 %.",
       "riesgo": "Al Chelsea le faltan Reece James (centros y córners) y quizá João Pedro. Si alguien marca pronto y el otro se encierra, puede quedarse en 8. Córners va 4 de 5: aún pocos picks. Cuota de una sola casa; si Winamax paga menos de 1,40, no compensa.",
-      "alternativa": "Ambos marcan (55 %, ~1,75 estimada)"
+      "alternativa": "Ambos marcan (55 %, ~1,75 estimada)",
+      "resultado": "fallo",
+      "marcador": "3-2",
+      "dato": "Córners 1-2"
     },
     {
       "id": "ven-bol",
@@ -44,7 +49,9 @@
       "prob": 0.68,
       "motivo": "El Venezia es último: 2 victorias en 12, 8 goles a favor y 25 en contra, y viene de perder 4-0 en Turín. El Bologna lleva 5 sin perder (4 victorias, entre ellas 2-4 en San Siro, y 1-1 con el Udinese). Pinnacle da un 70 % a 'Bologna o empate'.",
       "riesgo": "Favorito visitante contra un local que necesita puntuar (lección del 14/11): no paso del 68 %. A 1,32 y con valor de unos -0,07 en Winamax, no va en dobles ni combinadas. El Venezia ganó 2-1 al Udinese en casa este mes.",
-      "alternativa": "Bologna: más de 0,5 goles (74 %, ~1,27 estimada)"
+      "alternativa": "Bologna: más de 0,5 goles (74 %, ~1,27 estimada)",
+      "resultado": "acierto",
+      "marcador": "0-0"
     }
   ],
   "combinadas": [],

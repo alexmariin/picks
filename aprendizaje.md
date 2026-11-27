@@ -14,10 +14,11 @@ Este archivo es la memoria del analista. Cada día, antes de elegir picks, se le
 - 2026-11-25 · "Más de 2,5" a cuota 1,26 en Champions (atm-vik 2-0 e int-stu 2-0): los dos con favorito que gana 2-0 y el rival sin marcar. El Atlético marcó 2 en 24 minutos y bajó el ritmo (segunda parte sin nada); en Champions ninguno de sus partidos había pasado de 2 goles y lo escribí en el riesgo. El Inter llevaba 2 victorias seguidas sin encajar y yo usé datos viejos ("marca y encaja"). Las cuotas < 1,30 ya van 21 picks y -11 % de neto: ya no es solo pista. Haré: no publico picks a cuota < 1,30 salvo que diga 80 % o más. Y "más de 2,5" solo si los partidos recientes de los DOS equipos (últimos 3) pasan de 2 goles; si el favorito no encaja o sus partidos se quedan cortos, mejor "favorito gana" o "más de 1,5".
 - 2026-11-24 · "Más de 2,5" con el favorito sin delanteros (bod-las 1-0 y com-aek 1-0): los dos partidos acabaron 1-0. Al Bodø le faltaban Evjen y Mikkelsen y venía de un 0-0 en casa; al Como, Kean y Diao (y falló un penalti). Lo puse en el riesgo y lo jugué igual, y a cuota 1,26-1,34. Haré: si al favorito le faltan 2 o más atacantes titulares, no juego "más de 2,5"; como mucho "más de 1,5" o el favorito gana. La lección de bajas (juv-ven, om-lem) vale también para los mercados de goles.
 - 2026-11-24 · Ambos marcan "FLOJO" (gal-avl 1-0 y fey-por 0-1): ambos marcan va 2 de 5 y -30 %. Los dos los marqué yo como casi 50-50; al Galatasaray le faltaba todo su ataque y el Oporto llegaba con 3 derrotas fuera. Haré: un pick que yo mismo llamo FLOJO (menos del 60 %) no se publica; y no juego "ambos marcan" si a uno de los dos le falta su delantero titular. Aún es pista (menos de 20 picks).
-- 2026-11-22 · Bajas del favorito (juv-ven y om-lem, 2 fallos): en los dos ya sabía las bajas y jugué igual. La Juve sin Yildiz, Thuram, Locatelli ni Kalulu fue lenta: 0-0 al descanso, 59 % de posesión y pocas llegadas; luego marcó 4 en 18 minutos y bajó el ritmo. Solo 7 córners (5-2). El Marsella sin Emerson, Cornelius y con Højbjerg tocado ganaba 2-0 y encajó 3 (el Le Mans remató más y tuvo más xG). Haré: si al favorito le faltan 3 o más titulares (en ataque para córners; en defensa para su victoria), no juego "más córners" ni su victoria seca a cuota de 1,40 o menos. Y un pick con valor negativo en la casa no entra en ninguna combinada. Va con la lección del hándicap (bay-koe).
+- 2026-11-22 + 27 · Bajas del favorito (juv-ven, om-lem y wer-bmg 3-3, 3 fallos): el 27/11 el Werder jugaba sin Stage, Topp, Musah, Agu ni N'Diaye (5 titulares) y perdía 1-3 con el colista; empató en el 90+2. Lo jugué porque la cuota era 1,60 y la regla decía "1,40 o menos". La regla se queda corta. Bundesliga va 2 de 6.
+  Lo anterior: en los dos ya sabía las bajas y jugué igual. La Juve sin Yildiz, Thuram, Locatelli ni Kalulu fue lenta: 0-0 al descanso, 59 % de posesión y pocas llegadas; luego marcó 4 en 18 minutos y bajó el ritmo. Solo 7 córners (5-2). El Marsella sin Emerson, Cornelius y con Højbjerg tocado ganaba 2-0 y encajó 3 (el Le Mans remató más y tuvo más xG). Haré: si al favorito le faltan 3 o más titulares (en ataque para córners; en defensa para su victoria), no juego "más córners" ni su victoria seca, sea cual sea la cuota (desde el 27/11). Como mucho, "gana o empate" o nada. Y un pick con valor negativo en la casa no entra en ninguna combinada. Va con la lección del hándicap (bay-koe).
 - 2026-11-21 · bmg-bvb (Más de 2,5, 0-1): lo elegí porque "el derbi suele tener goles", pero el Gladbach era colista, con 4 puntos y sin ganar en casa. Un colista que apenas marca no aporta su parte al "más". Haré: nunca juego goles por la fama de un partido; miro los goles reales de los dos esta temporada. Si uno de los dos casi no marca, "menos de 3,5" o el favorito gana, no "más de 2,5". (sge-tsg 1-0 fue mala suerte: dos penaltis fallados).
 - 2026-11-21 · Empate no válido: 0 de 3 en un día (ray-val 0-1 fallo; avl-sun 0-0 y sch-vfb 0-0, nulos). Los tres eran favoritos del 66-70 % sin margen contra equipos de la zona baja. El Sunderland se encerró con un bloque bajo (Villa: 73 % de posesión, 17 remates y 0 goles) y el Villa llegaba con 4 partidos sin ganar. Haré: no juego al favorito (ni sin empate) contra un rival de abajo que se encierra si el favorito viene sin ganar; ahí prefiero córners del favorito. Y si el favorito también está en la zona baja (Rayo), no hay pick de ganador. Aún hay pocos picks: es una pista. (2026-11-22 · hul-bri 2-0: mala suerte, el Brighton tuvo más xG, el portero del Hull hizo 7 paradas y los goles llegaron en el 90+2 y 90+5 tras una roja al Brighton. Empate no válido va 0 de 3 con 2 nulos: vigilar.)
-- 2026-11-20/22 · Mercados nuevos: córners 3 de 4 (liv-mun acertó con 20 córners, 15-5: el Liverpool atacó todo el partido contra 10). Antes: córners 2 de 2. ath-esp (11 córners) y mci-ful (14 córners, 8-6) acertaron aunque el favorito no ganó: al ir por detrás o empatado, sigue atacando. Pocos picks: es una pista, no una regla. Seguir con córners cuando el favorito local ataca por bandas.
+- 2026-11-20/27 · Mercados nuevos: córners va 4 de 7 y neto negativo. nfo-che (más de 8,5, 3-2) solo tuvo 3 córners (1-2): el Forest marcó en el 5' y se encerró, y el Chelsea, con 65 % de posesión y sin Reece James, apenas llegó por banda. Mucho de mala suerte (3 córners es rarísimo), pero ojo: en córners "del partido", si el equipo que más saca pierde a su lateral de centros, bajo 5 puntos la probabilidad. Antes: córners 3 de 4 (liv-mun acertó con 20 córners, 15-5: el Liverpool atacó todo el partido contra 10). Antes: córners 2 de 2. ath-esp (11 córners) y mci-ful (14 córners, 8-6) acertaron aunque el favorito no ganó: al ir por detrás o empatado, sigue atacando. Pocos picks: es una pista, no una regla. Seguir con córners cuando el favorito local ataca por bandas.
 - 2026-11-17 · irl-kos (Menos de 2,5, 3-0): Irlanda tenía que ganar en casa y Kosovo se conformaba con el empate. Irlanda atacó, logró dos penaltis y Kosovo acabó con 10. Lo escribí en el riesgo y lo jugué igual. Haré: si el local está obligado a ganar, no juego "menos de 2,5"; prefiero el local gana o nada. Va con la lección de cyp-mne: el "menos" pide que ninguno de los dos tenga que salir.
 - 2026-11-17 · pol-swe (Más de 2,5, 1-1): partido sin nada en juego (Suecia ya había subido) y salió flojo: 2 goles en 25 minutos y nada más. Haré: en partidos sin nada en juego no juego "más de 2,5"; como mucho "ambos marcan" o "más de 1,5", que aguantan un 1-1.
 - 2026-11-20 · bay-koe (Bayern gana por 2 o más, 1-1) + 2026-11-16 · ltu-lie (Lituania gana por 2 o más, 2-1): el hándicap -1,5 va 2 de 4 y pierde dinero. El Bayern marcaba mucho, pero salió sin Neuer, Davies, Díaz ni Gnabry, con Kane en sequía; el Colonia marcó en el 12' y luego se lesionaron Kane y Olise. Las lesiones fueron mala suerte; las bajas ya se sabían. Haré: hándicap -1,5 solo con un favorito que marque 2 o más goles de media Y con su once casi completo. Con 3 o más titulares fuera, "gana" seco o un mercado de córners. A cuota menor de 1,40 no compensa: un gol tempranero del rival lo tumba.
@@ -30,52 +31,52 @@ Este archivo es la memoria del analista. Cada día, antes de elegir picks, se le
 
 ## Números
 <!-- STATS -->
-_Actualizado con 96 picks cerrados (de 2026-11-12 a 2026-11-26)._
+_Actualizado con 99 picks cerrados (de 2026-11-12 a 2026-11-27)._
 
-**Total:** 70 de 96 (73% real frente a 68% que dije).
+**Total:** 71 de 99 (72% real frente a 67% que dije).
 
 ### Por mercado
 | Grupo | Picks | Aciertos | % real | % que dije | Neto a 1 u por pick |
 |---|---|---|---|---|---|
 | Goles totales | 38 | 27 | 71% | 67% | +1.85 u (+5%) |
-| 1X2 | 18 | 16 | 89% | 67% | +4.60 u (+26%) |
+| 1X2 | 19 | 16 | 84% | 67% | +3.60 u (+19%) |
 | Goles por equipo | 12 | 9 | 75% | 69% | -0.05 u (-0%) |
-| Doble oportunidad | 10 | 8 | 80% | 74% | +0.33 u (+3%) |
+| Doble oportunidad | 11 | 9 | 82% | 74% | +0.65 u (+6%) |
+| Córners | 6 | 4 | 67% | 65% | -0.48 u (-8%) |
 | Ambos marcan | 6 | 3 | 50% | 59% | -0.90 u (-15%) |
 | Handicap | 5 | 3 | 60% | 66% | -0.52 u (-10%) |
-| Córners | 5 | 4 | 80% | 65% | +0.52 u (+10%) |
 | Empate no válido | 2 | 0 | 0% | 69% | -2.00 u (-100%) |
 
 ### Por cuota
 | Grupo | Picks | Aciertos | % real | % que dije | Neto a 1 u por pick |
 |---|---|---|---|---|---|
 | < 1,30 | 21 | 15 | 71% | 75% | -2.22 u (-11%) |
-| 1,30 – 1,49 | 42 | 31 | 74% | 68% | +0.70 u (+2%) |
-| 1,50 – 1,79 | 30 | 21 | 70% | 63% | +2.90 u (+10%) |
+| 1,30 – 1,49 | 44 | 32 | 73% | 68% | +0.02 u (+0%) |
+| 1,50 – 1,79 | 31 | 21 | 68% | 63% | +1.90 u (+6%) |
 | ≥ 1,80 | 3 | 3 | 100% | 56% | +2.45 u (+82%) |
 
 ### Calibración: por probabilidad que dije
 | Grupo | Picks | Aciertos | % real | % que dije | Neto a 1 u por pick |
 |---|---|---|---|---|---|
 | < 60 % | 8 | 6 | 75% | 57% | +2.28 u (+29%) |
-| 60 – 69 % | 50 | 38 | 76% | 65% | +5.92 u (+12%) |
+| 60 – 69 % | 53 | 39 | 74% | 65% | +4.24 u (+8%) |
 | 70 – 79 % | 34 | 22 | 65% | 72% | -5.26 u (-15%) |
 | ≥ 80 % | 4 | 4 | 100% | 83% | +0.89 u (+22%) |
 
 ### Por competición
 | Grupo | Picks | Aciertos | % real | % que dije | Neto a 1 u por pick |
 |---|---|---|---|---|---|
-| Nations League A | 16 | 14 | 88% | 68% | +4.26 u (+27%) |
 | Nations League C | 16 | 12 | 75% | 69% | +1.72 u (+11%) |
+| Nations League A | 16 | 14 | 88% | 68% | +4.26 u (+27%) |
 | Champions League | 15 | 9 | 60% | 68% | -2.62 u (-17%) |
 | Nations League B | 13 | 10 | 77% | 67% | +1.70 u (+13%) |
-| Serie A | 6 | 5 | 83% | 66% | +0.84 u (+14%) |
+| Serie A | 7 | 6 | 86% | 67% | +1.16 u (+17%) |
+| Bundesliga | 6 | 2 | 33% | 67% | -3.32 u (-55%) |
 | LaLiga | 6 | 5 | 83% | 66% | +0.79 u (+13%) |
 | Europa League | 5 | 3 | 60% | 69% | -0.90 u (-18%) |
-| Bundesliga | 5 | 2 | 40% | 69% | -2.32 u (-46%) |
-| Ligue 1 | 4 | 3 | 75% | 68% | -0.05 u (-1%) |
 | Nations League D | 4 | 3 | 75% | 67% | +0.45 u (+11%) |
-| Premier League | 3 | 2 | 67% | 67% | -0.20 u (-7%) |
+| Ligue 1 | 4 | 3 | 75% | 68% | -0.05 u (-1%) |
+| Premier League | 4 | 2 | 50% | 66% | -1.20 u (-30%) |
 | Conference League | 3 | 2 | 67% | 63% | +0.16 u (+5%) |
 
 ### Combinadas (1 u a cada una)
