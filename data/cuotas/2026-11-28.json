@@ -1,0 +1,1046 @@
+{
+  "fecha": "2026-11-28",
+  "ligas": {
+    "soccer_spain_la_liga": {
+      "pedido": "09:13",
+      "partidos": [
+        {
+          "local": "Real Betis",
+          "visitante": "Rayo Vallecano",
+          "hora": "14:00",
+          "winamax": {
+            "2": 4.7,
+            "1": 1.52,
+            "X": 4.0
+          },
+          "pinnacle_justa": {
+            "2": 0.178,
+            "1": 0.598,
+            "X": 0.224
+          },
+          "mejor": {
+            "2": 5.8,
+            "1": 1.65,
+            "X": 4.57,
+            "mas_2.5": 1.6,
+            "menos_2.5": 2.5
+          },
+          "mediana": {
+            "2": 5.3,
+            "1": 1.58,
+            "X": 4.2,
+            "mas_2.5": 1.54,
+            "menos_2.5": 2.36
+          },
+          "valor_winamax": {
+            "2": -0.162,
+            "1": -0.091,
+            "X": -0.105
+          }
+        },
+        {
+          "local": "Málaga",
+          "visitante": "Athletic Bilbao",
+          "hora": "16:15",
+          "winamax": {
+            "2": 1.64,
+            "1": 4.3,
+            "X": 3.7
+          },
+          "pinnacle_justa": {
+            "2": 0.551,
+            "1": 0.198,
+            "X": 0.252,
+            "mas_2.5": 0.515,
+            "menos_2.5": 0.485
+          },
+          "mejor": {
+            "2": 1.77,
+            "1": 5.3,
+            "X": 3.96,
+            "mas_2.5": 1.92,
+            "menos_2.5": 2.1
+          },
+          "mediana": {
+            "2": 1.73,
+            "1": 4.75,
+            "X": 3.85,
+            "mas_2.5": 1.86,
+            "menos_2.5": 1.96
+          },
+          "valor_winamax": {
+            "2": -0.097,
+            "1": -0.15,
+            "X": -0.069
+          }
+        },
+        {
+          "local": "Elche CF",
+          "visitante": "Atlético Madrid",
+          "hora": "18:30",
+          "winamax": {
+            "1": 5.9,
+            "2": 1.39,
+            "X": 4.4
+          },
+          "pinnacle_justa": {
+            "1": 0.138,
+            "2": 0.661,
+            "X": 0.201
+          },
+          "mejor": {
+            "1": 7.4,
+            "2": 1.52,
+            "X": 5.0,
+            "mas_2.5": 1.63,
+            "menos_2.5": 2.49
+          },
+          "mediana": {
+            "1": 6.7,
+            "2": 1.44,
+            "X": 4.7,
+            "mas_2.5": 1.55,
+            "menos_2.5": 2.41
+          },
+          "valor_winamax": {
+            "1": -0.186,
+            "2": -0.081,
+            "X": -0.115
+          }
+        },
+        {
+          "local": "Real Madrid",
+          "visitante": "Alavés",
+          "hora": "21:00",
+          "winamax": {
+            "1": 1.1,
+            "2": 13.5,
+            "X": 9.0
+          },
+          "pinnacle_justa": {
+            "1": 0.839,
+            "2": 0.055,
+            "X": 0.105
+          },
+          "mejor": {
+            "1": 1.18,
+            "2": 21.0,
+            "X": 10.5,
+            "mas_2.5": 1.3,
+            "menos_2.5": 3.75
+          },
+          "mediana": {
+            "1": 1.13,
+            "2": 17.0,
+            "X": 9.0,
+            "mas_2.5": 1.29,
+            "menos_2.5": 3.57
+          },
+          "valor_winamax": {
+            "1": -0.077,
+            "2": -0.252,
+            "X": -0.054
+          }
+        }
+      ]
+    },
+    "soccer_epl": {
+      "pedido": "09:13",
+      "partidos": [
+        {
+          "local": "Manchester United",
+          "visitante": "Brentford",
+          "hora": "16:00",
+          "winamax": {
+            "1": 2.2,
+            "2": 2.65,
+            "X": 3.55
+          },
+          "pinnacle_justa": {
+            "1": 0.404,
+            "2": 0.337,
+            "X": 0.259
+          },
+          "mejor": {
+            "1": 2.42,
+            "2": 3.1,
+            "X": 3.98,
+            "mas_2.5": 1.6,
+            "menos_2.5": 2.5
+          },
+          "mediana": {
+            "1": 2.3,
+            "2": 2.88,
+            "X": 3.7,
+            "mas_2.5": 1.56,
+            "menos_2.5": 2.38
+          },
+          "valor_winamax": {
+            "1": -0.111,
+            "2": -0.108,
+            "X": -0.08
+          }
+        },
+        {
+          "local": "Leeds United",
+          "visitante": "Coventry City",
+          "hora": "16:00",
+          "winamax": {
+            "2": 5.6,
+            "1": 1.41,
+            "X": 4.4
+          },
+          "pinnacle_justa": {
+            "2": 0.145,
+            "1": 0.645,
+            "X": 0.21
+          },
+          "mejor": {
+            "2": 7.4,
+            "1": 1.53,
+            "X": 4.8,
+            "mas_2.5": 1.75,
+            "menos_2.5": 2.38
+          },
+          "mediana": {
+            "2": 6.63,
+            "1": 1.47,
+            "X": 4.6,
+            "mas_2.5": 1.65,
+            "menos_2.5": 2.2
+          },
+          "valor_winamax": {
+            "2": -0.19,
+            "1": -0.09,
+            "X": -0.076
+          }
+        },
+        {
+          "local": "Ipswich Town",
+          "visitante": "Aston Villa",
+          "hora": "18:30",
+          "winamax": {
+            "X": 3.5,
+            "1": 3.2,
+            "2": 1.92
+          },
+          "pinnacle_justa": {
+            "X": 0.256,
+            "1": 0.273,
+            "2": 0.471
+          },
+          "mejor": {
+            "X": 4.11,
+            "1": 3.7,
+            "2": 2.08,
+            "mas_2.5": 1.59,
+            "menos_2.5": 2.5
+          },
+          "mediana": {
+            "X": 3.78,
+            "1": 3.45,
+            "2": 2.01,
+            "mas_2.5": 1.56,
+            "menos_2.5": 2.38
+          },
+          "valor_winamax": {
+            "X": -0.103,
+            "1": -0.126,
+            "2": -0.097
+          }
+        }
+      ]
+    },
+    "soccer_italy_serie_a": {
+      "pedido": "09:13",
+      "partidos": [
+        {
+          "local": "Frosinone",
+          "visitante": "Parma",
+          "hora": "15:00",
+          "winamax": {
+            "X": 4.9,
+            "1": 1.35,
+            "2": 5.8
+          },
+          "pinnacle_justa": {
+            "X": 0.179,
+            "1": 0.681,
+            "2": 0.14
+          },
+          "mejor": {
+            "X": 5.51,
+            "1": 1.46,
+            "2": 7.4,
+            "mas_2.5": 1.35,
+            "menos_2.5": 3.26
+          },
+          "mediana": {
+            "X": 5.25,
+            "1": 1.41,
+            "2": 6.65,
+            "mas_2.5": 1.34,
+            "menos_2.5": 3.25
+          },
+          "valor_winamax": {
+            "X": -0.124,
+            "1": -0.081,
+            "2": -0.186
+          }
+        },
+        {
+          "local": "Torino",
+          "visitante": "Lazio",
+          "hora": "18:00",
+          "winamax": {
+            "2": 2.0,
+            "1": 3.25,
+            "X": 3.2
+          },
+          "pinnacle_justa": {
+            "2": 0.445,
+            "1": 0.272,
+            "X": 0.283,
+            "mas_2.5": 0.503,
+            "menos_2.5": 0.497
+          },
+          "mejor": {
+            "2": 2.24,
+            "1": 3.7,
+            "X": 3.69,
+            "mas_2.5": 1.95,
+            "menos_2.5": 2.02
+          },
+          "mediana": {
+            "2": 2.14,
+            "1": 3.43,
+            "X": 3.4,
+            "mas_2.5": 1.88,
+            "menos_2.5": 1.92
+          },
+          "valor_winamax": {
+            "2": -0.11,
+            "1": -0.115,
+            "X": -0.095
+          }
+        },
+        {
+          "local": "Inter Milan",
+          "visitante": "Genoa",
+          "hora": "20:45",
+          "winamax": {
+            "2": 8.5,
+            "X": 6.0,
+            "1": 1.22
+          },
+          "pinnacle_justa": {
+            "2": 0.094,
+            "X": 0.157,
+            "1": 0.749
+          },
+          "mejor": {
+            "2": 12.0,
+            "X": 6.2,
+            "1": 1.33,
+            "mas_2.5": 1.54,
+            "menos_2.5": 2.65
+          },
+          "mediana": {
+            "2": 9.8,
+            "X": 5.85,
+            "1": 1.29,
+            "mas_2.5": 1.49,
+            "menos_2.5": 2.5
+          },
+          "valor_winamax": {
+            "2": -0.203,
+            "X": -0.057,
+            "1": -0.086
+          }
+        }
+      ]
+    },
+    "soccer_germany_bundesliga": {
+      "pedido": "09:13",
+      "partidos": [
+        {
+          "local": "1. FC Köln",
+          "visitante": "Elversberg",
+          "hora": "15:30",
+          "winamax": {
+            "2": 3.15,
+            "1": 1.94,
+            "X": 3.6
+          },
+          "pinnacle_justa": {
+            "2": 0.274,
+            "1": 0.473,
+            "X": 0.253
+          },
+          "mejor": {
+            "2": 3.75,
+            "1": 2.08,
+            "X": 4.0,
+            "mas_2.5": 1.67,
+            "menos_2.5": 2.4
+          },
+          "mediana": {
+            "2": 3.45,
+            "1": 1.98,
+            "X": 3.75,
+            "mas_2.5": 1.57,
+            "menos_2.5": 2.3
+          },
+          "valor_winamax": {
+            "2": -0.137,
+            "1": -0.082,
+            "X": -0.09
+          }
+        },
+        {
+          "local": "Hamburger SV",
+          "visitante": "Bayern Munich",
+          "hora": "15:30",
+          "winamax": {
+            "1": 7.0,
+            "X": 5.9,
+            "2": 1.25
+          },
+          "pinnacle_justa": {
+            "1": 0.117,
+            "X": 0.151,
+            "2": 0.732
+          },
+          "mejor": {
+            "1": 9.6,
+            "X": 6.5,
+            "2": 1.35,
+            "mas_2.5": 1.39,
+            "menos_2.5": 3.25
+          },
+          "mediana": {
+            "1": 8.22,
+            "X": 6.0,
+            "2": 1.3,
+            "mas_2.5": 1.38,
+            "menos_2.5": 3.05
+          },
+          "valor_winamax": {
+            "1": -0.183,
+            "X": -0.11,
+            "2": -0.084
+          }
+        },
+        {
+          "local": "SC Paderborn",
+          "visitante": "FC Schalke 04",
+          "hora": "15:30",
+          "winamax": {
+            "2": 2.4,
+            "1": 2.4,
+            "X": 3.4
+          },
+          "pinnacle_justa": {
+            "2": 0.369,
+            "1": 0.36,
+            "X": 0.271
+          },
+          "mejor": {
+            "2": 2.85,
+            "1": 2.82,
+            "X": 3.79,
+            "mas_2.5": 1.75,
+            "menos_2.5": 2.26
+          },
+          "mediana": {
+            "2": 2.6,
+            "1": 2.58,
+            "X": 3.5,
+            "mas_2.5": 1.67,
+            "menos_2.5": 2.18
+          },
+          "valor_winamax": {
+            "2": -0.114,
+            "1": -0.137,
+            "X": -0.078
+          }
+        },
+        {
+          "local": "FSV Mainz 05",
+          "visitante": "Union Berlin",
+          "hora": "15:30",
+          "winamax": {
+            "2": 5.5,
+            "1": 1.41,
+            "X": 4.4
+          },
+          "pinnacle_justa": {
+            "2": 0.151,
+            "1": 0.649,
+            "X": 0.2
+          },
+          "mejor": {
+            "2": 7.2,
+            "1": 1.51,
+            "X": 5.0,
+            "mas_2.5": 1.55,
+            "menos_2.5": 2.5
+          },
+          "mediana": {
+            "2": 6.35,
+            "1": 1.45,
+            "X": 4.7,
+            "mas_2.5": 1.55,
+            "menos_2.5": 2.49
+          },
+          "valor_winamax": {
+            "2": -0.168,
+            "1": -0.085,
+            "X": -0.12
+          }
+        },
+        {
+          "local": "VfB Stuttgart",
+          "visitante": "Eintracht Frankfurt",
+          "hora": "18:30",
+          "winamax": {
+            "1": 1.72,
+            "2": 3.35,
+            "X": 4.2
+          },
+          "pinnacle_justa": {
+            "1": 0.534,
+            "2": 0.256,
+            "X": 0.21
+          },
+          "mejor": {
+            "1": 1.89,
+            "2": 4.0,
+            "X": 4.62,
+            "mas_2.5": 1.28,
+            "menos_2.5": 3.75
+          },
+          "mediana": {
+            "1": 1.78,
+            "2": 3.7,
+            "X": 4.4,
+            "mas_2.5": 1.27,
+            "menos_2.5": 3.72
+          },
+          "valor_winamax": {
+            "1": -0.081,
+            "2": -0.143,
+            "X": -0.119
+          }
+        }
+      ]
+    },
+    "soccer_france_ligue_one": {
+      "pedido": "09:13",
+      "partidos": [
+        {
+          "local": "Angers",
+          "visitante": "RC Lens",
+          "hora": "17:15",
+          "winamax": {
+            "2": 1.62,
+            "X": 3.85,
+            "1": 4.2
+          },
+          "pinnacle_justa": {
+            "2": 0.565,
+            "X": 0.237,
+            "1": 0.198
+          },
+          "mejor": {
+            "2": 1.75,
+            "X": 4.26,
+            "1": 5.1,
+            "mas_2.5": 1.76,
+            "menos_2.5": 2.3
+          },
+          "mediana": {
+            "2": 1.67,
+            "X": 4.0,
+            "1": 4.75,
+            "mas_2.5": 1.65,
+            "menos_2.5": 2.19
+          },
+          "valor_winamax": {
+            "2": -0.084,
+            "X": -0.088,
+            "1": -0.17
+          }
+        },
+        {
+          "local": "Le Havre",
+          "visitante": "Strasbourg",
+          "hora": "20:45",
+          "winamax": {
+            "1": 3.0,
+            "X": 3.35,
+            "2": 2.05
+          },
+          "pinnacle_justa": {
+            "1": 0.293,
+            "X": 0.278,
+            "2": 0.43
+          },
+          "mejor": {
+            "1": 3.35,
+            "X": 3.8,
+            "2": 2.28,
+            "mas_2.5": 1.78,
+            "menos_2.5": 2.23
+          },
+          "mediana": {
+            "1": 3.17,
+            "X": 3.49,
+            "2": 2.2,
+            "mas_2.5": 1.71,
+            "menos_2.5": 2.11
+          },
+          "valor_winamax": {
+            "1": -0.122,
+            "X": -0.07,
+            "2": -0.119
+          }
+        },
+        {
+          "local": "Le Mans FC",
+          "visitante": "Lille",
+          "hora": "20:45",
+          "winamax": {
+            "1": 3.4,
+            "2": 1.98,
+            "X": 3.2
+          },
+          "pinnacle_justa": {
+            "1": 0.253,
+            "2": 0.464,
+            "X": 0.283
+          },
+          "mejor": {
+            "1": 3.9,
+            "2": 2.1,
+            "X": 3.65,
+            "mas_2.5": 2.15,
+            "menos_2.5": 1.84
+          },
+          "mediana": {
+            "1": 3.75,
+            "2": 2.04,
+            "X": 3.33,
+            "mas_2.5": 2.05,
+            "menos_2.5": 1.76
+          },
+          "valor_winamax": {
+            "1": -0.139,
+            "2": -0.081,
+            "X": -0.095
+          }
+        },
+        {
+          "local": "Paris Saint Germain",
+          "visitante": "Lorient",
+          "hora": "20:45",
+          "winamax": {
+            "1": 1.15,
+            "2": 10.5,
+            "X": 7.5
+          },
+          "pinnacle_justa": {
+            "1": 0.808,
+            "2": 0.072,
+            "X": 0.12
+          },
+          "mejor": {
+            "1": 1.24,
+            "2": 17.0,
+            "X": 8.6,
+            "mas_2.5": 1.45,
+            "menos_2.5": 2.82
+          },
+          "mediana": {
+            "1": 1.19,
+            "2": 13.14,
+            "X": 7.4,
+            "mas_2.5": 1.43,
+            "menos_2.5": 2.75
+          },
+          "valor_winamax": {
+            "1": -0.071,
+            "2": -0.241,
+            "X": -0.099
+          }
+        },
+        {
+          "local": "Nice",
+          "visitante": "Troyes",
+          "hora": "20:45",
+          "winamax": {
+            "2": 4.2,
+            "1": 1.66,
+            "X": 3.6
+          },
+          "pinnacle_justa": {
+            "2": 0.199,
+            "1": 0.554,
+            "X": 0.247,
+            "mas_2.5": 0.542,
+            "menos_2.5": 0.458
+          },
+          "mejor": {
+            "2": 5.15,
+            "1": 1.79,
+            "X": 4.16,
+            "mas_2.5": 1.84,
+            "menos_2.5": 2.12
+          },
+          "mediana": {
+            "2": 4.67,
+            "1": 1.71,
+            "X": 3.8,
+            "mas_2.5": 1.77,
+            "menos_2.5": 2.02
+          },
+          "valor_winamax": {
+            "2": -0.162,
+            "1": -0.081,
+            "X": -0.112
+          }
+        }
+      ]
+    }
+  },
+  "extra": [
+    {
+      "local": "Málaga",
+      "visitante": "Athletic Bilbao",
+      "mercados": {
+        "alternate_team_totals_corners": [
+          {
+            "equipo": "Athletic Bilbao",
+            "linea": 5.5,
+            "opcion": "Over",
+            "winamax": null,
+            "mediana": 2.05,
+            "mejor": 2.05,
+            "pinnacle_justa": 0.456,
+            "valor_winamax": null,
+            "casas": 1
+          },
+          {
+            "equipo": "Athletic Bilbao",
+            "linea": 5.5,
+            "opcion": "Under",
+            "winamax": null,
+            "mediana": 1.72,
+            "mejor": 1.72,
+            "pinnacle_justa": 0.544,
+            "valor_winamax": null,
+            "casas": 1
+          },
+          {
+            "equipo": "Málaga",
+            "linea": 4.5,
+            "opcion": "Over",
+            "winamax": null,
+            "mediana": 2.12,
+            "mejor": 2.12,
+            "pinnacle_justa": 0.442,
+            "valor_winamax": null,
+            "casas": 1
+          },
+          {
+            "equipo": "Málaga",
+            "linea": 4.5,
+            "opcion": "Under",
+            "winamax": null,
+            "mediana": 1.68,
+            "mejor": 1.68,
+            "pinnacle_justa": 0.558,
+            "valor_winamax": null,
+            "casas": 1
+          }
+        ],
+        "alternate_totals_corners": [
+          {
+            "equipo": "",
+            "linea": 8.5,
+            "opcion": "Over",
+            "winamax": null,
+            "mediana": 1.52,
+            "mejor": 1.52,
+            "pinnacle_justa": 0.622,
+            "valor_winamax": null,
+            "casas": 1
+          },
+          {
+            "equipo": "",
+            "linea": 8.5,
+            "opcion": "Under",
+            "winamax": null,
+            "mediana": 2.5,
+            "mejor": 2.5,
+            "pinnacle_justa": 0.378,
+            "valor_winamax": null,
+            "casas": 1
+          },
+          {
+            "equipo": "",
+            "linea": 9.0,
+            "opcion": "Over",
+            "winamax": null,
+            "mediana": 1.66,
+            "mejor": 1.66,
+            "pinnacle_justa": 0.573,
+            "valor_winamax": null,
+            "casas": 1
+          },
+          {
+            "equipo": "",
+            "linea": 9.0,
+            "opcion": "Under",
+            "winamax": null,
+            "mediana": 2.23,
+            "mejor": 2.23,
+            "pinnacle_justa": 0.427,
+            "valor_winamax": null,
+            "casas": 1
+          },
+          {
+            "equipo": "",
+            "linea": 9.5,
+            "opcion": "Over",
+            "winamax": null,
+            "mediana": 1.88,
+            "mejor": 1.88,
+            "pinnacle_justa": 0.51,
+            "valor_winamax": null,
+            "casas": 1
+          },
+          {
+            "equipo": "",
+            "linea": 9.5,
+            "opcion": "Under",
+            "winamax": null,
+            "mediana": 1.96,
+            "mejor": 1.96,
+            "pinnacle_justa": 0.49,
+            "valor_winamax": null,
+            "casas": 1
+          },
+          {
+            "equipo": "",
+            "linea": 10.0,
+            "opcion": "Over",
+            "winamax": null,
+            "mediana": 2.1,
+            "mejor": 2.1,
+            "pinnacle_justa": 0.453,
+            "valor_winamax": null,
+            "casas": 1
+          },
+          {
+            "equipo": "",
+            "linea": 10.0,
+            "opcion": "Under",
+            "winamax": null,
+            "mediana": 1.74,
+            "mejor": 1.74,
+            "pinnacle_justa": 0.547,
+            "valor_winamax": null,
+            "casas": 1
+          },
+          {
+            "equipo": "",
+            "linea": 10.5,
+            "opcion": "Over",
+            "winamax": null,
+            "mediana": 2.32,
+            "mejor": 2.32,
+            "pinnacle_justa": 0.408,
+            "valor_winamax": null,
+            "casas": 1
+          },
+          {
+            "equipo": "",
+            "linea": 10.5,
+            "opcion": "Under",
+            "winamax": null,
+            "mediana": 1.6,
+            "mejor": 1.6,
+            "pinnacle_justa": 0.592,
+            "valor_winamax": null,
+            "casas": 1
+          }
+        ]
+      }
+    },
+    {
+      "local": "Real Madrid",
+      "visitante": "Alavés",
+      "mercados": {
+        "alternate_team_totals_corners": [
+          {
+            "equipo": "Alavés",
+            "linea": 2.5,
+            "opcion": "Over",
+            "winamax": null,
+            "mediana": 1.67,
+            "mejor": 1.67,
+            "pinnacle_justa": 0.559,
+            "valor_winamax": null,
+            "casas": 1
+          },
+          {
+            "equipo": "Alavés",
+            "linea": 2.5,
+            "opcion": "Under",
+            "winamax": null,
+            "mediana": 2.12,
+            "mejor": 2.12,
+            "pinnacle_justa": 0.441,
+            "valor_winamax": null,
+            "casas": 1
+          },
+          {
+            "equipo": "Real Madrid",
+            "linea": 6.5,
+            "opcion": "Over",
+            "winamax": null,
+            "mediana": 1.74,
+            "mejor": 1.74,
+            "pinnacle_justa": 0.538,
+            "valor_winamax": null,
+            "casas": 1
+          },
+          {
+            "equipo": "Real Madrid",
+            "linea": 6.5,
+            "opcion": "Under",
+            "winamax": null,
+            "mediana": 2.03,
+            "mejor": 2.03,
+            "pinnacle_justa": 0.462,
+            "valor_winamax": null,
+            "casas": 1
+          }
+        ],
+        "alternate_totals_corners": [
+          {
+            "equipo": "",
+            "linea": 9.0,
+            "opcion": "Over",
+            "winamax": null,
+            "mediana": 1.47,
+            "mejor": 1.47,
+            "pinnacle_justa": 0.63,
+            "valor_winamax": null,
+            "casas": 1
+          },
+          {
+            "equipo": "",
+            "linea": 9.0,
+            "opcion": "Under",
+            "winamax": null,
+            "mediana": 2.5,
+            "mejor": 2.5,
+            "pinnacle_justa": 0.37,
+            "valor_winamax": null,
+            "casas": 1
+          },
+          {
+            "equipo": "",
+            "linea": 9.5,
+            "opcion": "Over",
+            "winamax": null,
+            "mediana": 1.67,
+            "mejor": 1.67,
+            "pinnacle_justa": 0.558,
+            "valor_winamax": null,
+            "casas": 1
+          },
+          {
+            "equipo": "",
+            "linea": 9.5,
+            "opcion": "Under",
+            "winamax": null,
+            "mediana": 2.11,
+            "mejor": 2.11,
+            "pinnacle_justa": 0.442,
+            "valor_winamax": null,
+            "casas": 1
+          },
+          {
+            "equipo": "",
+            "linea": 10.0,
+            "opcion": "Over",
+            "winamax": null,
+            "mediana": 1.91,
+            "mejor": 1.91,
+            "pinnacle_justa": 0.503,
+            "valor_winamax": null,
+            "casas": 1
+          },
+          {
+            "equipo": "",
+            "linea": 10.0,
+            "opcion": "Under",
+            "winamax": null,
+            "mediana": 1.93,
+            "mejor": 1.93,
+            "pinnacle_justa": 0.497,
+            "valor_winamax": null,
+            "casas": 1
+          },
+          {
+            "equipo": "",
+            "linea": 10.5,
+            "opcion": "Over",
+            "winamax": null,
+            "mediana": 2.09,
+            "mejor": 2.09,
+            "pinnacle_justa": 0.446,
+            "valor_winamax": null,
+            "casas": 1
+          },
+          {
+            "equipo": "",
+            "linea": 10.5,
+            "opcion": "Under",
+            "winamax": null,
+            "mediana": 1.68,
+            "mejor": 1.68,
+            "pinnacle_justa": 0.554,
+            "valor_winamax": null,
+            "casas": 1
+          },
+          {
+            "equipo": "",
+            "linea": 11.0,
+            "opcion": "Over",
+            "winamax": null,
+            "mediana": 2.44,
+            "mejor": 2.44,
+            "pinnacle_justa": 0.381,
+            "valor_winamax": null,
+            "casas": 1
+          },
+          {
+            "equipo": "",
+            "linea": 11.0,
+            "opcion": "Under",
+            "winamax": null,
+            "mediana": 1.5,
+            "mejor": 1.5,
+            "pinnacle_justa": 0.619,
+            "valor_winamax": null,
+            "casas": 1
+          }
+        ]
+      }
+    }
+  ]
+}

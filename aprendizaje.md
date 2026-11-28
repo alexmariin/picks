@@ -42,8 +42,8 @@ _Actualizado con 99 picks cerrados (de 2026-11-12 a 2026-11-27)._
 | 1X2 | 19 | 16 | 84% | 67% | +3.60 u (+19%) |
 | Goles por equipo | 12 | 9 | 75% | 69% | -0.05 u (-0%) |
 | Doble oportunidad | 11 | 9 | 82% | 74% | +0.65 u (+6%) |
-| Córners | 6 | 4 | 67% | 65% | -0.48 u (-8%) |
 | Ambos marcan | 6 | 3 | 50% | 59% | -0.90 u (-15%) |
+| Córners | 6 | 4 | 67% | 65% | -0.48 u (-8%) |
 | Handicap | 5 | 3 | 60% | 66% | -0.52 u (-10%) |
 | Empate no válido | 2 | 0 | 0% | 69% | -2.00 u (-100%) |
 
@@ -75,8 +75,8 @@ _Actualizado con 99 picks cerrados (de 2026-11-12 a 2026-11-27)._
 | LaLiga | 6 | 5 | 83% | 66% | +0.79 u (+13%) |
 | Europa League | 5 | 3 | 60% | 69% | -0.90 u (-18%) |
 | Nations League D | 4 | 3 | 75% | 67% | +0.45 u (+11%) |
-| Ligue 1 | 4 | 3 | 75% | 68% | -0.05 u (-1%) |
 | Premier League | 4 | 2 | 50% | 66% | -1.20 u (-30%) |
+| Ligue 1 | 4 | 3 | 75% | 68% | -0.05 u (-1%) |
 | Conference League | 3 | 2 | 67% | 63% | +0.16 u (+5%) |
 
 ### Combinadas (1 u a cada una)

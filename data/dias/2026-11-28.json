@@ -1,0 +1,130 @@
+{
+  "fecha": "2026-11-28",
+  "titulo": "Sábado 28 de noviembre · LaLiga, Premier, Serie A y Ligue 1",
+  "generado": "2026-11-28 09:19",
+  "nota": "Cuotas de The Odds API (09:15). Winamax solo da el 1X2 y cobra mucho margen en todos los partidos (valor entre -0,06 y -0,25), así que ningún 1X2 de Winamax entra en dobles ni combinadas (lección del 22/11). De dónde sale cada cuota: Leeds gana es de WINAMAX; los goles del Frosinone-Parma y del Betis-Rayo son la MEDIANA del mercado; los córners del Málaga-Athletic son la MEDIANA (una sola casa, Pinnacle; Winamax suele pagar algo menos); Real Madrid gana por 2 o más, Angers menos de 1,5 goles e Inter más de 1,5 goles son ESTIMADAS a partir de las probabilidades justas de Pinnacle. Hoy no hay archivo de cuotas de Winamax de jugadores, córners ni tarjetas. Dejo fuera: Hamburgo-Bayern (al Bayern le faltan Kane, Olise, Musiala, Gnabry, Davies y Neuer: lección del 22/11), Elche-Atlético (sin Lookman, Sørloth ni Cuti Romero y con rotaciones antes del Barça: no juego su victoria, y lo demás paga menos de 1,25), PSG-Lorient (rotaciones y sin Kvaratskhelia, Doué ni Nuno Mendes), Niza-Troyes (al Niza le faltan 3 defensas), Mainz-Unión (el Mainz no ha ganado en casa y lleva 5 derrotas) y los partidos casi a tercios (Manchester United-Brentford, Ipswich-Aston Villa, Torino-Lazio, Colonia-Elversberg, Paderborn-Schalke, Le Mans-Lille, Le Havre-Estrasburgo y Stuttgart-Frankfurt). Mira los onces una hora antes.",
+  "picks": [
+    {
+      "id": "ang-rcl",
+      "hora": "17:15",
+      "competicion": "Ligue 1 · Jornada 12",
+      "local": "Angers",
+      "visitante": "Lens",
+      "seleccion": "Angers: menos de 1,5 goles",
+      "mercado": "Goles por equipo",
+      "cuota": 1.31,
+      "prob": 0.72,
+      "motivo": "El Angers tiene la peor delantera de la Ligue 1: 9 goles en 11 jornadas (0,8 por partido) y es 17.º. Pinnacle da al Lens un 56 % y el modelo de sus cuotas deja al Angers en 1 gol esperado: 1 o ningún gol en un 72 %.",
+      "riesgo": "Al Lens le faltan dos defensas (Nawrocki y Aguilar) y jugó el miércoles en Leipzig (perdió 3-1): puede llegar cansado. Un penalti o un error tumba el pick. Cuota estimada: mira la real en Winamax.",
+      "alternativa": "Lens o empate (78 %, ~1,22 estimada)"
+    },
+    {
+      "id": "rma-ala",
+      "hora": "21:00",
+      "competicion": "LaLiga · Jornada 14",
+      "local": "Real Madrid",
+      "visitante": "Alavés",
+      "seleccion": "Real Madrid gana por 2 o más goles",
+      "mercado": "Handicap",
+      "cuota": 1.55,
+      "prob": 0.62,
+      "motivo": "El Madrid lleva 10 victorias seguidas (la última, 5-1 al PSV), ha ganado sus 6 partidos en casa y marcó 16 goles en los últimos 5. El Alavés no ha ganado fuera en toda la temporada. Pinnacle da al Madrid un 84 %. Juegan Mbappé y Vinícius.",
+      "riesgo": "Bajas de Trent (enfermo), Rodrygo, Asencio y Endrick; solo Trent es titular, así que cumple la lección del hándicap (once casi completo). Si el Alavés marca pronto o el Madrid gana 1-0 al descanso y baja el ritmo, se queda corto. Cuota estimada.",
+      "alternativa": "Real Madrid: más de 6,5 córners (54 %, mediana 1,74)"
+    },
+    {
+      "id": "fro-par",
+      "hora": "15:00",
+      "competicion": "Serie A · Jornada 13",
+      "local": "Frosinone",
+      "visitante": "Parma",
+      "seleccion": "Más de 2,5 goles en el partido",
+      "mercado": "Goles totales",
+      "cuota": 1.34,
+      "prob": 0.69,
+      "motivo": "El Frosinone (7.º, 20 puntos) ha ganado 5 de sus 6 partidos en casa y marca unos 2,3-2,7 goles por partido en el Stirpe. El Parma (17.º, 8 puntos) perdió 5-1 con la Roma, ha perdido 4 de sus 5 salidas y en 4 de esas 5 hubo más de 2,5 goles. El Parma ha marcado en 4 de sus últimos 5. Pinnacle: 71 %.",
+      "riesgo": "Al Frosinone le faltan Raimondo y Birligea (delanteros); juega Bobcek. Si el Frosinone se pone 2-0 y baja el ritmo, se queda en 2 (lección del 25/11). Cuota de 1,34: justo en el límite.",
+      "alternativa": "Frosinone gana (68 %, Winamax 1,35, valor -0,08)"
+    },
+    {
+      "id": "mal-ath",
+      "hora": "16:15",
+      "competicion": "LaLiga · Jornada 14",
+      "local": "Málaga",
+      "visitante": "Athletic Club",
+      "seleccion": "Más de 8,5 córners en el partido",
+      "mercado": "Córners",
+      "cuota": 1.52,
+      "prob": 0.62,
+      "motivo": "El Athletic saca 5,8 córners por partido en liga (74 a favor y 55 en contra en 13: unos 10 por partido entre los dos). El Málaga es colista (5 puntos, 13 sin ganar, 9 goles) y se encerrará; el Athletic, 8.º, necesita ganar y ataca por bandas. Pinnacle da un 62 % a más de 8,5.",
+      "riesgo": "Al Athletic le faltan Guruzeta y Sannadi (sus dos 9) y Vivian. Si el Athletic marca pronto y baja el ritmo, se puede quedar en 8 (lección nfo-che). Córners va 4 de 7: aún pocos picks. Si Winamax paga menos de 1,45, no compensa.",
+      "alternativa": "Athletic gana (55 %, Winamax 1,64, valor -0,10)"
+    },
+    {
+      "id": "bet-ray",
+      "hora": "14:00",
+      "competicion": "LaLiga · Jornada 14",
+      "local": "Real Betis",
+      "visitante": "Rayo Vallecano",
+      "seleccion": "Más de 2,5 goles en el partido",
+      "mercado": "Goles totales",
+      "cuota": 1.54,
+      "prob": 0.6,
+      "motivo": "El Betis marcó 9 goles en sus últimos 5 partidos y vuelve el Cucho Hernández. El Rayo ha marcado en 5 de sus 6 salidas y aún no ha dejado la portería a cero fuera de casa. Pinnacle: un 61 % a más de 2,5.",
+      "riesgo": "Al Betis le faltan sus dos creadores, Lo Celso y Ceballos. El Rayo solo marcó 3 goles en sus últimos 5 y viene de dos derrotas. Pick justo: no va en dobles.",
+      "alternativa": "Betis gana (60 %, Winamax 1,52, valor -0,09)"
+    },
+    {
+      "id": "int-gen",
+      "hora": "20:45",
+      "competicion": "Serie A · Jornada 13",
+      "local": "Inter",
+      "visitante": "Genoa",
+      "seleccion": "Inter: más de 1,5 goles",
+      "mercado": "Goles por equipo",
+      "cuota": 1.33,
+      "prob": 0.65,
+      "motivo": "El Inter ha ganado sus 6 partidos en casa con 19 goles (3,2 por partido) y ha ganado los últimos 12 contra el Genoa en San Siro. Vuelve Lautaro. Pinnacle da al Inter un 75 % de victoria.",
+      "riesgo": "Al Inter le faltan Calhanoglu y Bastoni (y Zielinski es duda). El Genoa llega en forma: 4 victorias y 3 porterías a cero en sus últimos 5. Lección del 26/11: favorito local y como mucho al 65 % con cuota estimada. No va en dobles.",
+      "alternativa": "Más de 2,5 goles en el partido (60 %, mediana 1,49)"
+    },
+    {
+      "id": "lee-cov",
+      "hora": "16:00",
+      "competicion": "Premier League · Jornada 13",
+      "local": "Leeds United",
+      "visitante": "Coventry City",
+      "seleccion": "Leeds gana",
+      "mercado": "1X2",
+      "cuota": 1.41,
+      "prob": 0.65,
+      "motivo": "El Leeds no ha perdido en casa en liga y viene de ganar 4 en Stamford Bridge; Farke tiene a todos menos Mateo Joseph. El Coventry lleva 1 victoria y 4 derrotas fuera y pierde a su delantero Awoniyi. Pinnacle da al Leeds un 64,5 %.",
+      "riesgo": "El Leeds marca poco en casa (unos 1,3-1,6 goles por partido): un 1-1 es posible. Valor de Winamax -0,09: la casa paga poco, por eso no va en dobles ni combinadas. Juega solo si quieres un sencillo.",
+      "alternativa": "Más de 8,5 córners en el partido (61 %, ~1,47 estimada)"
+    }
+  ],
+  "combinadas": [
+    {
+      "id": "segura",
+      "nombre": "La segura",
+      "descripcion": "Las tres más sólidas del día, todas a 1,30 o más y de mercados distintos (goles de un equipo, goles del partido y hándicap). Cuota aproximada 2,72.",
+      "picks": ["ang-rcl", "fro-par", "rma-ala"]
+    },
+    {
+      "id": "equilibrada",
+      "nombre": "La equilibrada",
+      "descripcion": "Córners, goles del partido y goles de un equipo, en tres partidos distintos. Cuota aproximada 3,11.",
+      "picks": ["mal-ath", "bet-ray", "int-gen"]
+    },
+    {
+      "id": "sonadora",
+      "nombre": "La soñadora",
+      "descripcion": "Un pick de cada partido bueno del día salvo el 1X2 del Leeds (Winamax paga poco). Cuota aproximada 8,5. Es un capricho: cantidad mínima.",
+      "picks": ["bet-ray", "fro-par", "mal-ath", "ang-rcl", "int-gen", "rma-ala"]
+    }
+  ],
+  "dobles": [
+    {"id": "d1", "picks": ["ang-rcl", "rma-ala"]},
+    {"id": "d2", "picks": ["fro-par", "mal-ath"]}
+  ]
+}
